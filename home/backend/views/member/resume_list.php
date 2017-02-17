@@ -88,7 +88,7 @@ use yii\helpers\Url;
 						<td>
 							<div class="table-fun">
                                 <a href="<?php echo Url::toRoute(['member/members_log','uid'=>$v['uid']])?>">日志</a>
-								<a href="<?php echo Url::toRoute(['member/members_show','uid'=>$v['uid']])?>">查看</a>
+								<a href="<?php echo Url::toRoute(['member/members_show','uid'=>$v['uid'],'id'=>$v['id']])?>">查看</a>
 
 							</div>
 						</td>

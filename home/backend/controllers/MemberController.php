@@ -22,7 +22,7 @@ class MemberController extends Controller
     //简历列表的展示
     public function actionResume(){
 
-        $member=Yii::$app->db->createCommand("select * from `resume` join `members_info` on `resume`.uid=`members_info`.uid")->queryAll();
+               $member=Yii::$app->db->createCommand("select * from `resume` join `members_info` on `resume`.uid=`members_info`.uid")->queryAll();
 
         return $this->render('resume_list',['member'=>$member]);
 
@@ -87,6 +87,14 @@ class MemberController extends Controller
     public function actionMembers_show(){
 
         $uid=$_GET['uid'];
+        $pid=$_GET['id'];
+        $sql="select * from  `members_info` join `resume` on `members_info`.uid=`resume`.uid  join `resume_education` on `resume`.id=`resume_education`.pid  join `resume_work` on`resume_education`.pid=`resume_work`.pid  where `resume`.id='$pid'and `resume`.uid='$uid'";
+        $info=Yii::$app->db->createCommand($sql)->queryAll();
+//        print_r($info);die;
+        return   $this->render("members_show",['info'=>$info]);
+
+
+
 
 
 
