@@ -117,7 +117,7 @@
 							<li><a href="#" target="content">安全设置</a></li>
 							<li><a href="#" target="content">搜索设置</a></li>
 							<li><a href="#" target="content">页面管理</a></li>
-							<li><a href="#" target="content">导航设置</a></li>
+							<li><a href="<?php echo Url::to(['navigation/index']);?>" target="content">导航设置</a></li>
 							<li><a href="#" target="content">分类管理</a></li>
 							<li><a href="#" target="content">热门关键字</a></li>
 							<li><a href="#" target="content">网站管理员</a></li>
