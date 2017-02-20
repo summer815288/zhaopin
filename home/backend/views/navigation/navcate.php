@@ -29,8 +29,9 @@
                         <td><?php echo $value['alias']?></td>
                         <td>
                             <div class="table-fun">
-                                <a href="">修改</a>
-                                <a href="">删除</a>
+                                <a href="?r=navigation/cateupdate&id=<?php echo $value['id']?>">修改</a>
+                                <a href="javascript:void(0);" class="del">删除</a>
+                                <input type="hidden" name="id" value="<?php echo $value['id']?>">
                             </div>
                         </td>
                     </tr>
@@ -56,7 +57,20 @@
 </html>
 <script src="js/jquery.min.js"></script>
 <script>
-    $(".navadd").click(function () {
-
+    $(".del").click(function () {
+        var msg = "您确定要删除吗？";
+        if (confirm(msg)==true) {
+            var id = $(this).next().val();
+            $(this).parent().parent().parent().remove();
+            $.ajax({
+                type: "POST",
+                url: "?r=navigation/catedel",
+                data: {'id': id},
+            });
+        }
+        else
+        {
+            return false;
+        }
     })
 </script>

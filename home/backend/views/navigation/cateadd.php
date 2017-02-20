@@ -29,6 +29,7 @@
                     <input class="form-input-txt" type="text" name="alias" value="" />
                 </div>
                 <div class="form-group" style="margin-left:150px;">
+<!--                    <i nput type="hidden" name="admin_set" value="0" />-->
                     <input type="submit" class="sub-btn" value="提  交" />
                     <a href="?r=navigation/navcate"><input type="reset" class="sub-btn" value="返回" /></a>
                 </div>

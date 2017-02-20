@@ -18,6 +18,7 @@ class CommonController extends Controller
     }
     public function check()
     {
+        
         $session = Yii::$app->session;
         $names = $session->get('a');
         $u_name = $names['username'];
