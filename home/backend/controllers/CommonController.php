@@ -22,6 +22,10 @@ class CommonController extends Controller
         $session = Yii::$app->session;
         $names = $session->get('a');
         $u_name = $names['username'];
+        if($u_name == 'admin')
+        {
+            return true;
+        }
         // print_r($u_name);die;
         if (!isset($u_name)) {
             echo "<script>alert('非法登录');location.href='?r=login/login';</script>";
@@ -33,6 +37,7 @@ class CommonController extends Controller
     }
     public function checkNode()
     {
+        
         $controller = $this->id;
 
         // print_r($controller);die;
