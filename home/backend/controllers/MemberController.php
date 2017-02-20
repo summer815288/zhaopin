@@ -15,7 +15,7 @@ use yii\data\Pagination;
 /**
  *
  */
-class MemberController extends Controller
+class MemberController extends  CommonController
 {
     public $layout = false;
 
