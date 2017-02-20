@@ -29,22 +29,41 @@
                 </tr>
                 <?php foreach ($list as $key => $value): ?>
                 <tr>
-                    <td><input type="text" value="<?php echo $value['title']?>"></td>
-                    <td><?php echo $value['display']?></td>
-                    <td><?php echo $value['alias']?></td>
-                    <td><?php echo $value['target']?></td>
-                    <td><?php echo $value['navigationorder']?></td>
-                    <td><input type="text" style="width: 10%" value="<?php echo $value['id']?>"></td>
+                    <td><input type="hidden" value="<?php echo $value['id']?>"><input type="text" value="<?php echo $value['title']?>" class="title"></td>
+                    <td>
+                        <?php if($value['display']==1){?>
+                        显示
+                        <?php }else{?>
+                        隐藏
+                        <?php }?>
+                    </td>
+                    <td><?php echo $value['tag']?></td>
+                    <td>
+                        <?php if($value['alias']=='QS_top'){?>
+                            顶部导航
+                        <?php }else{?>
+                            底部导航
+                        <?php }?>
+                    </td>
+                    <td>
+                        <?php if($value['target']=='_blank'){?>
+                            新窗口
+                        <?php }else{?>
+                            原窗口
+                        <?php }?>
+                    </td>
+                    <td><input type="hidden" value="<?php echo $value['id']?>"><input type="text" style="width: 10%" value="<?php echo $value['navigationorder']?>" class="sort"></td>
                     <td>
                         <div class="table-fun">
-                            <a href="">修改</a>
-                            <a href="">删除</a>
+                            <a href="?r=navigation/navupdate&id=<?php echo $value['id']?>">修改</a>
+                            <a href="javascript:void(0);" class="del">删除</a>
+                            <input type="hidden" value="<?php echo $value['id']?>">
                         </div>
                     </td>
                 </tr>
                 <?php endforeach ?>
             </table>
-            <input style="float: left" type="button" value="保存修改">
+<!--            <input style="float: left" type="button" value="保存修改">-->
             <a style="float: left" href="?r=navigation/navadd"><input type="button" value="添加栏目"></a>
             <div class="page">
                 <form action="" method="get">
@@ -65,7 +84,47 @@
 </html>
 <script src="js/jquery.min.js"></script>
 <script>
-    $(".navadd").click(function () {
-
+    $(".title").blur(function () {
+        var id=$(this).prev().val();
+        var title=$(this).val();
+        $.ajax({
+            type: "POST",
+            url: "?r=navigation/index",
+            data: {'id':id,'title':title},
+            success: function(msg){
+                if(msg==1)
+                {
+                    alert( "修改成功" );
+                }else{
+                    alert("修改失败");
+                }
+            }
+        });
+    })
+    $(".sort").blur(function () {
+        var id=$(this).prev().val();
+        var sort=$(this).val();
+        $.ajax({
+            type: "POST",
+            url: "?r=navigation/sort",
+            data: {'id':id,'sort':sort},
+            success: function(msg){
+                if(msg==1)
+                {
+                    alert( "修改成功" );
+                }else{
+                    alert("修改失败");
+                }
+            }
+        });
+    })
+    $(".del").click(function () {
+        var id=$(this).next().val();
+        $(this).parent().parent().parent().remove();
+        $.ajax({
+            type: "POST",
+            url: "?r=navigation/del",
+            data: {'id':id},
+        });
     })
 </script>

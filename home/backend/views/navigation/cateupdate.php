@@ -16,21 +16,21 @@
                 <a style="float: left" href="?r=navigation/navcate">&nbsp;&nbsp;导航分类</a></h4>
         </div>
         <div class="public-content-cont">
-            <h3>新增导航分类</h3>
+            <h3>修改导航分类</h3>
         </div>
         <div class="public-content-cont">
-            <form action="?r=navigation/cateadd" method="post">
+            <form action="?r=navigation/cateupdate" method="post">
                 <div class="form-group">
                     <label for="">分类名称：</label>
-                    <input class="form-input-txt" type="text" name="categoryname" value="" />
+                    <input class="form-input-txt" type="text" name="categoryname" value="<?php echo $info['categoryname']?>" />
                 </div>
                 <div class="form-group">
                     <label for="">调用标题：</label>
-                    <input class="form-input-txt" type="text" name="alias" value="" />
+                    <input class="form-input-txt" type="text" name="alias" value="<?php echo $info['alias']?>" />
                 </div>
                 <div class="form-group" style="margin-left:150px;">
-<!--                    <i nput type="hidden" name="admin_set" value="0" />-->
-                    <input type="submit" class="sub-btn" value="提  交" />
+                                        <input type="hidden" name="id" value="<?php echo $info['id']?>" />
+                    <input type="submit" class="sub-btn" value="修  改" />
                     <a href="?r=navigation/navcate"><input type="reset" class="sub-btn" value="返回" /></a>
                 </div>
             </form>
