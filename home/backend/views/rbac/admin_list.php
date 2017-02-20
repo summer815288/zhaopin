@@ -19,8 +19,8 @@
 						<th style="width:5%">编号</th>
 						<th style="width:10%">管理员</th>
 						<th style="width:10%">角色</th>
-						<th style="width:20%">登录时间</th>						
-						<th style="width:20%">操作</th>
+						<th style="width:15%">登录时间</th>
+						<th style="width:25%">操作</th>
 					</tr>
 					<tbody id="tbody">
 					<?php foreach($admin_list as $k=>$v){?>
@@ -31,6 +31,7 @@
 						<td><?php echo date("Y-m-d H:i:s",$v['login_time'])?></td>
 						<td>
 							<div class="table-fun">
+								<a href="?r=rbac/setpower&rid=<?php echo $v['r_id']?>"><button class="del">权限</button></a>
 								<button class="del" value="<?php echo $v['admin_id']?>">删除</button>
 							</div>
 						</td>
