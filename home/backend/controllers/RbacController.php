@@ -74,7 +74,8 @@ class RbacController extends Controller
 	public function actionSetpower()
 	{
 		$rid=yii::$app->request->get('rid');
-		$list = yii::$app->db->createCommand("select * from ar_p JOIN apower ON ar_p.p_id=apower.p_id where r_id=$rid")->queryAll();
+//		$info = yii::$app->db->createCommand("select * from ar_p JOIN apower ON ar_p.p_id=apower.p_id where r_id=$rid")->queryAll();
+		$list = yii::$app->db->createCommand("select * from apower")->queryAll();
 		return $this->render('role_power',['list'=>$list]);
 	}
 }
