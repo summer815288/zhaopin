@@ -45124,3 +45124,618 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1487589759.268
     'REQUEST_TIME' => 1487589759
 ]
+2017-02-20 14:54:38 [127.0.0.1][-][-][error][yii\db\IntegrityException] exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'p_id' in field list is ambiguous' in F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\month9\zhaopin\home\backend\controllers\RbacController.php(77): yii\db\Command->queryAll()
+#3 [internal function]: backend\controllers\RbacController->actionSetpower()
+#4 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#5 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#6 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#7 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\phpStudy\WWW\month9\zhaopin\home\backend\web\index.php(17): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'p_id' in field list is ambiguous
+The SQL being executed was: select p_id from ar_p JOIN apower ON ar_p.p_id=apower.p_id where r_id=1' in F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'select p_id fro...')
+#1 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\month9\zhaopin\home\backend\controllers\RbacController.php(77): yii\db\Command->queryAll()
+#3 [internal function]: backend\controllers\RbacController->actionSetpower()
+#4 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#5 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#6 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#7 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\phpStudy\WWW\month9\zhaopin\home\backend\web\index.php(17): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1052
+    [2] => Column 'p_id' in field list is ambiguous
+)
+
+2017-02-20 14:54:38 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'rbac/setpower'
+    'rid' => '1'
+]
+
+$_COOKIE = [
+    'bdshare_firstime' => '1486123949110'
+    'advanced-backend' => '7vsipra2ugho53oebejv7k6v97'
+    '_csrf-backend' => '597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm\";}'
+    'name' => '033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa:2:{i:0;s:4:\"name\";i:1;s:5:\"admin\";}'
+    'advanced-frontend' => 'pb927et2lqi2d74n4d522ffl83'
+    '_csrf-frontend' => '4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"8F8aPoKGsimpsspk9qncxz2a8H5J5jCv\";}'
+    'PHPSESSID' => 'uvh75f20feod4cia67qccndau6'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/month9/zhaopin/home/backend/web/index.php?r=rbac/admin'
+    'HTTP_COOKIE' => 'bdshare_firstime=1486123949110; advanced-backend=7vsipra2ugho53oebejv7k6v97; _csrf-backend=597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm%22%3B%7D; name=033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa%3A2%3A%7Bi%3A0%3Bs%3A4%3A%22name%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; advanced-frontend=pb927et2lqi2d74n4d522ffl83; _csrf-frontend=4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%228F8aPoKGsimpsspk9qncxz2a8H5J5jCv%22%3B%7D; PHPSESSID=uvh75f20feod4cia67qccndau6'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\wamp\\php\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;F:\\wamp\\myspl\\bin;D:\\bin;E:\\Git\\cmd;F:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/month9/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '53661'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=rbac/setpower&rid=1'
+    'REQUEST_URI' => '/month9/zhaopin/home/backend/web/index.php?r=rbac/setpower&rid=1'
+    'SCRIPT_NAME' => '/month9/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/month9/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487573678.33
+    'REQUEST_TIME' => 1487573678
+]
+2017-02-20 14:56:11 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: pid' in F:\phpStudy\WWW\month9\zhaopin\home\backend\controllers\RbacController.php:80
+Stack trace:
+#0 F:\phpStudy\WWW\month9\zhaopin\home\backend\controllers\RbacController.php(80): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'F:\\phpStudy\\WWW...', 80, Array)
+#1 [internal function]: backend\controllers\RbacController->actionSetpower()
+#2 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('setpower', Array)
+#5 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('rbac/setpower', Array)
+#6 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 F:\phpStudy\WWW\month9\zhaopin\home\backend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2017-02-20 14:56:11 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'rbac/setpower'
+    'rid' => '1'
+]
+
+$_COOKIE = [
+    'bdshare_firstime' => '1486123949110'
+    'advanced-backend' => '7vsipra2ugho53oebejv7k6v97'
+    '_csrf-backend' => '597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm\";}'
+    'name' => '033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa:2:{i:0;s:4:\"name\";i:1;s:5:\"admin\";}'
+    'advanced-frontend' => 'pb927et2lqi2d74n4d522ffl83'
+    '_csrf-frontend' => '4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"8F8aPoKGsimpsspk9qncxz2a8H5J5jCv\";}'
+    'PHPSESSID' => 'uvh75f20feod4cia67qccndau6'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/month9/zhaopin/home/backend/web/index.php?r=rbac/admin'
+    'HTTP_COOKIE' => 'bdshare_firstime=1486123949110; advanced-backend=7vsipra2ugho53oebejv7k6v97; _csrf-backend=597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm%22%3B%7D; name=033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa%3A2%3A%7Bi%3A0%3Bs%3A4%3A%22name%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; advanced-frontend=pb927et2lqi2d74n4d522ffl83; _csrf-frontend=4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%228F8aPoKGsimpsspk9qncxz2a8H5J5jCv%22%3B%7D; PHPSESSID=uvh75f20feod4cia67qccndau6'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\wamp\\php\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;F:\\wamp\\myspl\\bin;D:\\bin;E:\\Git\\cmd;F:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/month9/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '53675'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=rbac/setpower&rid=1'
+    'REQUEST_URI' => '/month9/zhaopin/home/backend/web/index.php?r=rbac/setpower&rid=1'
+    'SCRIPT_NAME' => '/month9/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/month9/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487573771.846
+    'REQUEST_TIME' => 1487573771
+]
+2017-02-20 14:56:11 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2017-02-20 14:56:11 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'rbac/setpower'
+    'rid' => '1'
+]
+
+$_COOKIE = [
+    'bdshare_firstime' => '1486123949110'
+    'advanced-backend' => '7vsipra2ugho53oebejv7k6v97'
+    '_csrf-backend' => '597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm\";}'
+    'name' => '033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa:2:{i:0;s:4:\"name\";i:1;s:5:\"admin\";}'
+    'advanced-frontend' => 'pb927et2lqi2d74n4d522ffl83'
+    '_csrf-frontend' => '4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"8F8aPoKGsimpsspk9qncxz2a8H5J5jCv\";}'
+    'PHPSESSID' => 'uvh75f20feod4cia67qccndau6'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/month9/zhaopin/home/backend/web/index.php?r=rbac/admin'
+    'HTTP_COOKIE' => 'bdshare_firstime=1486123949110; advanced-backend=7vsipra2ugho53oebejv7k6v97; _csrf-backend=597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm%22%3B%7D; name=033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa%3A2%3A%7Bi%3A0%3Bs%3A4%3A%22name%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; advanced-frontend=pb927et2lqi2d74n4d522ffl83; _csrf-frontend=4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%228F8aPoKGsimpsspk9qncxz2a8H5J5jCv%22%3B%7D; PHPSESSID=uvh75f20feod4cia67qccndau6'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\wamp\\php\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;F:\\wamp\\myspl\\bin;D:\\bin;E:\\Git\\cmd;F:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/month9/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '53675'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=rbac/setpower&rid=1'
+    'REQUEST_URI' => '/month9/zhaopin/home/backend/web/index.php?r=rbac/setpower&rid=1'
+    'SCRIPT_NAME' => '/month9/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/month9/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487573771.846
+    'REQUEST_TIME' => 1487573771
+]
+2017-02-20 15:34:37 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: indo' in F:\phpStudy\WWW\month9\zhaopin\home\backend\views\rbac\role_power.php:26
+Stack trace:
+#0 F:\phpStudy\WWW\month9\zhaopin\home\backend\views\rbac\role_power.php(26): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'F:\\phpStudy\\WWW...', 26, Array)
+#1 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(325): require('F:\\phpStudy\\WWW...')
+#2 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\\phpStudy\\WWW...', Array)
+#3 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('F:\\phpStudy\\WWW...', Array, Object(backend\controllers\RbacController))
+#4 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('role_power', Array, Object(backend\controllers\RbacController))
+#5 F:\phpStudy\WWW\month9\zhaopin\home\backend\controllers\RbacController.php(80): yii\base\Controller->render('role_power', Array)
+#6 [internal function]: backend\controllers\RbacController->actionSetpower()
+#7 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('setpower', Array)
+#10 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('rbac/setpower', Array)
+#11 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\phpStudy\WWW\month9\zhaopin\home\backend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+2017-02-20 15:34:37 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'rbac/setpower'
+    'rid' => '1'
+]
+
+$_COOKIE = [
+    'bdshare_firstime' => '1486123949110'
+    'advanced-backend' => '7vsipra2ugho53oebejv7k6v97'
+    '_csrf-backend' => '597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm\";}'
+    'name' => '033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa:2:{i:0;s:4:\"name\";i:1;s:5:\"admin\";}'
+    'advanced-frontend' => 'pb927et2lqi2d74n4d522ffl83'
+    '_csrf-frontend' => '4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"8F8aPoKGsimpsspk9qncxz2a8H5J5jCv\";}'
+    'PHPSESSID' => 'uvh75f20feod4cia67qccndau6'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/month9/zhaopin/home/backend/web/index.php?r=rbac/admin'
+    'HTTP_COOKIE' => 'bdshare_firstime=1486123949110; advanced-backend=7vsipra2ugho53oebejv7k6v97; _csrf-backend=597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm%22%3B%7D; name=033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa%3A2%3A%7Bi%3A0%3Bs%3A4%3A%22name%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; advanced-frontend=pb927et2lqi2d74n4d522ffl83; _csrf-frontend=4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%228F8aPoKGsimpsspk9qncxz2a8H5J5jCv%22%3B%7D; PHPSESSID=uvh75f20feod4cia67qccndau6'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\wamp\\php\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;F:\\wamp\\myspl\\bin;D:\\bin;E:\\Git\\cmd;F:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/month9/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '54448'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=rbac/setpower&rid=1'
+    'REQUEST_URI' => '/month9/zhaopin/home/backend/web/index.php?r=rbac/setpower&rid=1'
+    'SCRIPT_NAME' => '/month9/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/month9/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487576077.023
+    'REQUEST_TIME' => 1487576077
+]
+2017-02-20 15:34:37 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2017-02-20 15:34:37 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'rbac/setpower'
+    'rid' => '1'
+]
+
+$_COOKIE = [
+    'bdshare_firstime' => '1486123949110'
+    'advanced-backend' => '7vsipra2ugho53oebejv7k6v97'
+    '_csrf-backend' => '597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm\";}'
+    'name' => '033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa:2:{i:0;s:4:\"name\";i:1;s:5:\"admin\";}'
+    'advanced-frontend' => 'pb927et2lqi2d74n4d522ffl83'
+    '_csrf-frontend' => '4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"8F8aPoKGsimpsspk9qncxz2a8H5J5jCv\";}'
+    'PHPSESSID' => 'uvh75f20feod4cia67qccndau6'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/month9/zhaopin/home/backend/web/index.php?r=rbac/admin'
+    'HTTP_COOKIE' => 'bdshare_firstime=1486123949110; advanced-backend=7vsipra2ugho53oebejv7k6v97; _csrf-backend=597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm%22%3B%7D; name=033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa%3A2%3A%7Bi%3A0%3Bs%3A4%3A%22name%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; advanced-frontend=pb927et2lqi2d74n4d522ffl83; _csrf-frontend=4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%228F8aPoKGsimpsspk9qncxz2a8H5J5jCv%22%3B%7D; PHPSESSID=uvh75f20feod4cia67qccndau6'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\wamp\\php\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;F:\\wamp\\myspl\\bin;D:\\bin;E:\\Git\\cmd;F:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/month9/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '54448'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=rbac/setpower&rid=1'
+    'REQUEST_URI' => '/month9/zhaopin/home/backend/web/index.php?r=rbac/setpower&rid=1'
+    'SCRIPT_NAME' => '/month9/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/month9/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487576077.023
+    'REQUEST_TIME' => 1487576077
+]
+2017-02-20 15:35:30 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined offset: 2' in F:\phpStudy\WWW\month9\zhaopin\home\backend\views\rbac\role_power.php:26
+Stack trace:
+#0 F:\phpStudy\WWW\month9\zhaopin\home\backend\views\rbac\role_power.php(26): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', 'F:\\phpStudy\\WWW...', 26, Array)
+#1 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(325): require('F:\\phpStudy\\WWW...')
+#2 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\\phpStudy\\WWW...', Array)
+#3 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('F:\\phpStudy\\WWW...', Array, Object(backend\controllers\RbacController))
+#4 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('role_power', Array, Object(backend\controllers\RbacController))
+#5 F:\phpStudy\WWW\month9\zhaopin\home\backend\controllers\RbacController.php(80): yii\base\Controller->render('role_power', Array)
+#6 [internal function]: backend\controllers\RbacController->actionSetpower()
+#7 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('setpower', Array)
+#10 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('rbac/setpower', Array)
+#11 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\phpStudy\WWW\month9\zhaopin\home\backend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+2017-02-20 15:35:30 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'rbac/setpower'
+    'rid' => '1'
+]
+
+$_COOKIE = [
+    'bdshare_firstime' => '1486123949110'
+    'advanced-backend' => '7vsipra2ugho53oebejv7k6v97'
+    '_csrf-backend' => '597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm\";}'
+    'name' => '033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa:2:{i:0;s:4:\"name\";i:1;s:5:\"admin\";}'
+    'advanced-frontend' => 'pb927et2lqi2d74n4d522ffl83'
+    '_csrf-frontend' => '4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"8F8aPoKGsimpsspk9qncxz2a8H5J5jCv\";}'
+    'PHPSESSID' => 'uvh75f20feod4cia67qccndau6'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/month9/zhaopin/home/backend/web/index.php?r=rbac/admin'
+    'HTTP_COOKIE' => 'bdshare_firstime=1486123949110; advanced-backend=7vsipra2ugho53oebejv7k6v97; _csrf-backend=597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm%22%3B%7D; name=033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa%3A2%3A%7Bi%3A0%3Bs%3A4%3A%22name%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; advanced-frontend=pb927et2lqi2d74n4d522ffl83; _csrf-frontend=4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%228F8aPoKGsimpsspk9qncxz2a8H5J5jCv%22%3B%7D; PHPSESSID=uvh75f20feod4cia67qccndau6'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\wamp\\php\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;F:\\wamp\\myspl\\bin;D:\\bin;E:\\Git\\cmd;F:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/month9/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '54460'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=rbac/setpower&rid=1'
+    'REQUEST_URI' => '/month9/zhaopin/home/backend/web/index.php?r=rbac/setpower&rid=1'
+    'SCRIPT_NAME' => '/month9/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/month9/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487576130.03
+    'REQUEST_TIME' => 1487576130
+]
+2017-02-20 15:35:30 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2017-02-20 15:35:30 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'rbac/setpower'
+    'rid' => '1'
+]
+
+$_COOKIE = [
+    'bdshare_firstime' => '1486123949110'
+    'advanced-backend' => '7vsipra2ugho53oebejv7k6v97'
+    '_csrf-backend' => '597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm\";}'
+    'name' => '033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa:2:{i:0;s:4:\"name\";i:1;s:5:\"admin\";}'
+    'advanced-frontend' => 'pb927et2lqi2d74n4d522ffl83'
+    '_csrf-frontend' => '4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"8F8aPoKGsimpsspk9qncxz2a8H5J5jCv\";}'
+    'PHPSESSID' => 'uvh75f20feod4cia67qccndau6'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/month9/zhaopin/home/backend/web/index.php?r=rbac/admin'
+    'HTTP_COOKIE' => 'bdshare_firstime=1486123949110; advanced-backend=7vsipra2ugho53oebejv7k6v97; _csrf-backend=597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm%22%3B%7D; name=033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa%3A2%3A%7Bi%3A0%3Bs%3A4%3A%22name%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; advanced-frontend=pb927et2lqi2d74n4d522ffl83; _csrf-frontend=4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%228F8aPoKGsimpsspk9qncxz2a8H5J5jCv%22%3B%7D; PHPSESSID=uvh75f20feod4cia67qccndau6'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\wamp\\php\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;F:\\wamp\\myspl\\bin;D:\\bin;E:\\Git\\cmd;F:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/month9/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '54460'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=rbac/setpower&rid=1'
+    'REQUEST_URI' => '/month9/zhaopin/home/backend/web/index.php?r=rbac/setpower&rid=1'
+    'SCRIPT_NAME' => '/month9/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/month9/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487576130.03
+    'REQUEST_TIME' => 1487576130
+]
+2017-02-20 15:36:10 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: $k' in F:\phpStudy\WWW\month9\zhaopin\home\backend\views\rbac\role_power.php:26
+Stack trace:
+#0 F:\phpStudy\WWW\month9\zhaopin\home\backend\views\rbac\role_power.php(26): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'F:\\phpStudy\\WWW...', 26, Array)
+#1 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(325): require('F:\\phpStudy\\WWW...')
+#2 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\\phpStudy\\WWW...', Array)
+#3 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('F:\\phpStudy\\WWW...', Array, Object(backend\controllers\RbacController))
+#4 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('role_power', Array, Object(backend\controllers\RbacController))
+#5 F:\phpStudy\WWW\month9\zhaopin\home\backend\controllers\RbacController.php(80): yii\base\Controller->render('role_power', Array)
+#6 [internal function]: backend\controllers\RbacController->actionSetpower()
+#7 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('setpower', Array)
+#10 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('rbac/setpower', Array)
+#11 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\phpStudy\WWW\month9\zhaopin\home\backend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+2017-02-20 15:36:10 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'rbac/setpower'
+    'rid' => '1'
+]
+
+$_COOKIE = [
+    'bdshare_firstime' => '1486123949110'
+    'advanced-backend' => '7vsipra2ugho53oebejv7k6v97'
+    '_csrf-backend' => '597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm\";}'
+    'name' => '033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa:2:{i:0;s:4:\"name\";i:1;s:5:\"admin\";}'
+    'advanced-frontend' => 'pb927et2lqi2d74n4d522ffl83'
+    '_csrf-frontend' => '4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"8F8aPoKGsimpsspk9qncxz2a8H5J5jCv\";}'
+    'PHPSESSID' => 'uvh75f20feod4cia67qccndau6'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/month9/zhaopin/home/backend/web/index.php?r=rbac/admin'
+    'HTTP_COOKIE' => 'bdshare_firstime=1486123949110; advanced-backend=7vsipra2ugho53oebejv7k6v97; _csrf-backend=597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm%22%3B%7D; name=033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa%3A2%3A%7Bi%3A0%3Bs%3A4%3A%22name%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; advanced-frontend=pb927et2lqi2d74n4d522ffl83; _csrf-frontend=4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%228F8aPoKGsimpsspk9qncxz2a8H5J5jCv%22%3B%7D; PHPSESSID=uvh75f20feod4cia67qccndau6'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\wamp\\php\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;F:\\wamp\\myspl\\bin;D:\\bin;E:\\Git\\cmd;F:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/month9/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '54467'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=rbac/setpower&rid=1'
+    'REQUEST_URI' => '/month9/zhaopin/home/backend/web/index.php?r=rbac/setpower&rid=1'
+    'SCRIPT_NAME' => '/month9/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/month9/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487576170.48
+    'REQUEST_TIME' => 1487576170
+]
+2017-02-20 15:36:10 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2017-02-20 15:36:10 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'rbac/setpower'
+    'rid' => '1'
+]
+
+$_COOKIE = [
+    'bdshare_firstime' => '1486123949110'
+    'advanced-backend' => '7vsipra2ugho53oebejv7k6v97'
+    '_csrf-backend' => '597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm\";}'
+    'name' => '033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa:2:{i:0;s:4:\"name\";i:1;s:5:\"admin\";}'
+    'advanced-frontend' => 'pb927et2lqi2d74n4d522ffl83'
+    '_csrf-frontend' => '4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"8F8aPoKGsimpsspk9qncxz2a8H5J5jCv\";}'
+    'PHPSESSID' => 'uvh75f20feod4cia67qccndau6'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/month9/zhaopin/home/backend/web/index.php?r=rbac/admin'
+    'HTTP_COOKIE' => 'bdshare_firstime=1486123949110; advanced-backend=7vsipra2ugho53oebejv7k6v97; _csrf-backend=597c222eeb0abe4041108602ad4af978baae03fad27e1176624616d4c942eeafa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JyxgQ7GeJWTfTB7K8cU4MFb4ahRXnBrm%22%3B%7D; name=033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa%3A2%3A%7Bi%3A0%3Bs%3A4%3A%22name%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; advanced-frontend=pb927et2lqi2d74n4d522ffl83; _csrf-frontend=4a30361427f3668a21c3c3ded09844859b8fb6b82c547106fbe1d4d6698db5a4a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%228F8aPoKGsimpsspk9qncxz2a8H5J5jCv%22%3B%7D; PHPSESSID=uvh75f20feod4cia67qccndau6'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\wamp\\php\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;F:\\wamp\\myspl\\bin;D:\\bin;E:\\Git\\cmd;F:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/month9/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '54467'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=rbac/setpower&rid=1'
+    'REQUEST_URI' => '/month9/zhaopin/home/backend/web/index.php?r=rbac/setpower&rid=1'
+    'SCRIPT_NAME' => '/month9/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/month9/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487576170.48
+    'REQUEST_TIME' => 1487576170
+]
