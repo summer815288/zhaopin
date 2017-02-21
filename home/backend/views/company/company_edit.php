@@ -19,6 +19,16 @@ use yii\helpers\Html;
             padding-bottom:10px;
             border-bottom:1px #CCCCCC dashed;
         }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body marginwidth="0" marginheight="0">
@@ -37,7 +47,7 @@ use yii\helpers\Html;
                     <p>所属会员：&nbsp;&nbsp;&nbsp;<?php echo $members['username']?></p>
                     <p>添加时间：&nbsp;&nbsp;&nbsp;<?php echo $members['addtime']?></p>
                     <p>添加方式：&nbsp;&nbsp;&nbsp;人工</p>
-                    <p>营业执照：&nbsp;&nbsp;&nbsp;<?php if($members['certificate_img']){echo"<a href='../data/certificate/$members[certificate_img]' target='_blank' title='点击查看'>已上传</a>";}else{echo"<font color='#7fff00'>未上传</font>";}?></p>
+                    <p>营业执照：&nbsp;&nbsp;&nbsp;<?php if($members['certificate_img']){echo"<a href='../web/upload/$members[certificate_img]' target='_blank' title='点击查看'>已上传</a>";}else{echo"<font color='#7fff00'>未上传</font>";}?></p>
                     <p>认证状态：<input type="radio" name="audit" <?php if($members['audit']==1){echo "checked";}?> value="1"/>认证通过
                         <input type="radio" name="audit" <?php if($members['audit']==2){echo "checked";}?> value="2"/>等待认证
                         <input type="radio" name="audit" <?php if($members['audit']==3){echo "checked";}?> value="3"/>认证未通过
@@ -86,10 +96,10 @@ use yii\helpers\Html;
                         <select class="district" name="district" id="ul">
                             <?php foreach($country as $k=>$v){?>
                                 <?php if($v['parentid']==0){?>
-                                <option class="district_cn"  value="<?=$v['id']?>"><?=$v['categoryname']?></option>
-                                    <?php }else{?>
+                                    <option class="district_cn"  value="<?=$v['id']?>"><?=$v['categoryname']?></option>
+                                <?php }else{?>
                                     <option class="district_cn" id="<?=$v['parentid']?>" value="<?=$v['id']?>"><span class="cate"></span><?=$v['categoryname']?></option>
-                                    <?php }?>
+                                <?php }?>
                             <?php } ?>
                         </select></p>
                     <input type="hidden" name="district_cn" class="districts"/>
@@ -134,22 +144,22 @@ use yii\helpers\Html;
                     <p>通讯地址：<input type="text" name="address" value="<?php echo $members['address']?>"/></p>
                     <p>公司介绍：<div id=""></div>
                     <textarea name="" id="editor" name="contents" cols="30" rows="10"><?php echo $members['contents']?></textarea></p>
-                    <p><input type="submit" value="提 交"/></p>
+                    <p><input type="submit" class="button" value="提 交"/></p>
                 </table>
             </form>
             <?=Html::endForm();?>
-<!--            <div class="page">-->
-<!--                <form action="" method="get">-->
-<!--                    共<span>42</span>个站点-->
-<!--                    <a href="">首页</a>-->
-<!--                    <a href="">上一页</a>-->
-<!--                    <a href="">下一页</a>-->
-<!--                    第<span style="color:red;font-weight:600">12</span>页-->
-<!--                    共<span style="color:red;font-weight:600">120</span>页-->
-<!--                    <input type="text" class="page-input">-->
-<!--                    <input type="submit" class="page-btn" value="跳转">-->
-<!--                </form>-->
-<!--            </div>-->
+            <div class="page">
+                <form action="" method="get">
+                    共<span>42</span>个站点
+                    <a href="">首页</a>
+                    <a href="">上一页</a>
+                    <a href="">下一页</a>
+                    第<span style="color:red;font-weight:600">12</span>页
+                    共<span style="color:red;font-weight:600">120</span>页
+                    <input type="text" class="page-input">
+                    <input type="submit" class="page-btn" value="跳转">
+                </form>
+            </div>
         </div>
     </div>
 </div>

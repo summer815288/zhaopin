@@ -62,8 +62,8 @@
                             <li class="active"><a href="<?php echo Url::to(['company/job']);?>" target="content">职位列表</a></li>
                             <li><a href="<?php echo Url::to(['admin/admin_music']);?>" target="content">待审核职位</a></li>
                             <li><a href="<?php echo Url::to(['company/manage']);?>" target="content">管理企业</a></li>
-                            <li><a href="<?php echo Url::to(['company/approve']);?>" target="content">待认证企业</a></li>
-                            <li><a href="<?php echo Url::to(['admin/index_tj']);?>" target="content">企业会员</a></li>
+                            <li><a href="<?php echo Url::to(['company/company_await']);?>" target="content">待认证企业</a></li>
+                            <li><a href="<?php echo Url::to(['company/company_member']);?>" target="content">企业会员</a></li>
                             <li><a href="<?php echo Url::to(['admin/index_tj']);?>" target="content">订单管理</a></li>
                         </ul>
 					</div>
