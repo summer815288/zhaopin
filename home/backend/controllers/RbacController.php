@@ -74,8 +74,27 @@ class RbacController extends Controller
 	public function actionSetpower()
 	{
 		$rid=yii::$app->request->get('rid');
-//		$info = yii::$app->db->createCommand("select * from ar_p JOIN apower ON ar_p.p_id=apower.p_id where r_id=$rid")->queryAll();
+
+		$pid = yii::$app->db->createCommand("select ar_p.p_id from ar_p JOIN apower ON ar_p.p_id=apower.p_id where r_id=$rid")->queryAll();
+		$p_id= array_column($pid, 'p_id');
+
+		// print_r($p_id);die;
 		$list = yii::$app->db->createCommand("select * from apower")->queryAll();
-		return $this->render('role_power',['list'=>$list]);
+		return $this->render('role_power',['list'=>$list,'p_id'=>$p_id,'rid'=>$rid]);
+	}
+
+
+	public function actionUpdatepower()
+	{
+		$id = $_POST['id'];
+		$rid = $_POST['rid'];
+		// print_r($rid);die;
+		$res = yii::$app->db->createCommand("delete from ar_p where r_id=$rid")->execute();
+		$ids =explode(',',trim($id,','));
+		foreach($ids as $k=>$v){
+			yii::$app->db->createCommand("insert into ar_p (r_id,p_id) value('$rid','$v')")->execute();
+		}
+
+		
 	}
 }
