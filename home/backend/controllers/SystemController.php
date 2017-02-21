@@ -13,7 +13,7 @@ use yii\web\UploadedFile;
 /**
  *
  */
-class SystemController extends Controller
+class SystemController extends CommonController
 {
     public $layout = false;
     public $enableCsrfValidation=false;

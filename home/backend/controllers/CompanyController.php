@@ -8,11 +8,11 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use backend\models\Company_profile;
 use yii\data\Pagination;
-class CompanyController extends Controller{
+class CompanyController extends CommonController{
     //职位列表
     public function actionJob(){
 
-        return $this->renderPartial('job');
+       return $this->renderPartial('job');
     }
     //管理企业
     public function actionManage(){

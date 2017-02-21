@@ -12,21 +12,25 @@ use yii\data\Pagination;
 /**
 * 
 */
-class AdminController extends Controller
+class AdminController extends CommonController
 {
 	public $layout = false;
 	
 	//首页
 	public function actionIndex()
 	{
-		$cookies = Yii::$app->request->cookies;
+		// $cookies = Yii::$app->request->cookies;
+		// if ($cookies->has('name')){
+		//     $name = $cookies->getValue('name');   
+		// }		
 
-		if ($cookies->has('name')){
-		    $name = $cookies->getValue('name');   
-		}		
-
+		$session = Yii::$app->session;
+		$names = $session->get('a');
+		$name = $names['username'];
+		
 		return $this->render('index',[
 			'name'=>$name,
+
 			]);
 	}
 
@@ -34,11 +38,13 @@ class AdminController extends Controller
 	public function actionMain()
 	{
 
-		$cookies = Yii::$app->request->cookies;
-		if ($cookies->has('name')){
-		    $name = $cookies->getValue('name');   
-		}
-
+		// $cookies = Yii::$app->request->cookies;
+		// if ($cookies->has('name')){
+		//     $name = $cookies->getValue('name');   
+		// }
+		$session = Yii::$app->session;
+		$names = $session->get('a');
+		$name = $names['username'];
 		return $this->render('main',[
 			'name'=>$name,
 			]);

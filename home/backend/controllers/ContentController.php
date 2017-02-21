@@ -12,7 +12,7 @@ use yii\db\Query;
 /**
  * Site controller
  */
-class ContentController extends Controller
+class ContentController extends CommonController
 {
 	public $enableCsrfValidation = false;
 	public function actionList()
