@@ -22,11 +22,7 @@ class CommonController extends Controller
         $session = Yii::$app->session;
         $names = $session->get('a');
         $u_name = $names['username'];
-<<<<<<< HEAD
-        if($u_name=='admin')
-=======
         if($u_name == 'admin')
->>>>>>> e0ec130e5d85ebdacebe3ee8b3fb1d0f46db5ca3
         {
             return true;
         }

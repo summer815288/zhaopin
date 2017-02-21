@@ -44,6 +44,7 @@ class LoginController extends Controller
 				$admin_id = $admin['admin_id'];
 				$session = Yii::$app->session;
 				$session->open();
+
 				$data =['username'=>$username,'admin_id'=>$admin_id];
 				// print_r($data);die;
 				$session->set('a',$data);
