@@ -101,6 +101,7 @@
 							<li><a href="<?php echo Url::to(['system/web_config']);?>" target="content">网站配置</a></li>
 							<li><a href="<?php echo Url::to(['system/company_set']);?>" target="content">企业设置</a></li>
 							<li><a href="<?php echo Url::to(['system/person_set']);?>" target="content">个人设置</a></li>
+							<li><a href="<?php echo Url::to(['address/index']);?>" target="content">地区管理</a></li>
 							<li><a href="<?php echo Url::to(['navigation/index']);?>" target="content">导航设置</a></li>
 						</ul>
 					</div>

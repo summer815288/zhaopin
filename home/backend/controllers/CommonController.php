@@ -12,10 +12,28 @@ use yii\web\Session;
  */
 class CommonController extends Controller
 {
+
+    public function getList($list,$parentid=0)
+    {
+        $data=array();
+        foreach ($list as $key =>$value)
+        {
+            if($value['parentid']==$parentid)
+            {
+                $data[$key]=$value;
+//                print_r($data[$key]);die;
+                $data[$key]['son']=$this->getList($list,$value['id']);
+//                print_r($data[$key]['son']);die;
+            }
+        }
+     return $data;
+    }
     public function init()
     {
         $this->check();
     }
+
+
     public function check()
     {
         
