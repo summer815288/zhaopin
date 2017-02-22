@@ -103,6 +103,7 @@
 							<li><a href="<?php echo Url::to(['system/person_set']);?>" target="content">个人设置</a></li>
 							<li><a href="<?php echo Url::to(['address/index']);?>" target="content">地区管理</a></li>
 							<li><a href="<?php echo Url::to(['navigation/index']);?>" target="content">导航设置</a></li>
+							<li><a href="<?php echo Url::to(['system/jobs']);?>" target="content">职位设置</a></li>
 						</ul>
 					</div>
 				</li>
