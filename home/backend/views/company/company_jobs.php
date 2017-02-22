@@ -76,7 +76,7 @@ use yii\helpers\Html;
                         <td>
                             <div class="table-fun">
                                 <a href="<?php echo Url::to(['company/company_log','uid'=>$item['uid']])?>">日志</a>
-                                <a href="">修改</a>
+                                <a href="<?php echo Url::to(['company/company_jobs_edit','uid'=>$item['uid']])?>">修改</a>
                                 <a href="">管理</a>
                             </div>
                         </td>
