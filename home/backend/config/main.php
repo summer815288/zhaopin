@@ -45,12 +45,35 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+<<<<<<< HEAD
+
+        //设置邮箱配置
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'useFileTransport' => false,   //一定要改成false，否则邮件不回发送
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.163.com',    //每种邮箱的host配置不一样
+                'username' => '18335103240@163.com',	//发件人邮箱
+                'password' => 'summer815288',	//授权码
+                'port' => '25',
+                'encryption' => 'tls',
+            ],
+            'messageConfig'=>[
+                'charset'=>'UTF-8',
+                'from'=>['18335103240@163.com'=>'nickname']  //发件人昵称
+            ],
+        ],
+
+
+=======
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
             'itemTable' => 'auth_item',
             'assignmentTable' => 'auth_assignment',
             'itemChildTable' => 'auth_item_child',
         ],
+>>>>>>> 5681a99649267fdd9ddedb9e8327ffb5e5a63241
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,

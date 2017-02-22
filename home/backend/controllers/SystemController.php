@@ -101,6 +101,61 @@ class SystemController extends CommonController
         return $this->render("person_set",['value'=>$value]);
     }
 
+
+    //系统 工作管理
+    public function actionJobs()
+    {
+        $list = yii::$app->db->createCommand("select * from category_jobs")->queryAll();
+        $data = $this->getList($list);
+        // print_r($data);die;
+        return $this->render("jobs",['data'=>$data]);
+    }
+
+    public function actionJobsdel()
+    {
+        $id = $_POST['id'];
+        yii::$app->db->createCommand("delete from category_jobs where id=$id")->query();
+    }
+
+    public function actionTitle()
+    {
+        $id = $_POST['id'];
+        $title = $_POST['title'];
+        $res = yii::$app->db->createCommand("update category_jobs set categoryname='$title' where id=$id")->query();
+        if($res){
+            echo 1;
+        }
+    }
+
+    public function actionSort()
+    {
+        $id = $_POST['id'];
+        $sort = $_POST['sort'];
+        $res = yii::$app->db->createCommand("update category_jobs set category_order='$sort' where id=$id")->query();
+        if($res){
+            echo 1;
+        }
+    }
+
+    public function actionJobsadd()
+    {
+        $id = $_GET['id'];
+        $data = yii::$app->db->createCommand("select categoryname from category_jobs where id=$id")->queryAll();
+
+        return $this->render("jobsadd",['data'=>$data,'id'=>$id]);
+    }
+
+    public function actionJobsaddpost()
+    {
+        $cate = $_POST['cate'];
+        $name = $_POST['name'];
+        $sort = $_POST['sort'];
+        $res = yii::$app->db->createCommand("insert into category_jobs(parentid,categoryname,category_order) value('$cate','$name','$sort')")->query();
+        if($res){
+            echo "<script>alert('添加成功！');location.href='?r=system/jobs'</script>";
+        }
+    }
+
 }
 
 ?>
