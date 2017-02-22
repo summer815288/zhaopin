@@ -3,8 +3,13 @@
 extension=php_sockets.dll
 extension=php_openssl.dll
 */
+if($data['content']==""){
+    echo "<script>alert('邮件内容不能为空');history.go(-1)</script>";die;
+}else if($data['subject']==""){
+    echo"<script>alert('邮件标题不能为空');history.go(-1)</script>";die;
+}
 
-    require  'PHPMailer/class.phpmailer.php';
+    require   'PHPMailer/class.phpmailer.php';
     $mail             = new PHPMailer();
     /*服务器相关信息*/
     $mail->IsSMTP();                        //设置使用SMTP服务器发送
