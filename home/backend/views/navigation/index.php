@@ -91,14 +91,6 @@
             type: "POST",
             url: "?r=navigation/index",
             data: {'id':id,'title':title},
-            success: function(msg){
-                if(msg==1)
-                {
-                    alert( "修改成功" );
-                }else{
-                    alert("修改失败");
-                }
-            }
         });
     })
     $(".sort").blur(function () {
@@ -108,14 +100,6 @@
             type: "POST",
             url: "?r=navigation/sort",
             data: {'id':id,'sort':sort},
-            success: function(msg){
-                if(msg==1)
-                {
-                    alert( "修改成功" );
-                }else{
-                    alert("修改失败");
-                }
-            }
         });
     })
     $(".del").click(function () {
