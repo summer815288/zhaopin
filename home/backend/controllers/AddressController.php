@@ -12,6 +12,7 @@ use app\models\UploadModel;
 use yii\web\UploadedFile;
 use app\models\Navigation;
 use app\models\NavigationCategory;
+use app\models\CategoryDistrict;
 /**
  *
  */
@@ -22,17 +23,12 @@ class AddressController extends CommonController
 
     public function actionIndex()
     {
-        $model = new Navigation();
+        $model = new CategoryDistrict();
         $data = yii::$app->request->post();
         if ($data) {
             $id = $data['id'];
             $title = $data['title'];
-            $re = $model->updateAll(['title' => $title], ['id' => $id]);
-            if ($re) {
-                echo 1;
-            } else {
-                echo 0;
-            }
+            $model->updateAll(['categoryname' => $title], ['id' => $id]);
         } else {
             $list = yii::$app->db->createCommand("select * from category_district")->queryAll();
             $data=$this->getList($list);
@@ -41,143 +37,51 @@ class AddressController extends CommonController
 
     }
 
-//    public function actionShowzi()
-//    {
-//        $id = yii::$app->request->post('id');
-//        $id=1;
-//        $info = yii::$app->db->createCommand("select * from category_district where parentid=0")->queryAll();
-//
-//    }
-
-    //修改导航栏排序
+    //修改地区排序
     public function actionSort()
     {
-        $model = new Navigation();
+        $model = new CategoryDistrict();
         $data = yii::$app->request->post();
         $id = $data['id'];
         $sort = $data['sort'];
-        $re = $model->updateAll(['navigationorder' => $sort], ['id' => $id]);
-        if ($re) {
-            echo 1;
-        } else {
-            echo 0;
-        }
+        $model->updateAll(['category_order' => $sort], ['id' => $id]);
     }
 
     //删除指定的导航栏
     public function actionDel()
     {
-        $model = new Navigation();
+        $model = new CategoryDistrict();
         $data=yii::$app->request->post();
         $id=$data['id'];
         $model->deleteAll(['id'=>$id]);
+        $model->deleteAll(['parentid'=>$id]);
     }
 
-    //添加导航栏目
-    public function actionNavadd()
+    //添加子地区
+    public function actionAddarea()
     {
-        $model = new Navigation();
+        $model = new CategoryDistrict();
         $data=yii::$app->request->post();
         if($data)
         {
-//            print_r($data);die;
+            $parentid=$data['parentid'];
+            $list=$model->find()->where(['categoryname'=>$parentid])->asArray()->one();
+            $data['parentid']=$list['id'];
             $model->setAttributes($data);
-            $re=$model->save();
+            $re=$model->insert();
             if($re)
             {
 //                echo $re;die;
-                return $this->redirect('?r=navigation/index');
+                return $this->redirect('?r=address/index');
             }
-        }else{
-            return $this->render('navadd');
-        }
-    }
-
-    //修改导航
-    //添加导航栏目
-    public function actionNavupdate()
-    {
-        $model = new Navigation();
-        $data=yii::$app->request->post();
-        $id=yii::$app->request->post('id');
-        if($data)
-        {
-            unset($data['id']);
-            $re = $model->updateAll($data,['id'=>$id]);
-            if($re)
-            {
-                return $this->redirect('?r=navigation/index');
-            }
-            else
-            {
-                return $this->redirect('?r=navigation/index');
+            else{
+                echo "没添加成功";
             }
         }else{
             $id=yii::$app->request->get('id');
-            $info=$model->find()->where(['id'=>$id])->asArray()->one();
-            return $this->render('navupdate',['info'=>$info]);
+            $data=$model->find()->where(['id'=>$id])->asArray()->one();
+            return $this->render('addarea',['data'=>$data]);
         }
-    }
-
-    //导航分类
-    public function actionNavcate()
-    {
-        $list = yii::$app->db->createCommand("select * from navigation_category")->queryAll();
-        return $this->render('navcate', ['list' => $list]);
-    }
-
-    //添加类别
-    public function actionCateadd()
-    {
-        $data = yii::$app->request->post();
-        if ($data) {
-            $categoryname = $data['categoryname'];
-            $alias = $data['alias'];
-            $re = yii::$app->db->createCommand("insert into navigation_category VALUES (null,'$categoryname','$alias','0')")->execute();
-            if ($re) {
-                return $this->redirect('?r=navigation/navcate');
-            }
-        } else {
-            return $this->render('cateadd');
-        }
-    }
-
-
-    //修改类别
-    public function actionCateupdate()
-    {
-        $model=new NavigationCategory();
-        $data = yii::$app->request->post();
-        $id=yii::$app->request->post('id');
-        if ($data) {
-            unset($data['id']);
-            $re = $model->updateAll($data,['id'=>$id]);
-            if($re)
-            {
-                return $this->redirect('?r=navigation/navcate');
-            }
-            else
-            {
-                return $this->redirect('?r=navigation/navcate');
-            }
-        } else {
-            $id= yii::$app->request->get('id');
-            $re = yii::$app->db->createCommand("select * from navigation_category where id='$id'")->queryAll();
-            $info = [];
-            foreach ($re as $val){
-                $info = $val;
-            }
-            return $this->render('cateupdate',['info'=>$info]);
-        }
-    }
-
-    //删除分类
-    public function actionCatedel()
-    {
-        $model = new NavigationCategory();
-        $data=yii::$app->request->post();
-        $id=$data['id'];
-        $model->deleteAll(['id'=>$id]);
     }
 
 }

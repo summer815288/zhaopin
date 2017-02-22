@@ -27,12 +27,7 @@ class NavigationController extends CommonController
         if ($data) {
             $id = $data['id'];
             $title = $data['title'];
-            $re = $model->updateAll(['title' => $title], ['id' => $id]);
-            if ($re) {
-                echo 1;
-            } else {
-                echo 0;
-            }
+             $model->updateAll(['title' => $title], ['id' => $id]);
         } else {
             $list = $model->find()->asArray()->all();
             return $this->render('index', ['list' => $list]);
@@ -47,12 +42,7 @@ class NavigationController extends CommonController
         $data = yii::$app->request->post();
         $id = $data['id'];
         $sort = $data['sort'];
-        $re = $model->updateAll(['navigationorder' => $sort], ['id' => $id]);
-        if ($re) {
-            echo 1;
-        } else {
-            echo 0;
-        }
+        $model->updateAll(['navigationorder' => $sort], ['id' => $id]);
     }
 
     //删除指定的导航栏

@@ -9,13 +9,8 @@
 </head>
 <body marginwidth="0" marginheight="0">
 <div class="container">
-    <div class="public-nav">您当前的位置：<a href="">系统</a><a href="">导航栏设置</a></div>
+    <div class="public-nav">您当前的位置：<a href="">系统</a><a href="">地区管理</a></div>
     <div class="public-content">
-        <div class="public-content-header">
-            <h4><a style="float: left" href="?r=navigation/index">导航菜单&nbsp;&nbsp;</a>
-                <a style="float: left" href="?r=navigation/navadd">&nbsp;&nbsp;添加导航栏目&nbsp;&nbsp;</a>
-                <a style="float: left" href="?r=navigation/navcate">&nbsp;&nbsp;导航分类</a></h4>
-        </div>
         <div class="public-content-cont">
             <table class="public-cont-table">
                 <tr>
@@ -25,12 +20,11 @@
                 </tr>
                 <?php foreach ($data as $key => $value): ?>
                 <tr>
-                    <td style="text-align:left"><input type="checkbox"><button class="add">+</button><button class="jian" style="display: none">-</button><input type="text" value="<?php echo $value['categoryname']?>" class="title"></td>
+                    <td style="text-align:left"><input type="checkbox"><button class="add">+</button><button class="jian" style="display: none">-</button><input type="text" value="<?php echo $value['categoryname']?>" area="<?php echo $value['id']?>" class="title"></td>
                     <td><input type="hidden" value="<?php echo $value['id']?>"><input type="text" style="width: 10%" value="<?php echo $value['category_order']?>" class="sort"></td>
                     <td>
                         <div class="table-fun">
-                            <a href="?r=navigation/navupdate&id=<?php echo $value['id']?>">添子</a>
-                            <a href="?r=navigation/navupdate&id=<?php echo $value['id']?>">修改</a>
+                            <a href="?r=address/addarea&id=<?php echo $value['id']?>">添子</a>
                             <a href="javascript:void(0);" class="del">删除</a>
                             <input type="hidden" value="<?php echo $value['id']?>">
                         </div>
@@ -41,13 +35,12 @@
                         <table>
                             <?php foreach ($value['son'] as $k => $val): ?>
                              <tr >
-                                <td style="width:30%"><input type="checkbox"><input type="hidden" value="<?php echo $val['id']?>"><input type="text" value="<?php echo $val['categoryname']?>" class="title"></td>
+                                <td style="width:30%"><input type="checkbox"><input type="text" value="<?php echo $val['categoryname']?>" area="<?php echo $val['id']?>" class="title"></td>
                                 <td style="width:15%"><input type="hidden" value="<?php echo $val['id']?>"><input type="text" style="width: 10%" value="<?php echo $val['category_order']?>" class="sort"></td>
                                 <td style="width:35%">
                                     <div class="table-fun">
-                                        <a href="?r=navigation/navupdate&id=<?php echo $value['id']?>">修改</a>
                                         <a href="javascript:void(0);" class="del">删除</a>
-                                        <input type="hidden" value="<?php echo $value['id']?>">
+                                        <input type="hidden" value="<?php echo $val['id']?>">
                                     </div>
                                 </td>
                              </tr>
@@ -88,47 +81,34 @@
         $(this).hide();
         $(this).prev().show();
     })
-//    $(".title").blur(function () {
-//        var id=$(this).prev().val();
-//        var title=$(this).val();
-//        $.ajax({
-//            type: "POST",
-//            url: "?r=navigation/index",
-//            data: {'id':id,'title':title},
-//            success: function(msg){
-//                if(msg==1)
-//                {
-//                    alert( "修改成功" );
-//                }else{
-//                    alert("修改失败");
-//                }
-//            }
-//        });
-//    })
-//    $(".sort").blur(function () {
-//        var id=$(this).prev().val();
-//        var sort=$(this).val();
-//        $.ajax({
-//            type: "POST",
-//            url: "?r=navigation/sort",
-//            data: {'id':id,'sort':sort},
-//            success: function(msg){
-//                if(msg==1)
-//                {
-//                    alert( "修改成功" );
-//                }else{
-//                    alert("修改失败");
-//                }
-//            }
-//        });
-//    })
-//    $(".del").click(function () {
-//        var id=$(this).next().val();
-//        $(this).parent().parent().parent().remove();
-//        $.ajax({
-//            type: "POST",
-//            url: "?r=navigation/del",
-//            data: {'id':id},
-//        });
-//    })
+    //修改地区名
+    $(".title").blur(function () {
+        var id=$(this).attr('area');
+        var title=$(this).val();
+        $.ajax({
+            type: "POST",
+            url: "?r=address/index",
+            data: {'id':id,'title':title},
+        });
+    })
+    //修改排序
+    $(".sort").blur(function () {
+        var id=$(this).prev().val();
+        var sort=$(this).val();
+        $.ajax({
+            type: "POST",
+            url: "?r=address/sort",
+            data: {'id':id,'sort':sort},
+        });
+    })
+    //删除地区
+    $(".del").click(function () {
+        var id=$(this).next().val();
+        $(this).parent().parent().parent().remove();
+        $.ajax({
+            type: "POST",
+            url: "?r=address/del",
+            data: {'id':id},
+        });
+    })
 </script>
