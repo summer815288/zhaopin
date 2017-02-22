@@ -77,13 +77,41 @@ use yii\helpers\Html;
                         <td>(0/)</td>
                         <td>
                             <div class="table-fun">
-                                <a href="<?php echo Url::to(['company/company_log'])?>">日志</a>
+                                <a href="<?php echo Url::to(['company/company_log','uid'=>$item['uid']])?>">日志</a>
                                 <a href='<?php echo Url::toRoute(["company/company_edit",'uid'=>$item['uid']])?>'>修改</a>
                                 <a href="">管理</a>
                             </div>
                         </td>
                     </tr>
                 <?php }?>
+            </table>
+            <table style="line-height: 50px" width="100%" class="public-cont-table">
+                <tr align="left">
+                    <th>
+                        <input style="background-color: #f6fffd;cursor: pointer;margin-left: 10px" type="button" class="button" value="认证企业"/>
+                    </th>
+                    <th align="right">
+                        <?=Html::beginForm('index.php?r=company/manage_search','post')?>
+                        <div class="seh">
+                            <div class="keybox" style="display: inline">
+                                <input name="key" class="sbt" style='height: 30px;background: #edf9ff url("../web/admin/images/search.gif") no-repeat scroll 4px;border: 1px solid #1B242F;border-right-style: none;padding-left: 20px' value="" type="text"
+                                    ></div
+                                ><div class="selbox" style="display: inline;"
+                                ><select name="search_where" class="sbt" style="height: 33px;border: 1px solid #1B242F;background-color:#edf9ff ;border-left-style: none;border-right-style: none">
+                                    <option value="companyname">公司名</option>
+                                    <option value="username">会员名</option>
+                                    <option value="street_cn">地址</option>
+                                    <option value="telephone">电话</option>
+                                </select
+                                    ></div
+                                ><div class="sbtbox" style="display: inline;"
+                                ><input id="sbt" class="sbt" name="" style="height: 33px;border: 1px solid #1B242F;background-color:#f6fffd ;border-left-style: none;" value="搜索" type="submit">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <?=Html::endForm();?>
+                    </th>
+                </tr>
             </table>
             <!--            <div class="page">-->
             <!--                <form action="" method="get">-->
@@ -102,32 +130,7 @@ use yii\helpers\Html;
 </div>
 </body>
 </html>
-<table style="margin-top: 20px;width: 100%;">
-        <tr>
-            <td><input style="background-color: #f6fffd;cursor: pointer;margin-left: 10px" type="button" class="button" value="认证企业"/></td>
-            <td align="right">
-                <?=Html::beginForm('index.php?r=company/manage_search','post')?>
-                <div class="seh">
-                    <div class="keybox" style="display: inline">
-                        <input name="key" class="sbt" style='height: 30px;background: #edf9ff url("../web/admin/images/search.gif") no-repeat scroll 4px;border: 1px solid #1B242F;border-right-style: none;padding-left: 20px' value="" type="text"
-                            ></div
-                        ><div class="selbox" style="display: inline;"
-                        ><select name="search_where" class="sbt" style="height: 33px;border: 1px solid #1B242F;background-color:#edf9ff ;border-left-style: none;border-right-style: none">
-                            <option value="companyname">公司名</option>
-                            <option value="username">会员名</option>
-                            <option value="street_cn">地址</option>
-                            <option value="telephone">电话</option>
-                        </select
-                            ></div
-                        ><div class="sbtbox" style="display: inline;"
-                        ><input id="sbt" class="sbt" name="" style="height: 33px;border: 1px solid #1B242F;background-color:#f6fffd ;border-left-style: none;" value="搜索" type="submit">
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <?=Html::endForm();?>
-            </td>
-        </tr>
-</table>
+
 <div id="win" style="background-color: #f1fffd;width:400px;height: 250px;display: none; ">
     <div class="Box">
         <div>

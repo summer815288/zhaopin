@@ -67,43 +67,76 @@ use yii\helpers\Html;
                         </td>
                     </tr>
                 <?php }?>
+
+            </table>
+            <table style="line-height: 50px" width="100%" class="public-cont-table">
+                <tr>
+                    <th align="left">
+                        <input style="background-color: #f6fffd;cursor: pointer;margin-left: 25px;padding: 8px 10px" type="button" id="company_member_add" class="button" value='添加会员'/>
+                        <script>$("#company_member_add").click(function(){window.location='index.php?r=company/company_member_add'})</script>
+                        <input style="background-color: #f6fffd;cursor: pointer;margin-left: 25px;padding: 8px 10px" type="button" id="del" class="button" value="删除会员"/>
+                    </th>
+                    <th align="right">
+                        <?=Html::beginForm('index.php?r=company/company_search','post')?>
+                        <div class="seh">
+                            <div class="keybox" style="display: inline">
+                                <input name="key" class="sbt" style='height: 30px;background: #edf9ff url("../web/admin/images/search.gif") no-repeat scroll 4px;border: 1px solid #1B242F;border-right-style: none;padding-left: 20px' value="" type="text"
+                                    ></div
+                                ><div class="selbox" style="display: inline;"
+                                ><select name="search_where" class="sbt" style="height: 34px;border: 1px solid #1B242F;background-color:#edf9ff ;border-left-style: none;border-right-style: none">
+                                    <option value="username">用户名</option>
+                                    <option value="uid">UID</option>
+                                    <option value="email">email</option>
+                                    <option value="mobile">手机号</option>
+                                    <option value="companyname">公司名</option>
+                                </select
+                                    ></div
+                                ><div class="sbtbox" style="display: inline;"
+                                ><input id="sbt" class="sbt" name="" style="height: 34px;padding-top: 1px;border: 1px solid #1B242F;background-color:#f6fffd ;border-left-style: none;" value="搜索" type="submit">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <?=Html::endForm();?>
+                    </th>
+                </tr>
             </table>
         </div>
     </div>
 </div>
 </body>
 </html>
-    <table style="border-bottom: 0 none;" width="100%">
-        <tr>
-            <td>
-                <input style="background-color: #f6fffd;cursor: pointer;margin-left: 25px;padding: 8px 10px" type="button" id="company_member_add" class="button" value='添加会员'/>
-                <script>$("#company_member_add").click(function(){window.location='index.php?r=company/company_member_add'})</script>
-                <input style="background-color: #f6fffd;cursor: pointer;margin-left: 25px;padding: 8px 10px" type="button" id="del" class="button" value="删除会员"/>
-            </td>
-            <td align="right">
-                <?=Html::beginForm('index.php?r=company/company_search','post')?>
-                <div class="seh">
-                    <div class="keybox" style="display: inline">
-                        <input name="key" class="sbt" style='height: 30px;background: #edf9ff url("../web/admin/images/search.gif") no-repeat scroll 4px;border: 1px solid #1B242F;border-right-style: none;padding-left: 20px' value="" type="text"
-                            ></div
-                        ><div class="selbox" style="display: inline;"
-                        ><select name="search_where" class="sbt" style="height: 33px;border: 1px solid #1B242F;background-color:#edf9ff ;border-left-style: none;border-right-style: none">
-                            <option value="username">用户名</option>
-                            <option value="uid">UID</option>
-                            <option value="email">email</option>
-                            <option value="mobile">手机号</option>
-                            <option value="companyname">公司名</option>
-                        </select
-                            ></div
-                        ><div class="sbtbox" style="display: inline;"
-                        ><input id="sbt" class="sbt" name="" style="height: 33px;border: 1px solid #1B242F;background-color:#f6fffd ;border-left-style: none;" value="搜索" type="submit">
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <?=Html::endForm();?>
-            </td>
-        </tr>
-    </table>
+<!--<table style="border-bottom: 0 none;line-height: 50px" width="100%">-->
+<!--    <tr>-->
+<!--        <td width="60px;">-->
+<!--            <input style="background-color: #f6fffd;cursor: pointer;margin-left: 25px;padding: 8px 10px" type="button" id="company_member_add" class="button" value='添加会员'/>-->
+<!--            <script>$("#company_member_add").click(function(){window.location='index.php?r=company/company_member_add'})</script>-->
+<!--            <input style="background-color: #f6fffd;cursor: pointer;margin-left: 25px;padding: 8px 10px" type="button" id="del" class="button" value="删除会员"/>-->
+<!--        </td>-->
+<!--        <td align="right" width="40px">-->
+<!--            --><?//=Html::beginForm('index.php?r=company/company_search','post')?>
+<!--            <div class="seh">-->
+<!--                <div class="keybox" style="display: inline">-->
+<!--                    <input name="key" class="sbt" style='background: #edf9ff url("../web/admin/images/search.gif") no-repeat scroll 4px;border: 1px solid #1B242F;border-right-style: none;padding-left: 20px' value="" type="text"-->
+<!--                        ></div-->
+<!--                    ><div class="selbox" style="display: inline;"-->
+<!--                    ><select name="search_where" class="sbt" style="border: 1px solid #1B242F;background-color:#edf9ff ;border-left-style: none;border-right-style: none">-->
+<!--                        <option value="username">用户名</option>-->
+<!--                        <option value="uid">UID</option>-->
+<!--                        <option value="email">email</option>-->
+<!--                        <option value="mobile">手机号</option>-->
+<!--                        <option value="companyname">公司名</option>-->
+<!--                    </select-->
+<!--                        ></div-->
+<!--                    ><div class="sbtbox" style="display: inline;"-->
+<!--                    ><input id="sbt" class="sbt" name="" style="border: 1px solid #1B242F;background-color:#f6fffd ;border-left-style: none;" value="搜索" type="submit">-->
+<!--                </div>-->
+<!--                <div class="clear"></div>-->
+<!--            </div>-->
+<!--            --><?//=Html::endForm();?>
+<!--        </td>-->
+<!--    </tr>-->
+<!--</table>-->
+
 
 
 <script>
@@ -138,10 +171,8 @@ use yii\helpers\Html;
             success:function(msg){
                 if(msg==1){
                     alert('删除成功');window.location='index.php?r=company/company_member'
-                }else if(msg==0){
-                    alert('删除失败');window.location='index.php?r=company/company_member'
                 }else{
-                    alert('参数错误');window.location='index.php?r=company/company_member'
+                    alert('删除失败');window.location='index.php?r=company/company_member'
                 }
             }
         })
