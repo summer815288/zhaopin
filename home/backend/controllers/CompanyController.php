@@ -10,9 +10,78 @@ use backend\models\Company_profile;
 use yii\data\Pagination;
 class CompanyController extends CommonController{
     //职位列表
-    public function actionJob(){
-
-       return $this->renderPartial('job');
+    public function actionCompany_jobs(){
+        $sql="select * from jobs";
+        $jobs=Yii::$app->db->createCommand($sql)->queryAll();
+        foreach($jobs as $item){$uid[]=$item['uid'];}
+        if(!isset($uid)){
+            return $this->renderPartial('company_jobs',['jobs'=>$jobs]);
+        }
+        foreach($uid as $k=>$v){
+            $sql2="select count(*) from personal_jobs_apply where jobs_id in ($v)";
+            $sql3="select count(*) from personal_jobs_apply where personal_look=1 and jobs_id in ($v)";
+            $count1=Yii::$app->db->createCommand($sql2)->queryAll();
+            $count2=Yii::$app->db->createCommand($sql3)->queryAll();
+        }
+        foreach($count1 as $k1=>$v1){
+            foreach($count2 as $k2=>$v2){
+                foreach($jobs as $k=>$v){
+                    $jobs[$k]['count1']=$v1;
+                    $jobs[$k]['count2']=$v2;
+                }
+            }
+        }
+        return $this->renderPartial('company_jobs',['jobs'=>$jobs]);
+    }
+    //审核职位
+    public function actionJobs_audit(){
+        $uid=$_POST['uid'];
+        $audits=$_POST['audits'];
+        if(empty($uid)){
+            echo "<script>alert('修改失败,请选择企业');window.location='index.php?r=company/manage'</script>";die;
+        }
+        $sql="update jobs set audit=$audits where uid in ($uid)";
+        $update_audit=Yii::$app->db->createCommand($sql)->execute();
+        if($update_audit){
+            echo "<script>alert('修改成功');window.location='index.php?r=company/company_jobs'</script>";
+        }
+    }
+    //带认证职业
+    public function actionCompany_jobs_to(){
+        $sql="select * from jobs where audit=2";
+        $jobs=Yii::$app->db->createCommand($sql)->queryAll();
+        foreach($jobs as $item){$uid[]=$item['uid'];}
+        if(!isset($uid)){
+            return $this->renderPartial('company_jobs_to',['jobs'=>$jobs]);
+        }
+        foreach($uid as $k=>$v){
+            $sql2="select count(*) from personal_jobs_apply where jobs_id in ($v)";
+            $sql3="select count(*) from personal_jobs_apply where personal_look=1 and jobs_id in ($v)";
+            $count1=Yii::$app->db->createCommand($sql2)->queryAll();
+            $count2=Yii::$app->db->createCommand($sql3)->queryAll();
+        }
+        foreach($count1 as $k1=>$v1){
+            foreach($count2 as $k2=>$v2){
+                foreach($jobs as $k=>$v){
+                    $jobs[$k]['count1']=$v1;
+                    $jobs[$k]['count2']=$v2;
+                }
+            }
+        }
+        return $this->renderPartial('company_jobs_to',['jobs'=>$jobs]);
+    }
+    //待认证审核职位
+    public function actionJobs_audit_to(){
+        $uid=$_POST['uid'];
+        $audits=$_POST['audits'];
+        if(empty($uid)){
+            echo "<script>alert('修改失败,请选择企业');window.location='index.php?r=company/company_jobs_to'</script>";die;
+        }
+        $sql="update jobs set audit=$audits where uid in ($uid)";
+        $update_audit=Yii::$app->db->createCommand($sql)->execute();
+        if($update_audit){
+            echo "<script>alert('修改成功');window.location='index.php?r=company/company_jobs_to'</script>";
+        }
     }
     //管理企业
     public function actionManage(){
@@ -31,7 +100,8 @@ class CompanyController extends CommonController{
     }
     //企业日志
     public function actionCompany_log(){
-        $sql="select * from company_profile as cp join members_log as ml on cp.uid=ml.log_uid";
+        $uid=$_GET['uid'];
+        $sql="select * from members_log where log_uid=$uid";
         $data=Yii::$app->db->createCommand($sql)->queryAll();
         return $this->renderPartial('company_log',['company_log'=>$data]);
     }
@@ -115,7 +185,7 @@ class CompanyController extends CommonController{
     }
     //企业会员
     public function actionCompany_member(){
-        $sql="select uid,username,email,mobile,reg_time,reg_ip,last_login_time from members";
+        $sql="select uid,username,email,mobile,reg_time,reg_ip,last_login_time from members where utype=1";
         $members=Yii::$app->db->createCommand($sql)->queryAll();
         $sql2="select uid,companyname,audit from company_profile";
         $company_profile=Yii::$app->db->createCommand($sql2)->queryAll();
@@ -145,11 +215,9 @@ class CompanyController extends CommonController{
             $members_points=Yii::$app->db->createCommand($sql2)->execute();
             if($members&&$members_setmeal&&$members_points){
                 echo"1";
-            }else{
-                echo"0";
             }
         }else{
-            echo "2";
+            echo "0";
         }
     }
     //搜索企业会员
@@ -217,7 +285,7 @@ class CompanyController extends CommonController{
             echo"<script>alert('添加失败');window.location='index.php?r=company/company_member'</script>";
         }
     }
-    //
+
     //无限极分类
     public function tree($list,$parent_id=0){
         $tree=array();
