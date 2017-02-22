@@ -21,6 +21,7 @@ class IndexController extends Controller
 	//首页
 	public function actionIndex()
 	{
+		$list=yii::$app->db->createCommand("select * from navigation")->queryAll();
 		return $this->render("index");
 	}
 
