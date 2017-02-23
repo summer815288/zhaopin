@@ -55,6 +55,13 @@ class IndexController extends CommonController
 	}
 
 
+	public function actionSearch()
+	{
+		$kd = $_POST['kd'];
+		echo $kd;
+	}
+
+
 	//账号设置
 	public function actionLoginset()
 	{

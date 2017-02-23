@@ -27,9 +27,11 @@ class LoginController extends Controller
 	{
 		$email = $_POST['email'];
 		$pwd = $_POST['password'];
-		$a = yii::$app->db->createCommand("select * from user where u_email = '$email' and u_pwd = '$pwd'")->queryOne();
-		$type = $a['u_type'];
-		// $data = ['type'=>$type,'email'=>$email];		
+		$login_time = time();
+		$a = yii::$app->db->createCommand("select * from members where email = '$email' and password = '$pwd'")->queryOne();
+		yii::$app->db->createCommand("update members set last_login_time='$login_time' where email = '$email' and password = '$pwd'")->query();
+		$type = $a['utype'];
+		// $data = ['type'=>$type,'email'=>$email];
 		$session = yii::$app->session;
 		$session->open();
 		$session->set('type',$type);
@@ -52,11 +54,13 @@ class LoginController extends Controller
 		$type= $_POST['type'];
 		$pwd= $_POST['password'];
 		$email= $_POST['email'];
-		$a = yii::$app->db->createCommand("select * from user where u_email = '$email'")->queryOne();
+		$reg_time=time(); 
+		$reg_ip = $_SERVER['REMOTE_ADDR'];		
+		$a = yii::$app->db->createCommand("select * from members where email = '$email'")->queryOne();
 		if($a){
 			echo "<script>alert('用户已存在');location.href='?r=login/register'</script>";
 		}else{
-			$res = yii::$app->db->createCommand("insert into user(u_type,u_email,u_pwd) value('$type','$email','$pwd')")->query();
+			$res = yii::$app->db->createCommand("insert into members(utype,email,password,reg_ip,reg_time) value('$type','$email','$pwd','$reg_ip','$reg_time')")->query();
 			if($res){
 				echo "<script>alert('注册成功');location.href='?r=login/login'</script>";
 			}
@@ -77,6 +81,10 @@ class LoginController extends Controller
 		return $this->render("reset");
 	}
 
-	
+	//qq第三方登录
+	public function actionQq()
+	{
+		return $this->render("qq/index.php");
+	}
 
 }
