@@ -44,6 +44,16 @@ use yii\helpers\Html;
                 <td><input class="input_text_200" name="points" type="text"/></td>
             </tr>
             <tr>
+                <td><font color="red">是否否已收费：</font></td>
+                <td>
+                    <input type="radio" name="is_money" class="yes_money3" value="1"/><span id="a">是</span>
+                    <input type="radio" name="is_money" class="yes_money3"  value="0"/><span id="b">不是</span></td>
+            </tr>
+            <tr hidden id="input_mount" >
+                <td><span>收费金额：</span></td>
+                <td><input class="input_text_200" name="log_amount" type="text"/></td>
+            </tr>
+            <tr>
                 <td><input type="submit" style="background-color: #f6fffd;padding: 8px 20px;cursor: pointer" value="添加"/></td>
                 <td><input type="reset" style="background-color: #f6fffd;padding: 8px 20px;cursor: pointer" value="返回"/></td>
             </tr>
@@ -62,6 +72,17 @@ use yii\helpers\Html;
             $("#input_num").attr('style','display:none');
             $("#n").attr('style','color: rgb(0, 153, 0)');
             $("#y").attr('style','color: rgb(102, 102, 102)');
+        }
+    })
+    $(document).on('click',".yes_money3",function(){
+        if($(this).val()=='1'){
+            $("#input_mount").attr('style','display:table-row');
+            $("#a").attr('style','color: rgb(0, 153, 0)');
+            $("#b").attr('style','color: rgb(102, 102, 102)')
+        }else{
+            $("#input_mount").attr('style','display:none');
+            $("#b").attr('style','color: rgb(0, 153, 0)');
+            $("#a").attr('style','color: rgb(102, 102, 102)');
         }
     })
 </script>

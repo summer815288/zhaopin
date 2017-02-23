@@ -38,11 +38,11 @@ use yii\helpers\Html;
         <table >
               <tr >
                   <td  aligin="right" style="margin:10px;" >  收件人地址：</td>
-                  <td ><input type="text"    name="send_to"  value="<?php   echo $email;?>" style="width:150px;height:20px;background-color: honeydew;border:1px black solid;margin:10px;" ></td>
+                  <td ><input type="text"    name="send_to"  value="<?php   echo $email;?>" style="width:150px;height:20px;background-color: #eef8ff;margin:10px;" ></td>
               </tr>
               <tr   >
                   <td  aligin="right" style="margin:10px;"> 邮件标题：</td>
-                  <td><input type="text"   name="subject" style="width:250px;height:20px;background-color: honeydew;border:1px black solid;margin:10px;"></td>
+                  <td><input type="text"   name="subject" style="width:250px;height:20px;background-color: #eef8ff;margin:10px;"></td>
               </tr>
               <tr>
                   <td  aligin="right" style="width:100px;margin:10px;" valign="top">邮件内容：</td>
@@ -50,9 +50,10 @@ use yii\helpers\Html;
                           <script id="editor"  name="content"  type="text/plain" style="width:700px;height:238px;"></script>
                       </div></td>
               </tr>
+            <br>
               <tr>
                   <td aligin="right" style="width:100px;margin:10px;" valign></td>
-                  <td><input type="submit" value="立即发送"  style="width:100px;height:20px;background-color: honeydew;border:1px black solid;margin:10px;" ></td>
+                  <td><input type="submit" value="立即发送"  style="width:100px;height:40px;background-color: #f1fffd;padding:8px 10px" ></td>
               </tr>
         </table>
         <?= Html::endForm() ?>
