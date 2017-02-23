@@ -45,7 +45,7 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-<<<<<<< HEAD
+
 
         //设置邮箱配置
         'mailer' => [
@@ -66,14 +66,14 @@ return [
         ],
 
 
-=======
+
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
             'itemTable' => 'auth_item',
             'assignmentTable' => 'auth_assignment',
             'itemChildTable' => 'auth_item_child',
         ],
->>>>>>> 5681a99649267fdd9ddedb9e8327ffb5e5a63241
+
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,

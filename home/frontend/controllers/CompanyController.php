@@ -14,7 +14,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 class CompanyController extends Controller
 {
-	public $layout = false;
+	public $layout = 'header';
     public $enableCsrfValidation = false;
 
 	//我发布的职位

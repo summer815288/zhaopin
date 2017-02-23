@@ -14,7 +14,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 class PersonController extends Controller
 {
-	public $layout = false;
+	public $layout = 'header';
     public $enableCsrfValidation = false;
 	//我的简历
 	public function actionMyinfo()
@@ -27,6 +27,7 @@ class PersonController extends Controller
 	{
 		return $this->render("collections");
 	}
+
 
 	//我的订阅
 	public function actionSubscribe()

@@ -29,12 +29,16 @@ class LoginController extends Controller
 		$pwd = $_POST['password'];
 		$a = yii::$app->db->createCommand("select * from user where u_email = '$email' and u_pwd = '$pwd'")->queryOne();
 		$type = $a['u_type'];
-		$data = ['type'=>$type,'email'=>$email];		
+		// $data = ['type'=>$type,'email'=>$email];		
 		$session = yii::$app->session;
 		$session->open();
-		$session->set('data',$data);
+		$session->set('type',$type);
+		$session->set('email',$email);
 		if($a){
 			echo "<script>alert('登录成功');location.href='?r=index/index'</script>";
+		}else{
+			echo "<script>alert('登录失败，请确认后在登录');location.href='?r=login/login'</script>";
+
 		}
 	}
 
@@ -63,7 +67,8 @@ class LoginController extends Controller
 	public function actionLoginout()
 	{
 		$session = Yii::$app->session;
-		$session->remove('data');		
+		$session->remove('email');		
+		$session->remove('type');		
 		$this->redirect("?r=login/login");
 	}
 	//忘记密码
@@ -72,16 +77,6 @@ class LoginController extends Controller
 		return $this->render("reset");
 	}
 
-	//账号设置
-	public function actionLoginset()
-	{
-		return $this->render("set");
-	}
-
-	//修改密码
-	public function actionUpdatepwd()
-	{
-		return $this->render("updatepwd");
-	}
+	
 
 }
