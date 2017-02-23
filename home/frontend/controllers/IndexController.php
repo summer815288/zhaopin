@@ -17,12 +17,16 @@ use yii\filters\AccessControl;
 class IndexController extends Controller
 {
 	public $layout = false;
-
+    public $enableCsrfValidation = false;
+	
 	//首页
 	public function actionIndex()
 	{
-		$list=yii::$app->db->createCommand("select * from navigation")->queryAll();
-		return $this->render("index");
+		$session = Yii::$app->session;
+		$data = $session->get('data');
+
+		return $this->render("index",['data'=>$data]);
+			
 	}
 
 	//公司
@@ -31,11 +35,7 @@ class IndexController extends Controller
 		return $this->render("companylist");
 	}
 
-	//我的简历
-	public function actionMyinfo()
-	{
-		return $this->render("jianli");
-	}
+	
 
 	//发布职位
 	public function actionCreate()

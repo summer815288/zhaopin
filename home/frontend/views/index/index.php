@@ -44,14 +44,34 @@ var youdao_conv_id = 271546;
     			<li class="current"><a href="?r=index/index">首页</a></li>
     			<li ><a href="?r=index/company" >公司</a></li>
     			<!-- <li ><a href="#" target="_blank">论坛</a></li> -->
-    			<li ><a href="?r=index/myinfo" rel="nofollow">我的简历</a></li>
+    			<li ><a href="?r=person/myinfo" rel="nofollow">我的简历</a></li>
 	    		<li ><a href="?r=index/create" rel="nofollow">发布职位</a></li>
 	    	</ul>
-        	<ul class="loginTop">
-            	<li><a href="?r=login/login" rel="nofollow">登录</a></li> 
-            	<li>|</li>
-            	<li><a href="?r=login/register" rel="nofollow">注册</a></li>
-            </ul>
+        	
+            <dl class="collapsible_menu">
+                <dt>
+           			<span><?=$data['email']?>&nbsp;</span> 
+            		<span class="red dn" id="noticeDot-1"></span>
+            		<i></i>
+                </dt>
+                <?php if($data['type'] == 1){ ?>
+                <!-- 企业用户 -->
+	                <dd><a href="?r=company/positions">我发布的职位</a></dd>
+	            	<dd><a href="?r=company/positions">我收到的简历</a></dd>
+	            	<dd class="btm"><a href="?r=company/myhome">我的公司主页</a></dd>
+	            	<dd><a href="?r=company/create">我要招人</a></dd>
+	                <dd><a href="?r=login/loginset">帐号设置</a></dd>
+	                <dd class="logout"><a rel="nofollow" href="?r=login/loginout">退出</a></dd>
+                <?php }else if($data['type'] == 2){?>
+               	<!-- 个人用户 -->
+	                <dd><a rel="nofollow" href="?r=person/myinfo">我的简历</a></dd>
+	                <dd><a href="?r=person/collections">我收藏的职位</a></dd>
+	                <dd class="btm"><a href="?r=person/subscribe">我的订阅</a></dd>
+	                <dd><a href="create.html">我要找工作</a></dd>
+	                <dd><a href="?r=login/loginset">帐号设置</a></dd>
+	                <dd class="logout"><a rel="nofollow" href="?r=login/loginout">退出</a></dd>
+                <?php }?>
+            </dl>
         </div>
     </div><!-- end #header -->
     <div id="container">
