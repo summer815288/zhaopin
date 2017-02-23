@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,7 +88,6 @@ var youdao_conv_id = 271546;
             </dl>
         </div>
     </div><!-- end #header -->
-
 <?php echo $content?>   
 </body>
 </html>

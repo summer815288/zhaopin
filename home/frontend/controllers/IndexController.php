@@ -17,11 +17,9 @@ use yii\filters\AccessControl;
 
 class IndexController extends CommonController
 {
-<<<<<<< HEAD
+
 	public $layout = 'header';
-=======
-	public $layout = false;
-<<<<<<< HEAD
+
 	public $enableCsrfValidation = false;
 	//首页
 	public function actionIndex()
@@ -30,18 +28,10 @@ class IndexController extends CommonController
 		$list=$this->getList($data);
 		$jobs=yii::$app->db->createCommand("select * from jobs")->queryAll();
 		return $this->render("index",['list'=>$list,'jobs'=>$jobs]);
-=======
->>>>>>> bab8256f2ca38a1c32acc8753bce1b5cef67c029
-    public $enableCsrfValidation = false;
-	
-	//首页
-	public function actionIndex()
-	{
-	
-		return $this->render("index");
-			
->>>>>>> de5211a88edcbed0249776b150cb848b1c6a78ca
 	}
+
+	
+	
 
 	//公司
 	public function actionCompany()
