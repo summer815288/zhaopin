@@ -18,6 +18,7 @@ use yii\filters\AccessControl;
 class IndexController extends CommonController
 {
 	public $layout = false;
+<<<<<<< HEAD
 	public $enableCsrfValidation = false;
 	//首页
 	public function actionIndex()
@@ -26,6 +27,18 @@ class IndexController extends CommonController
 		$list=$this->getList($data);
 		$jobs=yii::$app->db->createCommand("select * from jobs")->queryAll();
 		return $this->render("index",['list'=>$list,'jobs'=>$jobs]);
+=======
+    public $enableCsrfValidation = false;
+	
+	//首页
+	public function actionIndex()
+	{
+		$session = Yii::$app->session;
+		$data = $session->get('data');
+
+		return $this->render("index",['data'=>$data]);
+			
+>>>>>>> de5211a88edcbed0249776b150cb848b1c6a78ca
 	}
 
 	//公司
@@ -34,11 +47,7 @@ class IndexController extends CommonController
 		return $this->render("companylist");
 	}
 
-	//我的简历
-	public function actionMyinfo()
-	{
-		return $this->render("jianli");
-	}
+	
 
 	//发布职位
 	public function actionCreate()

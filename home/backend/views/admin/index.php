@@ -73,12 +73,12 @@
 					<div class="ifame-item-sub">
 						<ul>
                             <li><a href="<?php echo Url::to(['member/resume']);?>" target="content">简历列表</a></li>
-							<li><a href="信息管理/cate_manage.html" target="content">待审核简历</a></li>
-							<li><a href="信息管理/cate_manage.html" target="content">高级人才</a></li>
-							<li><a href="信息管理/cate_manage.html" target="content">代开通高级人才</a></li>
-							<li><a href="信息管理/cate_manage.html" target="content">照片简历</a></li>
-							<li><a href="信息管理/cate_manage.html" target="content">待审核照片</a></li>
-							<li><a href="信息管理/cate_manage.html" target="content">个人会员</a></li>
+                            <li><a href="<?php echo Url::to(['member/resume_wait']);?>" target="content">待审核简历</a></li>
+							<li><a href="<?php echo Url::to(['member/resume_talent']);?>" target="content">高级人才</a></li>
+							<li><a href="<?php echo Url::to(['member/resume_talent_wait']);?>" target="content">代开通高级人才</a></li>
+							<li><a href="<?php echo Url::to(['member/resume_photo']);?>" target="content">照片简历</a></li>
+							<li><a href="<?php echo Url::to(['member/resume_photo_wait']);?>" target="content">待审核照片</a></li>
+							<li><a href="<?php echo Url::to(['member/members_info']);?>" target="content">个人会员</a></li>
 						</ul>
 					</div>
 				</li>
@@ -103,6 +103,7 @@
 							<li><a href="<?php echo Url::to(['system/person_set']);?>" target="content">个人设置</a></li>
 							<li><a href="<?php echo Url::to(['address/index']);?>" target="content">地区管理</a></li>
 							<li><a href="<?php echo Url::to(['navigation/index']);?>" target="content">导航设置</a></li>
+							<li><a href="<?php echo Url::to(['system/jobs']);?>" target="content">职位设置</a></li>
 						</ul>
 					</div>
 				</li>

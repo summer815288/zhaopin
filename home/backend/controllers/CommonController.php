@@ -23,7 +23,13 @@ class CommonController extends Controller
                 $data[$key]=$value;
 //                print_r($data[$key]);die;
                 $data[$key]['son']=$this->getList($list,$value['id']);
-//                print_r($data[$key]['son']);die;
+                // print_r($data[$key]['son']);die;
+            // foreach($list as $k=>$v){
+            //     if($v['parentid'] == $value['id']){
+            //         $data[$key]['son']=$v;
+            //         $data[$k]['son']['sun']=$this->getList($list,$v['id']);
+            //     }
+            // }
             }
         }
      return $data;
