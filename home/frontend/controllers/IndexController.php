@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use frontend\controllers\CommonController;
 use Yii;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
@@ -14,15 +15,17 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
-class IndexController extends Controller
+class IndexController extends CommonController
 {
 	public $layout = false;
-
+	public $enableCsrfValidation = false;
 	//首页
 	public function actionIndex()
 	{
-		$list=yii::$app->db->createCommand("select * from navigation")->queryAll();
-		return $this->render("index");
+		$data=yii::$app->db->createCommand("select * from category_jobs")->queryAll();
+		$list=$this->getList($data);
+		$jobs=yii::$app->db->createCommand("select * from jobs")->queryAll();
+		return $this->render("index",['list'=>$list,'jobs'=>$jobs]);
 	}
 
 	//公司
