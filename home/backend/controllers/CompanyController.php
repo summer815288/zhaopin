@@ -8,6 +8,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use backend\models\Company_profile;
 use yii\data\Pagination;
+use backend\models\Category_jobs;
 class CompanyController extends CommonController{
     //职位列表
     public function actionCompany_jobs(){
@@ -45,6 +46,19 @@ class CompanyController extends CommonController{
         if($update_audit){
             echo "<script>alert('修改成功');window.location='index.php?r=company/company_jobs'</script>";
         }
+    }
+    //修改职位列表
+    public function actionCompany_jobs_edit(){
+        //职位类别
+        $category_jobs=Category_jobs::find()->where(['parentid'=>0])->asArray()->all();
+        foreach($category_jobs as $item){$uid[]=$item['id'];};
+        foreach($uid as $k=>$v){
+            $id[]=$v;
+        }
+        $category2[]=Category_jobs::find()->where(['parentid'=>$id])->asArray()->all();
+
+        //职位类别
+        return $this->renderPartial('company_jobs_edit',['category_jobs'=>$category_jobs,'category2'=>$category2[0]]);
     }
     //带认证职业
     public function actionCompany_jobs_to(){
@@ -263,7 +277,7 @@ class CompanyController extends CommonController{
     }
     //处理添加的企业会员
     public function actionCompany_member_adds(){
-        if($_POST['username']==""||$_POST['email']==""||$_POST['password']==""||$_POST['points']==""){
+        if($_POST['username']==""||$_POST['email']==""||$_POST['password']==""){
             echo"<script>alert('添加会员不能为空');window.location='index.php?r=company/company_member_add'</script>";die;
         }
         $username=$_POST['username'];
@@ -272,18 +286,31 @@ class CompanyController extends CommonController{
         $reg_time=time();
         $reg_ip=$_SERVER['REMOTE_ADDR'];
         $points=$_POST['points'];
-        $sql="insert into members (username,email,password,reg_time,reg_ip) values('$username','$email','$password','$reg_time','$reg_ip')";
-        $members=Yii::$app->db->createCommand($sql)->execute();
-        $uid=Yii::$app->db->getLastInsertID();
-        $sql1="insert into members_setmeal (uid) VALUES('$uid')";
-        $members_setmeal=Yii::$app->db->createCommand($sql1)->execute();
-        $sql2="insert into members_points (uid,points) values('$uid','$points')";
-        $members_points=Yii::$app->db->createCommand($sql2)->execute();
-        if($members&&$members_setmeal&&$members_points){
-            echo"<script>alert('添加成功');window.location='index.php?r=company/company_member'</script>";
-        }else{
-            echo"<script>alert('添加失败');window.location='index.php?r=company/company_member'</script>";
-        }
+        $log_amount=$_POST['log_amount'];
+            $sql="insert into members (username,email,password,reg_time,reg_ip) values('$username','$email','$password','$reg_time','$reg_ip')";
+            $members=Yii::$app->db->createCommand($sql)->execute();
+            $uid=Yii::$app->db->getLastInsertID();
+            $sql1="insert into members_setmeal (uid) VALUES('$uid')";
+            $members_setmeal=Yii::$app->db->createCommand($sql1)->execute();
+            $sql2="insert into members_points (uid,points) values('$uid','$points')";
+            $members_points=Yii::$app->db->createCommand($sql2)->execute();
+            if(isset($points)&&isset($log_amount)) {
+                $sql3 = "insert into members_charge_log (log_uid,log_username,log_addtime,log_value,log_amount,log_ismoney,log_type,log_mode) values('$uid','$username','$reg_time','注册会员系统自动赠送：免费会员','$log_amount','2','4','1')";
+                $members_charge_log = Yii::$app->db->createCommand($sql3)->execute();
+            }elseif(isset($points)){
+                $sql3 = "insert into members_charge_log (log_uid,log_username,log_addtime,log_value,log_amount,log_ismoney,log_type,log_mode) values('$uid','$username','$reg_time','注册会员系统自动赠送：免费会员','$log_amount','1','4','1')";
+                $members_charge_log = Yii::$app->db->createCommand($sql3)->execute();
+            }elseif(isset($log_amount)){
+                $sql3 = "insert into members_charge_log (log_uid,log_username,log_addtime,log_value,log_amount,log_ismoney,log_type,log_mode) values('$uid','$username','$reg_time','注册会员系统自动赠送：免费会员','$log_amount','2','4','2')";
+                $members_charge_log = Yii::$app->db->createCommand($sql3)->execute();
+            }
+            if($members&&$members_setmeal&&$members_points&&$members_charge_log){
+                echo"<script>alert('添加成功');window.location='index.php?r=company/company_member'</script>";
+            }elseif($members&&$members_setmeal&&$members_points){
+                echo"<script>alert('添加成功');window.location='index.php?r=company/company_member'</script>";
+            }else{
+                echo"<script>alert('添加失败');window.location='index.php?r=company/company_member'</script>";
+             }
     }
 
     //无限极分类
