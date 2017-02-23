@@ -14,12 +14,13 @@ use yii\db\Query;
 class RbacController extends Controller
 {
 	public $enableCsrfValidation = false;
-	
+	public $layout = false;
+
 	//管理员列表
 	public function actionAdmin()
 	{
-		$query = new Query();
-		$admin_list = $query->from("admin")->join('INNER JOIN','arole','arole.r_id = admin.r_id')->all();
+	        $query = new Query();
+        $admin_list = $query->from("admin")->join('INNER JOIN','arole','arole.r_id = admin.r_id')->all();
 
 		
 		return $this->render("admin_list",['admin_list'=>$admin_list]);

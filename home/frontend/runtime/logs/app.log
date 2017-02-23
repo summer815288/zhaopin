@@ -177,3 +177,72 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1487674356.712
     'REQUEST_TIME' => 1487674356
 ]
+2017-02-22 20:54:40 [::1][-][2flk66nur1cb302lkiko4t8591][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Index/index".' in D:\WWW\zhaopin\home\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\WWW\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Index/index', Array)
+#1 D:\WWW\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\WWW\zhaopin\home\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\WWW\zhaopin\home\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\WWW\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\WWW\zhaopin\home\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2017-02-22 20:54:40 [::1][-][2flk66nur1cb302lkiko4t8591][info][application] $_GET = [
+    'r' => 'Index/index'
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'c8ju4gjfsc1hhv1li46a4r1817'
+    '_csrf-backend' => 'e5dc6703f69460060a2e26f9048a9c7d65896f288aa079097b21ccf0077b7795a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"LpOAK5MCy9iHOn2K2mT88E5XADMdJ-PV\";}'
+    'name' => '033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa:2:{i:0;s:4:\"name\";i:1;s:5:\"admin\";}'
+    'PHPSESSID' => '2flk66nur1cb302lkiko4t8591'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;C:\\Program Files (x86)\\AMD APP\\bin\\x86_64;C:\\Program Files (x86)\\AMD APP\\bin\\x86;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;G:\\Git\\cmd;'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/web/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1908'
+    'SCRIPT_NAME' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_URI' => '/zhaopin/home/frontend/web/index.php?r=Index/index'
+    'QUERY_STRING' => 'r=Index/index'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '58225'
+    'SCRIPT_FILENAME' => 'D:/WWW/zhaopin/home/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/WWW'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'advanced-backend=c8ju4gjfsc1hhv1li46a4r1817; _csrf-backend=e5dc6703f69460060a2e26f9048a9c7d65896f288aa079097b21ccf0077b7795a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22LpOAK5MCy9iHOn2K2mT88E5XADMdJ-PV%22%3B%7D; name=033c23f62efcdd03a99edb8df69f8735da17169e274b052296b855baa20e082fa%3A2%3A%7Bi%3A0%3Bs%3A4%3A%22name%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; PHPSESSID=2flk66nur1cb302lkiko4t8591'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_HOST' => 'localhost'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487768080.6361
+    'REQUEST_TIME' => 1487768080
+]
