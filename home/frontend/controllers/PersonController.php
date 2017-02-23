@@ -16,11 +16,29 @@ class PersonController extends Controller
 {
 	public $layout = 'header';
     public $enableCsrfValidation = false;
+
+    //具体的个人中心
+    public function actionPerson()
+    {
+        return $this->render("person");
+    }
 	//我的简历
 	public function actionMyinfo()
 	{
 		return $this->render("jianli");
 	}
+
+
+
+    //账号管理---基本资料
+    public function actionMan(){
+
+
+        return  $this->renderPartial('man.php');
+    }
+
+
+
 
 	//收藏的职位
 	public function actionCollections()
