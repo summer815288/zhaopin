@@ -95,19 +95,21 @@
 	        </div><!--/#main_banner-->
 			
         	<ul id="da-thumbs" class="da-thumbs">
-	        		        		<li >
+        	<?php foreach($news as $k=>$v){?>
+	        		  <li >
 	                    <a href="h/c/1650.html" target="_blank">
-	                        <img src="style/images/a254b11ecead45bda166afa8aaa9c8bc.jpg" width="113" height="113" alt="联想" />
+	                        <img src="<?= $v['news_img']?>" width="113" height="113" alt="联想" />
 	                        <div class="hot_info">
-	                        	<h2 title="联想">联想</h2>
+	                        	<h2 title="联想"><?= $v['news_title']?></h2>
 	                            <em></em>
 	                            <p title="世界因联想更美好">
-	                            	世界因联想更美好
+	                            	<?= $v['news_content']?>
 	                            </p>
 	                        </div>
 	                    </a>
 	                </li>
-                	        		<li >
+	                <?php }?>
+                	        		<!-- <li >
 	                    <a href="h/c/9725.html" target="_blank">
 	                        <img src="style/images/c75654bc2ab141df8218983cfe5c89f9.jpg" width="113" height="113" alt="淘米" />
 	                        <div class="hot_info">
@@ -166,7 +168,7 @@
 	                            </p>
 	                        </div>
 	                    </a>
-	                </li>
+	                </li> -->
                             </ul>
             
             <ul class="reset hotabbing">

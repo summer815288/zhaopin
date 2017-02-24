@@ -84,7 +84,7 @@ class ContentController extends CommonController
         {
             $imginfo=$model->imageFiles = UploadedFile::getInstances($model, 'imageFiles');
             $img_name=$imginfo[0]->name;
-            $img_path='uploads/'.$img_name;
+            $img_path='../../public/uploads/'.$img_name;
            // var_dump($img_path);die;
         }
            

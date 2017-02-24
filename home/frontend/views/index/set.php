@@ -16,7 +16,7 @@
                 <ul class="user_noModify">
 
                     <li>当前登录帐号：<span><?= $data?></span> </li>
-                    <li>绑定后，你可以同时使用以下方式登录拉勾</li>
+                    <li>绑定后，你可以同时使用以下方式登录招聘</li>
                 </ul>
                 <dl class="user_thirdLogin">
                     <dt><img alt="qq" src="style/images/qq.png"></dt>

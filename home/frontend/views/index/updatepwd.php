@@ -82,7 +82,7 @@
      	<table>
          	<tbody><tr>
          		<td> 
-         			<h3 id="user_hasBindAccount">         				      				
+         			<h3 id="user_hasBindAccount">
          			</h3>
          			<div class="f18">你可以：</div>
          			<ul class="user_canOperatioin">
@@ -92,7 +92,7 @@
          		</td>
          	</tr>
          	<tr>
-         		<td align="center"> 
+         		<td align="center">
          			<a id="user_confirmBindTips" class="btn" href="javascript:;"><!-- 换个邮箱绑定 --></a>
          			<a class="cancel" href="login.html">退出当前帐号</a>
          		</td>
@@ -228,4 +228,3 @@
 <!--  -->
 
 
-<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>
