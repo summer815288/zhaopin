@@ -51,9 +51,28 @@ class IndexController extends CommonController
 	//查看更多
 	public function actionList()
 	{
-		return $this->render("list");
+		$wage_cn=yii::$app->db->createCommand("select wage_cn from jobs ORDER BY wage_cn ASC ")->queryAll();
+		$experience_cn=yii::$app->db->createCommand("select experience_cn from jobs ORDER BY experience_cn asc")->queryAll();
+		$education_cn=yii::$app->db->createCommand("select education_cn from jobs ORDER BY education_cn desc")->queryAll();
+		$nature_cn=yii::$app->db->createCommand("select nature_cn from jobs")->queryAll();
+//		$addtime=yii::$app->db->createCommand("select addtime from jobs")->queryAll();
+		$jobs=yii::$app->db->createCommand("select * from jobs")->queryAll();
+		$district=yii::$app->db->createCommand("select * from category_district limit 6")->queryAll();
+		$category_district=yii::$app->db->createCommand("select * from category_district")->queryAll();
+		$address=$this->getLev($category_district);
+		return $this->render("list",['wage_cn'=>$wage_cn,
+			'experience_cn'=>$experience_cn,
+			'education_cn'=>$education_cn,
+			'nature_cn'=>$nature_cn,'jobs'=>$jobs,
+			'district'=>$district,
+			'address'=>$address]);
 	}
 
+	//投递简历
+	public function actionToudi()
+	{
+		return $this->render("toudi");
+	}
 
 	public function actionSearch()
 	{

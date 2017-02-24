@@ -23401,3 +23401,267 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1487896452.829
     'REQUEST_TIME' => 1487896452
 ]
+2017-02-24 16:52:57 [127.0.0.1][-][-][error][yii\base\UnknownMethodException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: frontend\controllers\IndexController::getLev()' in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Component.php:285
+Stack trace:
+#0 E:\phpStudy\WWW\ninthmonths\zhaopin\home\frontend\controllers\IndexController.php(63): yii\base\Component->__call('getLev', Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\frontend\controllers\IndexController.php(63): frontend\controllers\IndexController->getLev(Array)
+#2 [internal function]: frontend\controllers\IndexController->actionList()
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('list', Array)
+#6 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('index/list', Array)
+#7 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 E:\phpStudy\WWW\ninthmonths\zhaopin\home\frontend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+2017-02-24 16:52:57 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'index/list'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1486692674,1487762227,1487810212'
+    '_pk_ysp_id_' => [
+        'object Object' => '6d8f80d4c9ef320e.1487821291.1.1487821291.1487821291.'
+    ]
+    'PHPSESSID' => '2fr90d7t0e4am0i46l5gi8iif0'
+    '_csrf' => '4d4ef98665c44f348fc36bf790f9e4b67dc257e0ffab093f99177f6f4b148d30a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9K5-00gWaKPU1kJI5x5RMBiiz9CptgjG\";}'
+    '_csrf-backend' => '6ed2dcf4b2d187875ea988205c080bbf91aa35b1866ea234fbe966cbdfb93828a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"gzvOMW68fwQPy7x_BeY84mH-Jl9Uq93-\";}'
+    'advanced-backend' => 'o3cft7e5rptfu5784b5scm2h95'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/frontend/web/index.php?r=index/index'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1486692674,1487762227,1487810212; _pk_ysp_id.[object Object].027a=6d8f80d4c9ef320e.1487821291.1.1487821291.1487821291.; PHPSESSID=2fr90d7t0e4am0i46l5gi8iif0; _csrf=4d4ef98665c44f348fc36bf790f9e4b67dc257e0ffab093f99177f6f4b148d30a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229K5-00gWaKPU1kJI5x5RMBiiz9CptgjG%22%3B%7D; _csrf-backend=6ed2dcf4b2d187875ea988205c080bbf91aa35b1866ea234fbe966cbdfb93828a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22gzvOMW68fwQPy7x_BeY84mH-Jl9Uq93-%22%3B%7D; advanced-backend=o3cft7e5rptfu5784b5scm2h95'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/frontend/web/index.php'
+    'REMOTE_PORT' => '3561'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=index/list'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/frontend/web/index.php?r=index/list'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/frontend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487926377.099
+    'REQUEST_TIME' => 1487926377
+]
+2017-02-24 16:52:57 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownMethodException))
+#7 {main}
+2017-02-24 16:52:57 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'index/list'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1486692674,1487762227,1487810212'
+    '_pk_ysp_id_' => [
+        'object Object' => '6d8f80d4c9ef320e.1487821291.1.1487821291.1487821291.'
+    ]
+    'PHPSESSID' => '2fr90d7t0e4am0i46l5gi8iif0'
+    '_csrf' => '4d4ef98665c44f348fc36bf790f9e4b67dc257e0ffab093f99177f6f4b148d30a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9K5-00gWaKPU1kJI5x5RMBiiz9CptgjG\";}'
+    '_csrf-backend' => '6ed2dcf4b2d187875ea988205c080bbf91aa35b1866ea234fbe966cbdfb93828a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"gzvOMW68fwQPy7x_BeY84mH-Jl9Uq93-\";}'
+    'advanced-backend' => 'o3cft7e5rptfu5784b5scm2h95'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/frontend/web/index.php?r=index/index'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1486692674,1487762227,1487810212; _pk_ysp_id.[object Object].027a=6d8f80d4c9ef320e.1487821291.1.1487821291.1487821291.; PHPSESSID=2fr90d7t0e4am0i46l5gi8iif0; _csrf=4d4ef98665c44f348fc36bf790f9e4b67dc257e0ffab093f99177f6f4b148d30a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229K5-00gWaKPU1kJI5x5RMBiiz9CptgjG%22%3B%7D; _csrf-backend=6ed2dcf4b2d187875ea988205c080bbf91aa35b1866ea234fbe966cbdfb93828a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22gzvOMW68fwQPy7x_BeY84mH-Jl9Uq93-%22%3B%7D; advanced-backend=o3cft7e5rptfu5784b5scm2h95'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/frontend/web/index.php'
+    'REMOTE_PORT' => '3561'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=index/list'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/frontend/web/index.php?r=index/list'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/frontend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487926377.099
+    'REQUEST_TIME' => 1487926377
+]
+2017-02-24 16:53:04 [127.0.0.1][-][-][error][yii\base\UnknownMethodException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: frontend\controllers\IndexController::getLev()' in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Component.php:285
+Stack trace:
+#0 E:\phpStudy\WWW\ninthmonths\zhaopin\home\frontend\controllers\IndexController.php(63): yii\base\Component->__call('getLev', Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\frontend\controllers\IndexController.php(63): frontend\controllers\IndexController->getLev(Array)
+#2 [internal function]: frontend\controllers\IndexController->actionList()
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('list', Array)
+#6 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('index/list', Array)
+#7 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 E:\phpStudy\WWW\ninthmonths\zhaopin\home\frontend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+2017-02-24 16:53:04 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'index/list'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1486692674,1487762227,1487810212'
+    '_pk_ysp_id_' => [
+        'object Object' => '6d8f80d4c9ef320e.1487821291.1.1487821291.1487821291.'
+    ]
+    'PHPSESSID' => '2fr90d7t0e4am0i46l5gi8iif0'
+    '_csrf' => '4d4ef98665c44f348fc36bf790f9e4b67dc257e0ffab093f99177f6f4b148d30a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9K5-00gWaKPU1kJI5x5RMBiiz9CptgjG\";}'
+    '_csrf-backend' => '6ed2dcf4b2d187875ea988205c080bbf91aa35b1866ea234fbe966cbdfb93828a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"gzvOMW68fwQPy7x_BeY84mH-Jl9Uq93-\";}'
+    'advanced-backend' => 'o3cft7e5rptfu5784b5scm2h95'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1486692674,1487762227,1487810212; _pk_ysp_id.[object Object].027a=6d8f80d4c9ef320e.1487821291.1.1487821291.1487821291.; PHPSESSID=2fr90d7t0e4am0i46l5gi8iif0; _csrf=4d4ef98665c44f348fc36bf790f9e4b67dc257e0ffab093f99177f6f4b148d30a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229K5-00gWaKPU1kJI5x5RMBiiz9CptgjG%22%3B%7D; _csrf-backend=6ed2dcf4b2d187875ea988205c080bbf91aa35b1866ea234fbe966cbdfb93828a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22gzvOMW68fwQPy7x_BeY84mH-Jl9Uq93-%22%3B%7D; advanced-backend=o3cft7e5rptfu5784b5scm2h95'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/frontend/web/index.php'
+    'REMOTE_PORT' => '3563'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=index/list'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/frontend/web/index.php?r=index/list'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/frontend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487926384.867
+    'REQUEST_TIME' => 1487926384
+]
+2017-02-24 16:53:05 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\UnknownMethodException))
+#7 {main}
+2017-02-24 16:53:04 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'index/list'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1486692674,1487762227,1487810212'
+    '_pk_ysp_id_' => [
+        'object Object' => '6d8f80d4c9ef320e.1487821291.1.1487821291.1487821291.'
+    ]
+    'PHPSESSID' => '2fr90d7t0e4am0i46l5gi8iif0'
+    '_csrf' => '4d4ef98665c44f348fc36bf790f9e4b67dc257e0ffab093f99177f6f4b148d30a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"9K5-00gWaKPU1kJI5x5RMBiiz9CptgjG\";}'
+    '_csrf-backend' => '6ed2dcf4b2d187875ea988205c080bbf91aa35b1866ea234fbe966cbdfb93828a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"gzvOMW68fwQPy7x_BeY84mH-Jl9Uq93-\";}'
+    'advanced-backend' => 'o3cft7e5rptfu5784b5scm2h95'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1486692674,1487762227,1487810212; _pk_ysp_id.[object Object].027a=6d8f80d4c9ef320e.1487821291.1.1487821291.1487821291.; PHPSESSID=2fr90d7t0e4am0i46l5gi8iif0; _csrf=4d4ef98665c44f348fc36bf790f9e4b67dc257e0ffab093f99177f6f4b148d30a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%229K5-00gWaKPU1kJI5x5RMBiiz9CptgjG%22%3B%7D; _csrf-backend=6ed2dcf4b2d187875ea988205c080bbf91aa35b1866ea234fbe966cbdfb93828a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22gzvOMW68fwQPy7x_BeY84mH-Jl9Uq93-%22%3B%7D; advanced-backend=o3cft7e5rptfu5784b5scm2h95'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/frontend/web/index.php'
+    'REMOTE_PORT' => '3563'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=index/list'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/frontend/web/index.php?r=index/list'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/frontend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487926384.867
+    'REQUEST_TIME' => 1487926384
+]
