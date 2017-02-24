@@ -550,7 +550,6 @@ class MemberController extends  CommonController
 
         }else{
             $sql="insert into `members_charge_log` values (null,'$data[log_uid]','$data[log_username]','$time','$data[log_value]','$data[log_amount]','$data[log_ismoney]','4','2','2')";
-            echo $sql;die;
             Yii::$app->db->createCommand($sql)->execute();
 
         }
