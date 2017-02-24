@@ -27,12 +27,11 @@ class IndexController extends CommonController
 		$data=yii::$app->db->createCommand("select * from category_jobs")->queryAll();
 		$list=$this->getList($data);
 		$jobs=yii::$app->db->createCommand("select * from jobs")->queryAll();
-		$news=yii::$app->db->createCommand("select * from news_list")->queryAll(); 
+		$news=yii::$app->db->createCommand("select * from news_list limit 6")->queryAll(); 
 		return $this->render("index",['list'=>$list,'jobs'=>$jobs,'news'=>$news]);
 	}
 
-	
-	
+
 
 	//公司
 	public function actionCompany()
