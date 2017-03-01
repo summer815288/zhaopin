@@ -25,7 +25,7 @@ use yii\helpers\Url;
     </dl>
     <dl class="company_center_aside">
         <dt>账户管理</dt>
-        <dd><a href="">企业资料</a></dd>
+        <dd><a href="<?php echo Url::to(['company/company_profile'])?>">企业资料</a></dd>
         <dd><a href="">安全认证</a></dd>
         <dd><a href="">我的消息</a></dd>
         <dd><a href="">退出登录</a></dd>

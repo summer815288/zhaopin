@@ -27,7 +27,8 @@ class IndexController extends CommonController
 		$data=yii::$app->db->createCommand("select * from category_jobs")->queryAll();
 		$list=$this->getList($data);
 		$jobs=yii::$app->db->createCommand("select * from jobs")->queryAll();
-		return $this->render("index",['list'=>$list,'jobs'=>$jobs]);
+		$news=yii::$app->db->createCommand("select * from news_list")->queryAll(); 
+		return $this->render("index",['list'=>$list,'jobs'=>$jobs,'news'=>$news]);
 	}
 
 	
@@ -55,6 +56,13 @@ class IndexController extends CommonController
 	}
 
 
+	public function actionSearch()
+	{
+
+
+	}
+
+
 	//账号设置
 	public function actionLoginset()
 	{
@@ -74,7 +82,22 @@ class IndexController extends CommonController
 
 	public function actionPwdup()
 	{
-		$post = yii::$app->request->post();
-		print_r($post);die;
+		$old_p = $_POST['oldpassword'];
+		$new_p = $_POST['newpassword'];
+		$com_p = $_POST['comfirmpassword'];
+
+		$session = yii::$app->session;
+		$email = $session->get('email');
+		$user = yii::$app->db->createCommand("select * from members where email='$email'")->queryOne();	
+		$pwd = $user['password'];
+		if($pwd != $old_p){
+			echo "<script>alert('密码错误');localtion.href='?r=index/updatepwd'</script>";
+		}
+		if($new_p != $com_p){
+			echo "<script>alert('两次密码不一致哦！');localtion.href='?r=index/updatepwd'</script>";
+
+		}else{
+			yii::$app->db->createCommand("update members set password='$com_p' where email='$email'")->query();
+		}
 	}
 }

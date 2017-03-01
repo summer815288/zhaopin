@@ -18,9 +18,9 @@ return [
         ],
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=zhaopin',
+            'dsn' => 'mysql:host=192.168.1.5;dbname=zhaopin',
             'username' => 'root',
-            'password' => 'root',
+            'password' => '123456',
             'charset' => 'utf8',
 
         ],

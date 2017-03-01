@@ -31,25 +31,14 @@
 		</div>
         <div class="content">	
 	        			<div id="search_box">
-		<form id="searchForm" name="searchForm" action="list.html" method="get">
+		<form id="searchForm" name="searchForm" action="?r=index/search" method="post">
         <ul id="searchType">
-        	        	<li data-searchtype="1" class="type_selected">职位</li>
+        	<li data-searchtype="1" class="type_selected">职位</li>
         	<li data-searchtype="4">公司</li>
-        	        </ul>
+        </ul>
         <div class="searchtype_arrow"></div>
         <input type="text" id="search_input" name = "kd"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
-        <input type="hidden" name="spc" id="spcInput" value=""/>
-        <input type="hidden" name="pl" id="plInput" value=""/>
-        <input type="hidden" name="gj" id="gjInput" value=""/>
-        <input type="hidden" name="xl" id="xlInput" value=""/>
-        <input type="hidden" name="yx" id="yxInput" value=""/>
-        <input type="hidden" name="gx" id="gxInput" value="" />
-        <input type="hidden" name="st" id="stInput" value="" />
-        <input type="hidden" name="labelWords" id="labelWords" value="" />
-        <input type="hidden" name="lc" id="lc" value="" />
-        <input type="hidden" name="workAddress" id="workAddress" value=""/>
-                <input type="hidden" name="city" id="cityInput" value=""/>
-                <input type="submit" id="search_button" value="搜索" />
+        <input type="submit" id="search_button" value="搜索" />
 				
     </form>
 </div>
@@ -106,19 +95,21 @@
 	        </div><!--/#main_banner-->
 			
         	<ul id="da-thumbs" class="da-thumbs">
-	        		        		<li >
+        	<?php foreach($news as $k=>$v){?>
+	        		  <li >
 	                    <a href="h/c/1650.html" target="_blank">
-	                        <img src="style/images/a254b11ecead45bda166afa8aaa9c8bc.jpg" width="113" height="113" alt="联想" />
+	                        <img src="<?= $v['news_img']?>" width="113" height="113" alt="联想" />
 	                        <div class="hot_info">
-	                        	<h2 title="联想">联想</h2>
+	                        	<h2 title="联想"><?= $v['news_title']?></h2>
 	                            <em></em>
 	                            <p title="世界因联想更美好">
-	                            	世界因联想更美好
+	                            	<?= $v['news_content']?>
 	                            </p>
 	                        </div>
 	                    </a>
 	                </li>
-                	        		<li >
+	                <?php }?>
+                	        		<!-- <li >
 	                    <a href="h/c/9725.html" target="_blank">
 	                        <img src="style/images/c75654bc2ab141df8218983cfe5c89f9.jpg" width="113" height="113" alt="淘米" />
 	                        <div class="hot_info">
@@ -177,7 +168,7 @@
 	                            </p>
 	                        </div>
 	                    </a>
-	                </li>
+	                </li> -->
                             </ul>
             
             <ul class="reset hotabbing">

@@ -1,4 +1,7 @@
-﻿<div id="container">
+﻿<?php
+use yii\helpers\Html;
+?>
+<div id="container">
 <style>
             .showyearbox {
                 background-color: #ffffff;
@@ -29,11 +32,7 @@
                     <dt><h1><em></em>发布新职位</h1></dt>
                     <dd   style="background-color: #fafafa">
                     	<div class="ccc_tr">今日已发布 <span>0</span> 个职位   还可发布 <span>5</span> 个职位</div>
-                    	<form action="http://www.lagou.com/corpPosition/preview.html" method="post" id="jobForm">
-                            <input type="hidden" value="" name="id">
-                            <input type="hidden" value="create" name="preview">
-                            <input type="hidden" value="25927" name="companyId">
-                            <input type="hidden" value="c29d4a7c35314180bf3be5eb3f00048f" name="resubmitToken">
+                    <?=Html::beginForm('index.php?r=company/create_to','post')?>
                             <dt class="redstar">职位信息:</dt>
                             <table class="btm">
                             	<tbody>
@@ -51,45 +50,203 @@
                                             <ul class="profile_radio clearfix reset">
                                                 <li>
                                                     全职<em></em>
-                                                    <input type="radio" name="jobNature" value="62">
+                                                    <input type="radio" class="nature" name="nature" val="全职" value="62">
                                                 </li>
                                                 <li>
                                                     兼职<em></em>
-                                                    <input type="radio" name="jobNature" value="63">
+                                                    <input type="radio" class="nature" name="nature" val="兼职" value="63">
                                                 </li>
                                                 <li>
                                                     实习<em></em>
-                                                    <input type="radio" name="jobNature" value="64">
+                                                    <input type="radio" class="nature" name="nature" val="实习" value="64">
                                                 </li>
+                                                <input type="hidden" class="nature_cn" name="nature_cn"/>
                                             </ul>
+                                            <script>
+                                                $(document).on('click','.nature',function(){
+                                                    if($(this).prop('checked',true)){
+                                                        var val=$(this).attr('val')
+                                                        $(".nature_cn").val(val)
+                                                    }
+                                                })
+                                            </script>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td width="25"><span class="redstar">*</span></td>
-                                        <td width="85">职位类别</td>
+                                    <tr  style="position: relative">
+                                        <td width="25"><span class="redstar">*</span><div class="tian"></div></td>
+                                        <td width="85">职位类别 <div class="tian"></div></td>
                                         <td>
-
+                                            <input type="text" class="LocalDataMultiC" id="positionName" style="cursor: pointer" readonly/>
+                                            <div class="input"></div>
+                                            <div id="jobs_div" style="width: 700px;height: 458px;background-color: #ffffff;display: none">
+                                                    <div style="height: 44px;">
+                                                        <span style="float: left;margin: 5px;padding: 5px"><b>职位选择</b></span>
+                                                        <span class="closes" style="float: right;margin: 5px;padding: 5px;background-color: #9900FF;cursor: pointer">×</span>
+                                                    </div>
+                                                    <div>
+                                                        <?php foreach($category_jobs_parents as $v){?>
+                                                        <div style="float: left;width: 700px;background-color: #ffffff;border-bottom: 1px solid #1B242F">
+                                                            <div style="width: 159px;float: left;">
+                                                                <span><?=trim($v['categoryname'])?></span>
+                                                            </div>
+                                                            <div style="width: 541px;float: right">
+                                                                <ul>
+                                                                    <?php foreach($category_jobs as $v2){?>
+                                                                        <?php if($v['id']==$v2['parentid']){?>
+                                                                                <li class="mouse" style="width: 151px;line-height:180%;float: left;list-style-type: none;font-size: 13px;margin: 1px;">
+                                                                                    <a href="javascript:void(0)" topname="<?=$v2['categoryname']?>" topclass="<?=$v['id']?>"  id="<?=$v2['id']?>" class="jobs_click">
+                                                                                    <input type="button" class="jobs_id"  style="padding-left: 2px;margin-right:5px;font-weight: bold;background-color: #ffffff;border: 1px solid #1B242F;color: #0000ff" value="+"/><?=$v2['categoryname']?>
+                                                                                    </a>
+                                                                                    <div class="jobs_three" style=";position:absolute;display:none;background-color: red;width:300px;">
+                                                                                    </div>
+                                                                                </li>
+                                                                        <?php }?>
+                                                                    <?php }?>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <?php }?>
+                                                    </div>
+                                            </div>
                                         </td>
+                                        <script>
+                                            //点击职业类别显示
+                                            $(document).on('click','.LocalDataMultiC',function(){
+                                                var jobs_div=$("#jobs_div");
+                                                jobs_div.toggle();
+
+                                            });
+                                            //鼠标移除事件
+                                            $(document).on("mouseleave",'.jobs_three',function(){
+                                                $(".jobs_three").hide()
+                                            })
+                                            //点击职业类别三级显示
+                                            $(document).on('click','.jobs_click',function(){
+                                                var obj=$(this);
+                                                var topclass=$(this).attr('topclass');//一级id
+                                               var parentid=$(this).prop('id');//二级id
+                                                var html='';
+                                                $.ajax({
+                                                    type:'POST',
+                                                    data:{parentid:parentid},
+                                                    url:'index.php?r=company/category_jobs',
+                                                    dataType:"json",
+                                                    success:function(msg){
+                                                        $.each(msg,function(i,v){
+                                                            html +="<span class='input_val' topclass='"+topclass+"' category='"+parentid+"' subclass='"+v['id']+"' style='cursor: pointer;display:inline-table;width:150px;line-height: 15px;'>"+ v['categoryname']+"</span>";
+                                                        });
+
+                                                        obj.next().html("<span style='cursor: pointer' class='input_val' topclass='"+topclass+"' category='"+parentid+"'>"+obj.attr('topname')+"</span>"+"</br>"+html).toggle();
+                                                    }
+                                                })
+                                            });
+                                            //点击赋值到文本框
+                                            $(document).on('click','.input_val',function(){
+                                                var topclass= $(this).attr('topclass');//一级分类id
+                                                var category=$(this).attr('category');//二级分类id
+                                                var category_cn=$(this).text();//三级分类id
+                                                $(".LocalDataMultiC").val(category_cn);
+                                                $(".input").html("<input type='hidden' name='topclass' value='"+topclass+"'/><input type='hidden' name='category' value='"+category+"'/><input type='hidden' name='subclass' value='0'/><input type='hidden' name='category_cn' value='"+category_cn+"'/>");
+                                                $("#jobs_div").hide();
+                                            });
+                                            //点击关闭div
+                                            $('.closes').click(function(){
+                                                $("#jobs_div").hide();
+                                            })
+                                        </script>
                                     </tr>
                                     <tr>
                                         <td><span class="redstar">*</span></td>
                                         <td>招聘人数：</td>
                                         <td>
-                                            <input type="text" placeholder="请输入职位名称，如：产品经理" value="" name="amount">
+                                            <input type="text" placeholder="请输入招聘人数" value="" name="amount">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td><span class="redstar">*</span></td>
                                         <td>工作城市</td>
                                         <td>
-                                            <input type="text" placeholder="请输入工作城市，如：北京" value="" name="district_cn">
+                                            <input type="text" class="district_cn" style="cursor: pointer" readonly placeholder="请选择城市" id="positionName" name="district_cn">
+                                            <input type='hidden' name='district' />
+                                            <input type='hidden' name='sdistrict' />
+                                            <input type='hidden' name='district_cn' />
+                                            <div id="djobs_div" style="width: 625px;height: 240px;background-color: #ffffff;display: none">
+                                                <div style="height: 44px;">
+                                                    <span style="float: left;margin: 5px;padding: 5px"><b>城市选择</b></span>
+                                                    <span class="dcloses" style="float: right;margin: 5px;padding: 5px;background-color: #9900FF;cursor: pointer">×</span>
+                                                </div>
+                                                <div>
+                                                    <div style="width: 625px;background-color: #ffffff;">
+                                                        <ul>
+                                                            <?php foreach($category_one as $v){?>
+                                                                <li style="list-style-type: none;width: 100px;line-height: 22px;display: inline-table">
+                                                                    <input type="button" class="cate1" c_id="<?=$v['id']?>" c_name="<?=$v['categoryname']?>" style="font-weight: bold;background-color: #ffffff;color: #0000aa;border: 1px solid #0000aa;padding: 1px 2px" value="+"/><?=$v['categoryname']?>
+                                                                        <div class="mouse_leave" style="position: absolute;display: none;background-color: #AFAFAF;width: 400px;height: auto;z-index: 10">
+                                                                            <ul>
+                                                                                <li class="cate2" c_id="<?=$v['id']?>" val="<?=$v['categoryname']?>" style="cursor: pointer;list-style-type: none;width: 80px;display: inline-table;font-weight: bold">不限</li><br>
+                                                                                <?php foreach($category_district as $v2){?>
+                                                                                    <?php if($v['id']==$v2['parentid']){?>
+                                                                                        <li class="cate2" c_id="<?=$v2['id']?>" val="<?=$v2['categoryname']?>" style="cursor: pointer;list-style-type: none;width: 80px;display: inline-table">
+                                                                                            <?=$v2['categoryname']?>
+                                                                                        </li>
+                                                                                    <?php }?>
+                                                                                <?php }?>
+                                                                            </ul>
+                                                                        </div>
+                                                                </li>
+                                                            <?php }?>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </td>
+                                        <script>
+                                            //点击职业类别显示
+                                            $(document).on('click','.district_cn',function(){
+                                                var djobs_div=$("#djobs_div");
+                                                djobs_div.toggle();
+                                            });
+                                            //点击关闭div
+                                            $('.dcloses').click(function(){
+                                                $("#djobs_div").hide();
+                                            });
+                                            //点击让二级城市显示
+                                            $(document).on('click','.cate1',function(){
+                                                $(this).next().toggle()
+                                            });
+                                            //点击赋值
+                                            $(document).on('click','.cate2',function(){
+                                                var district_div=$(".district_cn");
+                                                var district=$(this).parent().parent().prev().attr('c_id');//一级分类id
+                                                var c_name=$(this).parent().parent().prev().attr('c_name');//一级分类name
+                                                var sdistrict=$(this).attr('c_id');//二级分类id
+                                                var district_cn=$(this).attr('val');//二级分类name
+//                                                alert(c_name);
+                                                if(district==sdistrict){
+                                                    district_div.val(district_cn);//赋值到文本框
+                                                    $("input[name='district']").val(district);
+                                                    $("input[name='sdistrict']").val(0);
+                                                    $("input[name='district_cn']").val(c_name);
+                                                    $("#djobs_div").hide();
+                                                }else{
+                                                    district_div.val(c_name+'/'+district_cn);//赋值到文本框
+                                                    $("input[name='district']").val(district);
+                                                    $("input[name='sdistrict']").val(sdistrict);
+                                                    $("input[name='district_cn']").val(c_name+"/"+district_cn);
+                                                    $("#djobs_div").hide();
+                                                }
+                                            })
+                                            //鼠标移出事件
+                                            $(document).on('mouseleave','.mouse_leave',function(){
+                                                $(this).hide();
+                                            });
+                                        </script>
                                     </tr>
                                     <tr>
                                         <td><span class="redstar">*</span></td>
                                         <td width="85">薪资待遇：</td>
                                         <td>
-                                            <select name="wage_cn" id="">
+                                            <select name="wage_cn" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
                                                 <?php foreach($wage_cn as $item){?>
                                                     <option value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
                                                 <?php }?>
@@ -100,12 +257,128 @@
                                         <td><span class="redstar">*</span></td>
                                         <td width="85">职业亮点：</td>
                                         <td>
-                                            <button>+</button>
+                                            <input type="button" class="btn_redstar" style="padding: 5px 10px" value="添加+"/>
+                                            <span hidden="hidden" name="redsta" class="c_id"></span>
+                                            <div class="redstar_div" style="position: relative;font-size:15px;width: 662px;background-color: #ffffff;height: 241px;display: none">
+                                                <div style="height: 34px;border-bottom: 1px solid #8c8c8c">
+                                                   <span style="margin: 5px;float: left"><b>职位亮点选择</b></span>
+                                                    <input type="button" class="tag_close" value="X" style="float: right;margin: 5px"/>
+                                                    <input  class="mar_bottom" type="button" style="float: right;margin: 5px;" value="确定"/>
+                                                </div>
+                                                <div style="line-height: 30px;border-bottom: 1px solid #8c8c8c">
+                                                    <span>最多可选<font color="red"> 5 </font>项</span>
+                                                    <span class="tag_count">已选<font color="red" class="tag_num"> 0 </font>项</span>
+                                                    <span class="close_all"></span>
+                                                </div>
+                                                <table>
+                                                    <?php foreach($redstar as $item){?>
+                                                    <tr style="display: inline;line-height: 19px;">
+                                                        <td style="width: 146px;">
+                                                            <a class="tag"><input  type="checkbox" class="tag_check" id="<?=$item['c_id']?>"   value="<?=$item['c_name']?>"/><?=$item['c_name']?></a>
+                                                        </td>
+                                                    </tr>
+                                                    <?php }?>
+                                                </table>
+                                            </div>
                                         </td>
+                                        <script>
+                                            //点击职位亮点div显示
+                                            $(".btn_redstar").click(function(){
+                                                $(".redstar_div").toggle();
+                                            });
+                                            //点击关闭职业亮点选择
+                                            $(document).on('click','.close',function(){
+                                                $(this).remove()
+                                            });
+                                            //点击职位亮点选择
+                                            $(document).on('click','.tag',function(){
+                                                var tag=$(this);
+                                                //点击时候增加一
+                                                var num=$(".num").length;
+                                                var tag_id=tag.children().prop('id');
+                                                var tag_cn=tag.children().val();
+                                                if(tag.children().prop('checked')==true){
+                                                    tag.children().prop('checked',false);
+                                                    var obj=$('.num');
+                                                    for(var i=0;i<obj.length;i++){
+                                                        if(tag_id==obj.eq(i).attr("id")){
+                                                           obj.eq(i).remove();
+                                                            num=num-1;
+                                                            $(".tag_num").html(num);
+                                                        }
+                                                    }
+                                                }else{
+                                                    if(num<=4){
+                                                        num=num+1;
+                                                        tag.children().prop('checked',true);
+                                                        var tag_cn_input="<span class='num' value='"+tag_cn+" ' id='"+tag_id+"' style='margin-left: 5px;padding: 5px 8px;background-color: #44d0c7' >"+tag_cn+" <i class='tag_close' style='cursor:pointer'>×</i></span>";
+                                                        $(".tag_count").after(tag_cn_input);
+                                                        $(".tag_num").html(num);
+                                                        $(".close_all").html("<input  style='float:right;padding:3px;' type='button' class='tag_del' value='全部清除'/>")
+                                                    }else{
+                                                        alert('最多只能选五项')
+                                                    }
+                                                }
+                                            })
+                                            //点击[X]删除
+                                            $(document).on('click','.tag_close',function(){
+                                                var obj=$(".num");
+                                                var tag_id=obj.attr('id');
+                                                for(var i=0;i<obj.length;i++){
+                                                    if(tag_id==obj.eq(i).attr('id')){
+                                                        obj.eq(i).remove()
+                                                    }
+                                                }
+                                                var tag_check=$(".tag_check");
+                                                for(var j=0;j<tag_check.length;j++){
+                                                    if(tag_id==tag_check.eq(j).attr('id')){
+                                                        tag_check.eq(j).prop('checked',false);
+                                                    }
+                                                }
+                                                var num=obj.length;
+                                                num=num-1;
+                                                $(".tag_num").html(num);
+                                            })
+                                            //点击全部清除
+                                            $(document).on('click','.tag_del',function(){
+                                                var obj=$(".num");
+                                                for(var i=0;i<obj.length;i++){
+                                                    obj.eq(i).remove()
+                                                }
+                                                var tag_check=$(".tag_check");
+                                                for(var j=0;j<tag_check.length;j++){
+                                                    tag_check.eq(j).prop('checked',false);
+                                                }
+                                                $(".tag_num").html(0);
+                                            })
+                                            //点击确定按钮赋值
+                                            $(document).on('click','.mar_bottom',function(){
+                                                var obj=$('.num');
+                                                var btn_redstar=$(".btn_redstar");
+                                                var tag_id='';
+                                                var tag_cn='';
+
+                                                for(var i=0;i<obj.length;i++){
+                                                    var tag_c=obj.eq(i).attr('value');
+                                                    btn_redstar.before("<input type='button' style='padding:5px;margin:5px' value='"+tag_c+"'/>");
+                                                    tag_id+=','+obj.eq(i).attr('id');
+                                                    tag_cn+=','+obj.eq(i).attr('value');
+                                                }
+                                                tag_id=tag_id.substr(1);
+                                                tag_cn=tag_cn.substr(1);
+                                                btn_redstar.before("<input type='hidden' name='tag' style='padding:5px;margin:5px' value='"+tag_id+"'/>");
+                                                btn_redstar.before("<input type='hidden' name='tag_cn' style='padding:5px;margin:5px' value='"+tag_cn+"'/>");
+                                                $(".redstar_div").hide();
+                                            });
+                                            //点击[X]隐藏div
+                                            $(document).on('click','.tag_close',function(){
+                                                $(".redstar_div").hide();
+                                            })
+                                        </script>
                                     </tr>
                                 </tbody>
                             </table>
-                            
+
                             <table class="btm">
                             	<tbody>
                                 <dt class="redstar">职位要求:</dt>
@@ -116,24 +389,33 @@
                                         <ul class="profile_radio clearfix reset">
                                             <li>
                                                 不限<em></em>
-                                                <input type="radio" name="jobNature" value="3">
+                                                <input type="radio" class="sex" name="sex" val="不限" value="3">
                                             </li>
                                             <li>
                                                 男<em></em>
-                                                <input type="radio" name="jobNature" value="1">
+                                                <input type="radio" class="sex" name="sex" val="男" value="1">
                                             </li>
                                             <li>
                                                 女<em></em>
-                                                <input type="radio" name="jobNature" value="2">
+                                                <input type="radio" class="sex" name="sex" val="女" value="2">
                                             </li>
+                                            <input type="hidden" class="sex_cn" name="sex_cn"/>
                                         </ul>
+                                        <script>
+                                            $(document).on('click','.sex',function(){
+                                                if($(this).prop('checked',true)){
+                                                    var val=$(this).attr('val')
+                                                    $(".sex_cn").val(val)
+                                                }
+                                            })
+                                        </script>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td width="25"><span class="redstar">*</span></td>
                                     <td width="85">学历要求：</td>
                                     <td>
-                                        <select name="education_cn" id="">
+                                        <select name="education_cn" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
                                             <?php foreach($education_cn as $item){?>
                                                 <option value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
                                             <?php }?>
@@ -144,7 +426,7 @@
                                     <td width="25"><span class="redstar">*</span></td>
                                     <td width="85">工作经验：</td>
                                     <td>
-                                        <select name="experience_cn" id="">
+                                        <select name="experience_cn" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
                                             <?php foreach($experience_cn as $item){?>
                                                 <option value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
                                             <?php }?>
@@ -155,13 +437,13 @@
                                     <td width="25"><span class="redstar">*</span></td>
                                     <td width="85">年龄要求：</td>
                                     <td>
-                                        <select name="maxage" id="" style="width: 100px">
+                                        <select name="minage" id="" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 303px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
                                             <?php for($i=16;$i<=60;$i++){?>
                                             <option value="<?=$i.'岁'?>"><?=$i.'岁'?></option>
                                             <?php }?>
                                         </select>
                                         <span>至</span>
-                                        <select name="maxage" id="" style="width: 100px">
+                                        <select name="maxage" id="" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 303px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
                                             <?php for($i=16;$i<=60;$i++){?>
                                                 <option value="<?=$i.'岁'?>"><?=$i.'岁'?></option>
                                             <?php }?>
@@ -181,7 +463,8 @@
                                         <textarea name="" id="" cols="30" rows="10"></textarea>
                                     </td>
                                 </tr>
-                            </tbody></table>
+                                </tbody>
+                            </table>
                            
                             <table class="btm">
                                 <dt class="redstar">联系方式:</dt>
@@ -190,31 +473,31 @@
                                             <td width="25"><span class="redstar">*</span></td>
                                             <td width="95">联系人：</td>
                                             <td>
-                                                <input type="text" name="contact">
+                                                <input type="text" value="<?php echo $company_profile[0]['contact']?>" name="contact">
                                             </td>
-                                            <td><input type="checkbox" value="1" name="contact_show"/>对外公开联系人</td>
+                                            <td><input type="checkbox" <?php if($company_profile[0]['contact_show']=='1'){echo "checked";}?> value="1" name="contact_show"/>对外公开联系人</td>
                                         </tr>
                                         <tr>
                                             <td width="25"><span class="redstar">*</span></td>
                                             <td width="95">联系手机：</td>
                                             <td>
-                                                <input type="text" name="telephone">
+                                                <input type="text" value="<?php echo $company_profile[0]['telephone']?>" name="telephone">
                                             </td>
-                                            <td><input type="checkbox" value="1" name="telephone_show"/>对外公开联系人</td>
+                                            <td><input type="checkbox" <?php if($company_profile[0]['telephone_show']=='1'){echo "checked";}?>  value="1" name="telephone_show"/>对外公开联系人</td>
                                         </tr>
                                         <tr>
                                             <td width="25"><span class="redstar">*</span></td>
                                             <td width="95">联系邮箱：</td>
                                             <td>
-                                                <input type="text" name="email">
+                                                <input type="text" value="<?php echo $company_profile[0]['email']?>" name="email">
                                             </td>
-                                            <td><input type="checkbox" value="1" name="email_show"/>对外公开联系人</td>
+                                            <td><input type="checkbox" <?php if($company_profile[0]['email_show']=='1'){echo "checked";}?> value="1" name="email_show"/>对外公开联系人</td>
                                         </tr>
                                         <tr>
                                             <td width="25"><span class="redstar">*</span></td>
                                             <td width="95">联系地址：</td>
                                             <td>
-                                                <input type="text" name="address">
+                                                <input type="text" value=" <?php echo $company_profile[0]['address']?>" name="address">
                                             </td>
                                         </tr>
                             </tbody>
@@ -226,25 +509,27 @@
                                 <tr>
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td colspan="2">
-                                    	接收简历邮箱： <span id="receiveEmailVal">admin@admin.com</span>
-                                        <input type="hidden" name="email_two">
+                                    	接收简历邮箱： <span id="receiveEmailVal">
+                                            <input type="text" disabled value="<?php echo $company_profile[0]['email']?>" name="email_two"><input type="checkbox" value="1" name="notify"/>接收
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="25"><span class="redstar">*</span></td>
+                                    <td colspan="2">
+                                    	简历短信通知：<span id="receiveEmailVal">
+                                        <input type="text" value="<?php echo $company_profile[0]['telephone']?>" name="telephone_two">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                    	简历短信通知：
-                                    </td>
-                                    <td><input type="text" name="telephone_two"></td>
-                                </tr>
-                                <tr>
-                                	<td width="25"></td>
-                                	<td colspan="2">
-                                    	<input type="submit" value="预览" id="jobPreview" class="btn_32">
-                                    	<input type="button" value="发布" id="formSubmit" class="btn_32">
+                                    	<input type="submit" value="发布" id="jobPreview" class="btn_32">
                                     </td>
                                 </tr>
-                         	</tbody></table>
-                        </form>
+                         	</tbody>
+                            </table>
+                    <?=Html::endForm()?>
                     </dd>
                 </dl>
             </div><!-- end .content -->
