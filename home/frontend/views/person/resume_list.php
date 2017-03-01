@@ -1,13 +1,14 @@
-﻿
-                                    <div class="dn" id="noticeTip">
+﻿<?php
+use yii\helpers\Url;
+?>
+<div class="dn" id="noticeTip">
             	<span class="bot"></span>
 				<span class="top"></span>
 				<a target="_blank" href="delivery.html"><strong>0</strong>条新投递反馈</a>
 				<a class="closeNT" href="javascript:;"></a>
-
-    </div><!-- end #header -->
+    </div>
+ <!-- end #header -->
     <div id="container">
-        
   		<div class="clearfix">
             <div class="content_l">
             	<div class="fl" id="resume_name">
@@ -29,8 +30,8 @@
             		
             		<div class="which fl">
             			<div>工作经历最能体现自己的工作能力，且完善后才可投递简历哦！</div>
-            										<span rel="workExperience"><a>马上去完善</a></span>
-						            		</div>
+            			<span rel="workExperience"><a href="<?php  echo Url::to(['person/person']) ?>">马上去完善</a></span>
+					</div>
             	</div><!--end #resumeScore-->
 
             	<div class="profile_box" id="basicInfo">
