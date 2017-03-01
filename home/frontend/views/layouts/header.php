@@ -21,8 +21,8 @@
 
 <!-- <div class="web_root"  style="display:none">h</div> -->
 <script type="text/javascript">
-var ctx = "h";
-console.log(1);
+// var ctx = "h";
+// console.log(1);
 </script>
 <link rel="Shortcut Icon" href="h/images/favicon.ico">
 <link rel="stylesheet" type="text/css" href="style/css/style.css"/>
@@ -52,8 +52,7 @@ var youdao_conv_id = 271546;
                 <li ><a href="?r=index/company" >公司</a></li>
                 <!-- <li ><a href="#" target="_blank">论坛</a></li> -->
 <?php $session = Yii::$app->session; ?>
-                <?php if($session->get('type') == 1){ ?>
-                
+                <?php if($session->get('type') == 1){ ?>                
                 <li ><a href="?r=index/create" rel="nofollow">发布职位</a></li>
                 <?php }else if($session->get('type') == 2){?>
                 <li ><a href="?r=person/myinfo" rel="nofollow">我的简历</a></li>
@@ -86,10 +85,24 @@ var youdao_conv_id = 271546;
                     <dd><a href="create.html">我要找工作</a></dd>
                     <dd><a href="?r=person/man">帐号设置</a></dd>
                     <dd class="logout"><a rel="nofollow" href="?r=login/loginout">退出</a></dd>
+
+                <?php }else if($session->get('type') == null) { ?>
+                    <ul class="loginTop">
+                        <li><a href="?r=login/login" rel="nofollow">登录</a></li> 
+                        <li>|</li>
+                        <li><a href="?r=login/register" rel="nofollow">注册</a></li>
+                    </ul>
                 <?php }?>
             </dl>
         </div>
     </div><!-- end #header -->
-<?php echo $content?>   
+<?php echo $content?>
 </body>
 </html>
+<style>
+    .pre li {
+        float:left;
+        list-style-type:none;
+        padding-left: 25px;;
+    }
+</style>

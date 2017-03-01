@@ -9637,6 +9637,7 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1487768777.284
     'REQUEST_TIME' => 1487768777
 ]
+<<<<<<< HEAD
 2017-02-23 14:04:52 [::1][-][1mknu1t381mucn32tlmuvou133][error][yii\base\ErrorException:32] exception 'yii\base\ErrorException' with message 'PHP Startup: ' in Unknown:0
 Stack trace:
 #0 [internal function]: yii\base\ErrorHandler->handleFatalError()
@@ -9841,10 +9842,27 @@ Stack trace:
 #6 [internal function]: yii\log\Logger->flush(true)
 #7 {main}
 2017-02-23 14:04:53 [::1][-][-][info][application] $_GET = [
+=======
+2017-02-24 11:24:01 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 120191 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-02-24 11:24:00 [127.0.0.1][-][-][info][application] $_GET = [
+>>>>>>> a26423013157da7703053ca638b82049348c80ab
     'r' => 'login/login'
 ]
 
 $_COOKIE = [
+<<<<<<< HEAD
     'PHPSESSID' => 'rg82d8jo0cilb991mlcfdcbub4'
     '_csrf' => '476e150a9a2818ce4d3c3fe11cde1872cbeaf500d6021a519f18ba3615da246fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"s7n5YlYURqXa0ou6o3VBo_CDTsGWeICd\";}'
     'advanced-backend' => '1mknu1t381mucn32tlmuvou133'
@@ -9907,17 +9925,107 @@ Stack trace:
 #6 [internal function]: yii\log\Logger->flush(true)
 #7 {main}
 2017-02-23 14:05:03 [::1][-][1mknu1t381mucn32tlmuvou133][info][application] $_GET = [
+=======
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1486692674,1487762227,1487810212'
+    '_pk_ysp_id_' => [
+        'object Object' => '6d8f80d4c9ef320e.1487821291.1.1487821291.1487821291.'
+    ]
+    'PHPSESSID' => '2fr90d7t0e4am0i46l5gi8iif0'
+    '_csrf' => '8fac95570663b9476437d7f99779dd1159632a79a363cb8ec4b5735ae94a28f7a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"dpZDyfUi2sKWb-TmJm94DSJQHhpQOw0d\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1486692674,1487762227,1487810212; _pk_ysp_id.[object Object].027a=6d8f80d4c9ef320e.1487821291.1.1487821291.1487821291.; PHPSESSID=2fr90d7t0e4am0i46l5gi8iif0; _csrf=8fac95570663b9476437d7f99779dd1159632a79a363cb8ec4b5735ae94a28f7a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22dpZDyfUi2sKWb-TmJm94DSJQHhpQOw0d%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '10813'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=login/login'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487906640.693
+    'REQUEST_TIME' => 1487906640
+]
+2017-02-24 11:24:09 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1049] Unknown database 'zhaopin'' in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Connection.php:579
+Stack trace:
+#0 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(216): yii\db\Connection->getSlavePdo()
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(831): yii\db\Command->prepare('<span class="ke...')
+#6 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\controllers\LoginController.php(40): yii\db\Command->queryOne()
+#8 [internal function]: backend\controllers\LoginController->actionLogindo()
+#9 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#10 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#11 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#12 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#13 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\web\index.php(17): yii\base\Application->run()
+#15 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1049] Unknown database 'zhaopin'' in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Connection.php:534
+Stack trace:
+#0 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(216): yii\db\Connection->getSlavePdo()
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(831): yii\db\Command->prepare('<span class="ke...')
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\controllers\LoginController.php(40): yii\db\Command->queryOne()
+#6 [internal function]: backend\controllers\LoginController->actionLogindo()
+#7 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#8 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#9 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#10 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#11 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+Additional Information:
+
+2017-02-24 11:24:08 [127.0.0.1][-][-][info][application] $_GET = [
+>>>>>>> a26423013157da7703053ca638b82049348c80ab
     'r' => 'login/logindo'
 ]
 
 $_POST = [
+<<<<<<< HEAD
     '_csrf-backend' => 'YUVlTVpxYjgkLhASKBAsclUTCGAoBAYNCjQvOTk1KgE.AF0UPT8adw=='
+=======
+    '_csrf-backend' => 'MG43NW5SZTBXFEF6IwVTCFYZZmUXZR1vcgtuDVo/LR16Ag5gH2tWHQ=='
+>>>>>>> a26423013157da7703053ca638b82049348c80ab
     'username' => 'admin'
     'password' => 'admin'
     'yan' => '1'
 ]
 
 $_COOKIE = [
+<<<<<<< HEAD
     'PHPSESSID' => 'rg82d8jo0cilb991mlcfdcbub4'
     '_csrf' => '476e150a9a2818ce4d3c3fe11cde1872cbeaf500d6021a519f18ba3615da246fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"s7n5YlYURqXa0ou6o3VBo_CDTsGWeICd\";}'
     'advanced-backend' => '1mknu1t381mucn32tlmuvou133'
@@ -10152,11 +10260,120 @@ $_COOKIE = [
     '_csrf' => '476e150a9a2818ce4d3c3fe11cde1872cbeaf500d6021a519f18ba3615da246fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"s7n5YlYURqXa0ou6o3VBo_CDTsGWeICd\";}'
     'advanced-backend' => '1mknu1t381mucn32tlmuvou133'
     '_csrf-backend' => '91e6cdc649db485b63a71d270fcd2f1c48387f4dd85008974563ef7e772afc79a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Eku_raNJ4Vm-rud5kqJtcDH9_E8YgNxO\";}'
+=======
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1486692674,1487762227,1487810212'
+    '_pk_ysp_id_' => [
+        'object Object' => '6d8f80d4c9ef320e.1487821291.1.1487821291.1487821291.'
+    ]
+    'PHPSESSID' => '2fr90d7t0e4am0i46l5gi8iif0'
+    '_csrf' => '8fac95570663b9476437d7f99779dd1159632a79a363cb8ec4b5735ae94a28f7a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"dpZDyfUi2sKWb-TmJm94DSJQHhpQOw0d\";}'
+    '_csrf-backend' => '6ed2dcf4b2d187875ea988205c080bbf91aa35b1866ea234fbe966cbdfb93828a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"gzvOMW68fwQPy7x_BeY84mH-Jl9Uq93-\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1486692674,1487762227,1487810212; _pk_ysp_id.[object Object].027a=6d8f80d4c9ef320e.1487821291.1.1487821291.1487821291.; PHPSESSID=2fr90d7t0e4am0i46l5gi8iif0; _csrf=8fac95570663b9476437d7f99779dd1159632a79a363cb8ec4b5735ae94a28f7a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22dpZDyfUi2sKWb-TmJm94DSJQHhpQOw0d%22%3B%7D; _csrf-backend=6ed2dcf4b2d187875ea988205c080bbf91aa35b1866ea234fbe966cbdfb93828a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22gzvOMW68fwQPy7x_BeY84mH-Jl9Uq93-%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '112'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '10816'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/logindo'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=login/logindo'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487906648.462
+    'REQUEST_TIME' => 1487906648
+]
+2017-02-25 08:44:14 [127.0.0.1][-][iedrbjsc1g495f3toest2k62d3][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zhaopin.easyguide' doesn't exist' in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(385): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Query.php(389): yii\db\Command->queryScalar()
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\ActiveQuery.php(339): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Query.php(296): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\controllers\AdminController.php(107): yii\db\Query->count()
+#6 [internal function]: backend\controllers\AdminController->actionIndex_tj()
+#7 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#8 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#9 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#10 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#11 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zhaopin.easyguide' doesn't exist
+The SQL being executed was: SELECT COUNT(*) FROM `easyguide`' in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(385): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Query.php(389): yii\db\Command->queryScalar()
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\ActiveQuery.php(339): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Query.php(296): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\controllers\AdminController.php(107): yii\db\Query->count()
+#6 [internal function]: backend\controllers\AdminController->actionIndex_tj()
+#7 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#8 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#9 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#10 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#11 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'zhaopin.easyguide' doesn't exist
+)
+
+2017-02-25 08:44:14 [127.0.0.1][-][iedrbjsc1g495f3toest2k62d3][info][application] $_GET = [
+    'r' => 'admin/index_tj'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1486692674,1487762227,1487810212'
+    '_pk_ysp_id_' => [
+        'object Object' => 'e2145520d50f5992.1487926594.1.1487926594.1487926594.'
+    ]
+    'PHPSESSID' => '2ira5gr1flf2j8mcqhmeqognt5'
+    '_csrf' => '8b422dc089b97b53b099bf14aea0105a48dcfd0a47a36f3f583294a0aaee60e4a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"5pqXRPa1u6uwdv9rYkUQD2sbR-XrEJQB\";}'
+    '_csrf-backend' => 'a2dd78823bfd52d8fe919a0b5974078a43ad96fb26c4713657d162d063ae6fe0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"K4rcZxJxcwxUubpYFrfmMTTNC4swwWXA\";}'
+    'advanced-backend' => 'iedrbjsc1g495f3toest2k62d3'
+>>>>>>> a26423013157da7703053ca638b82049348c80ab
 ]
 
 $_SESSION = [
     '__flash' => []
+<<<<<<< HEAD
     '__returnUrl' => '/zhaopin/home/backend/web/'
+=======
+>>>>>>> a26423013157da7703053ca638b82049348c80ab
     'a' => [
         'username' => 'admin'
         'admin_id' => '1'
@@ -10164,6 +10381,7 @@ $_SESSION = [
 ]
 
 $_SERVER = [
+<<<<<<< HEAD
     'PATH' => 'C:\\Program Files (x86)\\Common Files\\NetSarang;C:\\Program Files (x86)\\AMD APP\\bin\\x86_64;C:\\Program Files (x86)\\AMD APP\\bin\\x86;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\TortoiseSVN\\bin;G:\\Git\\cmd;'
     'SYSTEMROOT' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
@@ -11555,4 +11773,42 @@ $_SERVER = [
     'PHP_SELF' => '/zhaopin/home/backend/web/index.php'
     'REQUEST_TIME_FLOAT' => 1488278818.5345
     'REQUEST_TIME' => 1488278818
+=======
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=admin/index'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1486692674,1487762227,1487810212; _pk_ysp_id.[object Object].027a=e2145520d50f5992.1487926594.1.1487926594.1487926594.; PHPSESSID=2ira5gr1flf2j8mcqhmeqognt5; _csrf=8b422dc089b97b53b099bf14aea0105a48dcfd0a47a36f3f583294a0aaee60e4a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%225pqXRPa1u6uwdv9rYkUQD2sbR-XrEJQB%22%3B%7D; _csrf-backend=a2dd78823bfd52d8fe919a0b5974078a43ad96fb26c4713657d162d063ae6fe0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22K4rcZxJxcwxUubpYFrfmMTTNC4swwWXA%22%3B%7D; advanced-backend=iedrbjsc1g495f3toest2k62d3'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '10546'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin%2Findex_tj'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=admin%2Findex_tj'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487983454.01
+    'REQUEST_TIME' => 1487983454
+>>>>>>> a26423013157da7703053ca638b82049348c80ab
 ]

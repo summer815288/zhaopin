@@ -35,7 +35,7 @@ class ContentController extends CommonController
 	        $page=$_GET['p'];
 	        $where[]=" 1=1 ";
 	        if(!empty($str['title'])){
-	            $where[]="news_title like '%".$str['title']."%'";
+	            $where[]="news_title like '%".$str['title']."%'";	
 	        }
 	//        if(!empty($str['car_type'])){
 	//            $where[]="sbin_cate_id=".$str['car_type'];
@@ -84,7 +84,7 @@ class ContentController extends CommonController
         {
             $imginfo=$model->imageFiles = UploadedFile::getInstances($model, 'imageFiles');
             $img_name=$imginfo[0]->name;
-            $img_path='uploads/'.$img_name;
+            $img_path='../../public/uploads/'.$img_name;
            // var_dump($img_path);die;
         }
            
