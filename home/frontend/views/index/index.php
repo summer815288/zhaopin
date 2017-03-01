@@ -1,4 +1,7 @@
-﻿ <div id="container">
+﻿<?php
+use yii\widgets\ActiveForm;
+?>
+ <div id="container">
         				
 		<div id="sidebar">
 			<div class="mainNavs">
@@ -29,9 +32,13 @@
 							</div>
 			<!-- <a class="subscribe" href="subscribe.html" target="_blank">订阅职位</a> -->
 		</div>
-        <div class="content">	
-	        			<div id="search_box">
-		<form id="searchForm" name="searchForm" action="?r=index/search" method="post">
+        <div class="content">
+	    <div id="search_box">
+	    <?php $form = ActiveForm::begin([
+        		'action' => ['index/list'],
+        		'method'=>'get',
+        		]); ?>
+		
         <ul id="searchType">
         	<li data-searchtype="1" class="type_selected">职位</li>
         	<li data-searchtype="4">公司</li>
@@ -39,8 +46,7 @@
         <div class="searchtype_arrow"></div>
         <input type="text" id="search_input" name = "kd"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
         <input type="submit" id="search_button" value="搜索" />
-				
-    </form>
+	<?php ActiveForm::end(); ?>
 </div>
 <style>
 .ui-autocomplete{width:488px;background:#fafafa !important;position: relative;z-index:10;border: 2px solid #91cebe;}
@@ -51,7 +57,6 @@
 <script type="text/javascript" src="style/js/search.min.js"></script>
 <dl class="hotSearch">
 	<dt>热门搜索：</dt>
-
 	<dd><a href="list.htmlJava?labelWords=label&city=">Java</a></dd>
 	<dd><a href="list.htmlPHP?labelWords=label&city=">PHP</a></dd>
 	<dd><a href="list.htmlAndroid?labelWords=label&city=">Android</a></dd>
@@ -97,8 +102,8 @@
         	<ul id="da-thumbs" class="da-thumbs">
         	<?php foreach($news as $k=>$v){?>
 	        		  <li >
-	                    <a href="h/c/1650.html" target="_blank">
-	                        <img src="<?= $v['news_img']?>" width="113" height="113" alt="联想" />
+	                    <a href="#" target="_blank">
+	                        <img src="<?= $v['news_img']?>" width="112" height="112" alt="联想" />
 	                        <div class="hot_info">
 	                        	<h2 title="联想"><?= $v['news_title']?></h2>
 	                            <em></em>
@@ -109,67 +114,8 @@
 	                    </a>
 	                </li>
 	                <?php }?>
-                	        		<!-- <li >
-	                    <a href="h/c/9725.html" target="_blank">
-	                        <img src="style/images/c75654bc2ab141df8218983cfe5c89f9.jpg" width="113" height="113" alt="淘米" />
-	                        <div class="hot_info">
-	                        	<h2 title="淘米">淘米</h2>
-	                            <em></em>
-	                            <p title="将心注入 追求极致">
-	                            	将心注入 追求极致
-	                            </p>
-	                        </div>
-	                    </a>
-	                </li>
-                	        		<li >
-	                    <a href="h/c/1914.html" target="_blank">
-	                        <img src="style/images/2bba2b71d0b0443eaea1774f7ee17c9f.png" width="113" height="113" alt="优酷土豆" />
-	                        <div class="hot_info">
-	                        	<h2 title="优酷土豆">优酷土豆</h2>
-	                            <em></em>
-	                            <p title="专注于视频领域，是中国网络视频行业领军企业">
-	                            	专注于视频领域，是中国网络视频行业领军企业
-	                            </p>
-	                        </div>
-	                    </a>
-	                </li>
-                	        		<li >
-	                    <a href="h/c/6630.html" target="_blank">
-	                        <img src="style/images/f4822a445a8b495ebad81fcfad3e40e2.jpg" width="113" height="113" alt="思特沃克" />
-	                        <div class="hot_info">
-	                        	<h2 title="思特沃克">思特沃克</h2>
-	                            <em></em>
-	                            <p title="一家全球信息技术服务公司">
-	                            	一家全球信息技术服务公司
-	                            </p>
-	                        </div>
-	                    </a>
-	                </li>
-                	        		<li >
-	                    <a href="h/c/2700.html" target="_blank">
-	                        <img src="style/images/5caf8f9631114bf990f87bb11360653e.png" width="113" height="113" alt="奇猫" />
-	                        <div class="hot_info">
-	                        	<h2 title="奇猫">奇猫</h2>
-	                            <em></em>
-	                            <p title="专注于移动互联网、互联网产品研发">
-	                            	专注于移动互联网、互联网产品研发
-	                            </p>
-	                        </div>
-	                    </a>
-	                </li>
-                	        		<li  class="last" >
-	                    <a href="h/c/1335.html" target="_blank">
-	                        <img src="style/images/c0052c69ef4546c3b7d08366d0744974.jpg" width="113" height="113" alt="堆糖网" />
-	                        <div class="hot_info">
-	                        	<h2 title="堆糖网">堆糖网</h2>
-	                            <em></em>
-	                            <p title="分享收集生活中的美好，遇见世界上的另外一个你">
-	                            	分享收集生活中的美好，遇见世界上的另外一个你
-	                            </p>
-	                        </div>
-	                    </a>
-	                </li> -->
-                            </ul>
+</ul>
+                            
             
             <ul class="reset hotabbing">
             	            		<li class="current">热门职位</li>

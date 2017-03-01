@@ -45,4 +45,20 @@ class CommonController extends Controller
         }
         return $data;
     }
+    
+    public function getLev($list,$parentid=0)
+        {
+            $data=array();
+            foreach ($list as $key =>$value)
+            {
+                if($value['parentid']==$parentid)
+                {
+                    $data[$key]=$value;
+    //                print_r($data[$key]);die;
+                    $data[$key]['son']=$this->getLev($list,$value['id']);
+    //                print_r($data[$key]['son']);die;
+                }
+            }
+            return $data;
+        }
 }

@@ -14,6 +14,8 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\data\Pagination; 
+use yii\db\Query;
 
 class IndexController extends CommonController
 {
@@ -27,12 +29,11 @@ class IndexController extends CommonController
 		$data=yii::$app->db->createCommand("select * from category_jobs")->queryAll();
 		$list=$this->getList($data);
 		$jobs=yii::$app->db->createCommand("select * from jobs")->queryAll();
-		$news=yii::$app->db->createCommand("select * from news_list")->queryAll(); 
+		$news=yii::$app->db->createCommand("select * from news_list limit 6")->queryAll(); 
 		return $this->render("index",['list'=>$list,'jobs'=>$jobs,'news'=>$news]);
 	}
 
-	
-	
+
 
 	//公司
 	public function actionCompany()
@@ -52,14 +53,85 @@ class IndexController extends CommonController
 	//查看更多
 	public function actionList()
 	{
-		return $this->render("list");
+		//月薪
+		$wage_cn=yii::$app->db->createCommand("select c_name from category where c_alias='QS_wage'")->queryAll();
+		//工作经验
+		$experience_cn=yii::$app->db->createCommand("select c_name from category where c_alias='QS_experience'")->queryAll();
+		// print_r($experience_cn);die;
+		//学历
+		$education_cn=yii::$app->db->createCommand("select c_name from category where c_alias='QS_education'")->queryAll();
+		//工作性质
+		$nature_cn=yii::$app->db->createCommand("select c_name from category where c_alias='QS_jobs_nature'")->queryAll();
+		
+		$district=yii::$app->db->createCommand("select * from category_district limit 6")->queryAll();
+		$category_district=yii::$app->db->createCommand("select * from category_district")->queryAll();
+		$address=$this->getLev($category_district);
+        
+		$where = [];
+		$wage = isset($_GET['yx']) ? $_GET['yx'] : "" ;		
+		if(!empty($wage))
+		{
+			$where = ['=','wage_cn',"$wage"];
+		}
+
+		$experience = isset($_GET['gj']) ? $_GET['gj'] : "" ;		
+		if(!empty($experience))
+		{
+			$where = ['=','experience_cn',"$experience"];
+		}
+
+		$education = isset($_GET['xl']) ? $_GET['xl'] : "" ;		
+		if(!empty($education))
+		{
+			$where = ['=','education_cn',"$education"];
+		}
+
+		$nature = isset($_GET['gx']) ? $_GET['gx'] : "" ;		
+		if(!empty($nature))
+		{
+			$where = ['=','nature_cn',"$nature"];
+		}
+
+
+		$kd = isset($_GET['kd']) ? $_GET['kd'] : "";
+		if(!empty($kd))
+		{
+			$where = ['like','jobs_name',"$kd"];
+		}
+		
+		$query = new Query();
+		$a = $query->from('jobs')->where($where)->all();
+		
+	
+		$count = $query->count();
+        $pages = new Pagination([
+        		'totalCount' => $count,
+        		'pageSize'   => 5   //每页显示条数
+        	]);
+    	$models = $query->offset($pages->offset)
+    		->limit($pages->limit)
+    		->all();
+
+
+		return $this->render("list",['wage_cn'=>$wage_cn,
+			'experience_cn'=>$experience_cn,
+			'education_cn'=>$education_cn,
+			'nature_cn'=>$nature_cn,
+			// 'jobs'=>$jobs,
+			'district'=>$district,
+			'address'=>$address,
+			'pages'=>$pages,
+			'models'=>$models
+			]);
 	}
 
-
-	public function actionSearch()
+	//投递简历
+	public function actionToudi()
 	{
-
-
+		$id = $_GET['id'];
+		$jobs=yii::$app->db->createCommand("select * from jobs where id=$id")->queryAll();
+		// print_r($jobs);die;
+		return $this->render("toudi",['jobs'=>$jobs]);
 	}
 
 
