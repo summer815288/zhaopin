@@ -1,4 +1,7 @@
-﻿ <div id="container">
+﻿<?php
+use yii\widgets\ActiveForm;
+?>
+ <div id="container">
         				
 		<div id="sidebar">
 			<div class="mainNavs">
@@ -30,8 +33,12 @@
 			<!-- <a class="subscribe" href="subscribe.html" target="_blank">订阅职位</a> -->
 		</div>
         <div class="content">
-	        			<div id="search_box">
-		<form id="searchForm" name="searchForm" action="?r=index/search" method="post">
+	    <div id="search_box">
+	    <?php $form = ActiveForm::begin([
+        		'action' => ['index/list'],
+        		'method'=>'get',
+        		]); ?>
+		
         <ul id="searchType">
         	<li data-searchtype="1" class="type_selected">职位</li>
         	<li data-searchtype="4">公司</li>
@@ -39,8 +46,7 @@
         <div class="searchtype_arrow"></div>
         <input type="text" id="search_input" name = "kd"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
         <input type="submit" id="search_button" value="搜索" />
-				
-    </form>
+	<?php ActiveForm::end(); ?>
 </div>
 <style>
 .ui-autocomplete{width:488px;background:#fafafa !important;position: relative;z-index:10;border: 2px solid #91cebe;}
@@ -51,7 +57,6 @@
 <script type="text/javascript" src="style/js/search.min.js"></script>
 <dl class="hotSearch">
 	<dt>热门搜索：</dt>
-
 	<dd><a href="list.htmlJava?labelWords=label&city=">Java</a></dd>
 	<dd><a href="list.htmlPHP?labelWords=label&city=">PHP</a></dd>
 	<dd><a href="list.htmlAndroid?labelWords=label&city=">Android</a></dd>

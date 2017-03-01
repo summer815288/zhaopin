@@ -1,66 +1,70 @@
-﻿
-    <div id="container">
-        
-       	<div class="sidebar">
-       		 <div id="options" class="greybg">
-                 <dl >
-                   	<dt>月薪范围<em ></em></dt>
-	                <dd >
-						<?php foreach($wage_cn as $key =>$value):?>
-						<div class="wage"><?php echo $value['wage_cn']?></div>
-						<?php endforeach;?>
-	                 </dd>
-                </dl>
-                <dl >
-                   	<dt>工作经验 <em ></em></dt>
-	                <dd >
-						<div>不限</div>
-						<?php foreach($experience_cn as $key =>$value):?>
-							<div class="experience"><?php echo $value['experience_cn']?></div>
-						<?php endforeach;?>
-					</dd>
-                </dl>
-                <dl >
-                   	<dt>最低学历 <em ></em></dt>
-	                <dd >
-						<div>不限</div>
-						<?php foreach($education_cn as $key =>$value):?>
-							<div class="education"><?php echo $value['education_cn']?></div>
-						<?php endforeach;?>
-					</dd>
-                </dl>
-                                <dl >
-                   	<dt>工作性质 <em ></em></dt>
-	                <dd >
-						<?php foreach($nature_cn as $key =>$value):?>
-							<div class="nature"><?php echo $value['nature_cn']?></div>
-						<?php endforeach;?>
-					</dd>
-                </dl>
-             </div>
-            <!-- QQ群 -->
-          <div class="qq_group">
-		            	加入<span>前端</span>QQ群
-		            	<div class="f18">跟同行聊聊</div>
-		            	<p>160541839</p>
-		            </div>
+﻿<?php
+use yii\widgets\LinkPager;
+use yii\widgets\ActiveForm;
+use yii\helpers\Html;
+?>
+        <div id="container">
+            
+           	<div class="sidebar">
+           		 <div id="options" class="greybg">
+                     <dl >
+                       	<dt>月薪范围<em ></em></dt>
+    	                <dd >
+    						<?php foreach($wage_cn as $key =>$value):?>
+    						<div class="wage"><?php echo $value['c_name']?></div>
+    						<?php endforeach;?>
+    	                 </dd>
+                    </dl>
+                    <dl >
+                       	<dt>工作经验 <em ></em></dt>
+    	                <dd >
+    						<div>不限</div>
+    						<?php foreach($experience_cn as $key =>$value):?>
+    							<div class="experience"><?php echo $value['c_name']?></div>
+    						<?php endforeach;?>
+    					</dd>
+                    </dl>
+                    <dl >
+                       	<dt>最低学历 <em ></em></dt>
+    	                <dd >
+    						<div>不限</div>
+    						<?php foreach($education_cn as $key =>$value):?>
+    							<div class="education"><?php echo $value['c_name']?></div>
+    						<?php endforeach;?>
+    					</dd>
+                    </dl>
+                    <dl >
+                       	<dt>工作性质 <em ></em></dt>
+    	                <dd >
+    						<?php foreach($nature_cn as $key =>$value):?>
+    							<div class="nature"><?php echo $value['c_name']?></div>
+    						<?php endforeach;?>
+    					</dd>
+                    </dl>
+                 </div>
+                <!-- QQ群 -->
+              <div class="qq_group">
+	            	加入<span>前端</span>QQ群
+	            	<div class="f18">跟同行聊聊</div>
+	            	<p>160541839</p>
+	            </div>
 		                                
             <!-- 对外合作广告位  -->
-             	            		        	<a href="http://www.w3cplus.com/" target="_blank" class="partnersAd">
-		            	<img src="style/images/w3cplus.png" width="230" height="80" alt="w3cplus" />
+             	    <a href="http://www.w3cplus.com/" target="_blank" class="partnersAd">
+		            <img src="style/images/w3cplus.png" width="230" height="80" alt="w3cplus" />
 		            </a>
 		            <a href="" target="_blank" class="partnersAd">
-		            	<img src="style/images/jquery_school.jpg" width="230" height="80" alt="JQ学校" />
+		            <img src="style/images/jquery_school.jpg" width="230" height="80" alt="JQ学校" />
 		            </a>
-		                                	            <a href="http://linux.cn/" target="_blank" class="partnersAd">
+		            <a href="http://linux.cn/" target="_blank" class="partnersAd">
 	            	<img src="style/images/linuxcn.png" width="230" height="80" alt="Linux中文社区"  />
-	            </a>
-	            <a href="http://zt.zhubajie.com/zt/makesite? utm_source=lagou.com&utm_medium=referral&utm_campaign=BD-yl" target="_blank" class="partnersAd">
-	            	<img src="style/images/zhubajie.jpg" width="230" height="80" alt="猪八戒" />
-	            </a>
-	            <a href="http://www.imooc.com" target="_blank" class="partnersAd">
-	            	<img src="style/images/muke.jpg" width="230" height="80" alt="幕课网" />
-	            </a>
+		            </a>
+		            <a href="http://zt.zhubajie.com/zt/makesite? utm_source=lagou.com&utm_medium=referral&utm_campaign=BD-yl" target="_blank" class="partnersAd">
+		            <img src="style/images/zhubajie.jpg" width="230" height="80" alt="猪八戒" />
+		            </a>
+		            <a href="http://www.imooc.com" target="_blank" class="partnersAd">
+		            <img src="style/images/muke.jpg" width="230" height="80" alt="幕课网" />
+		            </a>
 	        	       	<!-- 	            <a href="http://www.osforce.cn/" target="_blank" class="partnersAd">
 	            	<img src="style/images/osf-lg.jpg" width="230" height="80" alt="开源力量"  />
 	            </a>
@@ -69,27 +73,92 @@
         
         <div class="content">
         	<div id="search_box">
-		<form id="searchForm" name="searchForm" action="list.html" method="get">
+        	<?php $form = ActiveForm::begin([
+        		'action' => ['index/list'],
+        		'method'=>'get',
+        		]); ?>
         <ul id="searchType">
-        	        	<li data-searchtype="1" class="type_selected">职位</li>
+        	<li data-searchtype="1" class="type_selected">职位</li>
         	<li data-searchtype="4">公司</li>
-        	        </ul>
+         </ul>
         <div class="searchtype_arrow"></div>
-        <input type="text" id="search_input" name = "kd"  tabindex="1" value="前端开发"  placeholder="请输入职位名称，如：产品经理"  />
-        <input type="hidden" name="spc" id="spcInput" value="1"/>
-        <input type="hidden" name="pl" id="plInput" value=""/>
-        <input type="hidden" name="gj" id="gjInput" value=""/>
-        <input type="hidden" name="xl" id="xlInput" value=""/>
-        <input type="hidden" name="yx" id="yxInput" value=""/>
-        <input type="hidden" name="gx" id="gxInput" value="" />
-        <input type="hidden" name="st" id="stInput" value="" />
-        <input type="hidden" name="labelWords" id="labelWords" value="label" />
-        <input type="hidden" name="lc" id="lc" value="" />
-        <input type="hidden" name="workAddress" id="workAddress" value=""/>
-                <input type="hidden" name="city" id="cityInput" value="全国"/>
-                <input type="submit" id="search_button" value="搜索" />
-    </form>
+        <input type="text" id="search_input" name = "kd"  tabindex="1"   placeholder="请输入职位名称，如：产品经理"  />      
+        <input type="submit" id="search_button" value="搜索" />
+        <?php ActiveForm::end(); ?>
 </div>
+<script>
+	    $('#options dd div').click(function() {
+	        var firstName = $(this).parents('dl').children('dt').text();
+	        var fn = $.trim(firstName);
+	        var par=window.location.search;	            
+	        if(fn=='月薪范围')
+	        {
+	            var val=$(this).html();
+	            // $('#yxInput').attr('value',val);
+	            location.href='index.php'+par+'&yx='+val;
+	        }
+	        else if(fn=="工作经验"){
+	            var val=$(this).html();
+	            var par=window.location.search;
+	            location.href='index.php'+par+'&gj='+val;
+	        }
+	        else if(fn=="最低学历"){
+	            var val=$(this).html();
+	            location.href='index.php'+par+'&xl='+val;
+	        }
+	        else if(fn=="工作性质"){
+	            var val=$(this).html();
+	            var par=window.location.search;
+	            location.href='index.php'+par+'&gx='+val;
+	        }
+
+	    });
+
+	// $(".wage").click(function(){
+	// 	var wage = $(this).html();
+	// 	$.ajax({
+	// 	   type: "POST",
+	// 	   url: "?r=index/list",
+	// 	   data: {wage:wage},
+	// 	   // success: function(msg){
+	// 	   //   alert( "Data Saved: " + msg );
+	// 	   // }
+	// 	});
+	// })
+	// $(".experience").click(function(){
+	// 	var experience = $(this).html();
+	// 	$.ajax({
+	// 	   type: "POST",
+	// 	   url: "?r=index/list",
+	// 	   data: {experience:experience},
+	// 	   // success: function(msg){
+	// 	   //   alert( "Data Saved: " + msg );
+	// 	   // }
+	// 	});
+	// })
+	// $(".education").click(function(){
+	// 	var education = $(this).html();
+	// 	$.ajax({
+	// 	   type: "POST",
+	// 	   url: "?r=index/list",
+	// 	   data: {education:education},
+	// 	   // success: function(msg){
+	// 	   //   alert( "Data Saved: " + msg );
+	// 	   // }
+	// 	});
+	// })
+	// $(".nature").click(function(){
+	// 	var nature = $(this).html();
+	// 	$.ajax({
+	// 	   type: "POST",
+	// 	   url: "?r=index/list",
+	// 	   data: {nature:nature},
+	// 	   // success: function(msg){
+	// 	   //   alert( "Data Saved: " + msg );
+	// 	   // }
+	// 	});
+	// })
+</script>
 <style>
 .ui-autocomplete{width:488px;background:#fafafa !important;position: relative;z-index:10;border: 2px solid #91cebe;}
 .ui-autocomplete-category{font-size:16px;color:#999;width:50px;position: absolute;z-index:11; right: 0px;/*top: 6px; */text-align:center;border-top: 1px dashed #e5e5e5;padding:5px 0;}
@@ -112,40 +181,41 @@
 </dl>			<div class="breakline"></div>
             <dl class="workplace" id="workplaceSelect">
                 <dt class="fl">工作地点：</dt>
-               	<dd >
-                	<a href="javascript:;" class="current">全国</a>|
-                </dd>
-				<?php foreach ($district as $key =>$value):?>
-               	<dd >
-                	<a href="javascript:;" ><?php echo $value['categoryname']?></a>|
-                </dd>
-				<?php endforeach;?>
-               	     <dd  class="more" >
-                	<a href="javascript:;" >其他</a>
-                	                	<div class="triangle citymore_arrow"></div>
-                	               	</dd>
-               	                <dd id="box_expectCity" class="searchlist_expectCity dn">
-	            	<span class="bot"></span>
-	            	<span class="top"></span>
-						<?php foreach ($address as $key =>$value):?>
-						<dl>
-			    			<dt><?php echo $value['categoryname']?></dt>
-			    			<dd>
-								<?php foreach ($value['son'] as $k =>$v):?>
-								<span><?php echo $v['categoryname']?></span>
-								<?php endforeach;?>
-							</dd>
-			    	  	</dl>
-						<?php endforeach;?>
-			     </dd>
+	               	<dd >
+	                	<a href="javascript:;" class="current">全国</a>|
+	                </dd>
+					<?php foreach ($district as $key =>$value):?>
+	               	<dd >
+	                	<a href="javascript:;" ><?php echo $value['categoryname']?></a>|
+	                </dd>
+					<?php endforeach;?>
+	               	     <dd  class="more" >
+	                	<a href="javascript:;" >其他</a>
+	                	                	<div class="triangle citymore_arrow"></div>
+	                	               	</dd>
+	               	                <dd id="box_expectCity" class="searchlist_expectCity dn">
+		            	<span class="bot"></span>
+		            	<span class="top"></span>
+							<?php foreach ($address as $key =>$value):?>
+							<dl>
+				    			<dt><?php echo $value['categoryname']?></dt>
+				    			<dd>
+									<?php foreach ($value['son'] as $k =>$v):?>
+									<span><?php echo $v['categoryname']?></span>
+									<?php endforeach;?>
+								</dd>
+				    	  	</dl>
+							<?php endforeach;?>
+				     </dd>    
+			      
             </dl>
-
+         
             <div id="tip_didi" class="dn">
             	<span>亲，“嘀嘀打车”已更名为“滴滴打车”了哦，我们已帮您自动跳转~</span>
             	<a href="javascript:;">我知道了</a>
             </div>
 				<ul class="hot_pos reset">
-				<?php foreach($jobs as $key =>$value):?>
+				<?php foreach($models as $key =>$value):?>
 					<li class="odd clearfix">
 
 						<div class="hot_pos_l">
@@ -164,7 +234,7 @@
 						</div>
 						<div class="hot_pos_r">
 							<div class="apply">
-								<a href="?r=index/toudi" target="_blank">投个简历</a>
+								<a href="?r=index/toudi&id=<?= $value['id']?>" target="_blank">投个简历</a>
 							</div>
 							<div class="mb10"><a href="h/c/7626.html" title="网利宝" target="_blank"><?php echo $value['companyname']?></a></div>
 							<span><em class="c7">领域： </em><?php echo $value['trade_cn']?></span>
@@ -181,8 +251,11 @@
 					</li>
 				<?php endforeach;?>
 			</ul>
-	         <div class="Pagination"></div>
-            	                    </div>	
+	        <div>
+        		<?= LinkPager::widget(['pagination' => $pages,'nextPageLabel' => '下一页', 'prevPageLabel' => '上一页','firstPageLabel' => '首页', 'lastPageLabel' => '尾页','options' => ['class' => 'pre'],]); ?>
+	       </div>
+	        </div>
+            	
 
 <script>
 $(function(){
