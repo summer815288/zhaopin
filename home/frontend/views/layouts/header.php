@@ -71,6 +71,7 @@ var youdao_conv_id = 271546;
                 <?php if($session->get('type') == 1){ ?>
                 <!-- 企业用户 -->
                     <dd><a href="?r=company/positions">我发布的职位</a></dd>
+                    <dd><a href="?r=company/positions">我发布的职位</a></dd>
                     <dd><a href="?r=company/positions">我收到的简历</a></dd>
                     <dd class="btm"><a href="?r=company/myhome">我的公司主页</a></dd>
                     <dd><a href="?r=company/create">我要招人</a></dd>
@@ -78,11 +79,12 @@ var youdao_conv_id = 271546;
                     <dd class="logout"><a rel="nofollow" href="?r=login/loginout">退出</a></dd>
                 <?php }else if($session->get('type') == 2){?>
                 <!-- 个人用户 -->
-                    <dd><a rel="nofollow" href="?r=person/myinfo">我的简历</a></dd>
+                    <dd><a rel="nofollow" href="?r=person/person">个人中心</a></dd>
+                    <dd><a rel="nofollow" href="?r=person/resume_list">我的简历</a></dd>
                     <dd><a href="?r=person/collections">我收藏的职位</a></dd>
                     <dd class="btm"><a href="?r=person/subscribe">我的订阅</a></dd>
                     <dd><a href="create.html">我要找工作</a></dd>
-                    <dd><a href="?r=index/loginset">帐号设置</a></dd>
+                    <dd><a href="?r=person/man">帐号设置</a></dd>
                     <dd class="logout"><a rel="nofollow" href="?r=login/loginout">退出</a></dd>
                 <?php }?>
             </dl>
