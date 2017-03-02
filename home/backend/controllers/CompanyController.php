@@ -50,15 +50,19 @@ class CompanyController extends CommonController{
     //修改职位列表
     public function actionCompany_jobs_edit(){
         //职位类别
-        $category_jobs=Category_jobs::find()->where(['parentid'=>0])->asArray()->all();
-        foreach($category_jobs as $item){$uid[]=$item['id'];};
-        foreach($uid as $k=>$v){
-            $id[]=$v;
-        }
-        $category2[]=Category_jobs::find()->where(['parentid'=>$id])->asArray()->all();
+        $category_jobs=Category_jobs::find()->asArray()->all();
+        $a=$this->tree($category_jobs,0);
 
         //职位类别
-        return $this->renderPartial('company_jobs_edit',['category_jobs'=>$category_jobs,'category2'=>$category2[0]]);
+        return $this->renderPartial('company_jobs_edit',['category_jobs'=>$a]);
+    }
+    public function actionCompany_jobs_edit_ajax(){
+        if($_GET){
+            $category_jobs=Category_jobs::find()->where(['parentid'=>$_GET])->asArray()->all();
+            echo json_encode($category_jobs);
+        }else{
+            echo"0";
+        }
     }
     //带认证职业
     public function actionCompany_jobs_to(){
@@ -314,12 +318,14 @@ class CompanyController extends CommonController{
     }
 
     //无限极分类
-    public function tree($list,$parent_id=0){
+    public function tree($list,$parent_id=0,$leave=0,$html='&nbsp;&nbsp;'){
         $tree=array();
         foreach($list as $key=>$value){
             if($value['parentid']==$parent_id){
+                $value['leave']=$leave+1;
+                $value['html']=str_repeat($html,$leave);
                 $tree[]=$value;
-                $tree=array_merge($tree,$this->tree($list,$value['id']));
+                $tree=array_merge($tree,$this->tree($list,$value['id'],$leave+1,$html));
             }
         }
         return $tree;

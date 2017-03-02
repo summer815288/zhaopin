@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
 								</dt>
 								<dd>
 									<?php foreach($val['sun'] as $k =>$v):?>
-									<a href="h/jobs/list_HTML5?labelWords=label"><?php echo $v['categoryname']?></a>
+									<a href="?r=index/mlist&job=<?php echo $v['categoryname']?>"><?php echo $v['categoryname']?></a>
 									<?php endforeach;?>
 								</dd>
 							</dl>
@@ -133,7 +133,6 @@ use yii\widgets\ActiveForm;
 	            <ul class="hot_pos reset">
 					<?php foreach($jobs as $key =>$value):?>
 	                <li class="odd clearfix">
-
 						 <div class="hot_pos_l">
 							<div class="mb10">
 								  <a href="h/jobs/147974.html" target="_blank"><?php echo $value['jobs_name']?></a>&nbsp;

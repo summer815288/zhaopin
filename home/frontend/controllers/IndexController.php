@@ -67,6 +67,21 @@ class IndexController extends CommonController
 		return $this->render("create");
 	}
 
+	//职位列表
+	public function actionMlist()
+	{
+		$job=yii::$app->request->get('job');
+		$list=yii::$app->db->createCommand("select * from jobs where jobs_name='$job'")->queryAll();
+//		print_r($list);die;
+		if($list)
+		{
+			return $this->render('mlist',['list'=>$list]);
+		}else{
+			echo "<script>alert('暂时还没有相关职位，请看看其他的吧！');history.go(-1);</script>";
+		}
+
+	}
+
 
 	//查看更多
 	public function actionList()

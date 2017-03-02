@@ -3,7 +3,7 @@ use yii\widgets\LinkPager;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 ?>
-        <div id="container">
+<div id="container">
             
            	<div class="sidebar">
            		 <div id="options" class="greybg">
@@ -189,25 +189,33 @@ use yii\helpers\Html;
 	                	<a href="javascript:;" ><?php echo $value['categoryname']?></a>|
 	                </dd>
 					<?php endforeach;?>
-	               	     <dd  class="more" >
-	                	<a href="javascript:;" >其他</a>
-	                	                	<div class="triangle citymore_arrow"></div>
-	                	               	</dd>
-	               	                <dd id="box_expectCity" class="searchlist_expectCity dn">
-		            	<span class="bot"></span>
+					  <dd  class="more" >
+	                	<a href="javascript:;" id="up">其他</a>
+	                	<div class="triangle citymore_arrow" id="up"></div>
+					  </dd>
+					  <dd id="box_expectCity" class="searchlist_expectCity dn">
+					    <span class="bot"></span>
 		            	<span class="top"></span>
-							<?php foreach ($address as $key =>$value):?>
-							<dl>
-				    			<dt><?php echo $value['categoryname']?></dt>
-				    			<dd>
-									<?php foreach ($value['son'] as $k =>$v):?>
-									<span><?php echo $v['categoryname']?></span>
+<!--						展示				-->
+						<div class="data-row item-list data-row-nob clearfix" id="show">
+							<div class="data-row-side-r615" style="position: relative">
+								<ul>
+									<?php foreach ($address as $key =>$value):?>
+									<li class="" style="list-style: none;width: 100px">
+										<a class="cat" rel="2.0" data="2.0,上海市" href="javascript:;" title="上海市"><button style="line-height:10px;width:15px;" class="jia">+</button><?php echo $value['categoryname']?></a>
+										<div class="box1" style="width: 400px;display: none;background-color: #00a7d0;position: absolute;z-index: inherit">
+											<ul>
+											<?php foreach ($value['son'] as $k =>$v):?>
+												<li class="cname" style="list-style: none;width: 100px"><span><?php echo $v['categoryname']?></span></li>
+											<?php endforeach;?>
+											</ul>
+										</div>
+									</li>
 									<?php endforeach;?>
-								</dd>
-				    	  	</dl>
-							<?php endforeach;?>
-				     </dd>    
-			      
+								</ul>
+							</div>
+						</div>
+				     </dd>
             </dl>
          
             <div id="tip_didi" class="dn">
@@ -257,15 +265,32 @@ use yii\helpers\Html;
         		<?= LinkPager::widget(['pagination' => $pages,'nextPageLabel' => '下一页', 'prevPageLabel' => '上一页','firstPageLabel' => '首页', 'lastPageLabel' => '尾页','options' => ['class' => 'pre'],]); ?>
 	       </div>
 	        </div>
-            	
+
 
 <script>
+<<<<<<< HEAD
 //热门搜索
 $(".hotSearch").click(function(){
 	var hot = $(this).contents().next().children().html();
 	var par=window.location.search;
 	location.href='index.php'+par+'&hot='+hot;
 })
+=======
+	//展示省级地区
+	$("#up").click(function () {
+		$(this).parent().next().show();
+	})
+	//展示子级地区
+	$(".jia").click(function () {
+		$(this).parent().next().show();
+	})
+	$(".cname").click(function () {
+		$("#box_expectCity").hide();
+	})
+	$(".box1").mouseleave(function(){
+		$(this).hide();
+	})
+>>>>>>> de0ca886f47514e5cf3484dcc86bb661c324ab48
 
 
 $(function(){
@@ -400,6 +425,7 @@ function editForm(inputId,inputValue){
 
 <script type="text/javascript" src="style/js/core.min.js"></script>
 <script type="text/javascript" src="style/js/popup.min.js"></script>
+
 
 <!--  -->
 
