@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
 								</dt>
 								<dd>
 									<?php foreach($val['sun'] as $k =>$v):?>
-									<a href="h/jobs/list_HTML5?labelWords=label"><?php echo $v['categoryname']?></a>
+									<a href="?r=index/mlist&job=<?php echo $v['categoryname']?>"><?php echo $v['categoryname']?></a>
 									<?php endforeach;?>
 								</dd>
 							</dl>
