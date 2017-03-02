@@ -7,7 +7,6 @@ use yii\helpers\Url;
         <dt>职位管理</dt>
         <dd><a href="<?php echo Url::to(['company/create'])?>">发布新职位</a></dd>
         <dd><a href="<?php echo Url::to(['company/jobs'])?>">管理职位</a></dd>
-        <dd><a href="haveNoticeResumes.html">微信招聘</a></dd>
     </dl>
     <dl class="company_center_aside">
         <dt>简历管理</dt>

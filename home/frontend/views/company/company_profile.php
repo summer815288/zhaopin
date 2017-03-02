@@ -7,56 +7,118 @@ use yii\helpers\Html;
         <dl class="company_center_content">
             <dt><h1><em></em>企业资料</h1></dt>
             <dd   style="background-color: #fafafa">
-                <?=Html::beginForm('index.php?r=company/create_to','post')?>
+                <?=Html::beginForm('index.php?r=company/company_profile_to','post',['enctype'=>'multipart/form-data'])?>
                     <table class="btm">
                         <tbody>
                             <tr>
                                 <td width="25"><span class="redstar">*</span></td>
                                 <td width="95">企业名称：</td>
                                 <td>
-
+                                    <input type="text" name="companyname"/>
+                                    <input type="hidden" name="uid" value=" <?=$uid?>"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td><span class="redstar">*</span></td>
                                 <td width="85">企业性质：</td>
                                 <td>
-                                    <select name="wage_cn" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
-<!--                                        --><?php //foreach($wage_cn as $item){?>
-                                            <option value=""></option>
-<!--                                        --><?php //}?>
+                                    <select name="nature" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
+                                        <option value="">请选择...</option>
+                                        <?php foreach($experience_cn as $item){?>
+                                            <option class="nature" n_name="<?=$item['c_name']?>" value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
+                                        <?php }?>
                                     </select>
+                                    <input type="hidden" name="nature_cn"/>
                                 </td>
+                                <script>
+                                    $(document).on('click','.nature',function(){
+                                        var nature=$(this);
+                                        for(var i=0;i<nature.length;i++){
+                                            var nature_cn=nature.attr('n_name')
+                                        }
+                                        $("input[name='nature_cn']").val(nature_cn)
+                                    })
+                                </script>
                             </tr>
                             <tr>
                                 <td><span class="redstar">*</span></td>
                                 <td width="85">所属行业：</td>
                                 <td>
-                                    <select name="" id="">
-                                        <option value=""></option>
-                                    </select>
+                                    <input type="text" placeholder="请选择所属行业" readonly style="cursor: pointer" id="trade"/>
+                                    <div id="tjobs_div" style="width: 625px;height: auto;background-color: #ffffff;display: none">
+                                        <div style="height: 44px;">
+                                            <span style="float: left;margin: 5px;padding: 5px"><b>行业选择</b></span>
+                                            <span class="tcloses" style="float: right;margin: 5px;padding: 5px;background-color: #d0eded;cursor: pointer">×</span>
+                                        </div>
+                                        <div>
+                                            <div style="width: 625px;background-color: #ffffff;">
+                                                <ul>
+                                                    <?php foreach($trade as $item){?>
+                                                    <li class="tra" t_id="<?=$item['c_id']?>" t_name="<?=$item['c_name']?>"  style="cursor: pointer;list-style-type: none;width: 160px;display: inline-table;background-color: #dcdcdc;margin-top: 5px;">
+                                                        <?=$item['c_name']?>
+                                                    </li>
+                                                    <?php }?>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="trade"/>
+                                    <input type="hidden" name="trade_cn"/>
                                 </td>
+                                <script>
+                                    //点击显示div
+                                    $(document).on('click',"#trade",function(){
+                                        $('#tjobs_div').toggle()
+                                    })
+                                    //点击隐藏div
+                                    $(document).on('click',".tcloses",function(){
+                                        $('#tjobs_div').hide()
+                                    })
+                                    //点击li进行赋值
+                                    $(document).on('click',".tra",function(){
+                                        var tra=$(this);
+                                        for(var i=0;i<tra.length;i++){
+                                            var trade=tra.eq(i).attr('t_id');
+                                            var trade_cn=tra.eq(i).attr('t_name');
+                                        }
+                                        $("#trade").val(trade_cn);
+                                        $("input[name='trade']").val(trade);
+                                        $("input[name='trade_cn']").val(trade_cn);
+                                        $('#tjobs_div').hide()
+                                    })
+                                </script>
                             </tr>
                             <tr>
                                 <td><span class="redstar">*</span></td>
                                 <td width="85">企业规模：</td>
                                 <td>
-                                    <select name="wage_cn" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
-                                        <!--                                        --><?php //foreach($wage_cn as $item){?>
-                                        <option value=""></option>
-                                        <!--                                        --><?php //}?>
+                                    <select name="scale" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
+                                        <option value="">请选择...</option>
+                                                                                <?php foreach($scale as $item){?>
+                                        <option class="scale" s_name="<?=$item['c_name']?>" value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
+                                                                                <?php }?>
                                     </select>
+                                    <input type="hidden" name="scale_cn"/>
                                 </td>
+                                <script>
+                                    $(document).on('click','.scale',function(){
+                                        var scale=$(this);
+                                        for(var i=0;i<scale.length;i++){
+                                            var scale_cn=scale.attr('s_name')
+                                        }
+                                        $("input[name='scale_cn']").val(scale_cn)
+                                    })
+                                </script>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td width="85">注册资金：</td>
                                 <td>
-                                    <input type="text" style="width: 100px;"/>万
-                                    <select name="wage_cn" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 100px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
-                                        <!--                                        --><?php //foreach($wage_cn as $item){?>
-                                        <option value=""></option>
-                                        <!--                                        --><?php //}?>
+                                    <input type="text" name="registered" style="width: 100px;"/>万
+                                    <select name="currency" style="border: 2px solid #f1f1f1;font-size:18px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 100px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
+                                        <option>请选择...</option>
+                                        <option value="人民币">人民币</option>
+                                        <option value="美元">美元</option>
                                     </select>
                                 </td>
                             </tr>
@@ -133,7 +195,7 @@ use yii\helpers\Html;
                                             $("input[name='district_cn']").val(c_name+"/"+district_cn);
                                             $("#djobs_div").hide();
                                         }
-                                    })
+                                    });
                                     //鼠标移出事件
                                     $(document).on('mouseleave','.mouse_leave',function(){
                                         $(this).hide();
@@ -144,59 +206,95 @@ use yii\helpers\Html;
                                 <td></td>
                                 <td width="85">所在街道：</td>
                                 <td>
-                                    <select name="wage_cn" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
-                                        <!--                                        --><?php //foreach($wage_cn as $item){?>
-                                        <option value=""></option>
-                                        <!--                                        --><?php //}?>
-                                    </select>
+                                    <input type="text" placeholder="请选择街道" readonly style="cursor: pointer" id="street"/>
+                                    <div id="street_div" style="width: 625px;height: auto;background-color: #ffffff;display: none">
+                                        <div style="height: 44px;">
+                                            <span style="float: left;margin: 5px;padding: 5px"><b>街道选择</b></span>
+                                            <span class="street_closes" style="float: right;margin: 5px;padding: 5px;background-color: #d0eded;cursor: pointer">×</span>
+                                        </div>
+                                        <div>
+                                            <div style="width: 625px;background-color: #ffffff;">
+                                                <ul>
+                                                    <?php foreach($street as $item){?>
+                                                        <li class="streets" s_id="<?=$item['c_id']?>" s_name="<?=$item['c_name']?>"  style="cursor: pointer;list-style-type: none;width: 160px;display: inline-table;background-color: #dcdcdc;margin-top: 5px;">
+                                                            <?=$item['c_name']?>
+                                                        </li>
+                                                    <?php }?>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="street"/>
+                                    <input type="hidden" name="street_cn"/>
                                 </td>
+                                <script>
+                                    //点击显示div
+                                    $(document).on('click',"#street",function(){
+                                        $('#street_div').toggle()
+                                    })
+                                    //点击隐藏div
+                                    $(document).on('click',".street_closes",function(){
+                                        $('#street_div').hide()
+                                    })
+                                    //点击li进行赋值
+                                    $(document).on('click',".streets",function(){
+                                        var streets=$(this);
+                                        for(var i=0;i<streets.length;i++){
+                                            var street=streets.eq(i).attr('s_id');
+                                            var street_cn=streets.eq(i).attr('s_name');
+                                        }
+                                        $("#street").val(street_cn);
+                                        $("input[name='street']").val(street);
+                                        $("input[name='street_cn']").val(street_cn);
+                                        $('#street_div').hide()
+                                    })
+                                </script>
                             </tr>
                             <tr>
                                 <td width="25"><span class="redstar">*</span></td>
                                 <td width="95">联系人：</td>
                                 <td>
-                                    <input type="text" placeholder="请输入联系人" value="" name="jobs_name" id="positionName">
+                                    <input type="text" placeholder="请输入联系人"  value="" name="contact">
+                                    <input type="checkbox" value="1" name="contact_show"/>联系人在企业介绍页显示
                                 </td>
                             </tr>
                             <tr>
                                 <td width="25"><span class="redstar">*</span></td>
                                 <td width="95">联系手机：</td>
                                 <td>
-                                    <input type="text" style="width: 500px" name="email"><input type="checkbox"/>联系电话在企业介绍中显示
+                                    <input type="text" style="width: 500px" name="telephone">
+                                    <input type="checkbox" value="1" name="telephone_show"/>联系电话在企业介绍中显示
                                 </td>
                             </tr>
                             <tr>
                                 <td width="25"><span class="redstar">*</span></td>
                                 <td width="95">联系邮箱：</td>
                                 <td>
-                                    <input type="text"style="width: 500px"  name="email"><input type="checkbox"/>联系邮箱在企业介绍中显示
+                                    <input type="text"style="width: 500px"  name="email">
+                                    <input type="checkbox" value="1" name="email_show"/>联系邮箱在企业介绍中显示
                                 </td>
                             </tr>
                             <tr>
                                 <td width="25"><span class="redstar">*</span></td>
                                 <td width="95">公司网址：</td>
                                 <td>
-                                    <input type="text" placeholder="请输入公司网址" value="" name="jobs_name" id="positionName">
+                                    <input type="text" placeholder="请输入公司网址" value="" name="website" id="positionName">
                                 </td>
                             </tr>
                             <tr>
                                 <td width="25"><span class="redstar">*</span></td>
                                 <td width="95">详细地址：</td>
                                 <td>
-                                    <input type="text" placeholder="请输入详细地址" value="" name="jobs_name" id="positionName">
+                                    <input type="text" placeholder="请输入详细地址" value="" name="address" id="positionName">
+                                    <input type="checkbox" value="1" name="address_show"/>详细地址在企业介绍中显示
                                 </td>
                             </tr>
                             <tr>
                                 <td width="25"><span class="redstar">*</span></td>
                                 <td width="95">公司简介：</td>
                                 <td>
-                                    <textarea name="" id="tr" cols="30" rows="10"></textarea>
+                                    <textarea name="contents" id="tr" cols="30" rows="10"></textarea>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td width="25"></td>
-                                <td width="95"></td>
-                                <td><input type="checkbox"/><font color="orange">修改联系方式同步到职位</font></td>
                             </tr>
                             <tr>
                                 <td width="25"></td>

@@ -2,30 +2,6 @@
 use yii\helpers\Html;
 ?>
 <div id="container">
-<style>
-            .showyearbox {
-                background-color: #ffffff;
-                border: 1px solid #ccc;
-                box-shadow: 3px 3px 4px #cccccc;
-                display: none;
-                left: 0;
-                padding: 5px;
-                position: absolute;
-                top: 35px;
-                width: 365px;
-                z-index: 88;
-            }
-            .input_text_50_bg {
-                background: rgba(0, 0, 0, 0) url("../images/icon36.png") no-repeat scroll 52px -98px;
-                border: 1px solid #cccccc;
-                color: #666666;
-                cursor: pointer;
-                font-size: 14px;
-                line-height: 16px;
-                padding: 9px;
-                width: 50px;
-            }
-</style>
 <?php include"left.php";?>
             <div class="content">
             	<dl class="company_center_content">
@@ -65,7 +41,7 @@ use yii\helpers\Html;
                                             <script>
                                                 $(document).on('click','.nature',function(){
                                                     if($(this).prop('checked',true)){
-                                                        var val=$(this).attr('val')
+                                                        var val=$(this).attr('val');
                                                         $(".nature_cn").val(val)
                                                     }
                                                 })
@@ -113,7 +89,7 @@ use yii\helpers\Html;
                                             //点击职业类别显示
                                             $(document).on('click','.LocalDataMultiC',function(){
                                                 var jobs_div=$("#jobs_div");
-                                                jobs_div.toggle();
+                                                jobs_div.toggle('10000');
 
                                             });
                                             //鼠标移除事件
@@ -204,7 +180,7 @@ use yii\helpers\Html;
                                             //点击职业类别显示
                                             $(document).on('click','.district_cn',function(){
                                                 var djobs_div=$("#djobs_div");
-                                                djobs_div.toggle();
+                                                djobs_div.toggle('10000');
                                             });
                                             //点击关闭div
                                             $('.dcloses').click(function(){
@@ -246,12 +222,22 @@ use yii\helpers\Html;
                                         <td><span class="redstar">*</span></td>
                                         <td width="85">薪资待遇：</td>
                                         <td>
-                                            <select name="wage_cn" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
+                                            <select name="wage" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
                                                 <?php foreach($wage_cn as $item){?>
-                                                    <option value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
+                                                    <option w_name="<?=$item['c_name']?>" class="wage" value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
                                                 <?php }?>
                                             </select>
+                                            <input type="hidden" name="wage_cn"/>
                                         </td>
+                                        <script>
+                                            $(document).on('click','.wage',function(){
+                                                var wage=$(this);
+                                                for(var i=0;i<wage.length;i++){
+                                                    var wage_cn=wage.attr('w_name')
+                                                }
+                                                $("input[name='wage_cn']").val(wage_cn)
+                                            })
+                                        </script>
                                     </tr>
                                     <tr>
                                         <td><span class="redstar">*</span></td>
@@ -284,7 +270,7 @@ use yii\helpers\Html;
                                         <script>
                                             //点击职位亮点div显示
                                             $(".btn_redstar").click(function(){
-                                                $(".redstar_div").toggle();
+                                                $(".redstar_div").toggle('100000');
                                             });
                                             //点击关闭职业亮点选择
                                             $(document).on('click','.close',function(){
@@ -366,6 +352,7 @@ use yii\helpers\Html;
                                                 }
                                                 tag_id=tag_id.substr(1);
                                                 tag_cn=tag_cn.substr(1);
+                                                alert(tag_id);
                                                 btn_redstar.before("<input type='hidden' name='tag' style='padding:5px;margin:5px' value='"+tag_id+"'/>");
                                                 btn_redstar.before("<input type='hidden' name='tag_cn' style='padding:5px;margin:5px' value='"+tag_cn+"'/>");
                                                 $(".redstar_div").hide();
@@ -375,6 +362,20 @@ use yii\helpers\Html;
                                                 $(".redstar_div").hide();
                                             })
                                         </script>
+                                    </tr>
+                                    <tr>
+                                        <td width="25"><span class="redstar">*</span></td>
+                                        <td width="95">开始时间：</td>
+                                        <td>
+                                            <input type="text" name="addtime">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="25"><span class="redstar">*</span></td>
+                                        <td width="95">结束时间：</td>
+                                        <td>
+                                            <input type="text" name="deadline" >
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -415,23 +416,43 @@ use yii\helpers\Html;
                                     <td width="25"><span class="redstar">*</span></td>
                                     <td width="85">学历要求：</td>
                                     <td>
-                                        <select name="education_cn" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
+                                        <select name="education" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
                                             <?php foreach($education_cn as $item){?>
-                                                <option value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
+                                                <option e_name="<?=$item['c_name']?>"  class="education"value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
                                             <?php }?>
                                         </select>
+                                        <input type="hidden" name="education_cn"/>
                                     </td>
+                                    <script>
+                                        $(document).on('click','.education',function(){
+                                            var education=$(this);
+                                            for(var i=0;i<education.length;i++){
+                                                var education_cn=education.attr('e_name')
+                                            }
+                                            $("input[name='education_cn']").val(education_cn)
+                                        })
+                                    </script>
                                 </tr>
                                 <tr>
                                     <td width="25"><span class="redstar">*</span></td>
                                     <td width="85">工作经验：</td>
                                     <td>
-                                        <select name="experience_cn" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
+                                        <select name="experience" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
                                             <?php foreach($experience_cn as $item){?>
-                                                <option value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
+                                                <option e_name="<?=$item['c_name']?>" class="experience" value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
                                             <?php }?>
                                         </select>
+                                        <input type="hidden" name="experience_cn"/>
                                     </td>
+                                    <script>
+                                        $(document).on('click','.experience',function(){
+                                            var experience=$(this);
+                                            for(var i=0;i<experience.length;i++){
+                                                var experience_cn=experience.attr('e_name')
+                                            }
+                                            $("input[name='experience_cn']").val(experience_cn)
+                                        })
+                                    </script>
                                 </tr>
                                 <tr>
                                     <td width="25"><span class="redstar">*</span></td>
@@ -439,13 +460,13 @@ use yii\helpers\Html;
                                     <td>
                                         <select name="minage" id="" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 303px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
                                             <?php for($i=16;$i<=60;$i++){?>
-                                            <option value="<?=$i.'岁'?>"><?=$i.'岁'?></option>
+                                            <option value="<?=$i?>"><?=$i.'岁'?></option>
                                             <?php }?>
                                         </select>
                                         <span>至</span>
                                         <select name="maxage" id="" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 303px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
                                             <?php for($i=16;$i<=60;$i++){?>
-                                                <option value="<?=$i.'岁'?>"><?=$i.'岁'?></option>
+                                                <option value="<?=$i?>"><?=$i.'岁'?></option>
                                             <?php }?>
                                         </select>
                                     </td>
@@ -460,7 +481,7 @@ use yii\helpers\Html;
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td width="85">职位描述:</td>
                                 	<td>
-                                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                                        <textarea name="contents" id="" cols="30" rows="10"></textarea>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -473,32 +494,34 @@ use yii\helpers\Html;
                                             <td width="25"><span class="redstar">*</span></td>
                                             <td width="95">联系人：</td>
                                             <td>
-                                                <input type="text" value="<?php echo $company_profile[0]['contact']?>" name="contact">
+                                                <input type="text" value="<?php echo $company_profile['contact']?>" name="contact">
                                             </td>
-                                            <td><input type="checkbox" <?php if($company_profile[0]['contact_show']=='1'){echo "checked";}?> value="1" name="contact_show"/>对外公开联系人</td>
+                                            <td><input type="checkbox" <?php if($company_profile['contact_show']=='1'){echo "checked";}?> value="1" name="contact_show"/>对外公开联系人</td>
                                         </tr>
                                         <tr>
                                             <td width="25"><span class="redstar">*</span></td>
                                             <td width="95">联系手机：</td>
                                             <td>
-                                                <input type="text" value="<?php echo $company_profile[0]['telephone']?>" name="telephone">
+                                                <input type="text" value="<?php echo $company_profile['telephone']?>" name="telephone">
                                             </td>
-                                            <td><input type="checkbox" <?php if($company_profile[0]['telephone_show']=='1'){echo "checked";}?>  value="1" name="telephone_show"/>对外公开联系人</td>
+                                            <td><input type="checkbox" <?php if($company_profile['telephone_show']=='1'){echo "checked";}?>  value="1" name="telephone_show"/>对外公开联系人</td>
                                         </tr>
                                         <tr>
                                             <td width="25"><span class="redstar">*</span></td>
                                             <td width="95">联系邮箱：</td>
                                             <td>
-                                                <input type="text" value="<?php echo $company_profile[0]['email']?>" name="email">
+                                                <input type="text" value="<?php echo $company_profile['email']?>" name="email">
                                             </td>
-                                            <td><input type="checkbox" <?php if($company_profile[0]['email_show']=='1'){echo "checked";}?> value="1" name="email_show"/>对外公开联系人</td>
+                                            <td><input type="checkbox" <?php if($company_profile['email_show']=='1'){echo "checked";}?> value="1" name="email_show"/>对外公开联系人</td>
                                         </tr>
                                         <tr>
                                             <td width="25"><span class="redstar">*</span></td>
                                             <td width="95">联系地址：</td>
                                             <td>
-                                                <input type="text" value=" <?php echo $company_profile[0]['address']?>" name="address">
+                                                <input type="text" value=" <?php echo $company_profile['address']?>" name="address">
                                             </td>
+                                            <td><input type="checkbox" <?php if($company_profile['address_show']=='1'){echo "checked";}?> value="1" name="address_show"/>对外公开联系人</td>
+
                                         </tr>
                             </tbody>
                             </table>
@@ -510,7 +533,8 @@ use yii\helpers\Html;
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td colspan="2">
                                     	接收简历邮箱： <span id="receiveEmailVal">
-                                            <input type="text" disabled value="<?php echo $company_profile[0]['email']?>" name="email_two"><input type="checkbox" value="1" name="notify"/>接收
+                                            <input type="text" disabled value="<?php echo $company_profile['email']?>" name="email_two">
+                                            <input type="checkbox" value="1" checked name="notify"/>接收
                                         </span>
 
                                     </td>
@@ -519,12 +543,14 @@ use yii\helpers\Html;
                                     <td width="25"><span class="redstar">*</span></td>
                                     <td colspan="2">
                                     	简历短信通知：<span id="receiveEmailVal">
-                                        <input type="text" value="<?php echo $company_profile[0]['telephone']?>" name="telephone_two">
+                                        <input type="text" value="<?php echo $company_profile['telephone']?>" name="telephone_two">
+                                            <input type="checkbox" value="1"  name="notify_mobile"/>接收
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
                                     	<input type="submit" value="发布" id="jobPreview" class="btn_32">
+                                        <input type="hidden" name="uid" value="<?php echo $company_profile['uid']?>"/>
                                     </td>
                                 </tr>
                          	</tbody>
@@ -782,6 +808,4 @@ $(function(){
 <script src="style/js/popup.min.js" type="text/javascript"></script>
 
 <!--  -->
-
-
 <div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>

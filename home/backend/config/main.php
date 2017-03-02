@@ -65,11 +65,6 @@ return [
             ],
         ],
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 9cc85d584a5c65dba3f7eb21ec67a77c3c4fe9d8
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
             'itemTable' => 'auth_item',

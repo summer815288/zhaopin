@@ -125,7 +125,6 @@ use yii\widgets\ActiveForm;
 	            <ul class="hot_pos reset">
 					<?php foreach($jobs as $key =>$value):?>
 	                <li class="odd clearfix">
-
 						 <div class="hot_pos_l">
 							<div class="mb10">
 								  <a href="h/jobs/147974.html" target="_blank"><?php echo $value['jobs_name']?></a>&nbsp;
