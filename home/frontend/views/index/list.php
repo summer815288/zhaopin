@@ -168,16 +168,16 @@ use yii\helpers\Html;
 <script type="text/javascript" src="style/js/search.min.js"></script>
 <dl class="hotSearch">
 	<dt>热门搜索：</dt>
-	<dd><a href="list.htmlJava?labelWords=label&city=全国">Java</a></dd>
-	<dd><a href="list.htmlPHP?labelWords=label&city=全国">PHP</a></dd>
-	<dd><a href="list.htmlAndroid?labelWords=label&city=全国">Android</a></dd>
-	<dd><a href="list.htmliOS?labelWords=label&city=全国">iOS</a></dd>
-	<dd><a href="list.html前端?labelWords=label&city=全国">前端</a></dd>
-	<dd><a href="list.html产品经理?labelWords=label&city=全国">产品经理</a></dd>
-	<dd><a href="list.htmlUI?labelWords=label&city=全国">UI</a></dd>
-	<dd><a href="list.html运营?labelWords=label&city=全国">运营</a></dd>
-	<dd><a href="list.htmlBD?labelWords=label&city=全国">BD</a></dd>
-	<dd><a href="list.html?gx=实习&city=全国">实习</a></dd>
+	<dd><a href="#">PHP</a></dd>
+	<dd><a href="#">Java</a></dd>
+	<dd><a href="#">Android</a></dd>
+	<dd><a href="#">iOS</a></dd>
+	<dd><a href="#">前端</a></dd>
+	<dd><a href="#">产品经理</a></dd>
+	<dd><a href="#">UI</a></dd>
+	<dd><a href="#">运营</a></dd>
+	<dd><a href="#">BD</a></dd>
+	<dd><a href="#">实习</a></dd>
 </dl>			<div class="breakline"></div>
             <dl class="workplace" id="workplaceSelect">
                 <dt class="fl">工作地点：</dt>
@@ -227,8 +227,10 @@ use yii\helpers\Html;
 							<span><em class="c7">经验：</em> <?php echo $value['experience_cn']?></span>
 							<span><em class="c7">最低学历： </em><?php echo $value['education_cn']?></span>
 							<br />
-							<span><em class="c7">职位诱惑：</em><?php echo $value['contents']?>等</span>
+							<span><em class="c7">职位诱惑：</em><?php echo $value['contents']?></span>
 							<br />
+							<span><em class="c7">工作性质：</em><?php echo $value['nature_cn']?></span>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<span><?php echo date("Y-m-d",$value['addtime'])?>发布</span>
 							<!-- <a  class="wb">分享到微博</a> -->
 						</div>
@@ -258,11 +260,19 @@ use yii\helpers\Html;
             	
 
 <script>
+//热门搜索
+$(".hotSearch").click(function(){
+	var hot = $(this).contents().next().children().html();
+	var par=window.location.search;
+	location.href='index.php'+par+'&hot='+hot;
+})
+
+
 $(function(){
 	/***************************
  	 * 分页
  	 */
- 	 						$('.Pagination').pager({
+ 	 	$('.Pagination').pager({
 		      currPage: 1,
 		      pageNOName: "pn",
 		      form: "searchForm",
