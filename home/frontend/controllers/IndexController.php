@@ -29,8 +29,12 @@ class IndexController extends CommonController
 		$data=yii::$app->db->createCommand("select * from category_jobs")->queryAll();
 		$list=$this->getList($data);
 		$jobs=yii::$app->db->createCommand("select * from jobs")->queryAll();
-		$news=yii::$app->db->createCommand("select * from news_list limit 6")->queryAll(); 
-		return $this->render("index",['list'=>$list,'jobs'=>$jobs,'news'=>$news]);
+		$news=yii::$app->db->createCommand("select * from news_list limit 6")->queryAll();
+
+		//简历
+		$resume = yii::$app->db->createCommand("select * from resume")->queryAll();	
+
+		return $this->render("index",['list'=>$list,'jobs'=>$jobs,'news'=>$news,'resume'=>$resume]);
 	}
 
 
@@ -38,7 +42,21 @@ class IndexController extends CommonController
 	//公司
 	public function actionCompany()
 	{
-		return $this->render("companylist");
+		//行业领域
+		$data = [];
+		$trade = yii::$app->db->createCommand("select c_name from category where c_alias='QS_trade'")->queryAll();
+		//公司
+		$company = yii::$app->db->createCommand("select * from company_profile")->queryAll();
+		$id =array();
+		foreach($company as $k=>$v){
+			$data[$k] = $v;
+			// $id[$k] =$v['id'];
+			$jobs = yii::$app->db->createCommand("select jobs_name,tag_cn from jobs where company_id='$v[id]'")->queryAll();
+			// print_r($jobs);die;
+			$data[$k]['job']=$jobs;			
+		}
+		// print_r($data);die;
+		return $this->render("companylist",['trade'=>$trade,'data'=>$data]);
 	}
 
 	
@@ -70,6 +88,7 @@ class IndexController extends CommonController
 	{
 		//月薪
 		$wage_cn=yii::$app->db->createCommand("select c_name from category where c_alias='QS_wage'")->queryAll();
+		// print_r($wage_cn);die;
 		//工作经验
 		$experience_cn=yii::$app->db->createCommand("select c_name from category where c_alias='QS_experience'")->queryAll();
 		// print_r($experience_cn);die;
@@ -113,6 +132,12 @@ class IndexController extends CommonController
 		{
 			$where = ['like','jobs_name',"$kd"];
 		}
+
+		$hot = isset($_GET['hot']) ? $_GET['hot'] : "";
+		if(!empty($hot))
+		{
+			$where = ['like','jobs_name',"$hot"];
+		}
 		
 		$query = new Query();
 		$a = $query->from('jobs')->where($where)->all();
@@ -142,7 +167,8 @@ class IndexController extends CommonController
 
 	//投递简历
 	public function actionToudi()
-	{
+	{	
+		
 		$id = $_GET['id'];
 		$jobs=yii::$app->db->createCommand("select * from jobs where id=$id")->queryAll();
 		// print_r($jobs);die;

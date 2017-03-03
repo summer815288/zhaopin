@@ -57,69 +57,77 @@ use yii\widgets\ActiveForm;
 <script type="text/javascript" src="style/js/search.min.js"></script>
 <dl class="hotSearch">
 	<dt>热门搜索：</dt>
-	<dd><a href="list.htmlJava?labelWords=label&city=">Java</a></dd>
-	<dd><a href="list.htmlPHP?labelWords=label&city=">PHP</a></dd>
-	<dd><a href="list.htmlAndroid?labelWords=label&city=">Android</a></dd>
-	<dd><a href="list.htmliOS?labelWords=label&city=">iOS</a></dd>
-	<dd><a href="list.html前端?labelWords=label&city=">前端</a></dd>
-	<dd><a href="list.html产品经理?labelWords=label&city=">产品经理</a></dd>
-	<dd><a href="list.htmlUI?labelWords=label&city=">UI</a></dd>
-	<dd><a href="list.html运营?labelWords=label&city=">运营</a></dd>
-	<dd><a href="list.htmlBD?labelWords=label&city=">BD</a></dd>
-	<dd><a href="list.html?gx=实习&city=">实习</a></dd>
-</dl>			
-			<div id="home_banner">
-	            <ul class="banner_bg">
-	            		                <li  class="banner_bg_1 current" >
-	                    <a href="h/subject/s_buyfundation.html?utm_source=DH__lagou&utm_medium=banner&utm_campaign=haomai" target="_blank"><img src="style/images/d05a2cc6e6c94bdd80e074eb05e37ebd.jpg" width="612" height="160" alt="好买基金——来了就给100万" /></a>
-	                </li>
-	                	                <li  class="banner_bg_2" >
-	                    <a href="h/subject/s_worldcup.html?utm_source=DH__lagou&utm_medium=home&utm_campaign=wc" target="_blank"><img src="style/images/c9d8a0756d1442caa328adcf28a38857.jpg" width="612" height="160" alt="世界杯放假看球，老板我也要！" /></a>
-	                </li>
-	                	                <li  class="banner_bg_3" >
-	                    <a href="h/subject/s_xiamen.html?utm_source=DH__lagou&utm_medium=home&utm_campaign=xiamen" target="_blank"><img src="style/images/d03110162390422bb97cebc7fd2ab586.jpg" width="612" height="160" alt="出北京记——第一站厦门" /></a>
-	                </li>
-	                	            </ul>
-	            <div class="banner_control">
-	                <em></em> 
-	                <ul class="thumbs">
-	                		                    <li  class="thumbs_1 current" >
-	                        <i></i>
-	                        <img src="style/images/4469b1b83b1f46c7adec255c4b1e4802.jpg" width="113" height="42" />
-	                    </li>
-	                    	                    <li  class="thumbs_2" >
-	                        <i></i>
-	                        <img src="style/images/381b343557774270a508206b3a725f39.jpg" width="113" height="42" />
-	                    </li>
-	                    	                    <li  class="thumbs_3" >
-	                        <i></i>
-	                        <img src="style/images/354d445c5fd84f1990b91eb559677eb5.jpg" width="113" height="42" />
-	                    </li>
-	                    	                </ul>
-	            </div>
-	        </div><!--/#main_banner-->
-			
-        	<ul id="da-thumbs" class="da-thumbs">
-        	<?php foreach($news as $k=>$v){?>
-	        		  <li >
-	                    <a href="#" target="_blank">
-	                        <img src="<?= $v['news_img']?>" width="112" height="112" alt="联想" />
-	                        <div class="hot_info">
-	                        	<h2 title="联想"><?= $v['news_title']?></h2>
-	                            <em></em>
-	                            <p title="世界因联想更美好">
-	                            	<?= $v['news_content']?>
-	                            </p>
-	                        </div>
-	                    </a>
-	                </li>
-	                <?php }?>
+	<dd><a href="#">PHP</a></dd>
+	<dd><a href="#">Java</a></dd>
+	<dd><a href="#">Android</a></dd>
+	<dd><a href="#">iOS</a></dd>
+	<dd><a href="#">前端</a></dd>
+	<dd><a href="#">产品经理</a></dd>
+	<dd><a href="#">UI</a></dd>
+	<dd><a href="#">运营</a></dd>
+	<dd><a href="#">BD</a></dd>
+	<dd><a href="#">实习</a></dd>
+</dl>
+<script>
+	//热门搜索
+	$(".hotSearch").click(function(){
+		var hot = $(this).contents().next().children().html();
+		var par='?r=index/list';
+		location.href='index.php'+par+'&hot='+hot;
+	})
+</script>
+	<div id="home_banner">
+        <ul class="banner_bg">
+        <li  class="banner_bg_1 current" >
+                <a href="h/subject/s_buyfundation.html?utm_source=DH__lagou&utm_medium=banner&utm_campaign=haomai" target="_blank"><img src="style/images/d05a2cc6e6c94bdd80e074eb05e37ebd.jpg" width="612" height="160" alt="好买基金——来了就给100万" /></a>
+            </li>
+            	                <li  class="banner_bg_2" >
+                <a href="h/subject/s_worldcup.html?utm_source=DH__lagou&utm_medium=home&utm_campaign=wc" target="_blank"><img src="style/images/c9d8a0756d1442caa328adcf28a38857.jpg" width="612" height="160" alt="世界杯放假看球，老板我也要！" /></a>
+            </li>
+            	                <li  class="banner_bg_3" >
+                <a href="h/subject/s_xiamen.html?utm_source=DH__lagou&utm_medium=home&utm_campaign=xiamen" target="_blank"><img src="style/images/d03110162390422bb97cebc7fd2ab586.jpg" width="612" height="160" alt="出北京记——第一站厦门" /></a>
+            </li>
+            	            </ul>
+        <div class="banner_control">
+            <em></em> 
+            <ul class="thumbs">
+            		                    <li  class="thumbs_1 current" >
+                    <i></i>
+                    <img src="style/images/4469b1b83b1f46c7adec255c4b1e4802.jpg" width="113" height="42" />
+                </li>
+                	                    <li  class="thumbs_2" >
+                    <i></i>
+                    <img src="style/images/381b343557774270a508206b3a725f39.jpg" width="113" height="42" />
+                </li>
+                	                    <li  class="thumbs_3" >
+                    <i></i>
+                    <img src="style/images/354d445c5fd84f1990b91eb559677eb5.jpg" width="113" height="42" />
+                </li>
+                	                </ul>
+        </div>
+    </div><!--/#main_banner-->
+	
+	<ul id="da-thumbs" class="da-thumbs">
+	<?php foreach($news as $k=>$v){?>
+    		  <li >
+                <a href="#" target="_blank">
+                    <img src="<?= $v['news_img']?>" width="112" height="112" alt="联想" />
+                    <div class="hot_info">
+                    	<h2 title="联想"><?= $v['news_title']?></h2>
+                        <em></em>
+                        <p title="世界因联想更美好">
+                        	<?= $v['news_content']?>
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <?php }?>
 </ul>
                             
-            
+        <?php $session = Yii::$app->session; if($session->get('type') == 2){ ?>
             <ul class="reset hotabbing">
-            	            		<li class="current">热门职位</li>
-            	            	<li>最新职位</li>
+            	<li class="current">热门职位</li>
+            	<li>最新职位</li>
             </ul>
             <div id="hotList">
 	            <ul class="hot_pos reset">
@@ -195,6 +203,53 @@ use yii\widgets\ActiveForm;
 					<a href="?r=index/list" class="btn fr" target="_blank">查看更多</a>
 	            </ul>
             </div>
+            <?php }else if($session->get('type') == 1){?>
+				<ul class="reset hotabbing">
+            	<li class="current">最新简历</li>            	
+            	</ul>
+            <div id="hotList">
+	            <ul class="hot_pos reset">
+					<?php foreach($resume as $key =>$value):?>
+	                <li class="odd clearfix">
+						 <div class="hot_pos_l">
+							<div class="mb10">
+								  <a href="h/jobs/147974.html" target="_blank"><?php echo $value['major_cn']?></a>&nbsp;
+								  <span class="c9">[<?php echo $value['district_cn']?>]</span>
+							</div>
+							<span><em class="c7">姓名： </em><?php echo $value['fullname']?></span>
+							<span><em class="c7">性别： </em><?php echo $value['sex_cn']?></span>
+							<span><em class="c7">期望薪资： </em><?php echo $value['wage_cn']?></span>
+							<span><em class="c7">经验：</em> <?php echo $value['experience_cn']?></span>
+							<span><em class="c7">最低学历： </em><?php echo $value['education_cn']?></span>
+					   		<br />
+					   		<span><em class="c7">联系电话：</em><?php echo $value['telephone']?></span>
+					   		<br />
+					   		<span><?php echo date("Y-m-d",$value['addtime'])?>发布</span>
+							<!-- <a  class="wb">分享到微博</a> -->
+						</div>
+			             <div class="hot_pos_r">
+			                   <div class="mb10 recompany">
+								   <a href="h/c/5232.html" target="_blank"></a>
+							   </div>
+							   <span><em class="c7">邮箱：</em><?php echo $value['email']?></span><br>
+							   <span><em class="c7">个人简述：</em><?php echo $value['tag_cn']?></span><br>
+			                   <span><em class="c7">领域：</em> <?php echo $value['trade_cn']?></span>
+			                   <br />
+			                   <!-- <span><em class="c7">阶段：</em> 成长型(A轮)</span>
+			                   <span><em class="c7">规模：</em></span> -->
+			                    <ul class="companyTags reset">
+									<!--  -->
+								</ul>
+			              </div>
+					</li>
+					<?php endforeach;?>
+	               
+	             </ul>           
+	           
+            </div>
+				
+
+            <?php }?>
             <div class="clear"></div>
 			<div id="linkbox">
 			    <dl>
