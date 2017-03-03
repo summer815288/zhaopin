@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use backend\models\Members;
 use Codeception\Module\Memcache;
 use Yii;
 use frontend\models\ContactForm;
@@ -153,8 +154,10 @@ class CompanyController extends Controller
 	//我公司主页
 	public function actionMyhome()
 	{
-
-		return $this->render("myhome");
+        $uid=Yii::$app->session->get('uid');
+        $members=Members::find()->where(['uid'=>$uid])->asArray()->all();
+        $company_profile=Company_profile::find()->where(['uid'=>$uid])->asArray()->all();
+		return $this->render("myhome",['members'=>$members[0],'company_profile'=>$company_profile[0]]);
 	}
 
 
@@ -183,11 +186,9 @@ class CompanyController extends Controller
 		return $this->render("delivery");
 	}
 
-    //企业资料
+    //企业资料20
     public function actionCompany_profile(){
         $uid=Yii::$app->session->get('uid');//用户id
-        $company_profile=Company_profile::find()->where(['uid'=>"$uid"])->asArray()->all();
-        if(empty($company_profile)){
             //企业性质
             $experience_cn=Category::find()->where(['c_alias'=>'QS_company_type'])->asArray()->all();
             //所属行业
@@ -200,12 +201,6 @@ class CompanyController extends Controller
             //所属街道
             $street=Category::find()->where(['c_alias'=>'QS_street'])->asArray()->all();
             return $this->render("company_profile",['uid'=>$uid,'experience_cn'=>$experience_cn,'trade'=>$trade,'scale'=>$scale,'category_one'=>$category_one,'category_district'=>$category_district,'street'=>$street]);
-        }else{
-            $title='企业信息';
-            $content='恭喜您信息已完善';
-            $href="<?php echo Url::to(['company/company_profile'])?>";
-            return $this->render('success',['title'=>$title,'content'=>$content,'href'=>$href]);
-        }
 
     }
     //企业资料入库

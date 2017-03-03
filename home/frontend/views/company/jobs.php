@@ -40,7 +40,8 @@
             <dd  style="background-color: #fafafa;height: 1000px">
                 <div>
                     <ul>
-                        <li class="li selecteds">发布中职位</li>
+                        <li class="li selecteds">
+                            发布中职位</li>
                         <li class="li">审核中职位</li>
                         <li class="li">未显示职位</li>
                         <li class="li">全部职位</li>
@@ -51,7 +52,7 @@
                         <div>
                             <div>
                                 <div style="background: #dcdcdc;padding: 15px;">
-                                    <span><input type="checkbox" "/>职位名称</span>
+                                    <span><input type="checkbox" class="check" />职位名称</span>
                                     <span style="float: right"><select name="" id="">
                                             <option value="">推广状态</option>
                                             <option value="">全部</option>
@@ -64,7 +65,7 @@
                                 <?php foreach($jobs as $item){?>
                                 <div  class="div">
                                     <div style="margin-left: 15px;width: 500px;float: left">
-                                        <p><input type="checkbox"/>发布职位<?=$item['jobs_name']?></p>
+                                        <p><input type="checkbox" class="checks"/><?=$item['jobs_name']?></p>
                                         <p style="margin-left: 15px;">应聘简介：2 | 更新时间: <?=date('Y-m-d',$item['refreshtime'])?> [刷新]</p>
                                         <p style="margin-left: 15px;">修改  匹配  关闭  删除 </p>
                                     </div>
@@ -101,7 +102,7 @@
                                 <tr><td><font style="margin-left: 100px">推广职位：产品经理</font></td></tr>
                                 <tr><td><font style="margin-left: 100px">推广方案：职位变色</font></td></tr>
                                 <tr><td height="30"><font style="margin-left: 100px">推广期限：<input type="text" style="width: 40px;height: 20px"/>天</font></td></tr>
-                                <tr><td><span style="margin-left: 100px">选择颜色：<div style="display: inline-block;width: 150px;height: 30px;cursor: pointer;border: 1px solid #008000" readonly id="c_color"></div><input type="hidden" name="highlight"/>
+                                <tr><td><span style="margin-left: 100px">选择颜色：<div style="display: inline-block;width: 173px;height: 30px;cursor: pointer;border: 1px solid #008000" readonly id="c_color"></div><input type="hidden" name="highlight"/>
                                             <?php foreach($color as $item){?><div style="background-color:<?=$item['value']?>;position:relative;width: 173px;margin-left: 170px;;height: 30px;display: none;cursor: pointer" class="c_color" value="<?=$item['value']?>" ></div><?php }?></span></td></tr>
                                 <script>
                                     $(document).on('click','#c_color',function(){
@@ -109,7 +110,7 @@
                                     })
                                     $(document).on('click','.c_color',function(){
                                         var value=$(this).attr('value');
-                                        $("#c_color").attr('style',"display:inline-block;width:150px;height:30px;cursor:pointer;border:1px solid #008000;background-color:"+value+"");
+                                        $("#c_color").attr('style',"position: absolute;display:inline-block;width:150px;height:30px;cursor:pointer;border:1px solid #008000;background-color:"+value+"");
                                         $("input[name='highlight']").val(value);
                                         $(".c_color").hide();
                                     })
@@ -145,3 +146,9 @@
         </dl>
     </div>
 </div>
+<script>
+    //全选
+    $(document).on('click','.check',function(){
+        $(".checks").prop("checked",$('.check').prop('checked'));
+    })
+</script>
