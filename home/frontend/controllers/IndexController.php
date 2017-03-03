@@ -180,6 +180,7 @@ class IndexController extends CommonController
         return $this->render("toudi",['jobs'=>$jobs,'resume'=>$resume]);
 	}
 
+<<<<<<< HEAD
 
     public function actionDeliever(){
         $data=$_POST;
@@ -194,6 +195,12 @@ class IndexController extends CommonController
     }
 
 
+=======
+    //投简历公司介绍
+    public function actionCompany_jobs(){
+        return $this->render('company_jobs');
+    }
+>>>>>>> 97fea5283f134d3037f9c15244c279ee0e6213e5
 	//账号设置
 	public function actionLoginset()
 	{

@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use backend\models\Members;
 use Codeception\Module\Memcache;
 use Yii;
 use frontend\models\ContactForm;
@@ -128,10 +129,13 @@ class CompanyController extends Controller
         if($wins){
             $title='发布职位';
             $content='发布职位成功';
-            $href="<?php echo Url::to(['company/create'])?>";
+            $href="index.php?r=company/create";
             return $this->render('success',['title'=>$title,'content'=>$content,'href'=>$href]);
         }else{
-            echo"<script>alert('发布职位失败');window.location='index.php?r=company/create';</script>";
+            $title='发布职位';
+            $content='发布职位失败';
+            $href="index.php?r=company/create";
+            return $this->render('success',['title'=>$title,'content'=>$content,'href'=>$href]);
         }
     }
     //管理职位
@@ -139,7 +143,27 @@ class CompanyController extends Controller
         $uid=Yii::$app->session->get('uid');
         $jobs=Jobs::find()->where(['uid'=>$uid])->asArray()->all();
         $color=Color::find()->asArray()->all();
-        return $this->render("jobs",['jobs'=>$jobs,'color'=>$color]);
+        return $this->render("jobs",['jobs'=>$jobs,'color'=>$color,'uid'=>$uid]);
+    }
+    //职位套色
+    public function actionJobs_color(){
+        print_r($_POST);
+        unset($_POST['_csrf']);
+        $id=$_POST['id'];
+        unset($_POST['id']);
+        $data=$_POST;
+        $success=Jobs::updateAll($data,['id'=>$id]);
+        if($success){
+            $title='管理职位';
+            $content='职位套色成功';
+            $href="index.php?r=company/jobs";
+            return $this->render('success',['title'=>$title,'content'=>$content,'href'=>$href]);
+        }else{
+            $title='管理职位';
+            $content='职位套色失败';
+            $href="index.php?r=company/jobs";
+            return $this->render('success',['title'=>$title,'content'=>$content,'href'=>$href]);
+        }
     }
 	//我发布的职位
 	public function actionPositions()
@@ -153,8 +177,10 @@ class CompanyController extends Controller
 	//我公司主页
 	public function actionMyhome()
 	{
-
-		return $this->render("myhome");
+        $uid=Yii::$app->session->get('uid');
+        $members=Members::find()->where(['uid'=>$uid])->asArray()->all();
+        $company_profile=Company_profile::find()->where(['uid'=>$uid])->asArray()->all();
+		return $this->render("myhome",['members'=>$members[0],'company_profile'=>$company_profile[0]]);
 	}
 
 
@@ -163,8 +189,8 @@ class CompanyController extends Controller
         return $this->render('recruitment');
     }
     //收到的简历
-    public function actionCanInterviewResumes(){
-
+    public function actionResumes(){
+        return $this->render('resumes');
     }
     //简历查看
     public function actionPreview(){
@@ -183,11 +209,9 @@ class CompanyController extends Controller
 		return $this->render("delivery");
 	}
 
-    //企业资料
+    //企业资料20
     public function actionCompany_profile(){
         $uid=Yii::$app->session->get('uid');//用户id
-        $company_profile=Company_profile::find()->where(['uid'=>"$uid"])->asArray()->all();
-        if(empty($company_profile)){
             //企业性质
             $experience_cn=Category::find()->where(['c_alias'=>'QS_company_type'])->asArray()->all();
             //所属行业
@@ -200,12 +224,6 @@ class CompanyController extends Controller
             //所属街道
             $street=Category::find()->where(['c_alias'=>'QS_street'])->asArray()->all();
             return $this->render("company_profile",['uid'=>$uid,'experience_cn'=>$experience_cn,'trade'=>$trade,'scale'=>$scale,'category_one'=>$category_one,'category_district'=>$category_district,'street'=>$street]);
-        }else{
-            $title='企业信息';
-            $content='恭喜您信息已完善';
-            $href="<?php echo Url::to(['company/company_profile'])?>";
-            return $this->render('success',['title'=>$title,'content'=>$content,'href'=>$href]);
-        }
 
     }
     //企业资料入库
@@ -219,12 +237,12 @@ class CompanyController extends Controller
         if($success){
             $title='企业信息';
             $content='恭喜您信息完善成功';
-            $href="<?php echo Url::to(['company/company_profile'])?>";
+            $href="index.php?r=company/company_profile";
             return $this->render('success',['title'=>$title,'content'=>$content,'href'=>$href]);
         }else{
             $title='企业信息';
             $content='信息完善失败';
-            $href="<?php echo Url::to(['company/company_profile'])?>";
+            $href="index.php?r=company/company_profile";
             return $this->render('success',['title'=>$title,'content'=>$content,'href'=>$href]);
         }
     }

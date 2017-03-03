@@ -132,70 +132,130 @@ use yii\helpers\Html;
             <input name="olddeadline" value="1489028779" type="hidden">
         </td>
     </tr>
-<!--    <tr>-->
-<!--        <td style=" border-bottom:1px #CCCCCC dashed" height="30" bgcolor="#FFFFFF" align="right">-->
-<!--            <span style="color:#FF3300; font-weight:bold">*</span>-->
-<!--            职位类别：-->
-<!--        </td>-->
-<!--        <td style=" border-bottom:1px #CCCCCC dashed" bgcolor="#FFFFFF">-->
-<!--            <input id="category" placeholder="请选择职业分类" readonly="" type="text">-->
-<!--            <div id="msg" class="msg" style="width:auto;height:auto;left: 131px;position: absolute;display: block;">-->
-<!--                <table>-->
-<!--                    <tr>-->
-<!--                        <td>1</td>-->
-<!--                        <td>--1</td>-->
-<!--                    </tr>-->
-<!--                </table>-->
-<!--            </div>-->
-<!--            <script>-->
-<!--                $(function () {-->
-<!--                    //分类文本框点击时切换分类选择层的显示与隐藏-->
-<!--                    $("#category").click(function () {-->
-<!--                        $("#msgbg").toggle().siblings("#msg").toggle();-->
-<!--                    });-->
-<!--                    $(document).on('click','.a',function(){-->
-<!--                        var id=$(this).prop('id');-->
-<!--                        $.ajax({-->
-<!--                            type:'get',-->
-<!--                            data:{id:id},-->
-<!--                            url:'index.php?r=company/company_jobs_edit_ajax',-->
-<!--                            success:function(msg){-->
-<!--                                if(msg=='0'){-->
-<!---->
-<!--                                }else{-->
-<!--                                    var html='';-->
-<!--                                    for(var i=0;i<=msg.categoryname.length;i++){-->
-<!--                                        html +=msg.categoryname.eq(i);-->
-<!--                                    }-->
-<!--                                    $(".b").val(html)-->
-<!--                                }-->
-<!--                            }-->
-<!--                        })-->
-<!--                    })-->
-<!---->
-<!--                });-->
-<!--            </script>-->
-<!--        </td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td style=" border-bottom:1px #CCCCCC dashed" height="30" bgcolor="#FFFFFF" align="right">-->
-<!--            <span style="color:#FF3300; font-weight:bold">*</span>-->
-<!--            工作地区：-->
-<!--        </td>-->
-<!--        <td style=" border-bottom:1px #CCCCCC dashed" bgcolor="#FFFFFF">-->
-<!--            <select name="" id=""></select>-->
-<!--        </td>-->
-<!--    </tr>-->
+    <tr  style="position: relative">
+        <td style=" border-bottom:1px #CCCCCC dashed" height="30" bgcolor="#FFFFFF" align="right">
+            <span style="color:#FF3300; font-weight:bold;">*</span>
+            职业类别：
+        </td>
+        <td>
+            <input type="text" class="LocalDataMultiC" id="positionName" style="cursor: pointer" readonly/>
+            <div class="input"></div>
+            <div id="jobs_div" style="width: 700px;height: 458px;background-color: #ffffff;display: none">
+                <div style="height: 44px;">
+                    <span style="float: left;margin: 5px;padding: 5px"><b>职位选择</b></span>
+                    <span class="closes" style="float: right;margin: 5px;padding: 5px;background-color: #9900FF;cursor: pointer">×</span>
+                </div>
+                <div>
+                    <?php foreach($category_jobs_parents as $v){?>
+                        <div style="float: left;width: 700px;background-color: #ffffff;border-bottom: 1px solid #1B242F">
+                            <div style="width: 159px;float: left;">
+                                <span><?=trim($v['categoryname'])?></span>
+                            </div>
+                            <div style="width: 541px;float: right">
+                                <ul>
+                                    <?php foreach($category_jobs as $v2){?>
+                                        <?php if($v['id']==$v2['parentid']){?>
+                                            <li class="mouse" style="width: 151px;line-height:180%;float: left;list-style-type: none;font-size: 13px;margin: 1px;">
+                                                <a href="javascript:void(0)" topname="<?=$v2['categoryname']?>" topclass="<?=$v['id']?>"  id="<?=$v2['id']?>" class="jobs_click">
+                                                    <input type="button" class="jobs_id"  style="padding-left: 2px;margin-right:5px;font-weight: bold;background-color: #ffffff;border: 1px solid #1B242F;color: #0000ff" value="+"/><?=$v2['categoryname']?>
+                                                </a>
+                                                <div class="jobs_three" style=";position:absolute;display:none;background-color: red;width:300px;">
+                                                </div>
+                                            </li>
+                                        <?php }?>
+                                    <?php }?>
+                                </ul>
+                            </div>
+                        </div>
+                    <?php }?>
+                </div>
+            </div>
+        </td>
+        <script>
+            //点击职业类别显示
+            $(document).on('click','.LocalDataMultiC',function(){
+                var jobs_div=$("#jobs_div");
+                jobs_div.toggle('10000');
+
+            });
+            //鼠标移除事件
+            $(document).on("mouseleave",'.jobs_three',function(){
+                $(".jobs_three").hide()
+            })
+            //点击职业类别三级显示
+            $(document).on('click','.jobs_click',function(){
+                var obj=$(this);
+                var topclass=$(this).attr('topclass');//一级id
+                var parentid=$(this).prop('id');//二级id
+                var html='';
+                $.ajax({
+                    type:'POST',
+                    data:{parentid:parentid},
+                    url:'index.php?r=company/category_jobs',
+                    dataType:"json",
+                    success:function(msg){
+                        $.each(msg,function(i,v){
+                            html +="<span class='input_val' topclass='"+topclass+"' category='"+parentid+"' subclass='"+v['id']+"' style='cursor: pointer;display:inline-table;width:150px;line-height: 15px;'>"+ v['categoryname']+"</span>";
+                        });
+
+                        obj.next().html("<span style='cursor: pointer' class='input_val' topclass='"+topclass+"' category='"+parentid+"'>"+obj.attr('topname')+"</span>"+"</br>"+html).toggle();
+                    }
+                })
+            });
+            //点击赋值到文本框
+            $(document).on('click','.input_val',function(){
+                var topclass= $(this).attr('topclass');//一级分类id
+                var category=$(this).attr('category');//二级分类id
+                var category_cn=$(this).text();//三级分类id
+                $(".LocalDataMultiC").val(category_cn);
+                $(".input").html("<input type='hidden' name='topclass' value='"+topclass+"'/><input type='hidden' name='category' value='"+category+"'/><input type='hidden' name='subclass' value='0'/><input type='hidden' name='category_cn' value='"+category_cn+"'/>");
+                $("#jobs_div").hide();
+            });
+            //点击关闭div
+            $('.closes').click(function(){
+                $("#jobs_div").hide();
+            })
+        </script>
+    </tr>
     <tr>
         <td style=" border-bottom:1px #CCCCCC dashed" height="30" bgcolor="#FFFFFF" align="right"> 学历要求：</td>
         <td style=" border-bottom:1px #CCCCCC dashed" bgcolor="#FFFFFF">
-            <select name="" id=""></select>
+            <select name="education" style="border: 2px solid #f1f1f1;outline: medium none;width:100px;transition: border 0.2s ease-in 0s;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
+                <?php foreach($education_cn as $item){?>
+                    <option e_name="<?=$item['c_name']?>"  class="education"value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
+                <?php }?>
+            </select>
+            <input type="hidden" name="education_cn"/>
+        <script>
+            $(document).on('click','.education',function(){
+                var education=$(this);
+                for(var i=0;i<education.length;i++){
+                    var education_cn=education.attr('e_name')
+                }
+                $("input[name='education_cn']").val(education_cn)
+            })
+        </script>
         </td>
     </tr>
     <tr>
         <td style=" border-bottom:1px #CCCCCC dashed" height="30" bgcolor="#FFFFFF" align="right">工作经验：</td>
         <td style=" border-bottom:1px #CCCCCC dashed" bgcolor="#FFFFFF">
-            <select name="" id=""></select>
+
+            <select name="experience" style="border: 2px solid #f1f1f1;outline: medium none;transition: border 0.2s ease-in 0s;width: 100px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
+                <?php foreach($experience_cn as $item){?>
+                    <option e_name="<?=$item['c_name']?>" class="experience" value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
+                <?php }?>
+            </select>
+            <input type="hidden" name="experience_cn"/>
+        <script>
+            $(document).on('click','.experience',function(){
+                var experience=$(this);
+                for(var i=0;i<experience.length;i++){
+                    var experience_cn=experience.attr('e_name')
+                }
+                $("input[name='experience_cn']").val(experience_cn)
+            })
+        </script>
         </td>
     </tr>
     <tr>
@@ -204,7 +264,21 @@ use yii\helpers\Html;
             月薪范围：
         </td>
         <td style=" border-bottom:1px #CCCCCC dashed" bgcolor="#FFFFFF">
-            <select name="" id=""></select>
+            <select name="wage" style="border: 2px solid #f1f1f1;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 150px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
+                <?php foreach($wage_cn as $item){?>
+                    <option w_name="<?=$item['c_name']?>" class="wage" value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
+                <?php }?>
+            </select>
+            <input type="hidden" name="wage_cn"/>
+        <script>
+            $(document).on('click','.wage',function(){
+                var wage=$(this);
+                for(var i=0;i<wage.length;i++){
+                    var wage_cn=wage.attr('w_name')
+                }
+                $("input[name='wage_cn']").val(wage_cn)
+            })
+        </script>
         </td>
     </tr>
     <tr>
