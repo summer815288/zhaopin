@@ -32,8 +32,11 @@ class PersonController extends Controller
 	//我的简历
 	public function actionResume_list()
 	{
+        $uid=Yii::$app->session->get('uid');
+        $resume=Resume::find()->where(['uid'=>$uid])->asArray()->all();
+//        print_r($resume);die;
 
-		return $this->render("resume_list");
+        return $this->render("resume_list",['resume'=>$resume]);
 	}
 
 
@@ -290,12 +293,18 @@ class PersonController extends Controller
         $sql="select * from `resume` where id=$id";
         $sql1="select * from `resume_education` where pid=$id";
         $sql2="select * from `resume_work` where pid=$id";
+        $sql3="select * from `resume_language` where pid=$id";
+        $sql4="select * from `resume_credent` where pid=$id";
+        $sql5="select * from `resume_img` where pid=$id";   //查找附件照片
         $info=Yii::$app->db->createCommand($sql)->queryOne();
-        $edu=Yii::$app->db->createCommand($sql1)->queryOne();
-        $work=Yii::$app->db->createCommand($sql2)->queryOne();
-       // print_r($info);die;
+        $edu=Yii::$app->db->createCommand($sql1)->queryAll();
+        $work=Yii::$app->db->createCommand($sql2)->queryAll();
+        $language=Yii::$app->db->createCommand($sql3)->queryAll();
+        $credent=Yii::$app->db->createCommand($sql4)->queryAll();
+        $img=Yii::$app->db->createCommand($sql5)->queryAll();
+        //print_r($edu);die;
 
-        return $this->render('resume_end',['id'=>$id,'info'=>$info,'edu'=>$edu,'work'=>$work]);
+        return $this->render('resume_end',['id'=>$id,'info'=>$info,'edu'=>$edu,'work'=>$work,'language'=>$language,'credent'=>$credent,'img'=>$img]);
 
 
     }
