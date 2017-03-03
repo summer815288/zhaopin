@@ -1610,7 +1610,7 @@ ul.resumeLists li.fileResume .resumeIntro span{	margin-top:-30px;}
 .company_center_content>dt h1{color:#fff;font-size:24px;font-weight:normal;line-height:47px;padding:0 20px;margin:0}
 .company_center_content>dt em{background:url(img/title_arrow_new.png) no-repeat;width:4px;height:5px;position:absolute;left:-4px;top:0}
 .company_center_content>dt span{font-size:14px}
-.company_center_content>dd{min-height:337px;padding:70px 0;position:relative}
+.company_center_content>dd{min-height:337px;padding:70px 0;position:relative;width: 948px}
 .company_center_content>dd .ccc_tr{position:absolute;right:20px;top:20px}
 .company_center_content>dd .ccc_tr span{color:#019875;font-weight:600}
 .company_center_content .no_resume_tip{font-size:18px;min-height:65px;background:url(img/noresult_95.png) 140px 0 no-repeat;padding:70px 0 0 250px;margin-top:15px;line-height:32px}

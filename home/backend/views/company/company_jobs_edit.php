@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 ?>
 <?=Html::beginForm('company/company_jobs_edit_to','post')?>
-<script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="admin/js/category/jquery.min.js"></script>
 <div>
      <div> 职位修改操作</div>
 </div>
@@ -132,104 +132,60 @@ use yii\helpers\Html;
             <input name="olddeadline" value="1489028779" type="hidden">
         </td>
     </tr>
-    <tr>
-        <td style=" border-bottom:1px #CCCCCC dashed" height="30" bgcolor="#FFFFFF" align="right">
-            <span style="color:#FF3300; font-weight:bold">*</span>
-            职位类别：
-        </td>
-        <td style=" border-bottom:1px #CCCCCC dashed" bgcolor="#FFFFFF">
-            <input id="category" placeholder="请选择职业分类" readonly="readonly" type="text">
-            <div id="msg" class="msg" style="left: 130px;align-content: center;background-color:#ffffff;position:absolute;display: none">
-                <ul>
-            <?php foreach($category_jobs as $item){?>
-                    <li class="twop" style="list-style-type:none;cursor: pointer;font-size: 18px" id="<?=$item['id']?>" title="<?=$item['categoryname']?>"><?=$item['categoryname']?></li>
-            <?php }?>
-                </ul>
-            </div>
-            <div class="tinfo" style="left: 130px;align-content: center;background-color:red;position:absolute;display: none">
-                <ul>
-                    <?php foreach($category2 as $item){?>
-                        <li style="list-style-type:none;cursor: pointer;font-size: 18px" id="<?=$item['id']?>" title="<?=$item['categoryname']?>"><?=$item['categoryname']?></li>
-                    <?php }?>
-                </ul>
-            </div>
-            <script>
-                $(function () {
-                    //分类文本框点击时切换分类选择层的显示与隐藏
-                    $("#category").click(function () {
-                        $("#msg").toggle('show');
-                    });
-                    //二级分类标题点击时切换三级分类的显示与隐藏
-                    $(".twop").click(function () {
-
-                        var obj=$(".tinfo");
-                        for(var i=0;i<=obj.length;i++){
-                            $("#msg").hide();
-                            if($(this).prop('id')==obj.eq(i).prop('id')){
-                                $(".tinfo").show();
-                            }
-                        }
-
-
-                    });
-                    //三层分类层鼠标离开时隐藏
-                    $(".tinfo").mouseleave(function () {
-                        $(this).hide();
-                    });
-                    //三级分类点击时开始判断并且设置获取分类
-                    $(".tinfo a").click(function () {
-                        var classname = $(this).attr("class");//获取被点击的三级分类的class，唯一，一般为分类id
-                        var valinfo = $(this).text();//获取三级分类的值
-                        //循环已经选择过的三级分类，如果存在去除
-                        $("#data_checkbox span").each(function () {
-                            if ($(this).attr("class") == classname) {
-                                $(this).remove();
-                            }
-                        });
-                        //获取已经选择的分类的个数，如果超过最大选择项，提示返回
-                        var length = $("#data_checkbox span").length;
-                        if (length >= maxlength) {
-                            alert("最多只能选择"+maxlength+"个职位");
-                            return;
-                        }
-                        //将选择的分类追加至指定的区域
-                        $("#data_checkbox").append('<span class="' + classname + '"><label><input type="checkbox" checked="true"> <b style="color:#0297fd">' + valinfo + '</b></label></span>');
-                        //分类文本框赋值
-                        setval();
-                    });
-                    //已选择文本框区域的分类项绑定单击事件，点击移除
-                    $("#data_checkbox span").live("click",function () {
-                        $(this).remove();
-                        //分类文本框重新赋值
-                        setval();
-                    });
-                    //关闭按钮
-                    $(".panel_closebtn").click(function () {
-                        $("#msgbg").hide().siblings("#msg").hide();
-                    });
-                    //重新获取最新的选择的分类赋值给分类文本框
-                    function setval()
-                    {
-                        var carray = "";
-                        $("#data_checkbox span").each(function () {
-                            carray += $(this).find("b").text()+",";
-                        });
-                        carray=carray.substring(0,carray.length-1);
-                        $("#category").val(carray);
-                    }
-                });
-            </script>
-        </td>
-    </tr>
-    <tr>
-        <td style=" border-bottom:1px #CCCCCC dashed" height="30" bgcolor="#FFFFFF" align="right">
-            <span style="color:#FF3300; font-weight:bold">*</span>
-            工作地区：
-        </td>
-        <td style=" border-bottom:1px #CCCCCC dashed" bgcolor="#FFFFFF">
-            <select name="" id=""></select>
-        </td>
-    </tr>
+<!--    <tr>-->
+<!--        <td style=" border-bottom:1px #CCCCCC dashed" height="30" bgcolor="#FFFFFF" align="right">-->
+<!--            <span style="color:#FF3300; font-weight:bold">*</span>-->
+<!--            职位类别：-->
+<!--        </td>-->
+<!--        <td style=" border-bottom:1px #CCCCCC dashed" bgcolor="#FFFFFF">-->
+<!--            <input id="category" placeholder="请选择职业分类" readonly="" type="text">-->
+<!--            <div id="msg" class="msg" style="width:auto;height:auto;left: 131px;position: absolute;display: block;">-->
+<!--                <table>-->
+<!--                    <tr>-->
+<!--                        <td>1</td>-->
+<!--                        <td>--1</td>-->
+<!--                    </tr>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--            <script>-->
+<!--                $(function () {-->
+<!--                    //分类文本框点击时切换分类选择层的显示与隐藏-->
+<!--                    $("#category").click(function () {-->
+<!--                        $("#msgbg").toggle().siblings("#msg").toggle();-->
+<!--                    });-->
+<!--                    $(document).on('click','.a',function(){-->
+<!--                        var id=$(this).prop('id');-->
+<!--                        $.ajax({-->
+<!--                            type:'get',-->
+<!--                            data:{id:id},-->
+<!--                            url:'index.php?r=company/company_jobs_edit_ajax',-->
+<!--                            success:function(msg){-->
+<!--                                if(msg=='0'){-->
+<!---->
+<!--                                }else{-->
+<!--                                    var html='';-->
+<!--                                    for(var i=0;i<=msg.categoryname.length;i++){-->
+<!--                                        html +=msg.categoryname.eq(i);-->
+<!--                                    }-->
+<!--                                    $(".b").val(html)-->
+<!--                                }-->
+<!--                            }-->
+<!--                        })-->
+<!--                    })-->
+<!---->
+<!--                });-->
+<!--            </script>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td style=" border-bottom:1px #CCCCCC dashed" height="30" bgcolor="#FFFFFF" align="right">-->
+<!--            <span style="color:#FF3300; font-weight:bold">*</span>-->
+<!--            工作地区：-->
+<!--        </td>-->
+<!--        <td style=" border-bottom:1px #CCCCCC dashed" bgcolor="#FFFFFF">-->
+<!--            <select name="" id=""></select>-->
+<!--        </td>-->
+<!--    </tr>-->
     <tr>
         <td style=" border-bottom:1px #CCCCCC dashed" height="30" bgcolor="#FFFFFF" align="right"> 学历要求：</td>
         <td style=" border-bottom:1px #CCCCCC dashed" bgcolor="#FFFFFF">
@@ -256,7 +212,7 @@ use yii\helpers\Html;
             <span style="color:#FF3300; font-weight:bold">*</span>
             职位描述：
         </td>
-        <td bgcolor="#FFFFFF">职位描述</td>
+        <td bgcolor="#FFFFFF"><textarea name="" id="" cols="30" rows="10"></textarea></td>
     </tr>
     <tr>
         <td height="30" align="right">

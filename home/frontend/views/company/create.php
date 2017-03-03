@@ -1,578 +1,561 @@
-﻿
-    <div id="container">
-        
-        	<div class="sidebar">
-            	<a class="btn_create" href="create.html">发布新职位</a>
-                <dl class="company_center_aside">
-		<dt>我收到的简历</dt>
-		<dd>
-		<a href="">待处理简历</a> 
-			</dd>
-	<dd>
-		<a href="canInterviewResumes.html">待定简历</a>
-	</dd>
-	<dd>
-		<a href="haveNoticeResumes.html">已通知面试简历</a>
-	</dd>
-	<dd>
-		<a href="haveRefuseResumes.html">不合适简历</a>
-	</dd>
-	<dd class="btm">
-		<a href="autoFilterResumes.html">自动过滤简历</a> 
-			</dd>
-</dl>
-<dl class="company_center_aside">
-		<dt>我发布的职位</dt>
-			<dd>
-		<a href="positions.html">有效职位</a>
-	</dd>
-	<dd>
-		<a href="positions.html">已下线职位</a>
-	</dd>
-	</dl>
-                <div class="subscribe_side mt20">
-   <div class="f14">想收到更多更好的简历？</div>
-   <div class="f18 mb10">就用拉勾招聘加速助手 </div>
-   <div>咨询：<a class="f16" href="mailto:jessica@lagou.com">jessica@lagou.com</a></div>
-   <div class="f18 ti2em">010-57286512</div>
-</div>
-<div class="subscribe_side mt20">
-   <div class="f14">加入互联网HR交流群</div>
-   <div class="f18 mb10">跟同行聊聊</div>
-   <div class="f24">338167634</div>
-</div>            </div><!-- end .sidebar -->
+﻿<?php
+use yii\helpers\Html;
+?>
+<div id="container">
+<?php include"left.php";?>
             <div class="content">
             	<dl class="company_center_content">
-                    <dt>
-                        <h1>
-                            <em></em>
-                                                       		发布新职位
-                           	                        </h1>
-                    </dt>
-                    <dd>
+                    <dt><h1><em></em>发布新职位</h1></dt>
+                    <dd   style="background-color: #fafafa">
                     	<div class="ccc_tr">今日已发布 <span>0</span> 个职位   还可发布 <span>5</span> 个职位</div>
-                    	<form action="http://www.lagou.com/corpPosition/preview.html" method="post" id="jobForm">
-                            <input type="hidden" value="" name="id">
-                            <input type="hidden" value="create" name="preview">
-                            <input type="hidden" value="25927" name="companyId">
-                            <input type="hidden" value="c29d4a7c35314180bf3be5eb3f00048f" name="resubmitToken">
+                    <?=Html::beginForm('index.php?r=company/create_to','post')?>
+                            <dt class="redstar">职位信息:</dt>
                             <table class="btm">
-                            	<tbody><tr>
-                                	<td width="25"><span class="redstar">*</span></td>
-                                	<td width="85">职位类别</td>
-                                	<td>
-                                    	<input type="hidden" id="positionType" value="" name="positionType">
-                                        <input type="button" value="请选择职位类别" id="select_category" class="selectr selectr_380">                                      
-                                        <div class="dn" id="box_job" style="display: none;">
-                                                                                            <dl>
-                                                    <dt>技术</dt>
-                                                    <dd>
-                                                        <ul class="reset job_main">
-                                                                                                                            <li>
-                                                                    <span>后端开发</span>
-                                                                                                                                        <ul class="reset job_sub dn">
-                                                                                                                                                    <li>Java</li>
-                                                                                                                                                    <li>C++</li>
-                                                                                                                                                    <li>PHP</li>
-                                                                                                                                                    <li>数据挖掘</li>
-                                                                                                                                                    <li>C</li>
-                                                                                                                                                    <li>C#</li>
-                                                                                                                                                    <li>.NET</li>
-                                                                                                                                                    <li>Hadoop</li>
-                                                                                                                                                    <li>Python</li>
-                                                                                                                                                    <li>Delphi</li>
-                                                                                                                                                    <li>VB</li>
-                                                                                                                                                    <li>Perl</li>
-                                                                                                                                                    <li>Ruby</li>
-                                                                                                                                                    <li>Node.js</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>移动开发</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -160px;">
-                                                                                                                                                    <li>HTML5</li>
-                                                                                                                                                    <li>Android</li>
-                                                                                                                                                    <li>iOS</li>
-                                                                                                                                                    <li>WP</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>前端开发</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -310px;">
-                                                                                                                                                    <li>web前端</li>
-                                                                                                                                                    <li>Flash</li>
-                                                                                                                                                    <li>html5</li>
-                                                                                                                                                    <li>JavaScript</li>
-                                                                                                                                                    <li>U3D</li>
-                                                                                                                                                    <li>COCOS2D-X</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>测试</span>
-                                                                                                                                        <ul class="reset job_sub dn">
-                                                                                                                                                    <li>测试工程师</li>
-                                                                                                                                                    <li>自动化测试</li>
-                                                                                                                                                    <li>功能测试</li>
-                                                                                                                                                    <li>性能测试</li>
-                                                                                                                                                    <li>测试开发</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>运维</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -160px;">
-                                                                                                                                                    <li>运维工程师</li>
-                                                                                                                                                    <li>运维开发工程师</li>
-                                                                                                                                                    <li>网络工程师</li>
-                                                                                                                                                    <li>系统工程师</li>
-                                                                                                                                                    <li>IT支持</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>DBA</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -310px;">
-                                                                                                                                                    <li>MySQL</li>
-                                                                                                                                                    <li>SQLServer</li>
-                                                                                                                                                    <li>Oracle</li>
-                                                                                                                                                    <li>DB2</li>
-                                                                                                                                                    <li>MongoDB</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>项目管理</span>
-                                                                                                                                        <ul class="reset job_sub dn">
-                                                                                                                                                    <li>项目经理</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>高端技术职位</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -160px;">
-                                                                                                                                                    <li>技术经理</li>
-                                                                                                                                                    <li>技术总监</li>
-                                                                                                                                                    <li>测试经理</li>
-                                                                                                                                                    <li>架构师</li>
-                                                                                                                                                    <li>CTO</li>
-                                                                                                                                                    <li>运维总监</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                    </ul>
-                                                    </dd>
-                                                </dl>
-                                                                                            <dl>
-                                                    <dt>产品</dt>
-                                                    <dd>
-                                                        <ul class="reset job_main">
-                                                                                                                            <li>
-                                                                    <span>产品经理</span>
-                                                                                                                                        <ul class="reset job_sub dn">
-                                                                                                                                                    <li>产品经理</li>
-                                                                                                                                                    <li>网页产品经理</li>
-                                                                                                                                                    <li>移动产品经理</li>
-                                                                                                                                                    <li>产品助理</li>
-                                                                                                                                                    <li>数据产品经理</li>
-                                                                                                                                                    <li>电商产品经理</li>
-                                                                                                                                                    <li>游戏策划</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>产品设计师</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -160px;">
-                                                                                                                                                    <li>网页产品设计师</li>
-                                                                                                                                                    <li>无线产品设计师</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>高端产品职位</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -310px;">
-                                                                                                                                                    <li>产品部经理</li>
-                                                                                                                                                    <li>产品总监</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                    </ul>
-                                                    </dd>
-                                                </dl>
-                                                                                            <dl>
-                                                    <dt>设计</dt>
-                                                    <dd>
-                                                        <ul class="reset job_main">
-                                                                                                                            <li>
-                                                                    <span>视觉设计</span>
-                                                                                                                                        <ul class="reset job_sub dn">
-                                                                                                                                                    <li>视觉设计师</li>
-                                                                                                                                                    <li>网页设计师</li>
-                                                                                                                                                    <li>Flash设计师</li>
-                                                                                                                                                    <li>APP设计师</li>
-                                                                                                                                                    <li>UI设计师</li>
-                                                                                                                                                    <li>平面设计师</li>
-                                                                                                                                                    <li>美术设计师（2D/3D）</li>
-                                                                                                                                                    <li>广告设计师</li>
-                                                                                                                                                    <li>多媒体设计师</li>
-                                                                                                                                                    <li>原画师</li>
-                                                                                                                                                    <li>游戏特效</li>
-                                                                                                                                                    <li>游戏界面设计师</li>
-                                                                                                                                                    <li>游戏场景</li>
-                                                                                                                                                    <li>游戏角色</li>
-                                                                                                                                                    <li>游戏动作</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>交互设计</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -160px;">
-                                                                                                                                                    <li>交互设计师</li>
-                                                                                                                                                    <li>无线交互设计师</li>
-                                                                                                                                                    <li>网页交互设计师</li>
-                                                                                                                                                    <li>硬件交互设计师</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>用户研究</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -310px;">
-                                                                                                                                                    <li>数据分析师</li>
-                                                                                                                                                    <li>用户研究员</li>
-                                                                                                                                                    <li>游戏数值策划</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>高端设计职位</span>
-                                                                                                                                        <ul class="reset job_sub dn">
-                                                                                                                                                    <li>设计经理/主管</li>
-                                                                                                                                                    <li>设计总监</li>
-                                                                                                                                                    <li>视觉设计经理/主管</li>
-                                                                                                                                                    <li>视觉设计总监</li>
-                                                                                                                                                    <li>交互设计经理/主管</li>
-                                                                                                                                                    <li>交互设计总监</li>
-                                                                                                                                                    <li>用户研究经理/主管</li>
-                                                                                                                                                    <li>用户研究总监</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                    </ul>
-                                                    </dd>
-                                                </dl>
-                                                                                            <dl>
-                                                    <dt>运营</dt>
-                                                    <dd>
-                                                        <ul class="reset job_main">
-                                                                                                                            <li>
-                                                                    <span>运营</span>
-                                                                                                                                        <ul class="reset job_sub dn">
-                                                                                                                                                    <li>用户运营</li>
-                                                                                                                                                    <li>产品运营</li>
-                                                                                                                                                    <li>数据运营</li>
-                                                                                                                                                    <li>内容运营</li>
-                                                                                                                                                    <li>活动运营</li>
-                                                                                                                                                    <li>商家运营</li>
-                                                                                                                                                    <li>品类运营</li>
-                                                                                                                                                    <li>游戏运营</li>
-                                                                                                                                                    <li>网络推广</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>编辑</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -160px;">
-                                                                                                                                                    <li>副主编</li>
-                                                                                                                                                    <li>内容编辑</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>客服</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -310px;">
-                                                                                                                                                    <li>售前咨询</li>
-                                                                                                                                                    <li>售后客服</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>高端运营职位</span>
-                                                                                                                                        <ul class="reset job_sub dn">
-                                                                                                                                                    <li>主编</li>
-                                                                                                                                                    <li>运营总监</li>
-                                                                                                                                                    <li>COO</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                    </ul>
-                                                    </dd>
-                                                </dl>
-                                                                                            <dl>
-                                                    <dt>市场与销售</dt>
-                                                    <dd>
-                                                        <ul class="reset job_main">
-                                                                                                                            <li>
-                                                                    <span>市场/营销</span>
-                                                                                                                                        <ul class="reset job_sub dn">
-                                                                                                                                                    <li>市场营销</li>
-                                                                                                                                                    <li>市场策划</li>
-                                                                                                                                                    <li>市场顾问</li>
-                                                                                                                                                    <li>市场推广</li>
-                                                                                                                                                    <li>SEO</li>
-                                                                                                                                                    <li>SEM</li>
-                                                                                                                                                    <li>商务渠道</li>
-                                                                                                                                                    <li>商业数据分析</li>
-                                                                                                                                                    <li>活动策划</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>公关</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -160px;">
-                                                                                                                                                    <li>媒介经理</li>
-                                                                                                                                                    <li>广告协调</li>
-                                                                                                                                                    <li>品牌公关</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>销售</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -310px;">
-                                                                                                                                                    <li>销售专员</li>
-                                                                                                                                                    <li>销售经理</li>
-                                                                                                                                                    <li>客户代表</li>
-                                                                                                                                                    <li>大客户代表</li>
-                                                                                                                                                    <li>BD经理</li>
-                                                                                                                                                    <li>商务渠道</li>
-                                                                                                                                                    <li>渠道销售</li>
-                                                                                                                                                    <li>代理商销售</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>高端市场职位</span>
-                                                                                                                                        <ul class="reset job_sub dn">
-                                                                                                                                                    <li>市场总监</li>
-                                                                                                                                                    <li>销售总监</li>
-                                                                                                                                                    <li>商务总监</li>
-                                                                                                                                                    <li>CMO</li>
-                                                                                                                                                    <li>公关总监</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                    </ul>
-                                                    </dd>
-                                                </dl>
-                                                                                            <dl>
-                                                    <dt>职能</dt>
-                                                    <dd>
-                                                        <ul class="reset job_main">
-                                                                                                                            <li>
-                                                                    <span>人力资源</span>
-                                                                                                                                        <ul class="reset job_sub dn">
-                                                                                                                                                    <li>人力资源</li>
-                                                                                                                                                    <li>招聘</li>
-                                                                                                                                                    <li>HRBP</li>
-                                                                                                                                                    <li>人事/HR</li>
-                                                                                                                                                    <li>培训经理</li>
-                                                                                                                                                    <li>薪资福利经理</li>
-                                                                                                                                                    <li>绩效考核经理</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>行政</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -160px;">
-                                                                                                                                                    <li>助理</li>
-                                                                                                                                                    <li>前台</li>
-                                                                                                                                                    <li>法务</li>
-                                                                                                                                                    <li>行政</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>财务</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -310px;">
-                                                                                                                                                    <li>会计</li>
-                                                                                                                                                    <li>出纳</li>
-                                                                                                                                                    <li>财务</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                            <li>
-                                                                    <span>高端职能职位</span>
-                                                                                                                                        <ul class="reset job_sub dn">
-                                                                                                                                                    <li>行政总监/经理</li>
-                                                                                                                                                    <li>财务总监/经理</li>
-                                                                                                                                                    <li>HRD/HRM</li>
-                                                                                                                                                    <li>CFO</li>
-                                                                                                                                            </ul>
-                                                                                                                                    </li>
-                                                                                                                    </ul>
-                                                    </dd>
-                                                </dl>
+                            	<tbody>
+                                    <tr>
+                                        <td width="25"><span class="redstar">*</span></td>
+                                        <td width="95">职位名称：</td>
+                                        <td>
+                                            <input type="text" placeholder="请输入职位名称，如：产品经理" value="" name="jobs_name" id="positionName">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="25"><span class="redstar">*</span></td>
+                                        <td width="85">职业性质</td>
+                                        <td>
+                                            <ul class="profile_radio clearfix reset">
+                                                <li>
+                                                    全职<em></em>
+                                                    <input type="radio" class="nature" name="nature" val="全职" value="62">
+                                                </li>
+                                                <li>
+                                                    兼职<em></em>
+                                                    <input type="radio" class="nature" name="nature" val="兼职" value="63">
+                                                </li>
+                                                <li>
+                                                    实习<em></em>
+                                                    <input type="radio" class="nature" name="nature" val="实习" value="64">
+                                                </li>
+                                                <input type="hidden" class="nature_cn" name="nature_cn"/>
+                                            </ul>
+                                            <script>
+                                                $(document).on('click','.nature',function(){
+                                                    if($(this).prop('checked',true)){
+                                                        var val=$(this).attr('val');
+                                                        $(".nature_cn").val(val)
+                                                    }
+                                                })
+                                            </script>
+                                        </td>
+                                    </tr>
+                                    <tr  style="position: relative">
+                                        <td width="25"><span class="redstar">*</span><div class="tian"></div></td>
+                                        <td width="85">职位类别 <div class="tian"></div></td>
+                                        <td>
+                                            <input type="text" class="LocalDataMultiC" id="positionName" style="cursor: pointer" readonly/>
+                                            <div class="input"></div>
+                                            <div id="jobs_div" style="width: 700px;height: 458px;background-color: #ffffff;display: none">
+                                                    <div style="height: 44px;">
+                                                        <span style="float: left;margin: 5px;padding: 5px"><b>职位选择</b></span>
+                                                        <span class="closes" style="float: right;margin: 5px;padding: 5px;background-color: #9900FF;cursor: pointer">×</span>
+                                                    </div>
+                                                    <div>
+                                                        <?php foreach($category_jobs_parents as $v){?>
+                                                        <div style="float: left;width: 700px;background-color: #ffffff;border-bottom: 1px solid #1B242F">
+                                                            <div style="width: 159px;float: left;">
+                                                                <span><?=trim($v['categoryname'])?></span>
+                                                            </div>
+                                                            <div style="width: 541px;float: right">
+                                                                <ul>
+                                                                    <?php foreach($category_jobs as $v2){?>
+                                                                        <?php if($v['id']==$v2['parentid']){?>
+                                                                                <li class="mouse" style="width: 151px;line-height:180%;float: left;list-style-type: none;font-size: 13px;margin: 1px;">
+                                                                                    <a href="javascript:void(0)" topname="<?=$v2['categoryname']?>" topclass="<?=$v['id']?>"  id="<?=$v2['id']?>" class="jobs_click">
+                                                                                    <input type="button" class="jobs_id"  style="padding-left: 2px;margin-right:5px;font-weight: bold;background-color: #ffffff;border: 1px solid #1B242F;color: #0000ff" value="+"/><?=$v2['categoryname']?>
+                                                                                    </a>
+                                                                                    <div class="jobs_three" style=";position:absolute;display:none;background-color: red;width:300px;">
                                                                                     </div>
-                                    </td>
-                                </tr>
-                            	<tr>
-                                	<td><span class="redstar">*</span></td>
-                                	<td>职位名称</td>
-                                	<td>
-                                    	<input type="text" placeholder="请输入职位名称，如：产品经理" value="" name="positionName" id="positionName">
-                                    	                                    </td>
-                                </tr>
-                            	<tr>
-                                	<td></td>
-                                	<td>所属部门</td>
-                                	<td>
-                                    	<input type="text" placeholder="请输入所属部门" value="" name="department" id="department">	
-                                    </td>
-                                </tr>
-                            </tbody></table>
-                            
-                            <table class="btm">
-                            	<tbody><tr>
-                                	<td width="25"><span class="redstar">*</span></td>
-                                	<td width="85">工作性质</td>
-                                	<td>
-                                    	<ul class="profile_radio clearfix reset">
-                                    		                                                                                                          <li>
-                                                           全职<em></em>
-                                                           <input type="radio" name="jobNature" value="全职"> 
-                                                       </li>
-                                                                                                                                                                                                         <li>
-                                                           兼职<em></em>
-                                                           <input type="radio" name="jobNature" value="兼职"> 
-                                                       </li>
-                                                                                                                                                                                                         <li>
-                                                           实习<em></em>
-                                                           <input type="radio" name="jobNature" value="实习"> 
-                                                       </li>
-                                                                                                                                       </ul>
-                                    </td>
-                                </tr>
-                            	<tr>
-                                	<td><span class="redstar">*</span></td>
-                                	<td>月薪范围</td>
-                                    <!--<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> -->
-                                	<td>
-                                    	<div class="salary_range">
-                                            <div>
-                                                <input type="text" placeholder="最低月薪" value="" id="salaryMin" name="salaryMin"> 
-                                                <span>k</span>
+                                                                                </li>
+                                                                        <?php }?>
+                                                                    <?php }?>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <?php }?>
+                                                    </div>
                                             </div>
-                                            <div>
-                                                <input type="text" placeholder="最高月薪" value="" id="salaryMax" name="salaryMax"> 
-                                                <span>k</span>
+                                        </td>
+                                        <script>
+                                            //点击职业类别显示
+                                            $(document).on('click','.LocalDataMultiC',function(){
+                                                var jobs_div=$("#jobs_div");
+                                                jobs_div.toggle('10000');
+
+                                            });
+                                            //鼠标移除事件
+                                            $(document).on("mouseleave",'.jobs_three',function(){
+                                                $(".jobs_three").hide()
+                                            })
+                                            //点击职业类别三级显示
+                                            $(document).on('click','.jobs_click',function(){
+                                                var obj=$(this);
+                                                var topclass=$(this).attr('topclass');//一级id
+                                               var parentid=$(this).prop('id');//二级id
+                                                var html='';
+                                                $.ajax({
+                                                    type:'POST',
+                                                    data:{parentid:parentid},
+                                                    url:'index.php?r=company/category_jobs',
+                                                    dataType:"json",
+                                                    success:function(msg){
+                                                        $.each(msg,function(i,v){
+                                                            html +="<span class='input_val' topclass='"+topclass+"' category='"+parentid+"' subclass='"+v['id']+"' style='cursor: pointer;display:inline-table;width:150px;line-height: 15px;'>"+ v['categoryname']+"</span>";
+                                                        });
+
+                                                        obj.next().html("<span style='cursor: pointer' class='input_val' topclass='"+topclass+"' category='"+parentid+"'>"+obj.attr('topname')+"</span>"+"</br>"+html).toggle();
+                                                    }
+                                                })
+                                            });
+                                            //点击赋值到文本框
+                                            $(document).on('click','.input_val',function(){
+                                                var topclass= $(this).attr('topclass');//一级分类id
+                                                var category=$(this).attr('category');//二级分类id
+                                                var category_cn=$(this).text();//三级分类id
+                                                $(".LocalDataMultiC").val(category_cn);
+                                                $(".input").html("<input type='hidden' name='topclass' value='"+topclass+"'/><input type='hidden' name='category' value='"+category+"'/><input type='hidden' name='subclass' value='0'/><input type='hidden' name='category_cn' value='"+category_cn+"'/>");
+                                                $("#jobs_div").hide();
+                                            });
+                                            //点击关闭div
+                                            $('.closes').click(function(){
+                                                $("#jobs_div").hide();
+                                            })
+                                        </script>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="redstar">*</span></td>
+                                        <td>招聘人数：</td>
+                                        <td>
+                                            <input type="text" placeholder="请输入招聘人数" value="" name="amount">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="redstar">*</span></td>
+                                        <td>工作城市</td>
+                                        <td>
+                                            <input type="text" class="district_cn" style="cursor: pointer" readonly placeholder="请选择城市" id="positionName" name="district_cn">
+                                            <input type='hidden' name='district' />
+                                            <input type='hidden' name='sdistrict' />
+                                            <input type='hidden' name='district_cn' />
+                                            <div id="djobs_div" style="width: 625px;height: 240px;background-color: #ffffff;display: none">
+                                                <div style="height: 44px;">
+                                                    <span style="float: left;margin: 5px;padding: 5px"><b>城市选择</b></span>
+                                                    <span class="dcloses" style="float: right;margin: 5px;padding: 5px;background-color: #9900FF;cursor: pointer">×</span>
+                                                </div>
+                                                <div>
+                                                    <div style="width: 625px;background-color: #ffffff;">
+                                                        <ul>
+                                                            <?php foreach($category_one as $v){?>
+                                                                <li style="list-style-type: none;width: 100px;line-height: 22px;display: inline-table">
+                                                                    <input type="button" class="cate1" c_id="<?=$v['id']?>" c_name="<?=$v['categoryname']?>" style="font-weight: bold;background-color: #ffffff;color: #0000aa;border: 1px solid #0000aa;padding: 1px 2px" value="+"/><?=$v['categoryname']?>
+                                                                        <div class="mouse_leave" style="position: absolute;display: none;background-color: #AFAFAF;width: 400px;height: auto;z-index: 10">
+                                                                            <ul>
+                                                                                <li class="cate2" c_id="<?=$v['id']?>" val="<?=$v['categoryname']?>" style="cursor: pointer;list-style-type: none;width: 80px;display: inline-table;font-weight: bold">不限</li><br>
+                                                                                <?php foreach($category_district as $v2){?>
+                                                                                    <?php if($v['id']==$v2['parentid']){?>
+                                                                                        <li class="cate2" c_id="<?=$v2['id']?>" val="<?=$v2['categoryname']?>" style="cursor: pointer;list-style-type: none;width: 80px;display: inline-table">
+                                                                                            <?=$v2['categoryname']?>
+                                                                                        </li>
+                                                                                    <?php }?>
+                                                                                <?php }?>
+                                                                            </ul>
+                                                                        </div>
+                                                                </li>
+                                                            <?php }?>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <span>只能输入整数，如：9</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                            	<tr>
-                                	<td><span class="redstar">*</span></td>
-                                	<td>工作城市</td>
-                                	<td>
-                                    	<input type="text" placeholder="请输入工作城市，如：北京" value="上海" name="workAddress" id="workAddress">
-                                    </td>
-                                </tr>
-                            </tbody></table>
+                                        </td>
+                                        <script>
+                                            //点击职业类别显示
+                                            $(document).on('click','.district_cn',function(){
+                                                var djobs_div=$("#djobs_div");
+                                                djobs_div.toggle('10000');
+                                            });
+                                            //点击关闭div
+                                            $('.dcloses').click(function(){
+                                                $("#djobs_div").hide();
+                                            });
+                                            //点击让二级城市显示
+                                            $(document).on('click','.cate1',function(){
+                                                $(this).next().toggle()
+                                            });
+                                            //点击赋值
+                                            $(document).on('click','.cate2',function(){
+                                                var district_div=$(".district_cn");
+                                                var district=$(this).parent().parent().prev().attr('c_id');//一级分类id
+                                                var c_name=$(this).parent().parent().prev().attr('c_name');//一级分类name
+                                                var sdistrict=$(this).attr('c_id');//二级分类id
+                                                var district_cn=$(this).attr('val');//二级分类name
+//                                                alert(c_name);
+                                                if(district==sdistrict){
+                                                    district_div.val(district_cn);//赋值到文本框
+                                                    $("input[name='district']").val(district);
+                                                    $("input[name='sdistrict']").val(0);
+                                                    $("input[name='district_cn']").val(c_name);
+                                                    $("#djobs_div").hide();
+                                                }else{
+                                                    district_div.val(c_name+'/'+district_cn);//赋值到文本框
+                                                    $("input[name='district']").val(district);
+                                                    $("input[name='sdistrict']").val(sdistrict);
+                                                    $("input[name='district_cn']").val(c_name+"/"+district_cn);
+                                                    $("#djobs_div").hide();
+                                                }
+                                            })
+                                            //鼠标移出事件
+                                            $(document).on('mouseleave','.mouse_leave',function(){
+                                                $(this).hide();
+                                            });
+                                        </script>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="redstar">*</span></td>
+                                        <td width="85">薪资待遇：</td>
+                                        <td>
+                                            <select name="wage" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
+                                                <?php foreach($wage_cn as $item){?>
+                                                    <option w_name="<?=$item['c_name']?>" class="wage" value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
+                                                <?php }?>
+                                            </select>
+                                            <input type="hidden" name="wage_cn"/>
+                                        </td>
+                                        <script>
+                                            $(document).on('click','.wage',function(){
+                                                var wage=$(this);
+                                                for(var i=0;i<wage.length;i++){
+                                                    var wage_cn=wage.attr('w_name')
+                                                }
+                                                $("input[name='wage_cn']").val(wage_cn)
+                                            })
+                                        </script>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="redstar">*</span></td>
+                                        <td width="85">职业亮点：</td>
+                                        <td>
+                                            <input type="button" class="btn_redstar" style="padding: 5px 10px" value="添加+"/>
+                                            <span hidden="hidden" name="redsta" class="c_id"></span>
+                                            <div class="redstar_div" style="position: relative;font-size:15px;width: 662px;background-color: #ffffff;height: 241px;display: none">
+                                                <div style="height: 34px;border-bottom: 1px solid #8c8c8c">
+                                                   <span style="margin: 5px;float: left"><b>职位亮点选择</b></span>
+                                                    <input type="button" class="tag_close" value="X" style="float: right;margin: 5px"/>
+                                                    <input  class="mar_bottom" type="button" style="float: right;margin: 5px;" value="确定"/>
+                                                </div>
+                                                <div style="line-height: 30px;border-bottom: 1px solid #8c8c8c">
+                                                    <span>最多可选<font color="red"> 5 </font>项</span>
+                                                    <span class="tag_count">已选<font color="red" class="tag_num"> 0 </font>项</span>
+                                                    <span class="close_all"></span>
+                                                </div>
+                                                <table>
+                                                    <?php foreach($redstar as $item){?>
+                                                    <tr style="display: inline;line-height: 19px;">
+                                                        <td style="width: 146px;">
+                                                            <a class="tag"><input  type="checkbox" class="tag_check" id="<?=$item['c_id']?>"   value="<?=$item['c_name']?>"/><?=$item['c_name']?></a>
+                                                        </td>
+                                                    </tr>
+                                                    <?php }?>
+                                                </table>
+                                            </div>
+                                        </td>
+                                        <script>
+                                            //点击职位亮点div显示
+                                            $(".btn_redstar").click(function(){
+                                                $(".redstar_div").toggle('100000');
+                                            });
+                                            //点击关闭职业亮点选择
+                                            $(document).on('click','.close',function(){
+                                                $(this).remove()
+                                            });
+                                            //点击职位亮点选择
+                                            $(document).on('click','.tag',function(){
+                                                var tag=$(this);
+                                                //点击时候增加一
+                                                var num=$(".num").length;
+                                                var tag_id=tag.children().prop('id');
+                                                var tag_cn=tag.children().val();
+                                                if(tag.children().prop('checked')==true){
+                                                    tag.children().prop('checked',false);
+                                                    var obj=$('.num');
+                                                    for(var i=0;i<obj.length;i++){
+                                                        if(tag_id==obj.eq(i).attr("id")){
+                                                           obj.eq(i).remove();
+                                                            num=num-1;
+                                                            $(".tag_num").html(num);
+                                                        }
+                                                    }
+                                                }else{
+                                                    if(num<=4){
+                                                        num=num+1;
+                                                        tag.children().prop('checked',true);
+                                                        var tag_cn_input="<span class='num' value='"+tag_cn+" ' id='"+tag_id+"' style='margin-left: 5px;padding: 5px 8px;background-color: #44d0c7' >"+tag_cn+" <i class='tag_close' style='cursor:pointer'>×</i></span>";
+                                                        $(".tag_count").after(tag_cn_input);
+                                                        $(".tag_num").html(num);
+                                                        $(".close_all").html("<input  style='float:right;padding:3px;' type='button' class='tag_del' value='全部清除'/>")
+                                                    }else{
+                                                        alert('最多只能选五项')
+                                                    }
+                                                }
+                                            })
+                                            //点击[X]删除
+                                            $(document).on('click','.tag_close',function(){
+                                                var obj=$(".num");
+                                                var tag_id=obj.attr('id');
+                                                for(var i=0;i<obj.length;i++){
+                                                    if(tag_id==obj.eq(i).attr('id')){
+                                                        obj.eq(i).remove()
+                                                    }
+                                                }
+                                                var tag_check=$(".tag_check");
+                                                for(var j=0;j<tag_check.length;j++){
+                                                    if(tag_id==tag_check.eq(j).attr('id')){
+                                                        tag_check.eq(j).prop('checked',false);
+                                                    }
+                                                }
+                                                var num=obj.length;
+                                                num=num-1;
+                                                $(".tag_num").html(num);
+                                            })
+                                            //点击全部清除
+                                            $(document).on('click','.tag_del',function(){
+                                                var obj=$(".num");
+                                                for(var i=0;i<obj.length;i++){
+                                                    obj.eq(i).remove()
+                                                }
+                                                var tag_check=$(".tag_check");
+                                                for(var j=0;j<tag_check.length;j++){
+                                                    tag_check.eq(j).prop('checked',false);
+                                                }
+                                                $(".tag_num").html(0);
+                                            })
+                                            //点击确定按钮赋值
+                                            $(document).on('click','.mar_bottom',function(){
+                                                var obj=$('.num');
+                                                var btn_redstar=$(".btn_redstar");
+                                                var tag_id='';
+                                                var tag_cn='';
+
+                                                for(var i=0;i<obj.length;i++){
+                                                    var tag_c=obj.eq(i).attr('value');
+                                                    btn_redstar.before("<input type='button' style='padding:5px;margin:5px' value='"+tag_c+"'/>");
+                                                    tag_id+=','+obj.eq(i).attr('id');
+                                                    tag_cn+=','+obj.eq(i).attr('value');
+                                                }
+                                                tag_id=tag_id.substr(1);
+                                                tag_cn=tag_cn.substr(1);
+                                                alert(tag_id);
+                                                btn_redstar.before("<input type='hidden' name='tag' style='padding:5px;margin:5px' value='"+tag_id+"'/>");
+                                                btn_redstar.before("<input type='hidden' name='tag_cn' style='padding:5px;margin:5px' value='"+tag_cn+"'/>");
+                                                $(".redstar_div").hide();
+                                            });
+                                            //点击[X]隐藏div
+                                            $(document).on('click','.tag_close',function(){
+                                                $(".redstar_div").hide();
+                                            })
+                                        </script>
+                                    </tr>
+                                    <tr>
+                                        <td width="25"><span class="redstar">*</span></td>
+                                        <td width="95">开始时间：</td>
+                                        <td>
+                                            <input type="text" name="addtime">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="25"><span class="redstar">*</span></td>
+                                        <td width="95">结束时间：</td>
+                                        <td>
+                                            <input type="text" name="deadline" >
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
 
                             <table class="btm">
-                            	<tbody><tr>
+                            	<tbody>
+                                <dt class="redstar">职位要求:</dt>
+                                <tr>
+                                    <td width="25"><span class="redstar">*</span></td>
+                                    <td width="95">性别要求：</td>
+                                    <td>
+                                        <ul class="profile_radio clearfix reset">
+                                            <li>
+                                                不限<em></em>
+                                                <input type="radio" class="sex" name="sex" val="不限" value="3">
+                                            </li>
+                                            <li>
+                                                男<em></em>
+                                                <input type="radio" class="sex" name="sex" val="男" value="1">
+                                            </li>
+                                            <li>
+                                                女<em></em>
+                                                <input type="radio" class="sex" name="sex" val="女" value="2">
+                                            </li>
+                                            <input type="hidden" class="sex_cn" name="sex_cn"/>
+                                        </ul>
+                                        <script>
+                                            $(document).on('click','.sex',function(){
+                                                if($(this).prop('checked',true)){
+                                                    var val=$(this).attr('val')
+                                                    $(".sex_cn").val(val)
+                                                }
+                                            })
+                                        </script>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="25"><span class="redstar">*</span></td>
+                                    <td width="85">学历要求：</td>
+                                    <td>
+                                        <select name="education" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
+                                            <?php foreach($education_cn as $item){?>
+                                                <option e_name="<?=$item['c_name']?>"  class="education"value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
+                                            <?php }?>
+                                        </select>
+                                        <input type="hidden" name="education_cn"/>
+                                    </td>
+                                    <script>
+                                        $(document).on('click','.education',function(){
+                                            var education=$(this);
+                                            for(var i=0;i<education.length;i++){
+                                                var education_cn=education.attr('e_name')
+                                            }
+                                            $("input[name='education_cn']").val(education_cn)
+                                        })
+                                    </script>
+                                </tr>
+                                <tr>
+                                    <td width="25"><span class="redstar">*</span></td>
+                                    <td width="85">工作经验：</td>
+                                    <td>
+                                        <select name="experience" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 625px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
+                                            <?php foreach($experience_cn as $item){?>
+                                                <option e_name="<?=$item['c_name']?>" class="experience" value="<?=$item['c_id']?>"><?=$item['c_name']?></option>
+                                            <?php }?>
+                                        </select>
+                                        <input type="hidden" name="experience_cn"/>
+                                    </td>
+                                    <script>
+                                        $(document).on('click','.experience',function(){
+                                            var experience=$(this);
+                                            for(var i=0;i<experience.length;i++){
+                                                var experience_cn=experience.attr('e_name')
+                                            }
+                                            $("input[name='experience_cn']").val(experience_cn)
+                                        })
+                                    </script>
+                                </tr>
+                                <tr>
+                                    <td width="25"><span class="redstar">*</span></td>
+                                    <td width="85">年龄要求：</td>
+                                    <td>
+                                        <select name="minage" id="" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 303px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
+                                            <?php for($i=16;$i<=60;$i++){?>
+                                            <option value="<?=$i?>"><?=$i.'岁'?></option>
+                                            <?php }?>
+                                        </select>
+                                        <span>至</span>
+                                        <select name="maxage" id="" style="border: 2px solid #f1f1f1;font-size:22px;height: 45px;margin-top: 20px;outline: medium none;padding: 6px 10px;transition: border 0.2s ease-in 0s;width: 303px;appearance:none;-moz-appearance:none;-webkit-appearance:none;cursor: pointer;">
+                                            <?php for($i=16;$i<=60;$i++){?>
+                                                <option value="<?=$i?>"><?=$i.'岁'?></option>
+                                            <?php }?>
+                                        </select>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="btm">
+                                <dt class="redstar">职位描述:</dt>
+                            	<tbody>
+                                <tr>
                                 	<td width="25"><span class="redstar">*</span></td>
-                                	<td width="85">工作经验</td>
+                                	<td width="85">职位描述:</td>
                                 	<td>
-                                    	<input type="hidden" id="experience" value="" name="workYear">
-                                        <input type="button" value="请选择工作经验" id="select_experience" class="selectr selectr_380">                                      
-                                        <div class="boxUpDown boxUpDown_380 dn" id="box_experience" style="display: none;">
-                                            <ul>
-                                                                                                    <li>
-                                                        不限
-                                                    </li>
-                                        	 	                                                    <li>
-                                                        应届毕业生
-                                                    </li>
-                                        	 	                                                    <li>
-                                                        1年以下
-                                                    </li>
-                                        	 	                                                    <li>
-                                                        1-3年
-                                                    </li>
-                                        	 	                                                    <li>
-                                                        3-5年
-                                                    </li>
-                                        	 	                                                    <li>
-                                                        5-10年
-                                                    </li>
-                                        	 	                                                    <li>
-                                                        10年以上
-                                                    </li>
-                                        	 	                                            </ul>
-                                    	</div>
+                                        <textarea name="contents" id="" cols="30" rows="10"></textarea>
                                     </td>
                                 </tr>
-                            	<tr>
-                                	<td><span class="redstar">*</span></td>
-                                	<td>学历要求</td>
-                                    <!--<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> -->
-                                	<td>
-                                    	<input type="hidden" id="education" value="" name="education">
-                                        <input type="button" value="请选择学历要求" id="select_education" class="selectr selectr_380">                                      
-                                        <div class="boxUpDown boxUpDown_380 dn" id="box_education" style="display: none;">
-                                            <ul>
-                                                                                                    <li>
-                                                        不限
-                                                    </li>
-                                        	 	                                                    <li>
-                                                        大专
-                                                    </li>
-                                        	 	                                                    <li>
-                                                        本科
-                                                    </li>
-                                        	 	                                                    <li>
-                                                        硕士
-                                                    </li>
-                                        	 	                                                    <li>
-                                                        博士
-                                                    </li>
-                                        	 	                                            </ul>
-                                    	</div>
-                                    </td>
-                                </tr>
-                            </tbody></table>
+                                </tbody>
+                            </table>
                            
                             <table class="btm">
-                            	<tbody><tr>
-                                	<td width="25"><span class="redstar">*</span></td>
-                                	<td width="85">职位诱惑</td>
-                                	<td>
-                                    	<input type="text" placeholder="20字描述该职位的吸引力，如：福利待遇、发展前景等" value="" name="positionAdvantage" class="input_520" id="positionAdvantage">
-                                    </td>
-                                </tr>
-                            	<tr>
-                                	<td><span class="redstar">*</span></td>
-                                	<td>职位描述</td>
-                                	<td>
-                                    	<span class="c9 f14">(建议分条描述工作职责等。请勿输入公司邮箱、联系电话及其他外链，否则将自动删除)</span>
-                                    	
-                                        <textarea name="positionDetail" id="positionDetail" class="tinymce" style="display: none;" aria-hidden="true"></textarea><span role="application" aria-labelledby="positionDetail_voice" id="positionDetail_parent" class="mceEditor defaultSkin"><span class="mceVoiceLabel" style="display:none;" id="positionDetail_voice">富文本域</span><table cellspacing="0" cellpadding="0" role="presentation" id="positionDetail_tbl" class="mceLayout" style="width: 544px; height: 276px;"><tbody><tr role="presentation" class="mceFirst"><td class="mceToolbar mceLeft mceFirst mceLast" role="toolbar"><div aria-labelledby="positionDetail_toolbargroup_voice" role="group" id="positionDetail_toolbargroup" tabindex="-1"><span role="application"><span style="display:none;" class="mceVoiceLabel" id="positionDetail_toolbargroup_voice">工具栏</span><table align="" cellspacing="0" cellpadding="0" tabindex="-1" role="presentation" class="mceToolbar mceToolbarRow1 Enabled" id="positionDetail_toolbar1" aria-disabled="false" aria-pressed="false"><tbody><tr><td class="mceToolbarStart mceToolbarStartButton mceFirst"><span><!-- IE --></span></td><td style="position: relative"><a title="粗体(Ctrl B)" aria-labelledby="positionDetail_bold_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_bold" href="javascript:;" id="positionDetail_bold" role="button" tabindex="-1"><span class="mceIcon mce_bold"></span><span id="positionDetail_bold_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">粗体(Ctrl B)</span></a></td><td style="position: relative"><a title="斜体(Ctrl I)" aria-labelledby="positionDetail_italic_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_italic" href="javascript:;" id="positionDetail_italic" role="button" tabindex="-1"><span class="mceIcon mce_italic"></span><span id="positionDetail_italic_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">斜体(Ctrl I)</span></a></td><td style="position: relative"><a title="下划线(Ctrl U)" aria-labelledby="positionDetail_underline_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_underline" href="javascript:;" id="positionDetail_underline" role="button" tabindex="-1"><span class="mceIcon mce_underline"></span><span id="positionDetail_underline_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">下划线(Ctrl U)</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="左对齐" aria-labelledby="positionDetail_justifyleft_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_justifyleft" href="javascript:;" id="positionDetail_justifyleft" role="button" tabindex="-1"><span class="mceIcon mce_justifyleft"></span><span id="positionDetail_justifyleft_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">左对齐</span></a></td><td style="position: relative"><a title="居中" aria-labelledby="positionDetail_justifycenter_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_justifycenter" href="javascript:;" id="positionDetail_justifycenter" role="button" tabindex="-1"><span class="mceIcon mce_justifycenter"></span><span id="positionDetail_justifycenter_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">居中</span></a></td><td style="position: relative"><a title="右对齐" aria-labelledby="positionDetail_justifyright_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_justifyright" href="javascript:;" id="positionDetail_justifyright" role="button" tabindex="-1"><span class="mceIcon mce_justifyright"></span><span id="positionDetail_justifyright_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">右对齐</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="项目列表" aria-labelledby="positionDetail_bullist_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_bullist" href="javascript:;" id="positionDetail_bullist" role="button" tabindex="-1" aria-pressed="false"><span class="mceIcon mce_bullist"></span><span id="positionDetail_bullist_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">项目列表</span></a></td><td style="position: relative"><a title="编号列表" aria-labelledby="positionDetail_numlist_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_numlist" href="javascript:;" id="positionDetail_numlist" role="button" tabindex="-1" aria-pressed="false"><span class="mceIcon mce_numlist"></span><span id="positionDetail_numlist_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">编号列表</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="减少缩进" aria-labelledby="positionDetail_outdent_voice" onclick="return false;" onmousedown="return false;" class="mceButton mce_outdent mceButtonDisabled" href="javascript:;" id="positionDetail_outdent" role="button" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_outdent"></span><span id="positionDetail_outdent_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">减少缩进</span></a></td><td style="position: relative"><a title="增加缩进" aria-labelledby="positionDetail_indent_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_indent" href="javascript:;" id="positionDetail_indent" role="button" tabindex="-1"><span class="mceIcon mce_indent"></span><span id="positionDetail_indent_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">增加缩进</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="撤销 (Ctrl Z)" aria-labelledby="positionDetail_undo_voice" onclick="return false;" onmousedown="return false;" class="mceButton mce_undo mceButtonDisabled" href="javascript:;" id="positionDetail_undo" role="button" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_undo"></span><span id="positionDetail_undo_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">撤销 (Ctrl Z)</span></a></td><td style="position: relative"><a title="恢复 (Ctrl Y)" aria-labelledby="positionDetail_redo_voice" onclick="return false;" onmousedown="return false;" class="mceButton mce_redo mceButtonDisabled" href="javascript:;" id="positionDetail_redo" role="button" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_redo"></span><span id="positionDetail_redo_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">恢复 (Ctrl Y)</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="插入/编辑 超链接" aria-labelledby="positionDetail_link_voice" onclick="return false;" onmousedown="return false;" class="mceButton mce_link mceButtonDisabled" href="javascript:;" id="positionDetail_link" role="button" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_link"></span><span id="positionDetail_link_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">插入/编辑 超链接</span></a></td><td style="position: relative"><a title="取消超链接" aria-labelledby="positionDetail_unlink_voice" onclick="return false;" onmousedown="return false;" class="mceButton mce_unlink mceButtonDisabled" href="javascript:;" id="positionDetail_unlink" role="button" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_unlink"></span><span id="positionDetail_unlink_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">取消超链接</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="插入水平线" aria-labelledby="positionDetail_hr_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_hr" href="javascript:;" id="positionDetail_hr" role="button" tabindex="-1"><span class="mceIcon mce_hr"></span><span id="positionDetail_hr_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">插入水平线</span></a></td><td style="position: relative"><a title="切换全屏模式" aria-labelledby="positionDetail_fullscreen_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_fullscreen" href="javascript:;" id="positionDetail_fullscreen" role="button" tabindex="-1" aria-pressed="false"><span class="mceIcon mce_fullscreen"></span><span id="positionDetail_fullscreen_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">切换全屏模式</span></a></td><td style="position: relative"><a title="插入/编辑 图片" aria-labelledby="positionDetail_image_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_image" href="javascript:;" id="positionDetail_image" role="button" tabindex="-1"><span class="mceIcon mce_image"></span><span id="positionDetail_image_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">插入/编辑 图片</span></a></td><td class="mceToolbarEnd mceToolbarEndButton mceLast"><span><!-- IE --></span></td></tr></tbody></table></span></div><a onfocus="tinyMCE.getInstanceById('positionDetail').focus();" title="转到工具按钮 - Alt-Q，转到编辑器 - Alt-Z，转到元素路径 - Alt-X。" accesskey="z" ><!-- IE --></a></td></tr><tr class="mceLast"><td class="mceIframeContainer mceFirst mceLast"><iframe frameborder="0" id="positionDetail_ifr" src="javascript:&quot;&quot;" allowtransparency="true" title="富文本域按 ALT-F10 定位到工具栏.按 ALT-0 获取帮助。" style="width: 100%; height: 253px; display: block;"></iframe></td></tr></tbody></table></span>
-                                       	
-                                    </td>
-                                </tr>
-                                <tr>
-                                	<td><span class="redstar">*</span></td>
-                                	<td>工作地址</td>
-                                	<td>
-                                    	<input type="text" placeholder="请输入详细的工作地址" value="" name="positionAddress" class="input_520" id="positionAddress">	
-                                        <input type="hidden" value="" name="positionLng" id="lng">
-                            			<input type="hidden" value="" name="positionLat" id="lat">
-                                        <div class="work_place f14">我们将在职位详情页以地图方式精准呈现给用户  <a id="mapPreview" href="javascript:;">预览地图</a></div>
-                                    </td>
-                                </tr>
-                            </tbody></table>
+                                <dt class="redstar">联系方式:</dt>
+                            	<tbody>
+                                        <tr>
+                                            <td width="25"><span class="redstar">*</span></td>
+                                            <td width="95">联系人：</td>
+                                            <td>
+                                                <input type="text" value="<?php echo $company_profile['contact']?>" name="contact">
+                                            </td>
+                                            <td><input type="checkbox" <?php if($company_profile['contact_show']=='1'){echo "checked";}?> value="1" name="contact_show"/>对外公开联系人</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="25"><span class="redstar">*</span></td>
+                                            <td width="95">联系手机：</td>
+                                            <td>
+                                                <input type="text" value="<?php echo $company_profile['telephone']?>" name="telephone">
+                                            </td>
+                                            <td><input type="checkbox" <?php if($company_profile['telephone_show']=='1'){echo "checked";}?>  value="1" name="telephone_show"/>对外公开联系人</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="25"><span class="redstar">*</span></td>
+                                            <td width="95">联系邮箱：</td>
+                                            <td>
+                                                <input type="text" value="<?php echo $company_profile['email']?>" name="email">
+                                            </td>
+                                            <td><input type="checkbox" <?php if($company_profile['email_show']=='1'){echo "checked";}?> value="1" name="email_show"/>对外公开联系人</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="25"><span class="redstar">*</span></td>
+                                            <td width="95">联系地址：</td>
+                                            <td>
+                                                <input type="text" value=" <?php echo $company_profile['address']?>" name="address">
+                                            </td>
+                                            <td><input type="checkbox" <?php if($company_profile['address_show']=='1'){echo "checked";}?> value="1" name="address_show"/>对外公开联系人</td>
+
+                                        </tr>
+                            </tbody>
+                            </table>
                             
                             <table>
-                            	<tbody><tr>
+                                <dt class="redstar">高级设置:</dt>
+                            	<tbody>
+                                <tr>
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td colspan="2">
-                                    	接收简历邮箱： <span id="receiveEmailVal">admin@admin.com</span>
-                                        <input type="hidden" value="admin@admin.com" id="receiveEmail" name="email">
+                                    	接收简历邮箱： <span id="receiveEmailVal">
+                                            <input type="text" disabled value="<?php echo $company_profile['email']?>" name="email_two">
+                                            <input type="checkbox" value="1" checked name="notify"/>接收
+                                        </span>
+
                                     </td>
                                 </tr>
                                 <tr>
-                                	<td width="25"></td>
-                                	<td colspan="2">
-                                    	同时简历自动发送至邮箱（仅一个）
-                                        <input type="text" value="" id="forwardEmail" name="forwardEmail">
-                                        <!-- <span class="error" id="beError" style="display:none"></span> -->
+                                    <td width="25"><span class="redstar">*</span></td>
+                                    <td colspan="2">
+                                    	简历短信通知：<span id="receiveEmailVal">
+                                        <input type="text" value="<?php echo $company_profile['telephone']?>" name="telephone_two">
+                                            <input type="checkbox" value="1"  name="notify_mobile"/>接收
                                     </td>
                                 </tr>
                                 <tr>
-                                	<td width="25"></td>
-                                	<td colspan="2">
-                                    	<input type="submit" value="预览" id="jobPreview" class="btn_32">
-                                    	<input type="button" value="发布" id="formSubmit" class="btn_32">
+                                    <td colspan="2">
+                                    	<input type="submit" value="发布" id="jobPreview" class="btn_32">
+                                        <input type="hidden" name="uid" value="<?php echo $company_profile['uid']?>"/>
                                     </td>
                                 </tr>
-                         	</tbody></table>
-                        </form>
+                         	</tbody>
+                            </table>
+                    <?=Html::endForm()?>
                     </dd>
                 </dl>
             </div><!-- end .content -->
@@ -611,7 +594,7 @@
 <!-- <script type="text/javascript" src="style/js/tinymce.min.js"></script>
 <script>
 $(function(){
-		
+
 	/*textarea 编辑器*/
 	tinymce.init({
 	    selector: "textarea.tinymce",
@@ -637,7 +620,7 @@ $(function(){
 	        console.log('save',e);
 	    },
 	    setup: function (editor) {
-	        editor.on('keyup', function (e) {  
+	        editor.on('keyup', function (e) {
 	        	tinyMCE.triggerSave();
 	        	var editorContent = tinyMCE.get(editor.id).getContent();
 			    if(editorContent.length > 20){
@@ -825,6 +808,4 @@ $(function(){
 <script src="style/js/popup.min.js" type="text/javascript"></script>
 
 <!--  -->
-
-
 <div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>
