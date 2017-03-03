@@ -8,6 +8,7 @@ use yii\helpers\Html;
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
+
         .ji{
             background-color: lavenderblush;
             display: inline-block;
@@ -43,7 +44,7 @@ use yii\helpers\Html;
         <dl class="company_center_content">
             <dt><h1><em></em>创建简历</h1></dt>
 
-            <dd style="padding:30px 0px;">
+            <dd style="padding:30px 0px;width: 100%">
                 <div class="ji"><h2><span style="color:red">*</span>基本信息</h2></div>
                 <div class="con">
                     <table class="btm" style="width:100%" >
@@ -54,7 +55,7 @@ use yii\helpers\Html;
 
                             <td>姓名：<?php  echo  $info['fullname']?></td>
                             <td>出生年份：<?php echo $info['birthdate']?></td>
-                            <td rowspan="7" style="border:1px solid #ccc;padding:3px;width:80px;bgcolor:#FFFFFF;">
+                            <td rowspan="7" style="border:1px solid #ccc;padding:3px;width:20%;bgcolor:#FFFFFF;">
                                 <?=Html::beginForm(['person/img'],'post',['enctype'=>'multipart/form-data'])?>
                                 <input type="hidden" value="<?php echo $info['id']  ?>" name="id">
                                 <input type="hidden" value="<?php echo $info['photo']  ?>" name="photo">
@@ -125,7 +126,7 @@ use yii\helpers\Html;
                         <tr style="line-height: 40px;margin: 5px;">
                             <td  style="text-align: center;" >
                                 教育经历最能体现您的学历和专业能力，快来完成它吸引企业和HR的青睐吧！<br>
-                                <input type="button" value="+添加经历" style="width:100px;height:30px;background:blue;color:white;" class="add-edication" >
+                                <input type="button" value="+添加经历" style="width:100px;height:30px;background:blue;color:white;" class="add-work" >
                             </td>
                         </tr>
                     </table>
@@ -214,6 +215,157 @@ use yii\helpers\Html;
                     </table>
                 </div>
 
+<!--出现-->
+                <?=Html::beginForm(['person/aeducation'],'post')?>
+                <table  class="aeducation" style="display: none;" >
+                    <tr>
+                        <input type="hidden" value="<?php  echo $info['id'];?>" name="pid">
+
+                        <td><span class="redstar">*</span></td>
+                        <td width="85"><span >学校名称：</span></td>
+                        <td >
+                            <input type="text"  name="school"   style="font-size: 16px;width:230px;color:gray;" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="redstar">*</span></td>
+                        <td width="85"><span >专业名称：</span></td>
+                        <td >
+                            <input type="text"  name="speciality"   style="font-size: 16px;width:230px;color:gray;" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="redstar">*</span></td>
+                        <td width="85"><span >学历：</span></td>
+                        <td >
+                            <input type="hidden" name="education_cn"   class="ed_cn">
+                            <select name="education"  style="font-size:14px;width:255px;height:40px;color:gray;" >
+                                <option value="0">请选择</option>
+                                <?php foreach($education as $v){ ?>
+                                    <option value="<?php echo $v['c_id']?>" class="ed"><?php echo $v['c_name'] ?></option>
+                                <?php }?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="redstar">*</span></td>
+                        <td width="85"><span >就读时间：</span></td>
+                        <td >
+                            <!--                                年-->
+                            <input type="text" value="年份" name="startyear" class="startyear" style="font-size: 16px;background:#ffffff url('images/2.png') no-repeat right center;width:100px;height:40px;color:gray;cursor: pointer;border:1px solid black;" readonly >
+                            <div style="position: absolute;z-index:3;width:300px;height:150px;background:white;border:1px black solid;display: none;" class="tan-year" >
+                                <table >
+                                    <tr>
+                                        <td width="50px"><img src="images/3.png" style="cursor: pointer" class="prev"></td>
+                                        <td  width="240px" style="padding-top:5px;display:inline;" index="1"  class="year">
+                                            <?php $i1=date('Y',time());
+                                            for($i=$i1;$i>$i1-20;$i--){?>
+                                                <a href="javascript:;"  style="padding:3px;cursor: pointer;" class="yea" ><?php  echo $i;?></a>
+                                            <?php  }?>
+                                        </td>
+                                        <td  width="240px" style="padding-top:5px;display:none;" index="2"    class="year">
+                                            <?php $i2=date('Y',time())-20;
+                                            for($i=$i2;$i>$i2-20;$i--){?>
+                                                <a href="javascript:;"   style="padding:3px;cursor: pointer;"   class="yea"><?php  echo $i;?></a>
+                                            <?php  }?>
+                                        </td>
+                                        <td  width="240px" style="padding-top:5px;display: none;" index="3"   class="year" >
+                                            <?php $i3=date('Y',time())-40;
+                                            for($i=$i3;$i>$i3-20;$i--){?>
+                                                <a href="javascript:;"   style="padding:3px;cursor: pointer;"   class="yea"><?php  echo $i;?></a>
+                                            <?php  }?>
+                                        </td>
+                                        <td   width="30px"><img src="images/4.png" class="next" style="display:none;cursor: pointer;"></td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <!--                                月-->
+
+                            <input   type="text" value="9月" name="startmonth" class="startmonth" style="font-size: 16px;background:#ffffff url('images/2.png') no-repeat right center;width:100px;height:40px;color:gray;cursor: pointer;border:1px solid black;"  readonly>
+                            <div style="margin-left: 103px;z-index:2;position: absolute;width:130px;height:100px;background:white;border:1px black solid;display:none;" class="tan-month" >
+                                <table >
+                                    <tr>
+                                        <td  style="padding-top:5px;">
+                                            <?php $i=12;
+                                            for($i=12;$i>0;$i--){?>
+                                                <a href="javascript:;"  style="padding:3px;cursor:pointer;width:20px;height: 20px;display: inline-table"  class="mon"  ><?php  echo $i;?></a>
+                                            <?php  }?>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            至
+
+                            <!--- 年---->
+                            <div style="display:inline;" class="end">
+                                <input type="text" value="年份" name="endyear" class="endyear" style="font-size: 16px;background:#ffffff url('images/2.png') no-repeat right center;width:100px;height:40px;color:gray;cursor: pointer;border:1px solid black;"  readonly>
+                                <div style="position: absolute;z-index:3;margin-left:225px;width:300px;height:150px;background:white;border:1px black solid;display: none;" class="tan-years" >
+                                    <table >
+                                        <tr>
+                                            <td width="50px"><img src="images/3.png" style="cursor: pointer" class="prevs"></td>
+                                            <td  width="240px" style="padding-top:5px;display:inline;" index="1"  class="years">
+                                                <?php $i1=date('Y',time());
+                                                for($i=$i1;$i>$i1-20;$i--){?>
+                                                    <a href="javascript:;"  style="padding:3px;cursor: pointer;" class="yeas" ><?php  echo $i;?></a>
+                                                <?php  }?>
+                                            </td>
+                                            <td  width="240px" style="padding-top:5px;display:none;" index="2"    class="years">
+                                                <?php $i2=date('Y',time())-20;
+                                                for($i=$i2;$i>$i2-20;$i--){?>
+                                                    <a href="javascript:;"   style="padding:3px;cursor: pointer;"   class="yeas"><?php  echo $i;?></a>
+                                                <?php  }?>
+                                            </td>
+                                            <td  width="240px" style="padding-top:5px;display: none;" index="3"   class="years" >
+                                                <?php $i3=date('Y',time())-40;
+                                                for($i=$i3;$i>$i3-20;$i--){?>
+                                                    <a href="javascript:;"   style="padding:3px;cursor: pointer;"   class="yeas"><?php  echo $i;?></a>
+                                                <?php  }?>
+                                            </td>
+                                            <td   width="30px"><img src="images/4.png" class="nexts" style="display:none;cursor: pointer;"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <!-- 月-->
+
+                                <input   type="text" value="7月" name="endmonth" class="endmonth" style="font-size: 16px;background:#ffffff url('images/2.png') no-repeat right center;width:100px;height:40px;color:gray;cursor: pointer;border:1px solid black;"  readonly>
+                                <div style="margin-left:328px;z-index:2;position: absolute;width:130px;height:100px;background:white;border:1px black solid;display:none;" class="tan-months" >
+                                    <table >
+                                        <tr>
+                                            <td  style="padding-top:5px;">
+                                                <?php $i=12;
+                                                for($i=12;$i>0;$i--){?>
+                                                    <a href="javascript:;"  style="padding:3px;cursor:pointer;width:20px;height: 20px;display: inline-table"  class="mons"  ><?php  echo $i;?></a>
+                                                <?php  }?>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </div>
+
+                            </div>
+                            <!-- 至今-->
+                            &nbsp;  &nbsp;  &nbsp;  &nbsp;
+                            <input type="checkbox" name="todate" class="todate" value="1"  >至今<br>
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td width="85"></td>
+                        <td>
+                            <input type="submit" value="保存" style="font-size: 16px;width:100px;height:40px;color:white;cursor: pointer;border:1px solid black;background:lawngreen;" class="bao">&nbsp;&nbsp;&nbsp;
+                            <input type="button" value="取消" style="font-size: 16px;width:100px;height:40px;color:white;cursor: pointer;border:1px solid black;background:gray;"  class="qu">
+
+                        </td>
+                    </tr>
+                </table>
+                <?=Html::endForm()?>
+
+<!--出现-->
+
 
 
                 <!--教育经历         -->
@@ -224,7 +376,7 @@ use yii\helpers\Html;
                             <tr style="line-height: 40px;margin: 5px;">
                                 <td  style="text-align: center;" >
                                     教育经历最能体现您的学历和专业能力，快来完成它吸引企业和HR的青睐吧！<br>
-                                    <input type="button" value="+添加经历" style="width:100px;height:30px;background:blue;color:white;" class="add-edication" >
+                                    <input type="button" value="+添加经历" style="width:100px;height:30px;background:blue;color:white;" class="add-education" >
                                 </td>
                             </tr>
                         <?php }else{?>
@@ -619,12 +771,12 @@ use yii\helpers\Html;
                                     <?=Html::endForm()?>
                             </div>
                                 <?php  }?>
-                        <div class="con" align="center" style="margin-top:20px;">
-
-                            <a href="<?php echo Url::toRoute(['person/resume_finish','id'=>$info['id']]) ?>"><input type="button" value="发布简历" style="width:150px;height:50px;background:#ff8c00;color:white;font-size: 16px;"  ></a>
-                        </div>
                     </table>
-                </div>
+                    <div class="con" align="center" style="margin-top:20px;">
+
+                        <a href="<?php echo Url::toRoute(['person/resume_finish','id'=>$info['id']]) ?>"><input type="button" value="发布简历" style="width:150px;height:50px;background:#ff8c00;color:white;font-size: 16px;"  ></a>
+                    </div>
+    </div>
 
 
 
@@ -868,7 +1020,7 @@ use yii\helpers\Html;
     })
 
 
-    $(document).on('click','.add-edication',function(){
+    $(document).on('click','.add-education',function(){
 
         $('.aeducation').fadeIn('slow');
         $('.btms').fadeOut('slow');

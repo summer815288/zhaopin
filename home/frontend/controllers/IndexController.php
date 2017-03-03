@@ -7,6 +7,7 @@ use Yii;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
+use frontend\models\Resume;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\base\InvalidParamException;
@@ -171,9 +172,26 @@ class IndexController extends CommonController
 		
 		$id = $_GET['id'];
 		$jobs=yii::$app->db->createCommand("select * from jobs where id=$id")->queryAll();
-		// print_r($jobs);die;
-		return $this->render("toudi",['jobs'=>$jobs]);
+		//print_r($jobs);die;
+        //得到当前用户的简历
+        $uid=Yii::$app->session->get('uid');
+        $resume=Resume::find()->where(['uid'=>$uid])->asArray()->all();
+
+        return $this->render("toudi",['jobs'=>$jobs,'resume'=>$resume]);
 	}
+
+
+    public function actionDeliever(){
+        $data=$_POST;
+        $data['apply_addtime']=time();
+        $data['notes']=$data['resume_name']."申请职位";
+        $insert=Yii::$app->db->createCommand()->insert('personal_jobs_apply',$data)->execute();
+        if($insert){
+            echo 1;
+        }else{
+            echo 0;
+        }
+    }
 
 
 	//账号设置

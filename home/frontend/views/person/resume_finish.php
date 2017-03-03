@@ -51,7 +51,7 @@ use yii\helpers\Html;
                 <div class="con" align="center" style="margin-top:20px;">
                     <a href=""><input type="button" value="匹配职位" style="width:100px;height:30px;background:#ff8c00;color:white;font-size: 16px;text-decoration: none;"  ></a>
                     <a href="<?php  echo Url::toRoute(['person/resume_end','id'=>$id]);?>"><input type="button" value="预览简历" style="width:100px;height:30px;background:#ff8c00;color:white;font-size: 16px;text-decoration: none;"  ></a>
-                    <a href=""><input type="button" value="管理简历" style="width:100px;height:30px;background:#ff8c00;color:white;font-size: 16px;text-decoration: none;"  ></a>
+                    <a href="<?php  echo Url::toRoute(['person/resume_list']);?>"><input type="button" value="管理简历" style="width:100px;height:30px;background:#ff8c00;color:white;font-size: 16px;text-decoration: none;"  ></a>
                 </div>
 
             </dd>
