@@ -42421,3 +42421,781 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1488529583.5146
     'REQUEST_TIME' => 1488529583
 ]
+2017-03-03 21:13:53 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'Invalid argument supplied for foreach()' in D:\php9\zhaopin\home\frontend\views\company\resumes.php:83
+Stack trace:
+#0 D:\php9\zhaopin\home\frontend\views\company\resumes.php(83): yii\base\ErrorHandler->handleError(2, 'Invalid argumen...', 'D:\\php9\\zhaopin...', 83, Array)
+#1 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(325): require('D:\\php9\\zhaopin...')
+#2 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\php9\\zhaopin...', Array)
+#3 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\php9\\zhaopin...', Array, Object(frontend\controllers\CompanyController))
+#4 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('resumes', Array, Object(frontend\controllers\CompanyController))
+#5 D:\php9\zhaopin\home\frontend\controllers\CompanyController.php(197): yii\base\Controller->render('resumes', Array)
+#6 [internal function]: frontend\controllers\CompanyController->actionResumes()
+#7 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('resumes', Array)
+#10 D:\php9\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('company/resumes', Array)
+#11 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\php9\zhaopin\home\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2017-03-03 21:13:53 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][info][application] $_GET = [
+    'r' => 'company/resumes'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => '31de97ebbc58bec8.1488529626.1.1488529626.1488529626.'
+    ]
+    'PHPSESSID' => 'q4g4o5elm3v070r4r7inlms440'
+    '_csrf' => 'bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'type' => '1'
+    'email' => 'company@qq.com'
+    'uid' => '30'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\New Folder\\bin;D:\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpstudy/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2188'
+    'SCRIPT_NAME' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_URI' => '/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'QUERY_STRING' => 'r=company%2Fresumes'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '64238'
+    'SCRIPT_FILENAME' => 'D:/php9/zhaopin/home/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/php9'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/php9'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.php9.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].9eec=31de97ebbc58bec8.1488529626.1.1488529626.1488529626.; PHPSESSID=q4g4o5elm3v070r4r7inlms440; _csrf=bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q%22%3B%7D'
+    'HTTP_REFERER' => 'http://www.php9.com/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_HOST' => 'www.php9.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488546833.8407
+    'REQUEST_TIME' => 1488546833
+]
+2017-03-03 21:13:54 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\php9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\php9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\php9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\php9\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\php9\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2017-03-03 21:13:53 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][info][application] $_GET = [
+    'r' => 'company/resumes'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => '31de97ebbc58bec8.1488529626.1.1488529626.1488529626.'
+    ]
+    'PHPSESSID' => 'q4g4o5elm3v070r4r7inlms440'
+    '_csrf' => 'bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'type' => '1'
+    'email' => 'company@qq.com'
+    'uid' => '30'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\New Folder\\bin;D:\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpstudy/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2188'
+    'SCRIPT_NAME' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_URI' => '/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'QUERY_STRING' => 'r=company%2Fresumes'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '64238'
+    'SCRIPT_FILENAME' => 'D:/php9/zhaopin/home/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/php9'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/php9'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.php9.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].9eec=31de97ebbc58bec8.1488529626.1.1488529626.1488529626.; PHPSESSID=q4g4o5elm3v070r4r7inlms440; _csrf=bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q%22%3B%7D'
+    'HTTP_REFERER' => 'http://www.php9.com/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_HOST' => 'www.php9.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488546833.8407
+    'REQUEST_TIME' => 1488546833
+]
+2017-03-03 21:13:55 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'Invalid argument supplied for foreach()' in D:\php9\zhaopin\home\frontend\views\company\resumes.php:83
+Stack trace:
+#0 D:\php9\zhaopin\home\frontend\views\company\resumes.php(83): yii\base\ErrorHandler->handleError(2, 'Invalid argumen...', 'D:\\php9\\zhaopin...', 83, Array)
+#1 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(325): require('D:\\php9\\zhaopin...')
+#2 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\php9\\zhaopin...', Array)
+#3 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\php9\\zhaopin...', Array, Object(frontend\controllers\CompanyController))
+#4 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('resumes', Array, Object(frontend\controllers\CompanyController))
+#5 D:\php9\zhaopin\home\frontend\controllers\CompanyController.php(197): yii\base\Controller->render('resumes', Array)
+#6 [internal function]: frontend\controllers\CompanyController->actionResumes()
+#7 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('resumes', Array)
+#10 D:\php9\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('company/resumes', Array)
+#11 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\php9\zhaopin\home\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2017-03-03 21:13:55 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][info][application] $_GET = [
+    'r' => 'company/resumes'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => '31de97ebbc58bec8.1488529626.1.1488529626.1488529626.'
+    ]
+    'PHPSESSID' => 'q4g4o5elm3v070r4r7inlms440'
+    '_csrf' => 'bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'type' => '1'
+    'email' => 'company@qq.com'
+    'uid' => '30'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\New Folder\\bin;D:\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpstudy/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2188'
+    'SCRIPT_NAME' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_URI' => '/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'QUERY_STRING' => 'r=company%2Fresumes'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '64243'
+    'SCRIPT_FILENAME' => 'D:/php9/zhaopin/home/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/php9'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/php9'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.php9.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].9eec=31de97ebbc58bec8.1488529626.1.1488529626.1488529626.; PHPSESSID=q4g4o5elm3v070r4r7inlms440; _csrf=bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q%22%3B%7D'
+    'HTTP_REFERER' => 'http://www.php9.com/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_HOST' => 'www.php9.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488546835.3622
+    'REQUEST_TIME' => 1488546835
+]
+2017-03-03 21:13:55 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\php9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\php9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\php9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\php9\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\php9\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2017-03-03 21:13:55 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][info][application] $_GET = [
+    'r' => 'company/resumes'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => '31de97ebbc58bec8.1488529626.1.1488529626.1488529626.'
+    ]
+    'PHPSESSID' => 'q4g4o5elm3v070r4r7inlms440'
+    '_csrf' => 'bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'type' => '1'
+    'email' => 'company@qq.com'
+    'uid' => '30'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\New Folder\\bin;D:\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpstudy/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2188'
+    'SCRIPT_NAME' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_URI' => '/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'QUERY_STRING' => 'r=company%2Fresumes'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '64243'
+    'SCRIPT_FILENAME' => 'D:/php9/zhaopin/home/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/php9'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/php9'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.php9.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].9eec=31de97ebbc58bec8.1488529626.1.1488529626.1488529626.; PHPSESSID=q4g4o5elm3v070r4r7inlms440; _csrf=bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q%22%3B%7D'
+    'HTTP_REFERER' => 'http://www.php9.com/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_HOST' => 'www.php9.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488546835.3622
+    'REQUEST_TIME' => 1488546835
+]
+2017-03-03 21:14:39 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'date() expects parameter 2 to be long, string given' in D:\php9\zhaopin\home\frontend\views\company\resumes.php:89
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'date() expects ...', 'D:\\php9\\zhaopin...', 89, Array)
+#1 D:\php9\zhaopin\home\frontend\views\company\resumes.php(89): date('Y-m-d', 'summer\xE7\x9A\x84\xE7\xAE\x80\xE5\x8E\x86')
+#2 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(325): require('D:\\php9\\zhaopin...')
+#3 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\php9\\zhaopin...', Array)
+#4 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\php9\\zhaopin...', Array, Object(frontend\controllers\CompanyController))
+#5 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('resumes', Array, Object(frontend\controllers\CompanyController))
+#6 D:\php9\zhaopin\home\frontend\controllers\CompanyController.php(197): yii\base\Controller->render('resumes', Array)
+#7 [internal function]: frontend\controllers\CompanyController->actionResumes()
+#8 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#9 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#10 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('resumes', Array)
+#11 D:\php9\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('company/resumes', Array)
+#12 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 D:\php9\zhaopin\home\frontend\web\index.php(18): yii\base\Application->run()
+#14 {main}
+2017-03-03 21:14:39 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][info][application] $_GET = [
+    'r' => 'company/resumes'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => '31de97ebbc58bec8.1488529626.1.1488529626.1488529626.'
+    ]
+    'PHPSESSID' => 'q4g4o5elm3v070r4r7inlms440'
+    '_csrf' => 'bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'type' => '1'
+    'email' => 'company@qq.com'
+    'uid' => '30'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\New Folder\\bin;D:\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpstudy/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2188'
+    'SCRIPT_NAME' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_URI' => '/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'QUERY_STRING' => 'r=company%2Fresumes'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '64284'
+    'SCRIPT_FILENAME' => 'D:/php9/zhaopin/home/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/php9'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/php9'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.php9.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].9eec=31de97ebbc58bec8.1488529626.1.1488529626.1488529626.; PHPSESSID=q4g4o5elm3v070r4r7inlms440; _csrf=bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q%22%3B%7D'
+    'HTTP_REFERER' => 'http://www.php9.com/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_HOST' => 'www.php9.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488546879.8787
+    'REQUEST_TIME' => 1488546879
+]
+2017-03-03 21:14:40 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\php9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\php9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\php9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\php9\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\php9\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2017-03-03 21:14:39 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][info][application] $_GET = [
+    'r' => 'company/resumes'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => '31de97ebbc58bec8.1488529626.1.1488529626.1488529626.'
+    ]
+    'PHPSESSID' => 'q4g4o5elm3v070r4r7inlms440'
+    '_csrf' => 'bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'type' => '1'
+    'email' => 'company@qq.com'
+    'uid' => '30'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\New Folder\\bin;D:\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpstudy/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2188'
+    'SCRIPT_NAME' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_URI' => '/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'QUERY_STRING' => 'r=company%2Fresumes'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '64284'
+    'SCRIPT_FILENAME' => 'D:/php9/zhaopin/home/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/php9'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/php9'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.php9.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].9eec=31de97ebbc58bec8.1488529626.1.1488529626.1488529626.; PHPSESSID=q4g4o5elm3v070r4r7inlms440; _csrf=bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q%22%3B%7D'
+    'HTTP_REFERER' => 'http://www.php9.com/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_HOST' => 'www.php9.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488546879.8787
+    'REQUEST_TIME' => 1488546879
+]
+2017-03-03 21:14:41 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'date() expects parameter 2 to be long, string given' in D:\php9\zhaopin\home\frontend\views\company\resumes.php:89
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'date() expects ...', 'D:\\php9\\zhaopin...', 89, Array)
+#1 D:\php9\zhaopin\home\frontend\views\company\resumes.php(89): date('Y-m-d', 'summer\xE7\x9A\x84\xE7\xAE\x80\xE5\x8E\x86')
+#2 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(325): require('D:\\php9\\zhaopin...')
+#3 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\php9\\zhaopin...', Array)
+#4 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\php9\\zhaopin...', Array, Object(frontend\controllers\CompanyController))
+#5 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('resumes', Array, Object(frontend\controllers\CompanyController))
+#6 D:\php9\zhaopin\home\frontend\controllers\CompanyController.php(197): yii\base\Controller->render('resumes', Array)
+#7 [internal function]: frontend\controllers\CompanyController->actionResumes()
+#8 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#9 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#10 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('resumes', Array)
+#11 D:\php9\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('company/resumes', Array)
+#12 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 D:\php9\zhaopin\home\frontend\web\index.php(18): yii\base\Application->run()
+#14 {main}
+2017-03-03 21:14:41 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][info][application] $_GET = [
+    'r' => 'company/resumes'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => '31de97ebbc58bec8.1488529626.1.1488529626.1488529626.'
+    ]
+    'PHPSESSID' => 'q4g4o5elm3v070r4r7inlms440'
+    '_csrf' => 'bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'type' => '1'
+    'email' => 'company@qq.com'
+    'uid' => '30'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\New Folder\\bin;D:\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpstudy/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2188'
+    'SCRIPT_NAME' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_URI' => '/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'QUERY_STRING' => 'r=company%2Fresumes'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '64286'
+    'SCRIPT_FILENAME' => 'D:/php9/zhaopin/home/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/php9'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/php9'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.php9.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].9eec=31de97ebbc58bec8.1488529626.1.1488529626.1488529626.; PHPSESSID=q4g4o5elm3v070r4r7inlms440; _csrf=bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q%22%3B%7D'
+    'HTTP_REFERER' => 'http://www.php9.com/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_HOST' => 'www.php9.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488546881.222
+    'REQUEST_TIME' => 1488546881
+]
+2017-03-03 21:14:41 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\php9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\php9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\php9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\php9\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\php9\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2017-03-03 21:14:41 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][info][application] $_GET = [
+    'r' => 'company/resumes'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => '31de97ebbc58bec8.1488529626.1.1488529626.1488529626.'
+    ]
+    'PHPSESSID' => 'q4g4o5elm3v070r4r7inlms440'
+    '_csrf' => 'bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'type' => '1'
+    'email' => 'company@qq.com'
+    'uid' => '30'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\New Folder\\bin;D:\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpstudy/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2188'
+    'SCRIPT_NAME' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_URI' => '/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'QUERY_STRING' => 'r=company%2Fresumes'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '64286'
+    'SCRIPT_FILENAME' => 'D:/php9/zhaopin/home/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/php9'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/php9'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.php9.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].9eec=31de97ebbc58bec8.1488529626.1.1488529626.1488529626.; PHPSESSID=q4g4o5elm3v070r4r7inlms440; _csrf=bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q%22%3B%7D'
+    'HTTP_REFERER' => 'http://www.php9.com/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_HOST' => 'www.php9.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488546881.222
+    'REQUEST_TIME' => 1488546881
+]
+2017-03-03 21:14:51 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'date() expects parameter 2 to be long, string given' in D:\php9\zhaopin\home\frontend\views\company\resumes.php:89
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'date() expects ...', 'D:\\php9\\zhaopin...', 89, Array)
+#1 D:\php9\zhaopin\home\frontend\views\company\resumes.php(89): date('Y-m-d', 'summer\xE7\x9A\x84\xE7\xAE\x80\xE5\x8E\x86')
+#2 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(325): require('D:\\php9\\zhaopin...')
+#3 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\php9\\zhaopin...', Array)
+#4 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\php9\\zhaopin...', Array, Object(frontend\controllers\CompanyController))
+#5 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('resumes', Array, Object(frontend\controllers\CompanyController))
+#6 D:\php9\zhaopin\home\frontend\controllers\CompanyController.php(197): yii\base\Controller->render('resumes', Array)
+#7 [internal function]: frontend\controllers\CompanyController->actionResumes()
+#8 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#9 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#10 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('resumes', Array)
+#11 D:\php9\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('company/resumes', Array)
+#12 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 D:\php9\zhaopin\home\frontend\web\index.php(18): yii\base\Application->run()
+#14 {main}
+2017-03-03 21:14:51 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][info][application] $_GET = [
+    'r' => 'company/resumes'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => '31de97ebbc58bec8.1488529626.1.1488529626.1488529626.'
+    ]
+    'PHPSESSID' => 'q4g4o5elm3v070r4r7inlms440'
+    '_csrf' => 'bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'type' => '1'
+    'email' => 'company@qq.com'
+    'uid' => '30'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\New Folder\\bin;D:\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpstudy/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2188'
+    'SCRIPT_NAME' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_URI' => '/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'QUERY_STRING' => 'r=company%2Fresumes'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '64299'
+    'SCRIPT_FILENAME' => 'D:/php9/zhaopin/home/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/php9'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/php9'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.php9.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].9eec=31de97ebbc58bec8.1488529626.1.1488529626.1488529626.; PHPSESSID=q4g4o5elm3v070r4r7inlms440; _csrf=bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q%22%3B%7D'
+    'HTTP_REFERER' => 'http://www.php9.com/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_HOST' => 'www.php9.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488546891.187
+    'REQUEST_TIME' => 1488546891
+]
+2017-03-03 21:14:51 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\php9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\php9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\php9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\php9\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\php9\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\php9\zhaopin\home\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2017-03-03 21:14:51 [127.0.0.1][-][q4g4o5elm3v070r4r7inlms440][info][application] $_GET = [
+    'r' => 'company/resumes'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => '31de97ebbc58bec8.1488529626.1.1488529626.1488529626.'
+    ]
+    'PHPSESSID' => 'q4g4o5elm3v070r4r7inlms440'
+    '_csrf' => 'bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'type' => '1'
+    'email' => 'company@qq.com'
+    'uid' => '30'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;D:\\New Folder\\bin;D:\\Git\\cmd;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpstudy/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2188'
+    'SCRIPT_NAME' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_URI' => '/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'QUERY_STRING' => 'r=company%2Fresumes'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '64299'
+    'SCRIPT_FILENAME' => 'D:/php9/zhaopin/home/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/php9'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/php9'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.php9.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].9eec=31de97ebbc58bec8.1488529626.1.1488529626.1488529626.; PHPSESSID=q4g4o5elm3v070r4r7inlms440; _csrf=bcdef48b20eb470b46c931748acbf83451861fbd24faea3fa3c7bacdedfd864aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ffJM8a-Yx9fLIRTsRWX3Ex2i_jW2KG2q%22%3B%7D'
+    'HTTP_REFERER' => 'http://www.php9.com/zhaopin/home/frontend/web/index.php?r=company%2Fresumes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0'
+    'HTTP_HOST' => 'www.php9.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488546891.187
+    'REQUEST_TIME' => 1488546891
+]
