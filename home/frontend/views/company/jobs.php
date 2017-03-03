@@ -1,3 +1,6 @@
+<?php
+use yii\helpers\Html;
+?>
 <style>
     .li{
         list-style-type: none;
@@ -65,13 +68,13 @@
                                 <?php foreach($jobs as $item){?>
                                 <div  class="div">
                                     <div style="margin-left: 15px;width: 500px;float: left">
-                                        <p><input type="checkbox" class="checks"/><?=$item['jobs_name']?></p>
+                                        <p><input type="checkbox" class="checks"/><?php if($item['highlight']==''){echo $item['jobs_name'];}else{echo"<font color=\"$item[highlight]\">$item[jobs_name]</font>";}?></p>
                                         <p style="margin-left: 15px;">应聘简介：2 | 更新时间: <?=date('Y-m-d',$item['refreshtime'])?> [刷新]</p>
                                         <p style="margin-left: 15px;">修改  匹配  关闭  删除 </p>
                                     </div>
                                     <div style="float: right;display: inline;margin-right: 15px;">
                                         <p></p>
-                                        <p><input type="button" style="background-color: #fafafa" value="置顶"/> <input type="button" class="right_color" style="background-color: #fafafa" value="套色"/></p>
+                                        <p><input type="button" style="background-color: #fafafa" value="置顶"/> <?php if($item['highlight']==''){echo'<input type="button" class="right_color" style="background-color: #fafafa" pid="'.$item['id'].'" value="套色"/>';}else{echo "<font style='margin-left: 5px;' color='#808080'>套色</font>";}?></p>
                                         <p><input type="button" style="background-color: #fafafa" value="紧急"/>  <input type="button" style="background-color: #fafafa" value="推荐"/></p>
                                     </div>
                                 </div>
@@ -79,17 +82,8 @@
                             </div>
 <!--        职业推广-->
 <!--             套色-->
-                            <script>
-                                //点击显示套色
-                                $(".right_color").click(function(){
-                                    $("#right_color").toggle('show');
-                                })
-                                //点击取消所有
-                                $(document).on('click',".cancel",function(){
-                                    $("#right_color").hide();
-                                })
-                            </script>
-                            <table id="right_color" style="left:25%;top:25%;margin-left:-50px;margin-top:-50px;position: absolute;background-color: #ffffff;width: 400px;height: 300px;display: none">
+                            <?=Html::beginForm('index.php?r=company/jobs_color','post')?>
+                            <table id="right_color"  style="left:25%;top:25%;margin-left:-50px;margin-top:-50px;position: absolute;background-color: #ffffff;width: 400px;height: 300px;display: none">
                                 <tbody>
                                 <tr>
                                     <td>
@@ -102,27 +96,43 @@
                                 <tr><td><font style="margin-left: 100px">推广职位：产品经理</font></td></tr>
                                 <tr><td><font style="margin-left: 100px">推广方案：职位变色</font></td></tr>
                                 <tr><td height="30"><font style="margin-left: 100px">推广期限：<input type="text" style="width: 40px;height: 20px"/>天</font></td></tr>
-                                <tr><td><span style="margin-left: 100px">选择颜色：<div style="display: inline-block;width: 173px;height: 30px;cursor: pointer;border: 1px solid #008000" readonly id="c_color"></div><input type="hidden" name="highlight"/>
+                                <tr><td><span style="margin-left: 100px">选择颜色：<div style="display: inline-block;;width: 173px;height: 30px;cursor: pointer;border: 1px solid #008000" readonly id="c_color"></div><input type="hidden" name="highlight"/>
                                             <?php foreach($color as $item){?><div style="background-color:<?=$item['value']?>;position:relative;width: 173px;margin-left: 170px;;height: 30px;display: none;cursor: pointer" class="c_color" value="<?=$item['value']?>" ></div><?php }?></span></td></tr>
-                                <script>
-                                    $(document).on('click','#c_color',function(){
-                                        $(".c_color").toggle("10000")
-                                    })
-                                    $(document).on('click','.c_color',function(){
-                                        var value=$(this).attr('value');
-                                        $("#c_color").attr('style',"position: absolute;display:inline-block;width:150px;height:30px;cursor:pointer;border:1px solid #008000;background-color:"+value+"");
-                                        $("input[name='highlight']").val(value);
-                                        $(".c_color").hide();
-                                    })
-                                </script>
-                                <tr><td>
-                                        <font style="margin-left: 100px">
-                                        <input type="submit" style="padding: 5px 8px;background-color: orange" value="确 定"/>
-                                        <input type="button" class="cancel" style="padding: 5px 8px;background-color: #dcdcdc;margin-left: 20px;" value="取 消"/>
-                                        </font>
-                                    </td></tr>
+                                <tr>
+                                    <td>
+                                    <font style="margin-left: 100px">
+                                    <input type="submit" style="padding: 5px 8px;background-color: orange" value="确 定"/>
+                                    <input type="button" class="cancel" style="padding: 5px 8px;background-color: #dcdcdc;margin-left: 20px;" value="取 消"/>
+                                    </font>
+                                    </td>
+                                </tr>
+                                <input type="hidden" name="id"/>
                                 </tbody>
                             </table>
+                            <?=Html::endForm();?>
+                            <script>
+                                //点击显示桃色
+                                $(".right_color").click(function(){
+                                    var pid=$(this).attr('pid');
+                                    $("input[name='id']").val(pid);
+                                    $("#right_color").toggle('show');
+                                })
+                                //点击取消所有
+                                $(document).on('click',".cancel",function(){
+                                    $("#right_color").hide();
+                                })
+                                //点击显示颜色
+                                $(document).on('click','#c_color',function(){
+                                    $(".c_color").toggle("10000")
+                                })
+                                //赋值
+                                $(document).on('click','.c_color',function(){
+                                    var value=$(this).attr('value');
+                                    $("#c_color").attr('style',"position: absolute;display:inline-block;width:150px;height:30px;cursor:pointer;border:1px solid #008000;background-color:"+value+"");
+                                    $("input[name='highlight']").val(value);
+                                    $(".c_color").hide();
+                                })
+                            </script>
 <!--                置顶-->
 
 <!--                紧急-->
@@ -132,6 +142,7 @@
 <!--     职业推广-->
                             <div style="margin-left: 30px;clear: both;">
                                 <input type="checkbox"/>&nbsp;
+                                <a href="#" onclick="js_method();return false;">sdsdsdsd</a>
                                 <input type="button" style="padding: 5px;background-color: #0000ff;color: #ffffff" value="刷新职位"/>&nbsp;&nbsp;&nbsp;
                                 <input type="button" style="padding: 5px;background-color: #0000ff;color: #ffffff" value="关闭"/>&nbsp;&nbsp;&nbsp;
                                 <input type="button" style="padding: 5px;background-color: #0000ff;color: #ffffff" value="删除"/>

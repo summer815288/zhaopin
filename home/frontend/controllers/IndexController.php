@@ -175,7 +175,10 @@ class IndexController extends CommonController
 		return $this->render("toudi",['jobs'=>$jobs]);
 	}
 
-
+    //投简历公司介绍
+    public function actionCompany_jobs(){
+        return $this->render('company_jobs');
+    }
 	//账号设置
 	public function actionLoginset()
 	{
