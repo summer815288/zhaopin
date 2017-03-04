@@ -27,13 +27,12 @@ use yii\helpers\Html;
     <div id="container">
                 <div class="clearfix">
             <div class="content_l">
-            	                <dl class="job_detail">
+            	<dl class="job_detail">
                     <dt>
                         <h1 title="产品经理">
                             <em></em>
                     	<div><?php echo $jobs[0]['companyname']?></div>
-<<<<<<< HEAD
-                      <?= $jobs[0]['jobs_name']?></h1>
+                      	<?= $jobs[0]['jobs_name']?></h1>
                                                                 	
 <!--                      <div class="collection" id="jobCollection">-->
 						  <h1 class="collection" style="float: right">【收藏】</h1>
@@ -45,19 +44,10 @@ use yii\helpers\Html;
 <!--							</div>-->
 <!--                       	</div>-->
                     </dt>
-=======
-                        <?= $jobs[0]['jobs_name']?></h1>
-<!--                          收藏职位                                      	-->
-                      <div class="jd_collection" id="jobCollection">
-                      <div class="jd_collection_success">
-                       			<span>已成功收藏该职位，</span>
-								<a class="jd_collection_page" href="collections.html">查看全部</a>								
-								<a class="jd_collection_x" href="javascript:;"></a>
-                      </div>
-                      </div>
-<!--                  收藏职位-->
-                 </dt>
->>>>>>> bda1da3c6104e46b8b186727c8dfeda10db1353c
+
+
+           
+
                     <dd class="job_request">
                     	<span class="red"><?= $jobs[0]['wage_cn']?></span>
                        	<span><?= $jobs[0]['district_cn']?></span> 

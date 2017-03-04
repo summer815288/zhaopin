@@ -176,6 +176,7 @@ class IndexController extends CommonController
 		//得到当前用户的简历
 		$uid = Yii::$app->session->get('uid');
 		$resume = Resume::find()->where(['uid' => $uid])->asArray()->all();
+		return $this->render('toudi',['jobs'=>$jobs,'resume'=>$resume]);
 	}
 
 	//收藏

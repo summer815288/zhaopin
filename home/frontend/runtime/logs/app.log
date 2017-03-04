@@ -49008,3 +49008,241 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1488590719.771
     'REQUEST_TIME' => 1488590719
 ]
+2017-03-04 09:28:56 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zhaopin.jobs' doesn't exist' in F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\month9\zhaopin\home\frontend\controllers\IndexController.php(144): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\IndexController->actionList()
+#5 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\month9\zhaopin\home\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zhaopin.jobs' doesn't exist
+The SQL being executed was: SELECT * FROM `jobs`' in F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\month9\zhaopin\home\frontend\controllers\IndexController.php(144): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\IndexController->actionList()
+#5 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\month9\zhaopin\home\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'zhaopin.jobs' doesn't exist
+)
+
+2017-03-04 09:28:53 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'index/list'
+]
+
+$_COOKIE = [
+    'bdshare_firstime' => '1486123949110'
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487822502,1488174487,1488455433'
+    '_pk_ysp_id_' => [
+        'object Object' => '6e791e9aba38c36c.1488242037.1.1488242037.1488242037.'
+    ]
+    'advanced-backend' => 'g38594rjt1gljir3devc7rk584'
+    '_csrf-backend' => '9bea7164e2611b719b4d761d7c4820637301ad240489ee9a01db240934af78eba:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"jr7r6UPB7PtorcT1yMNxcX_d5m0p6ar2\";}'
+    'PHPSESSID' => 'j3vf7crejs0397m10l8248jq44'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'bdshare_firstime=1486123949110; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487822502,1488174487,1488455433; _pk_ysp_id.[object Object].1fff=6e791e9aba38c36c.1488242037.1.1488242037.1488242037.; advanced-backend=g38594rjt1gljir3devc7rk584; _csrf-backend=9bea7164e2611b719b4d761d7c4820637301ad240489ee9a01db240934af78eba%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22jr7r6UPB7PtorcT1yMNxcX_d5m0p6ar2%22%3B%7D; PHPSESSID=j3vf7crejs0397m10l8248jq44'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\wamp\\php\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;F:\\wamp\\myspl\\bin;D:\\bin;E:\\Git\\cmd;F:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/month9/zhaopin/home/frontend/web/index.php'
+    'REMOTE_PORT' => '50513'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=index/list'
+    'REQUEST_URI' => '/month9/zhaopin/home/frontend/web/index.php?r=index/list'
+    'SCRIPT_NAME' => '/month9/zhaopin/home/frontend/web/index.php'
+    'PHP_SELF' => '/month9/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488590933.881
+    'REQUEST_TIME' => 1488590933
+]
+2017-03-04 09:35:30 [127.0.0.1][-][j3vf7crejs0397m10l8248jq44][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: resume' in F:\phpStudy\WWW\month9\zhaopin\home\frontend\views\index\toudi.php:83
+Stack trace:
+#0 F:\phpStudy\WWW\month9\zhaopin\home\frontend\views\index\toudi.php(83): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'F:\\phpStudy\\WWW...', 83, Array)
+#1 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(325): require('F:\\phpStudy\\WWW...')
+#2 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\\phpStudy\\WWW...', Array)
+#3 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('F:\\phpStudy\\WWW...', Array, Object(frontend\controllers\IndexController))
+#4 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('toudi', Array, Object(frontend\controllers\IndexController))
+#5 F:\phpStudy\WWW\month9\zhaopin\home\frontend\controllers\IndexController.php(179): yii\base\Controller->render('toudi', Array)
+#6 [internal function]: frontend\controllers\IndexController->actionToudi()
+#7 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('toudi', Array)
+#10 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('index/toudi', Array)
+#11 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\phpStudy\WWW\month9\zhaopin\home\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2017-03-04 09:35:30 [127.0.0.1][-][j3vf7crejs0397m10l8248jq44][info][application] $_GET = [
+    'r' => 'index/toudi'
+    'id' => '2'
+]
+
+$_COOKIE = [
+    'bdshare_firstime' => '1486123949110'
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487822502,1488174487,1488455433'
+    '_pk_ysp_id_' => [
+        'object Object' => '6e791e9aba38c36c.1488242037.1.1488242037.1488242037.'
+    ]
+    'advanced-backend' => 'g38594rjt1gljir3devc7rk584'
+    '_csrf-backend' => '9bea7164e2611b719b4d761d7c4820637301ad240489ee9a01db240934af78eba:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"jr7r6UPB7PtorcT1yMNxcX_d5m0p6ar2\";}'
+    'PHPSESSID' => 'j3vf7crejs0397m10l8248jq44'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'type' => '2'
+    'email' => 'person@qq.com'
+    'uid' => '31'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/month9/zhaopin/home/frontend/web/index.php?r=index/list'
+    'HTTP_COOKIE' => 'bdshare_firstime=1486123949110; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487822502,1488174487,1488455433; _pk_ysp_id.[object Object].1fff=6e791e9aba38c36c.1488242037.1.1488242037.1488242037.; advanced-backend=g38594rjt1gljir3devc7rk584; _csrf-backend=9bea7164e2611b719b4d761d7c4820637301ad240489ee9a01db240934af78eba%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22jr7r6UPB7PtorcT1yMNxcX_d5m0p6ar2%22%3B%7D; PHPSESSID=j3vf7crejs0397m10l8248jq44'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\wamp\\php\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;F:\\wamp\\myspl\\bin;D:\\bin;E:\\Git\\cmd;F:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/month9/zhaopin/home/frontend/web/index.php'
+    'REMOTE_PORT' => '50561'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=index/toudi&id=2'
+    'REQUEST_URI' => '/month9/zhaopin/home/frontend/web/index.php?r=index/toudi&id=2'
+    'SCRIPT_NAME' => '/month9/zhaopin/home/frontend/web/index.php'
+    'PHP_SELF' => '/month9/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488591330.454
+    'REQUEST_TIME' => 1488591330
+]
+2017-03-04 09:35:30 [127.0.0.1][-][j3vf7crejs0397m10l8248jq44][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 F:\phpStudy\WWW\month9\zhaopin\home\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2017-03-04 09:35:30 [127.0.0.1][-][j3vf7crejs0397m10l8248jq44][info][application] $_GET = [
+    'r' => 'index/toudi'
+    'id' => '2'
+]
+
+$_COOKIE = [
+    'bdshare_firstime' => '1486123949110'
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487822502,1488174487,1488455433'
+    '_pk_ysp_id_' => [
+        'object Object' => '6e791e9aba38c36c.1488242037.1.1488242037.1488242037.'
+    ]
+    'advanced-backend' => 'g38594rjt1gljir3devc7rk584'
+    '_csrf-backend' => '9bea7164e2611b719b4d761d7c4820637301ad240489ee9a01db240934af78eba:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"jr7r6UPB7PtorcT1yMNxcX_d5m0p6ar2\";}'
+    'PHPSESSID' => 'j3vf7crejs0397m10l8248jq44'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'type' => '2'
+    'email' => 'person@qq.com'
+    'uid' => '31'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/month9/zhaopin/home/frontend/web/index.php?r=index/list'
+    'HTTP_COOKIE' => 'bdshare_firstime=1486123949110; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487822502,1488174487,1488455433; _pk_ysp_id.[object Object].1fff=6e791e9aba38c36c.1488242037.1.1488242037.1488242037.; advanced-backend=g38594rjt1gljir3devc7rk584; _csrf-backend=9bea7164e2611b719b4d761d7c4820637301ad240489ee9a01db240934af78eba%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22jr7r6UPB7PtorcT1yMNxcX_d5m0p6ar2%22%3B%7D; PHPSESSID=j3vf7crejs0397m10l8248jq44'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\wamp\\php\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;F:\\wamp\\myspl\\bin;D:\\bin;E:\\Git\\cmd;F:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/month9/zhaopin/home/frontend/web/index.php'
+    'REMOTE_PORT' => '50561'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=index/toudi&id=2'
+    'REQUEST_URI' => '/month9/zhaopin/home/frontend/web/index.php?r=index/toudi&id=2'
+    'SCRIPT_NAME' => '/month9/zhaopin/home/frontend/web/index.php'
+    'PHP_SELF' => '/month9/zhaopin/home/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488591330.454
+    'REQUEST_TIME' => 1488591330
+]
