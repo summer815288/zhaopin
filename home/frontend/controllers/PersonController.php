@@ -34,10 +34,52 @@ class PersonController extends Controller
 	{
         $uid=Yii::$app->session->get('uid');
         $resume=Resume::find()->where(['uid'=>$uid])->asArray()->all();
-//        print_r($resume);die;
 
         return $this->render("resume_list",['resume'=>$resume]);
 	}
+
+    //申请职位
+    public function  actionResume_deliever(){
+        //通过uid查找
+        $uid=Yii::$app->session->get('uid');
+        $sql="select * from `personal_jobs_apply` ";
+        $data=Yii::$app->db->createCommand($sql)->queryAll();
+        $count=count($data);
+        //没看的
+        $sql2="select * from `personal_jobs_apply` where `personal_look`=1 ";
+        $data2=Yii::$app->db->createCommand($sql2)->queryAll();
+        $count2=count($data2);
+        //看了的
+        $sql3="select * from `personal_jobs_apply` where `personal_look`=2 ";
+        $data3=Yii::$app->db->createCommand($sql3)->queryAll();
+        $count3=count($data3);
+
+       return $this->render('resume_deliever',['data'=>$data,'count'=>$count,'data2'=>$data2,'count2'=>$count2,'data3'=>$data3,'count3'=>$count3]) ;
+
+    }
+
+    //面试邀请
+    public function actionInterview(){
+
+        //得到本用户的Uid,进行查找的操作
+        $uid=Yii::$app->session->get('uid');
+
+        $sql="select * from `company_interview` where `resume_uid`=$uid";
+        $data=Yii::$app->db->createCommand($sql)->queryAll();
+        $count=count($data);
+        //没看的
+        $sql2="select * from `company_interview` where `personal_look`=1 ";
+        $data2=Yii::$app->db->createCommand($sql2)->queryAll();
+        $count2=count($data2);
+        //看了的
+        $sql3="select * from `company_interview` where `personal_look`=2 ";
+        $data3=Yii::$app->db->createCommand($sql3)->queryAll();
+        $count3=count($data3);
+        return $this->render('resume_interview',['data'=>$data,'count'=>$count,'data2'=>$data2,'count2'=>$count2,'data3'=>$data3,'count3'=>$count3]) ;
+
+
+    }
+
 
 
 
@@ -309,8 +351,40 @@ class PersonController extends Controller
 
     }
 
+    //简历最终版的展示
+    public function actionResume_ends(){
+        $id=$_GET['id'];  //这是简历的id
+        $sql="select * from `resume` where id=$id";
+        $sql1="select * from `resume_education` where pid=$id";
+        $sql2="select * from `resume_work` where pid=$id";
+        $sql3="select * from `resume_language` where pid=$id";
+        $sql4="select * from `resume_credent` where pid=$id";
+        $sql5="select * from `resume_img` where pid=$id";   //查找附件照片
+        $info=Yii::$app->db->createCommand($sql)->queryOne();
+        $edu=Yii::$app->db->createCommand($sql1)->queryAll();
+        $work=Yii::$app->db->createCommand($sql2)->queryAll();
+        $language=Yii::$app->db->createCommand($sql3)->queryAll();
+        $credent=Yii::$app->db->createCommand($sql4)->queryAll();
+        $img=Yii::$app->db->createCommand($sql5)->queryAll();
+        //print_r($edu);die;
+
+        return $this->render('resume_ends',['id'=>$id,'info'=>$info,'edu'=>$edu,'work'=>$work,'language'=>$language,'credent'=>$credent,'img'=>$img]);
 
 
+    }
+
+
+
+    //职位收藏夹
+    public function actionCollection(){
+        $uid=Yii::$app->session->get('uid');
+        $sql="select * from `collect` join `jobs`   on `collect`.`jid`=`jobs`.id where `collect`.uid=$uid";
+        $data=Yii::$app->db->createCommand($sql)->queryAll();
+        //print_r($data);die;
+
+        return $this->render('resume_collection',['data'=>$data]);
+
+    }
 
 
 
@@ -318,8 +392,21 @@ class PersonController extends Controller
 	//收藏的职位
 	public function actionCollections()
 	{
-		return $this->render("collections");
+        $uid=Yii::$app->session->get('uid');
+        $collect=yii::$app->db->createCommand("select * from collect INNER JOIN jobs on collect.jid=jobs.id where collect.uid=$uid")->queryAll();
+		return $this->render("collections",['collect'=>$collect]);
 	}
+    
+    public function actionCollectdel()
+    {
+        $id=yii::$app->request->post('id');
+        $uid=Yii::$app->session->get('uid');
+        $re=yii::$app->db->createCommand("delete from collect where uid=$uid and jid=$id")->execute();
+        if($re)
+        {
+            echo 1;
+        }
+    }
 
 
 	//我的订阅

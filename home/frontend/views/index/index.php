@@ -214,7 +214,7 @@ use yii\helpers\Url;
 	                <li class="odd clearfix">
 						 <div class="hot_pos_l">
 							<div class="mb10">
-								  <a href="<?php echo Url::toRoute(['person/resume_end','id'=>$value['id']]) ?>" target="_blank"><?php echo $value['major_cn']?></a>&nbsp;
+								  <a href="<?php echo Url::toRoute(['person/resume_ends','id'=>$value['id']]) ?>" target="_blank"><?php echo $value['major_cn']?></a>&nbsp;
 								  <span class="c9">[<?php echo $value['district_cn']?>]</span>
 							</div>
 							<span><em class="c7">姓名： </em><?php echo $value['fullname']?></span>

@@ -141,8 +141,8 @@ use yii\helpers\Html;
 
 <!--     职业推广-->
                             <div style="margin-left: 30px;clear: both;">
-                                <input type="checkbox"/>&nbsp;
-                                <a href="#" onclick="js_method();return false;">sdsdsdsd</a>
+                                <!-- <input type="checkbox"/>&nbsp; -->
+                                <a href="#" onclick="js_method();return false;"></a>
                                 <input type="button" style="padding: 5px;background-color: #0000ff;color: #ffffff" value="刷新职位"/>&nbsp;&nbsp;&nbsp;
                                 <input type="button" style="padding: 5px;background-color: #0000ff;color: #ffffff" value="关闭"/>&nbsp;&nbsp;&nbsp;
                                 <input type="button" style="padding: 5px;background-color: #0000ff;color: #ffffff" value="删除"/>

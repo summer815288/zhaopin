@@ -168,21 +168,79 @@ class IndexController extends CommonController
 
 	//投递简历
 	public function actionToudi()
-	{	
-		
-		$id = $_GET['id'];
-		$jobs=yii::$app->db->createCommand("select * from jobs where id=$id")->queryAll();
-		//print_r($jobs);die;
-        //得到当前用户的简历
-        $uid=Yii::$app->session->get('uid');
-        $resume=Resume::find()->where(['uid'=>$uid])->asArray()->all();
+	{
 
-        return $this->render("toudi",['jobs'=>$jobs,'resume'=>$resume]);
+		$id = $_GET['id'];
+		$jobs = yii::$app->db->createCommand("select * from jobs where id=$id")->queryAll();
+		//print_r($jobs);die;
+		//得到当前用户的简历
+		$uid = Yii::$app->session->get('uid');
+		$resume = Resume::find()->where(['uid' => $uid])->asArray()->all();
+		return $this->render('toudi',['jobs'=>$jobs,'resume'=>$resume]);
+	}
+
+	//收藏
+	public function actionCollect()
+	{
+		$id=yii::$app->request->post('id');
+//		echo $id;die;
+		$uid=Yii::$app->session->get('uid');
+//		echo $uid;die;
+		$jid=yii::$app->db->createCommand("select jid from collect where uid=$uid")->queryAll();
+		if($jid)
+		{
+			foreach ($jid as $k =>$value)
+			{
+				$a[$k]=$value['jid'];
+			}
+			if(in_array($id,$a))
+			{
+				echo "已收藏";
+			}
+			else
+			{
+				yii::$app->db->createCommand("insert into collect VALUES (null,'$uid','$id')")->execute();
+				echo "收藏成功";
+			}
+		}else{
+			yii::$app->db->createCommand("insert into collect VALUES (null,'$uid','$id')")->execute();
+			echo "收藏成功";
+		}
+
 	}
 
 
 
-    public function actionDeliever(){
+
+    //个人收藏职位
+    public function actionCollection(){
+        //接收值，然后入库，返回前台
+        $id=$_POST['id'];
+        $uid=Yii::$app->session->get('uid');
+        $sql="select * from `collect` where `jid`=$id and `uid`=$uid";
+        $arr=Yii::$app->db->createCommand($sql)->queryone();
+        if($arr){
+            echo 2;
+        }else{
+
+            $insert=Yii::$app->db->createCommand()->insert('collect',['uid'=>$uid,'jid'=>$id])->execute();
+            if($insert){
+                echo 1;
+            }else{
+                echo 0;
+            }
+
+        }
+
+
+
+
+    }
+
+
+
+
+    	public function actionDeliever(){
         $data=$_POST;
         $data['apply_addtime']=time();
         $data['notes']=$data['resume_name']."申请职位";
@@ -193,6 +251,8 @@ class IndexController extends CommonController
             echo 0;
         }
     }
+
+
 
 
 

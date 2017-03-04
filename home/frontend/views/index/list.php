@@ -270,14 +270,13 @@ use yii\helpers\Html;
 
 
 <script>
-<<<<<<< HEAD
 //热门搜索
 $(".hotSearch").click(function(){
 	var hot = $(this).contents().next().children().html();
 	var par=window.location.search;
 	location.href='index.php'+par+'&hot='+hot;
 })
-=======
+
 	//展示省级地区
 	$("#up").click(function () {
 		$(this).parent().next().show();
@@ -292,7 +291,6 @@ $(".hotSearch").click(function(){
 	$(".box1").mouseleave(function(){
 		$(this).hide();
 	})
->>>>>>> de0ca886f47514e5cf3484dcc86bb661c324ab48
 
 
 $(function(){
