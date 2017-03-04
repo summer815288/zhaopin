@@ -9,6 +9,7 @@ use frontend\models\Category;
 use frontend\models\Category_district;
 use frontend\models\Company_profile;
 use frontend\models\Category_jobs;
+use frontend\models\Personal_jobs_apply;
 use frontend\models\Jobs;
 use frontend\models\Color;
 use yii\web\Controller;
@@ -190,7 +191,10 @@ class CompanyController extends Controller
     }
     //收到的简历
     public function actionResumes(){
-        return $this->render('resumes');
+        $uid=Yii::$app->session->get('uid');
+        $personal=Yii::$app->db->createCommand("select * from personal_jobs_apply join resume on personal_jobs_apply.resume_id=resume.id")->queryAll();
+
+        return $this->render('resumes',['personal'=>$personal]);
     }
     //简历查看
     public function actionPreview(){

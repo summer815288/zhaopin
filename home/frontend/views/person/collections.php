@@ -8,77 +8,36 @@
                         <h1><em></em>我收藏的职位</h1>
                     </dt>
                     <dd>
-                    	                        <form id="collectionsForm">
+                    	<form id="collectionsForm">
                             <ul class="reset my_collections">
-                               	                             	<li data-id="133340">
+								<?php foreach ($collect as $value):?>
+                               	 <li data-id="133340">
                              		<a title="携程旅行网" target="_blank" href="h/c/6636.html">
                              			<img alt="携程旅行网" src="style/images/ff808081441c19bf01441f9a47190b3a.png">
                              		</a>
                              		<div class="co_item">
                              			<h2 title="酒店业务助理">
 	                                        <a target="_blank" href="h/jobs/133340.html">
-	                                        	<em>酒店业务助理</em> 
-	                                        	<span>（4k以上）</span>
+	                                        	<em><?php echo $value['jobs_name']?></em>
+	                                        	<span>（<?php echo $value['wage_cn']?>）</span>
 	                                    	</a>
 	                                    </h2>
-	                                    <span class="co_time">发布时间：2014-06-27 09:37</span>
-	                                    <div class="co_cate">携程旅行网 / 北京 / 1-3年 / 本科</div>
-	                                    <span class="co_youhuo c7">出勤福利</span>
-                                       	                                       		                                       			                                       				<a class="collection_link" target="_blank" href="h/jobs/133340.html">投个简历</a>
-                                       			                                       												                                        <i></i>
-                                        <a class="collectionCancel collection_link collected" href="javascript:;">
+	                                    <span class="co_time">发布时间：<?php echo date("Y-m-d",$value['addtime'])?></span>
+	                                    <div class="co_cate"><?php echo $value['companyname']?> / <?php echo $value['district_cn']?> / <?php echo $value['experience_cn']?> / <?php echo $value['education_cn']?></div>
+	                                    <span class="co_youhuo c7"><?php echo $value['tag_cn']?></span>
+										<a class="collection_link" target="_blank" href="h/jobs/133340.html">投个简历</a>
+<!--										<i></i>-->
+										<span class="collectdel"><a class="collectionCancel collection_link collected" href="javascript:;">
                                         	取消收藏
                                         	<span>已取消收藏</span>
-                                        </a>
+                                        </a></span>
+										<input type="hidden" name="id" value="<?php echo $value['id']?>">
                                		</div>
                             	</li>
-                            	                             	<li data-id="148886">
-                             		<a title="蘑菇街" target="_blank" href="h/c/108.html">
-                             			<img alt="蘑菇街" src="style/images/ff80808142a8df050142b1674c596676.jpg">
-                             		</a>
-                             		<div class="co_item">
-                             			<h2 title="PHP">
-	                                        <a target="_blank" href="h/jobs/148886.html">
-	                                        	<em>PHP</em> 
-	                                        	<span>（15k-30k）</span>
-	                                    	</a>
-	                                    </h2>
-	                                    <span class="co_time">发布时间：2014-07-01 09:41</span>
-	                                    <div class="co_cate">蘑菇街 / 杭州 / 不限 / 本科</div>
-	                                    <span class="co_youhuo c7">有技术挑战、有成长机会、有漂亮妹子</span>
-                                       	                                       		                                       			                                       				<a class="collection_link" target="_blank" href="h/jobs/148886.html">投个简历</a>
-                                       			                                       												                                        <i></i>
-                                        <a class="collectionCancel collection_link collected" href="javascript:;">
-                                        	取消收藏
-                                        	<span>已取消收藏</span>
-                                        </a>
-                               		</div>
-                            	</li>
-                            	                             	<li data-id="148519">
-                             		<a title="搜狗" target="_blank" href="h/c/1537.html">
-                             			<img alt="搜狗" src="style/images/ff80808142e0968f0142e0d41f1205f2.jpg">
-                             		</a>
-                             		<div class="co_item">
-                             			<h2 title="商家运营">
-	                                        <a target="_blank" href="h/jobs/148519.html">
-	                                        	<em>商家运营</em> 
-	                                        	<span>（8k-16k）</span>
-	                                    	</a>
-	                                    </h2>
-	                                    <span class="co_time">发布时间：2014-07-01 09:21</span>
-	                                    <div class="co_cate">搜狗 / 北京 / 1-3年 / 本科</div>
-	                                    <span class="co_youhuo c7">领先品牌，全新产品，急聘电商运营人才。</span>
-                                       	                                       		                                       			                                       				<a class="collection_link" target="_blank" href="h/jobs/148519.html">投个简历</a>
-                                       			                                       												                                        <i></i>
-                                        <a class="collectionCancel collection_link collected" href="javascript:;">
-                                        	取消收藏
-                                        	<span>已取消收藏</span>
-                                        </a>
-                               		</div>
-                            	</li>
-                            	                            </ul>
-                                                    </form>
-                                            </dd>
+								<?php endforeach;?>
+							</ul>
+						</form>
+					</dd>
                 </dl>
             </div>	
             <div class="content_r">
@@ -96,6 +55,22 @@
        	</div>
 <script src="style/js/collections.min.js"></script>
 <script>
+	//取消收藏
+	$(".collectdel").click(function () {
+		var _this=$(".collectdel");
+		var id=$(this).next().val();
+		$.ajax({
+			type: "POST",
+			url: "?r=person/collectdel",
+			data: {'id':id},
+			success: function(msg){
+				if(msg==1)
+				{
+					_this.parent().parent().remove();
+				}
+			}
+		});
+	})
 $(function(){
 	$('.Pagination').pager({
 	      currPage: 1,

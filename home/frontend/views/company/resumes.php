@@ -79,16 +79,19 @@
                                     </table>
                                 </div>
                                     <div  class="div">
+
                                         <div style="margin-left: 15px;width: 948px;padding: 10px;;">
+                                            <?php foreach($personal as $item){?>
                                             <table>
                                                 <th style="display: inline;margin-right: 10px;"><input type="checkbox"/>&nbsp;<input type="button" value="+"/></th>
-                                                <th style="display: inline;margin-right: 50px;">456</th>
-                                                <th style="display: inline;margin-right: 50px;">16岁/大专/10年以上</th>
-                                                <th style="display: inline;margin-right: 60px;">发布职位</th>
-                                                <th style="display: inline;margin-right: 60px;">2017-02-22</th>
+                                                <th style="display: inline;margin-right: 50px;"><?php echo $item['resume_name']?></th>
+                                                <th style="display: inline;margin-right: 30px;">16岁/大专/10年以上</th>
+                                                <th style="display: inline;margin-right: 60px;"><?php echo $item['jobs_name']?></th>
+                                                <th style="display: inline;margin-right: 60px;"><?php echo date("Y-m-d",$item['apply_addtime'])?></th>
                                                 <th style="display: inline;margin-right: 75px;">主动投递</th>
                                                 <th style="display: inline;margin-right: 90px;">邀请面试 删除</th>
                                             </table>
+                                            <?php }?>
                                         </div>
 
                                     </div>

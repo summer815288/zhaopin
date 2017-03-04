@@ -168,18 +168,48 @@ class IndexController extends CommonController
 
 	//投递简历
 	public function actionToudi()
-	{	
-		
-		$id = $_GET['id'];
-		$jobs=yii::$app->db->createCommand("select * from jobs where id=$id")->queryAll();
-		//print_r($jobs);die;
-        //得到当前用户的简历
-        $uid=Yii::$app->session->get('uid');
-        $resume=Resume::find()->where(['uid'=>$uid])->asArray()->all();
+	{
 
-        return $this->render("toudi",['jobs'=>$jobs,'resume'=>$resume]);
+		$id = $_GET['id'];
+		$jobs = yii::$app->db->createCommand("select * from jobs where id=$id")->queryAll();
+		//print_r($jobs);die;
+		//得到当前用户的简历
+		$uid = Yii::$app->session->get('uid');
+		$resume = Resume::find()->where(['uid' => $uid])->asArray()->all();
+		return $this->render('toudi',['jobs'=>$jobs,'resume'=>$resume]);
 	}
 
+	//收藏
+	public function actionCollect()
+	{
+		$id=yii::$app->request->post('id');
+//		echo $id;die;
+		$uid=Yii::$app->session->get('uid');
+//		echo $uid;die;
+		$jid=yii::$app->db->createCommand("select jid from collect where uid=$uid")->queryAll();
+		if($jid)
+		{
+			foreach ($jid as $k =>$value)
+			{
+				$a[$k]=$value['jid'];
+			}
+			if(in_array($id,$a))
+			{
+				echo "已收藏";
+			}
+			else
+			{
+				yii::$app->db->createCommand("insert into collect VALUES (null,'$uid','$id')")->execute();
+				echo "收藏成功";
+			}
+		}else{
+			yii::$app->db->createCommand("insert into collect VALUES (null,'$uid','$id')")->execute();
+			echo "收藏成功";
+		}
+
+	}
+
+<<<<<<< HEAD
 
     //个人收藏职位
     public function actionCollection(){
@@ -207,8 +237,10 @@ class IndexController extends CommonController
     }
 
 
+=======
+>>>>>>> e972d5662d54d5f8258be4bf0b44de76c799be50
 
-    public function actionDeliever(){
+    	public function actionDeliever(){
         $data=$_POST;
         $data['apply_addtime']=time();
         $data['notes']=$data['resume_name']."申请职位";
@@ -221,7 +253,10 @@ class IndexController extends CommonController
     }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e972d5662d54d5f8258be4bf0b44de76c799be50
     //投简历公司介绍
     public function actionCompany_jobs(){
         return $this->render('company_jobs');

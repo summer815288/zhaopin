@@ -392,8 +392,21 @@ class PersonController extends Controller
 	//收藏的职位
 	public function actionCollections()
 	{
-		return $this->render("collections");
+        $uid=Yii::$app->session->get('uid');
+        $collect=yii::$app->db->createCommand("select * from collect INNER JOIN jobs on collect.jid=jobs.id where collect.uid=$uid")->queryAll();
+		return $this->render("collections",['collect'=>$collect]);
 	}
+    
+    public function actionCollectdel()
+    {
+        $id=yii::$app->request->post('id');
+        $uid=Yii::$app->session->get('uid');
+        $re=yii::$app->db->createCommand("delete from collect where uid=$uid and jid=$id")->execute();
+        if($re)
+        {
+            echo 1;
+        }
+    }
 
 
 	//我的订阅

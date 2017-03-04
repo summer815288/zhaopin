@@ -27,11 +27,12 @@ use yii\helpers\Html;
     <div id="container">
                 <div class="clearfix">
             <div class="content_l">
-            	                <dl class="job_detail">
+            	<dl class="job_detail">
                     <dt>
                         <h1 title="产品经理">
                             <em></em>
                     	<div><?php echo $jobs[0]['companyname']?></div>
+<<<<<<< HEAD
                         <?= $jobs[0]['jobs_name']?></h1>
 <!--                          收藏职位                                      	-->
                       <div class="jd_collection"     id="<?php echo $jobs[0]['id']?>" >
@@ -68,6 +69,23 @@ use yii\helpers\Html;
 
 </script>
 
+=======
+                      	<?= $jobs[0]['jobs_name']?></h1>
+                                                                	
+<!--                      <div class="collection" id="jobCollection">-->
+						  <h1 class="collection" style="float: right">【收藏】</h1>
+									<input type="hidden" name="id" value="<?php echo $jobs[0]['id']?>">
+<!--                      		<div class="jd_collection_success">-->
+<!--                       			<span>已成功收藏该职位，</span>-->
+<!--								<a class="jd_collection_page" href="collections.html">查看全部</a>-->
+<!--								<a class="jd_collection_x" href="?r=index"></a>-->
+<!--							</div>-->
+<!--                       	</div>-->
+                    </dt>
+
+
+           
+>>>>>>> e972d5662d54d5f8258be4bf0b44de76c799be50
 
                     <dd class="job_request">
                     	<span class="red"><?= $jobs[0]['wage_cn']?></span>
@@ -673,6 +691,18 @@ var options = {
 </script>
 <script src="style/js/common.js" type="text/javascript"></script> -->
 <script>
+	$(".collection").click(function () {
+		$(this).css("background","yellow");
+		var id=$(this).next().val();
+		$.ajax({
+			type: "POST",
+			url: "?r=index/collect",
+			data: {'id':id},
+			success: function(msg){
+				alert( "Data Saved: " + msg );
+			}
+		});
+	})
 $(function(){
 	$('#weibolist .cookietxte').text('推荐本职位给好友');
 	$(document).bind('cbox_complete', function(){ 
