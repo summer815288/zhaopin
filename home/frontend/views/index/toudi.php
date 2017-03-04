@@ -2,7 +2,7 @@
     body, html {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
     #allmap{width:100%;height:500px;}
     p{margin-left:5px; font-size:14px;}
-  </style>
+</style>
   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Og1IWYYufB3o6bUgGXhaZ5EY4TM6ecOK"></script>
 <title>根据关键字本地搜索</title>
 
@@ -15,16 +15,17 @@
                             <em></em>
                     	<div><?php echo $jobs[0]['companyname']?></div>
                       <?= $jobs[0]['jobs_name']?></h1>
-                        
-                                               	
-                       	                       	<div class="jd_collection" id="jobCollection">
-                       		                       		<div class="jd_collection_success">
-                       			<span>已成功收藏该职位，</span>
-								<a class="jd_collection_page" href="collections.html">查看全部</a>								
-								<a class="jd_collection_x" href="javascript:;"></a>
-							</div>
-                       	</div>
-                       	                    </dt>
+                                                                	
+<!--                      <div class="collection" id="jobCollection">-->
+						  <h1 class="collection" style="float: right">【收藏】</h1>
+									<input type="hidden" name="id" value="<?php echo $jobs[0]['id']?>">
+<!--                      		<div class="jd_collection_success">-->
+<!--                       			<span>已成功收藏该职位，</span>-->
+<!--								<a class="jd_collection_page" href="collections.html">查看全部</a>-->
+<!--								<a class="jd_collection_x" href="?r=index"></a>-->
+<!--							</div>-->
+<!--                       	</div>-->
+                    </dt>
                     <dd class="job_request">
                     	<span class="red"><?= $jobs[0]['wage_cn']?></span>
                        	<span><?= $jobs[0]['district_cn']?></span> 
@@ -74,7 +75,7 @@
                                         <dd>
                                         	                    				                   		<!-- 用户是否激活 0-否；1-是 -->
 		                				                   			
-	                   					                        									                							                   		<a title="投个简历" class="btn fr btn_apply inline cboxElement" href="#setResumeApply">投个简历</a>
+	     <a title="投个简历" class="btn fr btn_apply inline cboxElement" href="#setResumeApply">投个简历</a>
 						              								                	                        				                        	
 		                        	                        	                   		                	                </dd>
                 </dl>
@@ -101,8 +102,8 @@
                         	<li><span>规模</span><?= $jobs[0]['scale_cn']?></li>
                         	<li>
                         		<span>主页</span> 
-                        		           							<a rel="nofollow" title="http://www.100bt.com" target="_blank" href="http://www.100bt.com">http://www.100bt.com</a>
-           						                        	</li>
+                        		<a rel="nofollow" title="http://www.100bt.com" target="_blank" href="http://www.100bt.com">http://www.100bt.com</a>
+           						    </li>
                         </ul>
                         
                         <h4>发展阶段</h4>
@@ -239,7 +240,7 @@
 	            		<label class="radio">
 	            			<input type="radio" value="1" class="resume1" name="resumeName">
 	            			在线简历：
-	            				            				<span title="jason的简历">jason的简历</span>
+	            				            				<span title="jason的简历"><? $session = yii::$app->session; echo $session->get('email')?></span>
 	            				            		</label>
             			<div class="setBtns">
             					            				<a target="_blank" href="h/resume/preview.html">预览</a> |
@@ -280,7 +281,7 @@
 	            		<label class="radio">
 	            			<input type="radio" value="1" class="resume1" name="resumeName">
 	            			在线简历：
-	            				            				<span title="jason的简历">jason的简历</span>
+	            				            				<span title="jason的简历"><? $session = yii::$app->session; echo $session->get('email')?></span>
 	            				            		</label>
             			<div class="setBtns">
             					            				<a target="_blank" href="h/resume/preview.html">预览</a> |
@@ -637,6 +638,18 @@ var options = {
 </script>
 <script src="style/js/common.js" type="text/javascript"></script> -->
 <script>
+	$(".collection").click(function () {
+		$(this).css("background","yellow");
+		var id=$(this).next().val();
+		$.ajax({
+			type: "POST",
+			url: "?r=index/collect",
+			data: {'id':id},
+			success: function(msg){
+				alert( "Data Saved: " + msg );
+			}
+		});
+	})
 $(function(){
 	$('#weibolist .cookietxte').text('推荐本职位给好友');
 	$(document).bind('cbox_complete', function(){ 
