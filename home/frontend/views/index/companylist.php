@@ -98,14 +98,7 @@
 	                        </ul>
 	                    </dt>
 	                    <dd>
-	                        <dl>
-	                            <dt>发展阶段：</dt>
-	                            <dd><a href="javascript:void(0)">初创型</a>
-	                            <a href="javascript:void(0)">成长型</a>
-	                            <a href="javascript:void(0)">成熟型</a>
-	                            <a href="javascript:void(0)">已上市</a>
-	                            </dd>
-	                        </dl>
+	                        
 	                        <dl>
 	                            <dt>行业领域：</dt>
 	                            <dd>
@@ -144,7 +137,7 @@
 	               	<ul class="hc_list reset">
 	               	<?php foreach($data as $k=>$v){?>
 	               		<li>
-	                        <a href="h/c/25829.html" target="_blank">
+	                        <a href="?r=index/toudi&id=<?= $v['id']?>" target="_blank">
 	                        	<h3 title="CCIC"><?= $v['companyname']?></h3>
 	                        	<div class="comLogo">
 		                        	<img src="<?= $v['logo']?>" width="190" height="190" alt="CCIC" />

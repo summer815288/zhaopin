@@ -228,7 +228,9 @@ use yii\helpers\Html;
 
 						<div class="hot_pos_l">
 							<div class="mb10">
-								<a href="h/jobs/147974.html" target="_blank"><?php echo $value['jobs_name']?></a>&nbsp;
+								<a href="h/jobs/147974.html" target="_blank">
+					<?php if($value['highlight']==''){echo $value['jobs_name'];}else{echo"<font color=\"$value[highlight]\">$value[jobs_name]</font>";}?>
+								</a>&nbsp;
 								<span class="c9">[<?php echo $value['district_cn']?>]</span>
 							</div>
 							<span><em class="c7">月薪： </em><?php echo $value['wage_cn']?></span>

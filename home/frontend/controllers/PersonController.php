@@ -32,8 +32,11 @@ class PersonController extends Controller
 	//我的简历
 	public function actionResume_list()
 	{
+        $uid=Yii::$app->session->get('uid');
+        $resume=Resume::find()->where(['uid'=>$uid])->asArray()->all();
+//        print_r($resume);die;
 
-		return $this->render("resume_list");
+        return $this->render("resume_list",['resume'=>$resume]);
 	}
 
 
@@ -119,12 +122,122 @@ class PersonController extends Controller
         if($insert){
             //查找信息
             $id=Yii::$app->db->getLastInsertID();
-            $info=Resume::find()->where(['id'=>$id])->one();
-            $education=Category::find()->where(['c_alias'=>'QS_education'])->asArray()->all();
-            return $this->render('resume_creat',['info'=>$info,'education'=>$education]);
+            $this->redirect('index.php?r=person/resume_crea&pid='.$id);
         }
 
     }
+
+    //现在相当于是简历展示页面
+    public function actionResume_crea(){
+        $pid=$_GET['pid'];
+        @$id=$_GET['id'];
+        $uid=Yii::$app->session->get('uid');
+        $info=Resume::find()->where(['id'=>$pid])->one();
+        $education=Category::find()->where(['c_alias'=>'QS_education'])->asArray()->all();
+        $edu=Yii::$app->db->createCommand("select * from `resume_education` where `uid`=$uid and `pid`=$pid")->queryAll();
+        return $this->render('resume_creat',['edu'=>$edu,'info'=>$info,'education'=>$education]);
+
+    }
+
+    //教育经历的修改
+    public function actionAeducation_update(){
+        $edu=$_POST;
+        //print_r($edu);die;
+        $uid=Yii::$app->session->get('uid');
+        //要修改的字段
+        if(!isset($edu['todate'])){
+            $arr=[
+                'school'=>$edu['school'],
+                'speciality'=>$edu['speciality'],
+                'education_cn'=>$edu['education_cn'],
+                'education'=>$edu['education'],
+                'startyear'=>$edu['startyear'],
+                'startmonth'=>$edu['startmonth'],
+                'endyear'=>$edu['endyear'],
+                'endmonth'=>$edu['endmonth'],
+                'todate'=>0
+
+            ];
+        }else if($edu['todate']==1){
+            $arr=[
+                'school'=>$edu['school'],
+                'speciality'=>$edu['speciality'],
+                'education_cn'=>$edu['education_cn'],
+                'education'=>$edu['education'],
+                'startyear'=>$edu['startyear'],
+                'startmonth'=>$edu['startmonth'],
+                'todate'=>$edu['todate']
+
+            ];
+        }
+        //要修改的条件
+        $where=['uid'=>$uid,'id'=>$edu['id']];
+
+        $update=Yii::$app->db->createCommand()->update('resume_education',$arr,$where)->execute();
+        $this->redirect('index.php?r=person/resume_crea&pid='.$edu['pid']);
+
+    }
+
+    //教育经历的删除
+    public function actionAducation_del(){
+        $id=$_POST['id'];
+        $pid=$_POST['pid'];
+        $del=Yii::$app->db->createCommand()->delete('resume_education',['id'=>$id,'pid'=>$pid])->execute();
+        if($del){
+            echo 1;
+        }else{
+            echo 0;
+        }
+
+    }
+
+    //添加教育资料信息
+    public function actionAeducation(){
+        $edu=$_POST;
+        $uid=Yii::$app->session->get('uid');
+
+        if(!isset($edu['todate'])){
+            $arr=[
+                'pid'=>$edu['pid'],
+                'uid'=>$uid,
+                'school'=>$edu['school'],
+                'speciality'=>$edu['speciality'],
+                'education_cn'=>$edu['education_cn'],
+                'education'=>$edu['education'],
+                'startyear'=>$edu['startyear'],
+                'startmonth'=>$edu['startmonth'],
+                'endyear'=>$edu['endyear'],
+                'endmonth'=>$edu['endmonth'],
+
+            ];
+        }else if($edu['todate']==1){
+            $arr=[
+                'pid'=>$edu['pid'],
+                'uid'=>$uid,
+                'school'=>$edu['school'],
+                'speciality'=>$edu['speciality'],
+                'education_cn'=>$edu['education_cn'],
+                'education'=>$edu['education'],
+                'startyear'=>$edu['startyear'],
+                'startmonth'=>$edu['startmonth'],
+                'todate'=>1
+
+            ];
+        }
+
+        $insert=Yii::$app->db->createCommand()->insert('resume_education',$arr)->execute();
+        if($insert){
+
+            $this->redirect('index.php?r=person/resume_crea&pid='.$arr['pid']);
+
+
+        }
+
+
+
+    }
+
+
 
 
 
@@ -148,6 +261,53 @@ class PersonController extends Controller
 
     }
 
+    public function actionImg(){
+        //接收值
+        $id=$_POST['id'];
+        $photo=$_POST['photo'];
+        //设置文件名
+        $img=date('Y-m-d',time()).$id.".jpg";
+        //移动文件
+        $imgs=move_uploaded_file($_FILES['img']['tmp_name'],"uploads/".$img);
+        if($imgs){
+                //进行更新的操作
+                Yii::$app->db->createCommand()->update('resume',['photo_img'=>$img,'photo'=>1],['id'=>$id])->execute();
+                $this->redirect('index.php?r=person/resume_crea&pid='.$id);
+        }else{
+            echo "<script>alert('图片上传失败，请重新上传');history.go(-1)</script>";
+
+        }
+
+    }
+
+    //简历发布完成页面
+    public function  actionResume_finish(){
+        $id=$_GET['id'];
+        //展示出完成页面
+     return    $this->render('resume_finish',['id'=>$id]);
+
+    }
+    //简历最终版的展示
+    public function actionResume_end(){
+        $id=$_GET['id'];  //这是简历的id
+        $sql="select * from `resume` where id=$id";
+        $sql1="select * from `resume_education` where pid=$id";
+        $sql2="select * from `resume_work` where pid=$id";
+        $sql3="select * from `resume_language` where pid=$id";
+        $sql4="select * from `resume_credent` where pid=$id";
+        $sql5="select * from `resume_img` where pid=$id";   //查找附件照片
+        $info=Yii::$app->db->createCommand($sql)->queryOne();
+        $edu=Yii::$app->db->createCommand($sql1)->queryAll();
+        $work=Yii::$app->db->createCommand($sql2)->queryAll();
+        $language=Yii::$app->db->createCommand($sql3)->queryAll();
+        $credent=Yii::$app->db->createCommand($sql4)->queryAll();
+        $img=Yii::$app->db->createCommand($sql5)->queryAll();
+        //print_r($edu);die;
+
+        return $this->render('resume_end',['id'=>$id,'info'=>$info,'edu'=>$edu,'work'=>$work,'language'=>$language,'credent'=>$credent,'img'=>$img]);
+
+
+    }
 
 
 

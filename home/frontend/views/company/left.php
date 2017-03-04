@@ -11,7 +11,7 @@ use yii\helpers\Url;
     <dl class="company_center_aside">
         <dt>简历管理</dt>
         <dd><a href="<?php echo Url::to(['company/recruitment'])?>">面试邀请</a></dd>
-        <dd><a href="">收到的简历</a></dd>
+        <dd><a href="<?php echo Url::to(['company/resumes'])?>">收到的简历</a></dd>
         <dd><a href="">已下载的简历</a></dd>
         <dd><a href="">收藏的简历</a></dd>
     </dl>

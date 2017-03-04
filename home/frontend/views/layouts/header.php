@@ -70,7 +70,6 @@ var youdao_conv_id = 271546;
                 <?php if($session->get('type') == 1){ ?>
                 <!-- 企业用户 -->
                     <dd><a href="?r=company/positions">我发布的职位</a></dd>
-                    <dd><a href="?r=company/positions">我发布的职位</a></dd>
                     <dd><a href="?r=company/positions">我收到的简历</a></dd>
                     <dd class="btm"><a href="?r=company/myhome">我的公司主页</a></dd>
                     <dd><a href="?r=company/create">我要招人</a></dd>

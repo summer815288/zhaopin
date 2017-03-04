@@ -423,9 +423,6 @@ use yii\helpers\Html;
     })
 
     //文件选择了之后进行预览
-
-//    $('#img').on('change',function(){
-
    $(document).on('change','#img',function(){
 
         var url=window.URL.createObjectURL(this.files[0]);
