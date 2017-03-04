@@ -37324,3 +37324,1987 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1488346753.7989
     'REQUEST_TIME' => 1488346753
 ]
+2017-03-03 09:00:24 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:00:23 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3225'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488502823.892
+    'REQUEST_TIME' => 1488502823
+]
+2017-03-03 09:00:24 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:00:24 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3225'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488502824.13
+    'REQUEST_TIME' => 1488502824
+]
+2017-03-03 09:00:24 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:00:24 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'login/login'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3225'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=login/login'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488502824.335
+    'REQUEST_TIME' => 1488502824
+]
+2017-03-03 09:00:59 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:00:58 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'login/login'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3233'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=login/login'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488502858.952
+    'REQUEST_TIME' => 1488502858
+]
+2017-03-03 09:01:28 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:01:28 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'login/login'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3240'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=login/login'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488502888.062
+    'REQUEST_TIME' => 1488502888
+]
+2017-03-03 09:02:06 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:02:06 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'login/login'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3246'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=login/login'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488502926.779
+    'REQUEST_TIME' => 1488502926
+]
+2017-03-03 09:02:12 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:02:12 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'login/logindo'
+]
+
+$_POST = [
+    '_csrf-backend' => 'YnExb0lReFczSFgaAxMaMlZEdx4IDk8kVgl9O3gCHRoYFV4FOxZAYw=='
+    'username' => 'admin'
+    'password' => 'admin'
+    'yan' => '1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '110'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3246'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/logindo'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=login/logindo'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488502932.044
+    'REQUEST_TIME' => 1488502932
+]
+2017-03-03 09:02:12 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:02:12 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'admin/index'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3246'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/index'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=admin/index'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488502932.287
+    'REQUEST_TIME' => 1488502932
+]
+2017-03-03 09:02:12 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:02:12 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'admin/main'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=admin/index'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3246'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin%2Fmain'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=admin%2Fmain'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488502932.478
+    'REQUEST_TIME' => 1488502932
+]
+2017-03-03 09:02:19 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:02:19 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'login/logindo'
+]
+
+$_POST = [
+    '_csrf-backend' => 'YnExb0lReFczSFgaAxMaMlZEdx4IDk8kVgl9O3gCHRoYFV4FOxZAYw=='
+    'username' => 'admin'
+    'password' => 'admin'
+    'yan' => '1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '110'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3246'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/logindo'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=login/logindo'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488502939.711
+    'REQUEST_TIME' => 1488502939
+]
+2017-03-03 09:02:19 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:02:19 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'admin/index'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3246'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/index'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=admin/index'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488502939.856
+    'REQUEST_TIME' => 1488502939
+]
+2017-03-03 09:02:20 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:02:20 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'admin/main'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=admin/index'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3246'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin%2Fmain'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=admin%2Fmain'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488502940.065
+    'REQUEST_TIME' => 1488502940
+]
+2017-03-03 09:02:23 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:02:23 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'login/login'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3263'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=login/login'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488502943.107
+    'REQUEST_TIME' => 1488502943
+]
+2017-03-03 09:02:24 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:02:24 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'login/login'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3365'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=login/login'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488502944.234
+    'REQUEST_TIME' => 1488502944
+]
+2017-03-03 09:02:31 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:02:31 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'login/logindo'
+]
+
+$_POST = [
+    '_csrf-backend' => 'Y19uT0owR3AyZgc6AHIlFVdqKD4Lb3ADVyciG3tjIj0ZOwElOHd/RA=='
+    'username' => 'admin'
+    'password' => 'admin'
+    'yan' => '0'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '112'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3373'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/logindo'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=login/logindo'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488502951.515
+    'REQUEST_TIME' => 1488502951
+]
+2017-03-03 09:04:17 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:04:17 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'login/login'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=login/logindo'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3377'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=login/login'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488503057.783
+    'REQUEST_TIME' => 1488503057
+]
+2017-03-03 09:04:26 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:04:25 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'login/logindo'
+]
+
+$_POST = [
+    '_csrf-backend' => 'QVBpUldQOHcQaQAnHRJaEnVlLyMWDw8EdSglBmYDXTo7NAY4JRcAQw=='
+    'username' => 'admin'
+    'password' => 'admin'
+    'yan' => '1'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '110'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3385'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/logindo'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=login/logindo'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488503065.978
+    'REQUEST_TIME' => 1488503065
+]
+2017-03-03 09:04:26 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:04:26 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'admin/index'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3385'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/index'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=admin/index'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488503066.09
+    'REQUEST_TIME' => 1488503066
+]
+2017-03-03 09:04:26 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:04:26 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'admin/main'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=admin/index'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3385'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin%2Fmain'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=admin%2Fmain'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488503066.284
+    'REQUEST_TIME' => 1488503066
+]
+2017-03-03 09:04:34 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:04:33 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'company/company_jobs'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=admin/index'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3390'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company%2Fcompany_jobs'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=company%2Fcompany_jobs'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488503073.857
+    'REQUEST_TIME' => 1488503073
+]
+2017-03-03 09:06:07 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:06:07 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'company/company_jobs_to'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=admin/index'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3397'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company%2Fcompany_jobs_to'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=company%2Fcompany_jobs_to'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488503167.281
+    'REQUEST_TIME' => 1488503167
+]
+2017-03-03 09:06:08 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:06:08 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'company/manage'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=admin/index'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3397'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company%2Fmanage'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=company%2Fmanage'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488503168.741
+    'REQUEST_TIME' => 1488503168
+]
+2017-03-03 09:06:09 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:06:09 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'company/company_await'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=admin/index'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3397'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company%2Fcompany_await'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=company%2Fcompany_await'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488503169.727
+    'REQUEST_TIME' => 1488503169
+]
+2017-03-03 09:06:10 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 53641 bytes' 
+
+in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php:86
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\phpStudy\\WWW...', 86, Array)
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(86): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(61): yii\debug\LogTarget->updateIndexFile('E:\\phpStudy\\WWW...', Array)
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2017-03-03 09:06:10 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'company/company_member'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=admin/index'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3397'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company%2Fcompany_member'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=company%2Fcompany_member'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488503170.645
+    'REQUEST_TIME' => 1488503170
+]
+2017-03-03 09:06:11 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zhaopin.easyguide' doesn't exist' in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(385): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Query.php(389): yii\db\Command->queryScalar()
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\ActiveQuery.php(339): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Query.php(296): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\controllers\AdminController.php(107): yii\db\Query->count()
+#6 [internal function]: backend\controllers\AdminController->actionIndex_tj()
+#7 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#8 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#9 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#10 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#11 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zhaopin.easyguide' doesn't exist
+The SQL being executed was: SELECT COUNT(*) FROM `easyguide`' in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(385): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Query.php(389): yii\db\Command->queryScalar()
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\ActiveQuery.php(339): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Query.php(296): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\controllers\AdminController.php(107): yii\db\Query->count()
+#6 [internal function]: backend\controllers\AdminController->actionIndex_tj()
+#7 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#8 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#9 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#10 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#11 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'zhaopin.easyguide' doesn't exist
+)
+
+2017-03-03 09:06:11 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'admin/index_tj'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=admin/index'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '3405'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin%2Findex_tj'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=admin%2Findex_tj'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488503171.606
+    'REQUEST_TIME' => 1488503171
+]
+2017-03-03 10:57:04 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zhaopin.easyguide' doesn't exist' in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(385): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Query.php(389): yii\db\Command->queryScalar()
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\ActiveQuery.php(339): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Query.php(296): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\controllers\AdminController.php(107): yii\db\Query->count()
+#6 [internal function]: backend\controllers\AdminController->actionIndex_tj()
+#7 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#8 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#9 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#10 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#11 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zhaopin.easyguide' doesn't exist
+The SQL being executed was: SELECT COUNT(*) FROM `easyguide`' in E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Command.php(385): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#2 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Query.php(389): yii\db\Command->queryScalar()
+#3 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\ActiveQuery.php(339): yii\db\Query->queryScalar('<span class="st...', '<span class="ke...')
+#4 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\db\Query.php(296): yii\db\ActiveQuery->queryScalar('<span class="st...', '<span class="ke...')
+#5 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\controllers\AdminController.php(107): yii\db\Query->count()
+#6 [internal function]: backend\controllers\AdminController->actionIndex_tj()
+#7 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#8 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#9 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#10 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#11 E:\phpStudy\WWW\ninthmonths\zhaopin\home\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 E:\phpStudy\WWW\ninthmonths\zhaopin\home\backend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'zhaopin.easyguide' doesn't exist
+)
+
+2017-03-03 10:57:04 [127.0.0.1][-][tbsahntd79cmkkissmf4g6q8m7][info][application] $_GET = [
+    'r' => 'admin/index_tj'
+]
+
+$_COOKIE = [
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1487810212,1488243713,1488454475,1488501774'
+    '_pk_ysp_id_' => [
+        'object Object' => '8cc65277cd1440f4.1488348524.1.1488348524.1488348524.'
+    ]
+    'PHPSESSID' => 'rc5c2ilgt9bv2a74u0k3tni1j3'
+    '_csrf' => '1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv\";}'
+    'Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1488501791'
+    'advanced-backend' => 'tbsahntd79cmkkissmf4g6q8m7'
+    '_csrf-backend' => '3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/ninthmonths/zhaopin/home/backend/web/'
+    'a' => [
+        'username' => 'admin'
+        'admin_id' => '1'
+    ]
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.phpstudy.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.phpstudy.com/ninthmonths/zhaopin/home/backend/web/index.php?r=admin/index'
+    'HTTP_COOKIE' => 'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1487810212,1488243713,1488454475,1488501774; _pk_ysp_id.[object Object].027a=8cc65277cd1440f4.1488348524.1.1488348524.1488348524.; PHPSESSID=rc5c2ilgt9bv2a74u0k3tni1j3; _csrf=1da232077b5e3884dd02513ade47fd97eb0d9414b57864acc3f549ed80b5743ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22d9B3VM7Cnl19VCqEGGq4-KUM-_DxK5Pv%22%3B%7D; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1488501791; advanced-backend=tbsahntd79cmkkissmf4g6q8m7; _csrf-backend=3665ce39a8a8740b52503dd8e6c2929351048369968767e2c10ff5dc5e6e1989a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Q9iuJBbe45FqA_7s4xLT1SeMzdojrG84%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\web\\bin;E:\\web\\mysql\\bin;E:\\小乌龟\\bin;C:\\ProgramData\\ComposerSetup\\bin;E:\\phpStudy\\php55;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\DELL\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.phpstudy.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/phpStudy/WWW/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REMOTE_PORT' => '6067'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin%2Findex_tj'
+    'REQUEST_URI' => '/ninthmonths/zhaopin/home/backend/web/index.php?r=admin%2Findex_tj'
+    'SCRIPT_NAME' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'PHP_SELF' => '/ninthmonths/zhaopin/home/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1488509824.485
+    'REQUEST_TIME' => 1488509824
+]

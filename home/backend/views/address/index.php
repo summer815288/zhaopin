@@ -24,7 +24,7 @@
                     <td><input type="hidden" value="<?php echo $value['id']?>"><input type="text" style="width: 10%" value="<?php echo $value['category_order']?>" class="sort"></td>
                     <td>
                         <div class="table-fun">
-                            <a href="?r=address/addarea&id=<?php echo $value['id']?>">添子</a>
+                            <a href="?r=address/addarea&id=<?php echo $value['id']?>">添加</a>
                             <a href="javascript:void(0);" class="del">删除</a>
                             <input type="hidden" value="<?php echo $value['id']?>">
                         </div>

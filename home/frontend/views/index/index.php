@@ -142,7 +142,7 @@ use yii\widgets\ActiveForm;
 							<span><em class="c7">经验：</em> <?php echo $value['experience_cn']?></span>
 							<span><em class="c7">最低学历： </em><?php echo $value['education_cn']?></span>
 					   		<br />
-					   		<span><em class="c7">职位诱惑：</em><?php echo $value['contents']?>等</span>
+					   		<span><em class="c7">职位诱惑：</em><?php echo $value['tag_cn']?>等</span>
 					   		<br />
 					   		<span><?php echo date("Y-m-d",$value['addtime'])?>发布</span>
 							<!-- <a  class="wb">分享到微博</a> -->

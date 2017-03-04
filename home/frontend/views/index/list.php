@@ -235,7 +235,7 @@ use yii\helpers\Html;
 							<span><em class="c7">经验：</em> <?php echo $value['experience_cn']?></span>
 							<span><em class="c7">最低学历： </em><?php echo $value['education_cn']?></span>
 							<br />
-							<span><em class="c7">职位诱惑：</em><?php echo $value['contents']?></span>
+							<span><em class="c7">职位诱惑：</em><?php echo $value['tag_cn']?></span>
 							<br />
 							<span><em class="c7">工作性质：</em><?php echo $value['nature_cn']?></span>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
