@@ -10,7 +10,7 @@ use yii\helpers\Url;
                 <div class="publish_tip">
                     <h2><?php echo $content?></h2>
                     <a class="greylink" href="<?php echo Url::to(['company/myhome'])?>"> 进入我的公司主页</a><br>
-                    <a class="greylink" href="<?php echo Url::to(['company/company_profile'])?>"> 点击返回上一页</a><br>
+                    <a class="greylink" href="<?php echo$href?>"> 点击返回上一页</a><br>
                     <div style="float:left;" class="invite_share">
                         <!-- JiaThis Button BEGIN -->
                         <div class="jiathis_style_32x32">

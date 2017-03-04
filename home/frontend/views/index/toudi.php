@@ -1,9 +1,27 @@
-﻿<style type="text/css">
+﻿<?php
+use yii\helpers\Url;
+use yii\helpers\Html;
+?>
+<style type="text/css">
     body, html {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
     #allmap{width:100%;height:500px;}
     p{margin-left:5px; font-size:14px;}
+
+    .bu{
+        background-color: #e7e7e7;
+        color: #333;
+        display: inline;
+        font-size: 14px;
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 5px;
+        text-align: center;
+        width: 100px;
+        margin-left: 35px;
+        cursor: pointer;
+    }
 </style>
-  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Og1IWYYufB3o6bUgGXhaZ5EY4TM6ecOK"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Og1IWYYufB3o6bUgGXhaZ5EY4TM6ecOK"></script>
 <title>根据关键字本地搜索</title>
 
     <div id="container">
@@ -14,6 +32,7 @@
                         <h1 title="产品经理">
                             <em></em>
                     	<div><?php echo $jobs[0]['companyname']?></div>
+<<<<<<< HEAD
                       <?= $jobs[0]['jobs_name']?></h1>
                                                                 	
 <!--                      <div class="collection" id="jobCollection">-->
@@ -26,6 +45,19 @@
 <!--							</div>-->
 <!--                       	</div>-->
                     </dt>
+=======
+                        <?= $jobs[0]['jobs_name']?></h1>
+<!--                          收藏职位                                      	-->
+                      <div class="jd_collection" id="jobCollection">
+                      <div class="jd_collection_success">
+                       			<span>已成功收藏该职位，</span>
+								<a class="jd_collection_page" href="collections.html">查看全部</a>								
+								<a class="jd_collection_x" href="javascript:;"></a>
+                      </div>
+                      </div>
+<!--                  收藏职位-->
+                 </dt>
+>>>>>>> bda1da3c6104e46b8b186727c8dfeda10db1353c
                     <dd class="job_request">
                     	<span class="red"><?= $jobs[0]['wage_cn']?></span>
                        	<span><?= $jobs[0]['district_cn']?></span> 
@@ -37,50 +69,74 @@
                     </dd>
                     <dd class="job_bt">
                         <h3 class="description">职位描述</h3>
-                        <p><strong>工作职责：</strong>&nbsp;<br>1、挖掘公司互联网产品现有和预期的市场需求；&nbsp; <br>2、负责组织公司互联网新产品开发和产品改进；&nbsp; <br>3、发掘收集竞争对手信息，进行竞争对手分析，制定应对战略；&nbsp; <br>4、在产品运营中倾听用户声音，了解用户潜在需求，并在产品改进中满足；&nbsp; <br>5、在产品运营中整合已有的产品功能、用户资源、推广资源，策划运营活动；&nbsp; <br>6、与市场、运营、UI、开发、测试、公关、法务、客服等人员紧密合作，实现产品目标。 <br>&nbsp; <br> <strong>任职要求：</strong> <br>1、本科及以上学历，英语四级以上，专业不限；&nbsp; <br>2、对互联网产品有敏锐的直觉和良好的市场分析能力；&nbsp; <br>3、有严密的逻辑分析能力，有良好的沟通协作能力；&nbsp; <br>4、有很强的责任心、学习能力、文字表达能力；&nbsp; <br>5、具有很强的团队协助精神，善于总结和分享经验；&nbsp; <br>6、具有互联网产品规划和产品设计经验者优先。</p> 
-<p>&nbsp;</p> 
-<p><strong>其他：&nbsp;</strong></p> 
-<p>1、五险一金、商业综合医疗保险，节日慰问金、生日礼金、结婚礼金、年度体检、旅游；</p> 
-<p>2、工作时间为5天工作制，享受国家法定节假日、带薪年假7天、带薪病假、产假（陪产假）、婚假、丧假等；</p> 
-<p>3、每周定期举办足球、羽毛球、篮球及员工深度互动等文体活动。</p>
+                        <p style="line-height: 30px;">
+                            <?php
+                            $ha=str_replace("；",'<br>',$jobs[0]['contents']);
+                            $ha=str_replace("。",'<br>',$ha);
+                            $ha=str_replace("：",'<br>',$ha);
+                            echo $ha;
+                            ?>
+                        </p>
                     </dd>
-                     
-                                        	<!-- 用户是否激活 0-否；1-是 -->
-	                			       									                    <dd class="resume resume_web">
-				                        <div>
-								          <span> 你已有可投递的在线简历：<a title="jason的简历" target="_blank" href="jianli.html"><strong>jason的简历</strong></a></span><br>
-								          <span>简历更新于2014-07-01 15:53</span>
-				                        </div>
-				                        <span class="setBtns">
-				                        	<a target="_blank" title="预览" href="h/resume/preview.html">预览</a> |
-				                        	<a title="修改" target="_blank" href="jianli.html">修改</a>
-				                        </span>
-				                    </dd>
-				                			            	                                                        <div class="saoma saoma_btm">
-                      	<div class="dropdown_menu">
-							<div class="drop_l">
-								<img width="131" height="131" src="style/images/b533f6e729e74b418fcd6862bbde95dc_318969.jpg">
-																<span>[仅限本人使用]</span>
-															</div>
-							<div class="drop_r">
-								<div class="drop_title"></div>
-								<p>
-									想知道HR在看简历嘛？<br>
-          							想在微信中收到面试通知？<br>
-          							<span>&lt;&lt; 扫一扫，给你解决</span>
-								</p>
-							</div>
-						</div>
-                    </div>
-                                        <dd>
-                                        	                    				                   		<!-- 用户是否激活 0-否；1-是 -->
-		                				                   			
-	     <a title="投个简历" class="btn fr btn_apply inline cboxElement" href="#setResumeApply">投个简历</a>
-						              								                	                        				                        	
-		                        	                        	                   		                	                </dd>
-                </dl>
-                                <div id="weibolist"></div>
-            </div>	
+<!-- 用户是否激活 0-否；1-是 -->
+<dd class="resume resume_web">
+    <?php  foreach($resume as $kk=>$vv){?>
+    <div>
+	<span> 你已有可投递的在线简历：<a title="<?=$vv['title']  ?>" target="_blank" href="<?= Url::toRoute(['person/resume_end','id'=>$vv['id']]) ?>"><strong><?=$vv['title']?></strong></a></span><br>
+	<span>简历更新于
+    <?php if(empty($vv['refreshtime'])){ ?>
+        <?php  echo  date('Y-m-d H:i:s',$vv['addtime'])?>
+    <?php }else{?>
+        <?php  echo  date('Y-m-d H:i:s',$vv['refreshtime'])?>
+        <?php }?>
+    </span>
+	</div>
+
+	<span class="setBtns">
+	<a target="_blank" title="预览" href="<?= Url::toRoute(['person/resume_end','id'=>$vv['id']]) ?>">预览</a> |
+	<a title="修改" target="_blank" href="jianli.html">修改</a>
+
+    <a   class="bu  deliever"    resume_id="<?php echo $vv['id'] ?>"  personal_uid="<?php echo $vv['uid'] ?>"  company_uid="<?php echo $jobs[0]['uid'] ?>"   company_id="<?php echo $jobs[0]['company_id'] ?>"  jobs_name="<?php echo $jobs[0]['jobs_name'] ?>"  jobs_id="<?php echo $jobs[0]['id'] ?>"  personal_uid="<?php echo $vv['uid'] ?>"  resume_name="<?php echo $vv['fullname'] ?>"    >投递简历</a>
+
+	 </span>
+
+
+
+    <?php }?>
+    <script>
+        $(document).on('click','.deliever',function(){
+
+            var resume_id=$(this).attr('resume_id');
+            var resume_name=$(this).attr('resume_name');
+            var personal_uid=$(this).attr('personal_uid');
+            var jobs_id=$(this).attr('jobs_id');
+            var jobs_name=$(this).attr('jobs_name');
+            var company_id=$(this).attr('company_id');
+            var company_uid=$(this).attr('company_uid');
+            $.ajax({
+                type:'post',
+                url:"index.php?r=index/deliever",
+                data:{resume_id:resume_id,resume_name:resume_name,personal_uid:personal_uid,jobs_id:jobs_id,jobs_name:jobs_name,company_id:company_id},
+                success:function(msg){
+                   if(msg==1){
+                       alert('投递成功');
+                   }else{
+                       alert('投递失败，请继续投递');
+                   }
+                }
+            })
+
+
+        })
+    </script>
+</dd>
+
+<dd>
+<!-- 用户是否激活 0-否；1-是 -->
+     <a title="投个简历" class="btn fr btn_apply inline cboxElement" href="#setResumeApply">投个简历</a>
+	</dl>
+       <div id="weibolist"></div>
+        </div>
             <div class="content_r">
                 <dl class="job_company">
                     <dt>
@@ -103,43 +159,13 @@
                         	<li>
                         		<span>主页</span> 
                         		<a rel="nofollow" title="http://www.100bt.com" target="_blank" href="http://www.100bt.com">http://www.100bt.com</a>
-           						    </li>
+           					</li>
                         </ul>
                         
                         <h4>发展阶段</h4>
                         <ul class="c_feature reset">
                         	<li><span>目前阶段</span> 上市公司</li>
-                        	                        </ul>
-                        
-                        <!--	                    	<h4>公司产品</h4>
-	                        <ul class="c_feature reset">
-	                        		                        		<li><span>百田网、问他</span></li>
-	                        		                        </ul>
-                                                
-                       	<h4>公司标签</h4>
-                        <ul class="company_tags reset" id="hasLabels">
-                        	                            	<li><span>股票期权</span></li>
-                                                        	<li><span>专项奖金</span></li>
-                                                        	<li><span>年底双薪</span></li>
-                                                        	<li><span>五险一金</span></li>
-                                                        	<li><span>带薪年假</span></li>
-                                                        	<li><span>节日礼物</span></li>
-                                                        	<li><span>年度旅游</span></li>
-                                                        	<li><span>弹性工作</span></li>
-                                                        	<li><span>定期体检</span></li>
-                                                        	<li><span>岗位晋升</span></li>
-                                                        	<li><span>技能培训</span></li>
-                                                        	<li><span>扁平管理</span></li>
-                                                        	<li><span>领导好</span></li>
-                                                        	<li><span>美女多</span></li>
-                                                        	<li><span>帅哥多</span></li>
-                                                       <li class="link"><a>编辑</a></li>
                         </ul>
-                        <div class="clear"></div>
-                        <div id="addLabel" class="addLabel dn">
-                            <input type="text" class="fl" id="label" name="label" placeholder="添加自定义标签" />	
-                            <input type="submit" id="add" value="贴上" />
-                        </div> -->    	
 
                         <h4>工作地址</h4>
                        	<div class="address">
@@ -172,6 +198,7 @@
                 </script>
 
 
+<!--                职位推荐-->
               <div id="myRecommend_jd">
             		<h2>可能适合你的职位 <i>匹配度</i></h2>
             		<ul class="reset">
@@ -272,31 +299,28 @@
 <!-- 投递简历时  - 设置默认投递简历 -->
 	<div style="height:280px;" class="popup" id="setResumeApply">
 	    <table width="100%">
-	    	<tbody><tr>
-	    		<td class="f18 c5">请选择你要投出去的简历：</td>
-	    	</tr>
+	    	<tbody>
+            <tr><td class="f18 c5">请选择你要投出去的简历：</td></tr>
 	    	<tr>
 	        	<td>
                     <form class="resumeSetForm" id="resumeSendForm">
 	            		<label class="radio">
 	            			<input type="radio" value="1" class="resume1" name="resumeName">
-	            			在线简历：
-	            				            				<span title="jason的简历"><? $session = yii::$app->session; echo $session->get('email')?></span>
-	            				            		</label>
+	            			在线简历<span title="jason的简历"><? $session = yii::$app->session; echo $session->get('email')?></span>
+	            		</label>
             			<div class="setBtns">
-            					            				<a target="_blank" href="h/resume/preview.html">预览</a> |
-	            										<a target="_blank" href="jianli.html">修改</a>
+            			<a target="_blank" href="h/resume/preview.html">预览</a> |
+	            		<a target="_blank" href="jianli.html">修改</a>
             			</div>
 	            		<div class="clear"></div>
 	            		<label class="radio">
 	            			<input type="radio" value="0" class="resume0" name="resumeName">
-	            			附件简历：
-	            				            				<span class="uploadedResume red">暂无附件简历</span>
-	            				            		</label>
+	            			附件简历：<span class="uploadedResume red">暂无附件简历</span>
+	            		</label>
 	            		<div class="setBtns">
-	            				            				<a class="downloadResume dn" href="h/nearBy/downloadResume">下载</a> <span class="dn">|</span>
-            					<a class="reUpload" title="上传附件简历" target="_blank">上传附件简历</a>
-	            				            			<input type="file" onchange="file_check(this,'h/nearBy/updateMyResume.json','reUploadResume2')" id="reUploadResume2" name="newResume" title="支持word、pdf、ppt、txt、wps格式文件，大小不超过10M">
+	            		<a class="downloadResume dn" href="h/nearBy/downloadResume">下载</a> <span class="dn">|</span>
+            			<a class="reUpload" title="上传附件简历" target="_blank">上传附件简历</a>
+	            		<input type="file" onchange="file_check(this,'h/nearBy/updateMyResume.json','reUploadResume2')" id="reUploadResume2" name="newResume" title="支持word、pdf、ppt、txt、wps格式文件，大小不超过10M">
             			</div>
             			<div class="clear"></div>
             			<span style="display:none;" class="error">只支持word、pdf、ppt、txt、wps格式文件，请重新上传</span>
@@ -691,4 +715,13 @@ $(function(){
 <!--  -->
 
 
-<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;">
+
+    </div>
+</div>
+</body>
+</html>
+
+
+
+

@@ -9,6 +9,7 @@ use yii\filters\AccessControl;
 use backend\models\Company_profile;
 use yii\data\Pagination;
 use backend\models\Category_jobs;
+use backend\models\Category;
 class CompanyController extends CommonController{
     //职位列表
     public function actionCompany_jobs(){
@@ -49,12 +50,16 @@ class CompanyController extends CommonController{
     }
     //修改职位列表
     public function actionCompany_jobs_edit(){
-        //职位类别
+        //职业类别
+        $category_jobs_parents=Category_jobs::find()->where(['parentid'=>'0'])->asArray()->all();
         $category_jobs=Category_jobs::find()->asArray()->all();
-        $a=$this->tree($category_jobs,0);
-
-        //职位类别
-        return $this->renderPartial('company_jobs_edit',['category_jobs'=>$a]);
+        //工作经验
+        $experience_cn=Category::find()->where(['c_alias'=>'QS_experience'])->asArray()->all();
+        //月薪
+        $wage_cn=Category::find()->where(['c_alias'=>'QS_wage'])->asArray()->all();
+        //学历
+        $education_cn=Category::find()->where(['c_alias'=>'QS_education'])->asArray()->all();
+        return $this->renderPartial('company_jobs_edit',['wage_cn'=>$wage_cn,'experience_cn'=>$experience_cn,'education_cn'=>$education_cn,'category_jobs_parents'=>$category_jobs_parents,'category_jobs'=>$category_jobs]);
     }
     public function actionCompany_jobs_edit_ajax(){
         if($_GET){

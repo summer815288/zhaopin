@@ -4,7 +4,7 @@
         <dl class="company_center_aside">
             <dt><b>简历管理</b></dt>
             <dd><a href="<?php echo Url::to(['person/resume_create']) ?>">创建简历</a></dd>
-            <dd><a href="canInterviewResumes.html">我的简历</a></dd>
+            <dd><a href="<?php echo Url::to(['person/resume_list']) ?>">我的简历</a></dd>
         </dl>
         <dl class="company_center_aside">
             <dt><b>求职管理</b></dt>

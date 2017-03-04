@@ -5,135 +5,60 @@ use yii\helpers\Url;
 <link rel="stylesheet" href="/74cms_v3.7_20160412/upload/templates/default/css/user_company.css">
 <div id="container">
     <?php include"left.php";?>
-
     <div class="content">
         <div class="company_center_content">
-            <div class="bbox1">
-                <div class="index-company-wrap">
-                    <div class="top-welcome clearfix top-welcome-mt5">
-                        <h1 class="f-left">欢迎您，2414619320@qq.com</h1>
-                        <div class="f-right short-message">
-                            消息提醒：
-                            <a class="underline" href="company_user.php?act=pm">已读(1)</a>
-                            <a class="underline" href="company_user.php?act=pm">
-                                未读
-                                <span>(5)</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="company-log-auth clearfix">
-                        <div class="index-logo f-left">
-                            <img src="/74cms_v3.7_20160412/upload/data/logo/2017/02/21/2.png?rand=" alt="" onclick="javascript:location.href='company_info.php?act=company_logo'" height="78" width="243">
-                        </div>
-                        <div class="name-auth-info ">
-                            <div class="company-name clearfix">
-                                <h2 class="f-left">北京企业</h2>
-                                <div class="c-name-edit-text f-left">
-                                    <input type="text">
-                                </div>
-                                <a class="name-edit f-left" href="company_info.php?act=company_profile">编辑</a>
-                            </div>
-                            <div class="last-login">
-                                上次登录：2017-02-22 11:05
-                                <a class="underline" href="company_user.php?act=login_log">[登录日志]</a>
-                            </div>
-                            <div class="auth-wrap clearfix">
-                                <div class="i-auth-item f-left">
-                                    <a class="auth-block com done" href="company_info.php?act=company_auth">企业已认证</a>
-                                </div>
-                                <div class="i-auth-item f-left">
-                                    <a class="auth-block mail " href="company_user.php?act=authenticate">邮箱未认证</a>
-                                    <div class="not-auth-tip" style="display: none;">
-                                        <i class="ia-tip-arrow"></i>
-                                        邮箱认证后，可以通过邮箱取回账户密码，且接收简历。
-                                        <a class="underline" href="company_user.php?act=authenticate">立即认证</a>
-                                    </div>
-                                </div>
+            <dt><h1><em></em>我的公司主页</h1></dt>
+            <dd  style="background-color: #fafafa;height: 1000px">
+                <div style="height: 192px;">
+                    <p style="font-size: 18px;margin-bottom: 10px;margin-left: 20px;">欢迎您，<font color="red"><?php echo $members['username']?></font></p>
+                    <div style="height:90px;margin-left: 15px;">
+                        <div style="width: 300px;height: 150px;background-image: url('../../public/uploads/3.jpg');margin-left: 15px;">
+                            <div style="margin-left: 330px;width: 300px;height: 85px;">
+                                <div style="margin-bottom: 20px"><font size="5"><?php echo$company_profile['companyname']?></font> <a style="margin-left: 10px;color: #0000ff" href="<?php echo Url::to('index.php?r=company/company_profile')?>">编辑</a></div>
+                                <div style="color: #a9a9a9;margin-bottom: 15px;font-size: 17px;">上次登录时间：<?php echo date('Y-m-m h:i:s',$members['last_login_time'])?></div>
+                                <div style="color: #a9a9a9;margin-bottom: 15px;font-size: 17px;">
+                                    <?php if($company_profile['audit']=='0'){echo "<a href='index.php?r=company/company_profile'></a>未完善企业";}elseif($company_profile['audit']=='1'){echo"企业通过";}elseif($company_profile['audit']=='2'){echo"等待认证";}elseif($company_profile['audit']==3){echo"认证未通过";}?>
+                                    邮箱未认证</div>
                             </div>
                         </div>
-                    </div>
-                    <div class="index-account-info">
-<span class="account-type last">
-<span>我的积分：</span>
-<span class="account-fen">32</span>
-点
-<a class="underline" href="company_service.php?act=order_add">积分充值</a>
-</span>
                     </div>
                 </div>
-                <div class="commanage clearfix">
-                    <div class="list" style="float: left">
-                        <div class="t">职位管理</div>
-                        <div class="p">
-                            <a href="company_jobs.php?act=jobs&jobtype=">
-                                <span class="s_a">发布中的职位：</span>
-                                2
-                            </a>
-                            <a href="company_jobs.php?act=jobs&jobtype=2">
-                                <span class="s_a">审核中的职位：</span>
-                                0
-                            </a>
-                        </div>
-                        <div class="but">
-                            <input class="but180lan" name="" value="发布职位" onclick="javascript:location.href='company_jobs.php?act=addjobs'" type="button">
-                        </div>
-                    </div>
-                    <div class="list" style="width:300px">
-                        <div class="t">简历管理</div>
-                        <div class="p">
-                            <a href="company_recruitment.php?act=apply_jobs&look=1">
-                                <span class="s_a">未查看的简历：</span>
-                                2
-                            </a>
-                            <a href="company_recruitment.php?act=down_resume_list">
-                                <span class="s_a">已下载的简历：</span>
-                                0
-                            </a>
-                        </div>
-                        <div class="but">
-                            <input class="but180lan" name="" value="管理简历" onclick="javascript:location.href='company_recruitment.php?act=apply_jobs'" type="button">
-                        </div>
-                    </div>
-                    <div class="list last">
-                        <div class="t">简历搜索</div>
-                        <div class="p">
-                            <a href="company_recruitment.php?act=favorites_list">
-                                <span class="s_a">已收藏的简历：</span>
-                                0
-                            </a>
-                        </div>
-                        <div class="but">
-                            <input class="but180lan" name="" value="搜索简历" onclick="javascript:window.open('http://www.php9.com/74cms_v3.7_20160412/upload/resume/resume-list.php')" type="button">
-                        </div>
-                    </div>
-                    <div class="clear"></div>
+                <div style="width: 910px;height: 50px;background-color: orange">
+                    <p style="font-size: 20px;padding: 10px;">我的积分：&nbsp;33点 &nbsp;&nbsp;&nbsp;<a href="">积分充值</a></p>
                 </div>
-                <div class="rec-resumes">
-                    <div class="rec-re-top clearfix">
-                        <h4 class="f-left">推荐简历</h4>
-                        <a class="f-right underline" href="http://www.php9.com/74cms_v3.7_20160412/upload/resume/resume-list.php">查看更多>></a>
-                    </div>
-                    <div class="rec-data">
-                        <table>
-                            <tbody>
-                            <tr>
-                                <td class="first" style="float: left" width="117">
-                                    <a class="underline" href="http://www.php9.com/74cms_v3.7_20160412/upload/resume/resume-show.php?id=2" target="_blank">卜晨晖</a>
-                                </td>
-                                <td width="74">16岁</td>
-                                <td width="78">高中</td>
-                                <td width="87">10年以上</td>
-                                <td width="325">
-                                    <div title="计算机应用,互联网/网络,计算机软硬件">意向职位：计算机应用,互联网/网络,计算机软硬件</div>
-                                </td>
-                                <td width="73">2017-02-22</td>
-                            </tr>
-                            <tr>
-                            </tbody>
+                <div style="border-bottom: 1px solid #dcdcdc;height: 1px;margin-top: 10px;margin-bottom: 10px;"></div>
+                <div style="width: 910px;height:200px:">
+                    <div>
+                        <table style="float: left;width:200px;margin-left: 100px;border-right: 1px dashed #808080">
+                            <tr><td><font size="4" style="margin-left: 30px;">职位管理</font></td></tr>
+                            <tr><td><span style="margin: 20px 15px;font-size: 15px;color: #a9a9a9">发布中的职位：<font color="red">2</font></span></td></tr>
+                            <tr><td><span style="margin: 20px 15px;font-size: 15px;color: #a9a9a9">审核中的职位：<font color="red">0</font></span></td></tr>
+                            <tr><td><input type="submit" class="create" style="width: 160px;height: 40px;background-color: #0000ff;font-size: 15px;color: #ffffff;margin-top: 20px;" value="发布职位"/></td></tr>
+                            <script>
+                                $(".create").click(function(){
+                                    window.location='index.php?r=company/create';
+                                })
+                            </script>
+                        </table>
+                        <table style="float: left;width:200px;margin-left: 100px;border-right: 1px dashed #808080">
+                            <tr><td><font size="4" style="margin-left: 30px;">简历管理</font></td></tr>
+                            <tr><td><span style="margin: 20px 15px;font-size: 15px;color: #a9a9a9">未查看简历：<font color="red">2</font></span></td></tr>
+                            <tr><td><span style="margin: 20px 15px;font-size: 15px;color: #a9a9a9">已下载简历：<font color="red">0</font></span></td></tr>
+                            <tr><td><input type="submit" style="width: 160px;height: 40px;background-color: #0000ff;font-size: 15px;color: #ffffff;margin-top: 20px;" value="管理简历"/></td></tr>
+                        </table>
+                        <table style="float: left;width:200px;margin-left: 100px; ">
+                            <tr><td><font size="4" style="margin-left: 30px;">简历搜索</font></td></tr>
+                            <tr><td><span style="margin: 20px 15px;font-size: 15px;color: #a9a9a9">已收藏简历：<font color="red">2</font></span></td></tr>
+                            <tr><td><input type="submit" style="width: 160px;height: 40px;background-color: #0000ff;font-size: 15px;color: #ffffff;margin-top: 20px;" value="搜索简历"/></td></tr>
                         </table>
                     </div>
                 </div>
-            </div>
+                <div style="clear: both;border-bottom: 1px solid #dcdcdc;height: 1px;"></div>
+                <div>
+                    <a style="float: right;font-size: 15px;margin-right: 20px;" href="">查看更多</a>
+                    <span style="float: left;font-size: 17px;margin-left: 20px;font-weight: bold">推荐简历</span>
+                </div>
+            </dd>
         </div>
 
         </div>
