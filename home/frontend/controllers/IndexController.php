@@ -180,7 +180,33 @@ class IndexController extends CommonController
         return $this->render("toudi",['jobs'=>$jobs,'resume'=>$resume]);
 	}
 
-<<<<<<< HEAD
+
+    //个人收藏职位
+    public function actionCollection(){
+        //接收值，然后入库，返回前台
+        $id=$_POST['id'];
+        $uid=Yii::$app->session->get('uid');
+        $sql="select * from `collect` where `jid`=$id and `uid`=$uid";
+        $arr=Yii::$app->db->createCommand($sql)->queryone();
+        if($arr){
+            echo 2;
+        }else{
+
+            $insert=Yii::$app->db->createCommand()->insert('collect',['uid'=>$uid,'jid'=>$id])->execute();
+            if($insert){
+                echo 1;
+            }else{
+                echo 0;
+            }
+
+        }
+
+
+
+
+    }
+
+
 
     public function actionDeliever(){
         $data=$_POST;
@@ -195,12 +221,12 @@ class IndexController extends CommonController
     }
 
 
-=======
+
     //投简历公司介绍
     public function actionCompany_jobs(){
         return $this->render('company_jobs');
     }
->>>>>>> 97fea5283f134d3037f9c15244c279ee0e6213e5
+
 	//账号设置
 	public function actionLoginset()
 	{

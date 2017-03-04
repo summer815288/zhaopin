@@ -34,7 +34,7 @@ use yii\helpers\Html;
                     	<div><?php echo $jobs[0]['companyname']?></div>
                         <?= $jobs[0]['jobs_name']?></h1>
 <!--                          收藏职位                                      	-->
-                      <div class="jd_collection" id="jobCollection">
+                      <div class="jd_collection"     id="<?php echo $jobs[0]['id']?>" >
                       <div class="jd_collection_success">
                        			<span>已成功收藏该职位，</span>
 								<a class="jd_collection_page" href="collections.html">查看全部</a>								
@@ -42,7 +42,33 @@ use yii\helpers\Html;
                       </div>
                       </div>
 <!--                  收藏职位-->
+
                  </dt>
+<script>
+    $(document).on('click','.jd_collection',function(){
+        var id=$(this).attr('id');
+        $.ajax({
+            type:'post',
+            url:"index.php?r=index/collection",
+            data:{id:id},
+            success:function(msg){
+                if(msg==1){
+                    alert('收藏成功');
+                    $('.jd_collection').css('background','oringe');
+                }else if(msg==0){
+                    alert('收藏失败');
+                }else if(msg==2){
+                    alert('您已经收藏过了呦！');
+                }
+            }
+        })
+
+
+    })
+
+</script>
+
+
                     <dd class="job_request">
                     	<span class="red"><?= $jobs[0]['wage_cn']?></span>
                        	<span><?= $jobs[0]['district_cn']?></span> 
@@ -118,7 +144,7 @@ use yii\helpers\Html;
 
 <dd>
 <!-- 用户是否激活 0-否；1-是 -->
-     <a title="投个简历" class="btn fr btn_apply inline cboxElement" href="#setResumeApply">投个简历</a>
+<!--     <a title="投个简历" class="btn fr btn_apply inline cboxElement" href="#setResumeApply">投个简历</a>-->
 	</dl>
        <div id="weibolist"></div>
         </div>

@@ -8,9 +8,9 @@
         </dl>
         <dl class="company_center_aside">
             <dt><b>求职管理</b></dt>
-            <dd><a href="">面试邀请</a></dd>
-            <dd><a href="">已申请职位</a></dd>
-            <dd><a href="">职位收藏夹</a></dd>
+            <dd><a href="<?php echo Url::to(['person/interview']) ?>">面试邀请</a></dd>
+            <dd><a href="<?php echo Url::to(['person/resume_deliever']) ?>">已申请职位</a></dd>
+            <dd><a href="<?php echo Url::to(['person/collection']) ?>">职位收藏夹</a></dd>
         </dl>
         <dl class="company_center_aside">
             <dt><b>账号管理</b></dt>
